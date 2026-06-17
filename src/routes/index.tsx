@@ -143,6 +143,38 @@ function Index() {
         </div>
       </section>
 
+      {/* QUI SOMMES-NOUS */}
+      <section id="about" className="relative z-10 mx-auto max-w-5xl px-6 py-28">
+        <div className="mb-10 text-center">
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Notre histoire ↓</span>
+          <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+            Qui sommes-nous
+          </h2>
+        </div>
+        <div className="rounded-3xl border-2 p-8 md:p-12" style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}>
+          <p className="font-handwritten text-2xl leading-relaxed md:text-3xl" style={{ color: "var(--cocoa)" }}>
+            Bienvenue chez <span className="scribble-underline">Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.
+          </p>
+          <div className="mt-8 space-y-6 text-base leading-relaxed md:text-lg" style={{ color: "var(--cocoa)" }}>
+            <p>
+              Depuis notre tendre enfance, le dessin a été notre refuge, notre moyen d'expression. Chaque trait, chaque éclat de couleur raconte une histoire, reflète une émotion et nous transporte dans un univers où la créativité n'a pas de limites.
+            </p>
+            <p>
+              Nous sommes animés par une vision commune : celle de créer des souvenirs intemporels pour les petits et les grands "walcoeurs". Parce que nous croyons en la magie des souvenirs, en leur capacité à évoquer des sourires et à tisser des liens précieux. Nous mettons tout notre talent et notre passion au service de la création d'objets uniques et personnalisés.
+            </p>
+            <p>
+              Notre équipe dévouée est là pour concrétiser vos rêves et donner vie à vos idées. Que ce soit pour personnaliser des vêtements, des chaussures, des casquettes, des accessoires ou même les baskets de vos enfants, nous mettons notre expertise à votre disposition. Chaque création est pensée avec soin et réalisée avec "cœur", pour que chaque pièce devienne un véritable trésor, porteur d'histoires et de souvenirs inoubliables.
+            </p>
+            <p className="font-handwritten text-xl md:text-2xl" style={{ color: "var(--clay)" }}>
+              Chez Moonwalcoeur, nous croyons en la beauté du custom et en son pouvoir de rassembler. Nous sommes impatients de partager notre passion avec vous et de créer ensemble des moments magiques et uniques.
+            </p>
+            <p className="font-handwritten text-xl md:text-2xl" style={{ color: "var(--clay)" }}>
+              Bienvenue dans notre univers, où chaque création est une invitation au voyage sur la lune.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section id="services" className="relative z-10 mx-auto max-w-6xl px-6 py-28">
         <div className="mb-12 text-center">
