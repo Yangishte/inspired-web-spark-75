@@ -1,296 +1,278 @@
 import { createFileRoute } from "@tanstack/react-router";
-import palm from "@/assets/palm.png";
-import portrait from "@/assets/portrait.png";
-import jungle from "@/assets/jungle.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Hey, I'm Sam — I make ridiculously fun websites" },
+      { title: "Bar à custom — Personnalisation unique & faite main" },
       {
         name: "description",
         content:
-          "Personal playground of a designer and developer who refuses to make another beige, boring website. Come for the palm trees, stay for the squiggles.",
+          "Bar à custom : atelier de personnalisation sur-mesure. Vêtements, accessoires et objets uniques, customisés à la main dans un esprit chaleureux et artisanal.",
       },
-      { property: "og:title", content: "Hey, I'm Sam — I make ridiculously fun websites" },
+      { property: "og:title", content: "Bar à custom — Personnalisation unique & faite main" },
       {
         property: "og:description",
-        content: "Designer, developer, professional doodler. Built with love and zero corporate vibes.",
+        content: "Atelier de customisation sur-mesure. Venez créer la pièce qui vous ressemble.",
       },
-      { property: "og:image", content: jungle },
-      { name: "twitter:image", content: jungle },
     ],
   }),
   component: Index,
 });
 
-function NavIcon({ label, color }: { label: string; color: string }) {
+function Doodle({ className = "", color = "var(--clay)" }: { className?: string; color?: string }) {
   return (
-    <a
-      href="#"
-      className="group flex flex-col items-center gap-1 font-marker text-sm tracking-wide transition-transform hover:-translate-y-1"
-      style={{ color }}
-    >
-      <div
-        className="grid h-12 w-12 place-items-center rounded-full border-2 transition-colors"
-        style={{ borderColor: color }}
-      >
-        <span className="text-lg">★</span>
-      </div>
-      {label}
-    </a>
-  );
-}
-
-function Doodle({ className = "", color = "#3ee0d6" }: { className?: string; color?: string }) {
-  return (
-    <svg
-      viewBox="0 0 120 60"
-      className={className}
-      fill="none"
-      stroke={color}
-      strokeWidth="2.5"
-      strokeLinecap="round"
-    >
+    <svg viewBox="0 0 120 60" className={className} fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round">
       <path d="M5 30 Q 30 5 60 30 T 115 25" />
       <path d="M105 18 L 115 25 L 108 35" />
     </svg>
   );
 }
 
+function NavLink({ label, href }: { label: string; href: string }) {
+  return (
+    <a
+      href={href}
+      className="font-marker text-sm tracking-wide transition-transform hover:-translate-y-0.5"
+      style={{ color: "var(--cocoa)" }}
+    >
+      {label}
+    </a>
+  );
+}
+
 function Index() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
-      {/* ambient palm decorations */}
-      <img
-        src={palm}
-        alt=""
+      {/* subtle grain overlay */}
+      <div
         aria-hidden
-        width={896}
-        height={1216}
-        className="pointer-events-none absolute -right-32 top-[10vh] hidden w-[480px] opacity-90 float-slow md:block"
-      />
-      <img
-        src={palm}
-        alt=""
-        aria-hidden
-        width={896}
-        height={1216}
-        className="pointer-events-none absolute -left-40 top-[120vh] hidden w-[380px] -scale-x-100 opacity-80 float-slow md:block"
+        className="pointer-events-none fixed inset-0 opacity-[0.15] mix-blend-multiply"
+        style={{
+          backgroundImage:
+            "radial-gradient(oklch(0.55 0.06 50 / 0.4) 1px, transparent 1px)",
+          backgroundSize: "3px 3px",
+        }}
       />
 
       {/* NAV */}
       <header className="relative z-10 mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 pt-8">
-        <a
-          href="#"
-          className="font-marker text-3xl tracking-wide tilt-left"
-          style={{ color: "var(--neon-yellow)" }}
-        >
-          Sam Squiggle
+        <a href="#" className="font-display text-2xl tracking-tight tilt-left" style={{ color: "var(--cocoa)" }}>
+          Bar à custom
         </a>
         <nav className="flex flex-wrap items-center gap-7">
-          <NavIcon label="Course" color="var(--neon-yellow)" />
-          <NavIcon label="Videos" color="var(--neon-yellow)" />
-          <NavIcon label="Talks" color="var(--neon-yellow)" />
-          <NavIcon label="Articles" color="var(--neon-yellow)" />
-          <NavIcon label="Work" color="var(--neon-yellow)" />
-          <NavIcon label="Say hi" color="var(--neon-yellow)" />
+          <NavLink label="L'atelier" href="#atelier" />
+          <NavLink label="Services" href="#services" />
+          <NavLink label="Galerie" href="#galerie" />
+          <NavLink label="Tarifs" href="#tarifs" />
+          <NavLink label="Contact" href="#contact" />
         </nav>
       </header>
 
       {/* HERO */}
-      <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-6 pb-32 pt-20 md:grid-cols-2 md:pt-32">
-        <div className="relative mx-auto md:mx-0">
-          <span
-            className="absolute -left-8 -top-2 rotate-[-14deg] font-handwritten text-2xl"
-            style={{ color: "var(--neon-cyan)" }}
-          >
-            That's me! →
-          </span>
-          <span
-            className="absolute -right-4 top-10 rotate-[8deg] font-handwritten text-lg leading-tight md:text-xl"
-            style={{ color: "var(--neon-cyan)" }}
-          >
-            I do this hair thing
-            <br /> to look taller.
-          </span>
-          <img
-            src={portrait}
-            alt="A friendly cartoon portrait of Sam"
-            width={1024}
-            height={1024}
-            className="relative w-72 md:w-96"
-          />
-          <span
-            className="absolute -bottom-2 left-8 rotate-[-6deg] font-handwritten text-lg leading-tight"
-            style={{ color: "var(--neon-cyan)" }}
-          >
-            I rarely wear collars.
-            <br /> They get in the way.
-          </span>
-        </div>
-
+      <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 pb-32 pt-20 md:grid-cols-[1.2fr_1fr] md:pt-32">
         <div>
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
+            Atelier de personnalisation — fait main ✿
+          </span>
           <h1
-            className="font-display text-5xl leading-[0.95] md:text-7xl"
-            style={{ color: "var(--neon-yellow)" }}
+            className="mt-4 font-display text-5xl leading-[0.95] md:text-7xl"
+            style={{ color: "var(--cocoa)" }}
           >
-            I'm tired of boring websites.
+            Et si ta pièce préférée n'existait qu'en un seul exemplaire&nbsp;?
           </h1>
-          <p className="mt-8 font-handwritten text-2xl leading-snug md:text-3xl" style={{ color: "var(--neon-cyan)" }}>
-            So I built this loud little thing instead. It makes me happy. Sorry about the giant images, I'm into them.
+          <p className="mt-8 max-w-xl text-lg leading-relaxed" style={{ color: "var(--cocoa)" }}>
+            Bienvenue au <span className="scribble-underline">Bar à custom</span>. On peint, on brode, on patche, on
+            transforme tes vêtements et accessoires en pièces uniques — autour d'un café, dans une ambiance douce et
+            ensoleillée.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#work"
+              href="#contact"
               className="rounded-full px-7 py-3 font-marker text-lg tilt-left transition-transform hover:scale-105"
-              style={{ background: "var(--neon-yellow)", color: "var(--primary-foreground)" }}
+              style={{ background: "var(--cocoa)", color: "var(--cream)" }}
             >
-              Poke around
+              Réserver une session
             </a>
             <a
-              href="#hi"
+              href="#galerie"
               className="rounded-full border-2 px-7 py-3 font-marker text-lg tilt-right transition-transform hover:scale-105"
-              style={{ borderColor: "var(--neon-pink)", color: "var(--neon-pink)" }}
+              style={{ borderColor: "var(--clay)", color: "var(--clay)" }}
             >
-              Say hi 👋
+              Voir la galerie
             </a>
           </div>
         </div>
-      </section>
 
-      {/* JUNGLE BAND */}
-      <section className="relative">
-        <img
-          src={jungle}
-          alt="Low-poly jungle sunset"
-          width={1920}
-          height={1024}
-          loading="lazy"
-          className="h-[55vh] w-full object-cover"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
-        <div className="absolute inset-0 grid place-items-center px-6 text-center">
-          <h2
-            className="max-w-4xl font-display text-4xl leading-tight drop-shadow-[0_4px_0_rgba(0,0,0,0.35)] md:text-6xl"
-            style={{ color: "var(--neon-yellow)" }}
+        <div className="relative mx-auto">
+          <div
+            className="relative h-80 w-80 rotate-3 overflow-hidden rounded-[2rem] border-4 shadow-2xl md:h-96 md:w-96"
+            style={{ borderColor: "var(--cocoa)", background: "var(--sand)" }}
           >
-            I design things, write code, make videos, and dream of the 80s &amp; 90s.
-          </h2>
-        </div>
-      </section>
-
-      {/* ABOUT BLURB */}
-      <section className="relative z-10 mx-auto max-w-3xl px-6 py-28 text-center">
-        <p className="font-handwritten text-3xl leading-snug md:text-4xl" style={{ color: "var(--neon-cyan)" }}>
-          I built{" "}
-          <a href="#" className="scribble-underline" style={{ color: "var(--neon-yellow)" }}>
-            Wobblefish CMS
-          </a>{" "}
-          (the most ridiculous CMS ever) and teach in my{" "}
-          <a href="#" className="scribble-underline" style={{ color: "var(--neon-yellow)" }}>
-            Radical Web Course
-          </a>
-          . I live in a small town, drink too much coffee, learn fast, try to put others first, and believe websites
-          should feel like a Saturday morning, not a Monday meeting.
-        </p>
-      </section>
-
-      {/* LATEST THING */}
-      <section className="relative z-10 mx-auto max-w-5xl px-6 pb-32">
-        <div className="mb-8 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--neon-pink)" }}>
-            Check out my latest thing! ↓
-          </span>
-        </div>
-        <a
-          href="#"
-          className="group relative block overflow-hidden rounded-3xl border-4 p-10 transition-transform hover:-rotate-1 md:p-16"
-          style={{
-            borderColor: "var(--neon-yellow)",
-            background: "linear-gradient(135deg, oklch(0.32 0.08 200), oklch(0.26 0.06 200))",
-          }}
-        >
-          <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
-            <div>
-              <h3 className="font-display text-4xl md:text-6xl" style={{ color: "var(--neon-yellow)" }}>
-                Radical Web Course
-              </h3>
-              <p
-                className="mt-4 font-handwritten text-2xl"
-                style={{ color: "var(--neon-cyan)" }}
-              >
-                A rebellious, possibly life-changing course on building websites with personality. Yes, really.
-              </p>
-            </div>
-            <div
-              className="grid h-32 w-32 place-items-center rounded-full font-marker text-xl tilt-right transition-transform group-hover:scale-110"
-              style={{ background: "var(--neon-pink)", color: "white" }}
-            >
-              Enroll →
+            <div className="absolute inset-0 grid place-items-center">
+              <div className="text-center">
+                <div className="font-display text-7xl" style={{ color: "var(--cocoa)" }}>★</div>
+                <p className="mt-4 font-handwritten text-3xl" style={{ color: "var(--cocoa)" }}>
+                  Pièce unique<br />n°327
+                </p>
+              </div>
             </div>
           </div>
-        </a>
+          <span
+            className="absolute -bottom-4 -left-4 rotate-[-8deg] rounded-full border-2 px-4 py-2 font-handwritten text-xl"
+            style={{ borderColor: "var(--clay)", color: "var(--clay)", background: "var(--cream)" }}
+          >
+            100% fait main
+          </span>
+        </div>
       </section>
 
-      {/* ARTICLES */}
-      <section className="relative z-10 mx-auto max-w-5xl px-6 pb-32">
-        <h2
-          className="ml-auto max-w-2xl text-right font-display text-3xl leading-tight md:text-5xl"
-          style={{ color: "var(--neon-yellow)" }}
-        >
-          I scribbled these articles recently &amp; right-aligned them for absolutely no reason.
-        </h2>
-        <ul className="mt-12 space-y-6 text-right">
+      {/* ATELIER BAND */}
+      <section
+        id="atelier"
+        className="relative border-y-2"
+        style={{ borderColor: "var(--clay)", background: "var(--sand)" }}
+      >
+        <div className="mx-auto max-w-5xl px-6 py-24 text-center">
+          <h2 className="font-display text-4xl leading-tight md:text-6xl" style={{ color: "var(--cocoa)" }}>
+            Un comptoir, des pinceaux, ton imagination.
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl font-handwritten text-3xl" style={{ color: "var(--clay)" }}>
+            Pas de série, pas de standard — chaque pièce raconte ton histoire.
+          </p>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="relative z-10 mx-auto max-w-6xl px-6 py-28">
+        <div className="mb-12 text-center">
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Ce qu'on fait ↓</span>
+          <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+            Trois manières de customiser
+          </h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
           {[
-            { when: "2 weeks ago", title: "Hey Starbucks, I have some ideas for you" },
-            { when: "1 month ago", title: "Beep beep beep, here comes the squiggle truck!" },
-            { when: "3 months ago", title: "Finally, a side project worth abandoning properly" },
-            { when: "6 months ago", title: "Why your portfolio should embarrass your mom (a little)" },
-          ].map((a) => (
-            <li key={a.title} className="group">
-              <a
-                href="#"
-                className="inline-flex flex-wrap items-baseline justify-end gap-x-4 gap-y-1 transition-transform hover:-translate-x-1"
-              >
-                <span className="font-handwritten text-xl" style={{ color: "var(--neon-cyan)" }}>
-                  {a.when}
-                </span>
-                <span
-                  className="font-marker text-2xl group-hover:underline md:text-3xl"
-                  style={{ color: "var(--neon-yellow)" }}
-                >
-                  {a.title}
-                </span>
-              </a>
-            </li>
+            {
+              title: "Peinture textile",
+              desc: "Vestes, jeans, baskets — on peint à la main, à ton style.",
+              tag: "★",
+            },
+            {
+              title: "Broderie & patches",
+              desc: "Lettrages, motifs, écussons cousus avec amour.",
+              tag: "✿",
+            },
+            {
+              title: "Upcycling",
+              desc: "On transforme l'ancien en pièce qu'on a envie de re-porter.",
+              tag: "✦",
+            },
+          ].map((s, i) => (
+            <div
+              key={s.title}
+              className={`rounded-3xl border-2 p-8 transition-transform hover:-translate-y-1 ${i % 2 === 0 ? "tilt-left" : "tilt-right"}`}
+              style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
+            >
+              <div className="font-display text-5xl" style={{ color: "var(--clay)" }}>{s.tag}</div>
+              <h3 className="mt-4 font-display text-2xl" style={{ color: "var(--cocoa)" }}>{s.title}</h3>
+              <p className="mt-3 text-base leading-relaxed" style={{ color: "var(--cocoa)" }}>{s.desc}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
 
-      {/* SAY HI */}
-      <section id="hi" className="relative z-10 mx-auto max-w-4xl px-6 pb-40 text-center">
-        <Doodle className="mx-auto mb-6 w-32" color="var(--neon-pink)" />
-        <h2
-          className="font-display text-5xl leading-tight md:text-7xl"
-          style={{ color: "var(--neon-yellow)" }}
-        >
-          Wanna make something weird together?
+      {/* GALERIE */}
+      <section id="galerie" className="relative z-10 mx-auto max-w-6xl px-6 pb-28">
+        <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+          Quelques pièces qui sont sorties d'ici.
         </h2>
-        <p className="mt-6 font-handwritten text-2xl" style={{ color: "var(--neon-cyan)" }}>
-          I take on a small handful of projects a year. If yours has palm trees, even better.
+        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+          {[
+            "Veste denim — fleurs",
+            "Sneakers — lettrage",
+            "Tote bag — patches",
+            "Sweat — broderie",
+            "Casquette — peint",
+            "Chemise — upcycling",
+            "Jean — étoiles",
+            "Foulard — main libre",
+          ].map((label, i) => (
+            <div
+              key={label}
+              className="group relative aspect-square overflow-hidden rounded-2xl border-2 transition-transform hover:-rotate-1"
+              style={{
+                borderColor: "var(--cocoa)",
+                background: i % 2 === 0 ? "var(--sand)" : "var(--clay)",
+              }}
+            >
+              <div className="absolute inset-0 grid place-items-center px-3 text-center">
+                <span
+                  className="font-handwritten text-2xl"
+                  style={{ color: i % 2 === 0 ? "var(--cocoa)" : "var(--cream)" }}
+                >
+                  {label}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* TARIFS */}
+      <section
+        id="tarifs"
+        className="relative border-y-2"
+        style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
+      >
+        <div className="mx-auto grid max-w-5xl gap-10 px-6 py-24 md:grid-cols-3">
+          {[
+            { name: "La petite touche", price: "25€", desc: "Un patch, un mot, une étoile. Pour goûter." },
+            { name: "Le total look", price: "65€", desc: "Une pièce entière revisitée. Le best-seller.", featured: true },
+            { name: "Le sur-mesure", price: "Sur devis", desc: "Projet long, mariage, cadeau. On en parle." },
+          ].map((p) => (
+            <div
+              key={p.name}
+              className="rounded-3xl border-2 p-8 text-center"
+              style={{
+                borderColor: "var(--cocoa)",
+                background: p.featured ? "var(--cocoa)" : "transparent",
+                color: p.featured ? "var(--cream)" : "var(--cocoa)",
+              }}
+            >
+              <h3 className="font-display text-2xl">{p.name}</h3>
+              <p className="mt-4 font-display text-5xl">{p.price}</p>
+              <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="relative z-10 mx-auto max-w-4xl px-6 py-28 text-center">
+        <Doodle className="mx-auto mb-6 w-32" color="var(--clay)" />
+        <h2 className="font-display text-4xl leading-tight md:text-6xl" style={{ color: "var(--cocoa)" }}>
+          On se retrouve à l'atelier&nbsp;?
+        </h2>
+        <p className="mt-6 font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
+          Réserve ta session, ramène ta pièce, on s'occupe du reste.
         </p>
         <a
-          href="mailto:hi@samsquiggle.com"
-          className="mt-10 inline-block rounded-full px-10 py-4 font-marker text-xl tilt-left transition-transform hover:scale-110"
-          style={{ background: "var(--neon-pink)", color: "white" }}
+          href="mailto:hello@baracustom.fr"
+          className="mt-10 inline-block rounded-full px-10 py-4 font-marker text-xl tilt-left transition-transform hover:scale-105"
+          style={{ background: "var(--cocoa)", color: "var(--cream)" }}
         >
-          hi@samsquiggle.com
+          hello@baracustom.fr
         </a>
+        <p className="mt-6 text-sm" style={{ color: "var(--cocoa)" }}>
+          12 rue des Artisans · Ouvert du mercredi au samedi · 10h–19h
+        </p>
       </section>
 
-      <footer className="relative z-10 border-t-2 px-6 py-10 text-center font-handwritten text-xl" style={{ borderColor: "var(--neon-yellow)", color: "var(--neon-cyan)" }}>
-        Made with neon markers &amp; way too much coffee. © {new Date().getFullYear()}.
+      <footer
+        className="relative z-10 border-t-2 px-6 py-8 text-center font-handwritten text-lg"
+        style={{ borderColor: "var(--clay)", color: "var(--cocoa)" }}
+      >
+        Bar à custom — fait main avec beaucoup de café · © {new Date().getFullYear()}
       </footer>
     </div>
   );
