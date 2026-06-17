@@ -61,6 +61,7 @@ function Index() {
         </a>
         <nav className="flex flex-wrap items-center gap-7">
           <NavLink label="L'atelier" href="#atelier" />
+          <NavLink label="Qui sommes-nous" href="#about" />
           <NavLink label="Services" href="#services" />
           <NavLink label="Galerie" href="#galerie" />
           <NavLink label="Tarifs" href="#tarifs" />
