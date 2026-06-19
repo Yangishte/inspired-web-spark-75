@@ -294,7 +294,24 @@ function Index() {
         <div className="rounded-3xl border-2 p-4 md:p-8" style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}>
           <Accordion type="single" collapsible className="w-full space-y-2">
             {[
-              { q: "Où ?", a: "Rue du Centre 37, 1025 St-Sulpice" },
+              { q: "Où ?", a: (
+                <div className="space-y-1">
+                  <p>Rue Centre 37</p>
+                  <p>1025 St-Sulpice</p>
+                  <div className="mt-4 overflow-hidden rounded-2xl border-2" style={{ borderColor: "var(--cocoa)" }}>
+                    <iframe
+                      src="https://www.google.com/maps?q=Rue+Centre+37,1025+St-Sulpice,Switzerland&output=embed"
+                      width="100%"
+                      height="280"
+                      style={{ border: 0 }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Localisation Bar à custom"
+                    />
+                  </div>
+                </div>
+              ) },
               { q: "Tarifs ?", a: "Prix: Adulte CHF49.- Enfant CHF39.-" },
               { q: "Durée ?", a: "2 heures avec boisson offertes !" },
               { q: "Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
