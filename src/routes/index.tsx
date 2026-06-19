@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,6 +66,7 @@ function Index() {
           <NavLink label="Services" href="#services" />
           <NavLink label="Galerie" href="#galerie" />
           <NavLink label="Tarifs" href="#tarifs" />
+          <NavLink label="FAQ" href="#faq" />
           <NavLink label="Réserver" href="#reserver" />
           <NavLink label="Contact" href="#contact" />
         </nav>
@@ -278,6 +280,39 @@ function Index() {
               <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="relative z-10 mx-auto max-w-4xl px-6 py-28">
+        <div className="mb-10 text-center">
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Les questions ↓</span>
+          <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+            FAQ
+          </h2>
+        </div>
+        <div className="rounded-3xl border-2 p-4 md:p-8" style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}>
+          <Accordion type="single" collapsible className="w-full space-y-2">
+            {[
+              { q: "Où ?", a: "Rue du Centre 37, 1025 St-Sulpice" },
+              { q: "Tarifs ?", a: "Prix: Adulte CHF49.- Enfant CHF39.-" },
+              { q: "Durée ?", a: "2 heures avec boisson offertes !" },
+              { q: "Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
+              { q: "Ensuite ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
+            ].map((item) => (
+              <AccordionItem key={item.q} value={item.q} className="border-0">
+                <AccordionTrigger 
+                  className="rounded-2xl px-4 py-4 font-marker text-lg hover:no-underline hover:bg-[var(--sand)] data-[state=open]:bg-[var(--sand)]"
+                  style={{ color: "var(--cocoa)" }}
+                >
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-4 pt-2 text-base leading-relaxed" style={{ color: "var(--cocoa)" }}>
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
