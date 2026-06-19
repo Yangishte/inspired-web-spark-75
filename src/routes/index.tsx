@@ -65,6 +65,7 @@ function Index() {
           <NavLink label="Services" href="#services" />
           <NavLink label="Galerie" href="#galerie" />
           <NavLink label="Tarifs" href="#tarifs" />
+          <NavLink label="Réserver" href="#reserver" />
           <NavLink label="Contact" href="#contact" />
         </nav>
       </header>
@@ -88,7 +89,7 @@ function Index() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#contact"
+              href="#reserver"
               className="rounded-full px-7 py-3 font-marker text-lg tilt-left transition-transform hover:scale-105"
               style={{ background: "var(--cocoa)", color: "var(--cream)" }}
             >
@@ -277,6 +278,26 @@ function Index() {
               <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* RESERVER */}
+      <section id="reserver" className="relative z-10 py-28">
+        <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Prends ton créneau ↓</span>
+          <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+            Réserver un rendez-vous
+          </h2>
+          <p className="mt-4 font-handwritten text-xl" style={{ color: "var(--clay)" }}>
+            Choisis ta date, ton créneau et viens customiser ta pièce.
+          </p>
+        </div>
+        {/* WIDGET ACUITY SCHEDULING — code d'intégration à insérer ici par la suite */}
+        <div
+          className="flex w-full items-center justify-center border-y-2"
+          style={{ borderColor: "var(--clay)", background: "var(--cream)", minHeight: "500px", color: "var(--cocoa)" }}
+        >
+          <p className="font-handwritten text-2xl">Widget Acuity Scheduling — bientôt disponible ✿</p>
         </div>
       </section>
 
