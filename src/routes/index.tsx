@@ -89,7 +89,7 @@ function Index() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href="#contact"
+              href="#reserver"
               className="rounded-full px-7 py-3 font-marker text-lg tilt-left transition-transform hover:scale-105"
               style={{ background: "var(--cocoa)", color: "var(--cream)" }}
             >
