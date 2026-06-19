@@ -65,6 +65,7 @@ function Index() {
           <NavLink label="Services" href="#services" />
           <NavLink label="Galerie" href="#galerie" />
           <NavLink label="Tarifs" href="#tarifs" />
+          <NavLink label="Réserver" href="#reserver" />
           <NavLink label="Contact" href="#contact" />
         </nav>
       </header>
