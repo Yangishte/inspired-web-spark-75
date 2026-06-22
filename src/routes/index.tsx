@@ -103,7 +103,7 @@ function Index() {
           <NavLink label="L'atelier" href="#atelier" />
           <NavLink label="Qui sommes-nous" href="#about" />
           <NavLink label="Services" href="#services" />
-          <NavLink label="Tarifs" href="#tarifs" />
+          <NavLink label="Tarifs" href="#faq" />
           <NavLink label="FAQ" href="#faq" />
           <NavLink label="Réserver" href="#reserver" />
           <NavLink label="Contact" href="#contact" />
