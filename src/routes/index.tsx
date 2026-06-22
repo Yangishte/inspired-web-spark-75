@@ -195,6 +195,8 @@ function Index() {
         </div>
       </section>
 
+      <FloatingClouds className="z-10 -mb-8 -mt-8" />
+
       {/* QUI SOMMES-NOUS */}
       <section id="about" className="relative z-10 mx-auto max-w-5xl px-6 py-28">
         <div className="mb-10 text-center">
