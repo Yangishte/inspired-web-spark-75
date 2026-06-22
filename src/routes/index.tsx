@@ -295,7 +295,29 @@ function Index() {
                   </div>
                 </div>
               ) },
-              { q: "Tarifs ?", a: "Prix: Adulte CHF49.- Enfant CHF39.-" },
+              { q: "Tarifs ?", a: (
+                <div className="grid gap-4 md:grid-cols-3">
+                  {[
+                    { name: "La petite touche", price: "25€", desc: "Un patch, un mot, une étoile. Pour goûter." },
+                    { name: "Le total look", price: "65€", desc: "Une pièce entière revisitée. Le best-seller.", featured: true },
+                    { name: "Le sur-mesure", price: "Sur devis", desc: "Projet long, mariage, cadeau. On en parle." },
+                  ].map((p) => (
+                    <div
+                      key={p.name}
+                      className="rounded-3xl border-2 p-6 text-center"
+                      style={{
+                        borderColor: "var(--cocoa)",
+                        background: p.featured ? "var(--cocoa)" : "transparent",
+                        color: p.featured ? "var(--cream)" : "var(--cocoa)",
+                      }}
+                    >
+                      <h3 className="font-display text-xl">{p.name}</h3>
+                      <p className="mt-3 font-display text-4xl">{p.price}</p>
+                      <p className="mt-3 text-sm leading-relaxed opacity-90">{p.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              ) },
               { q: "Durée ?", a: "2 heures avec boisson offertes !" },
               { q: "Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
               { q: "Ensuite ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
