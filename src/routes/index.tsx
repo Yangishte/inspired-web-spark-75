@@ -329,12 +329,12 @@ function Index() {
       {/* RESERVER */}
       <section id="reserver" className="relative z-10 py-28">
         <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Prends ton créneau ↓</span>
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Prends ton créneau</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
             Réserver un rendez-vous
           </h2>
           <p className="mt-4 font-handwritten text-xl" style={{ color: "var(--clay)" }}>
-            Choisis ta date, ton créneau et viens customiser ta pièce.
+            Choisis ta date, ton créneau et viens customiser ta pièce !
           </p>
         </div>
         <div className="mx-auto flex max-w-5xl justify-center px-6">
