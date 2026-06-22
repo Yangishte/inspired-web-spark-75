@@ -388,7 +388,7 @@ function Index() {
         </p>
         <a
           href="mailto:hello@baracustom.fr"
-          className="mt-10 inline-block rounded-full px-10 py-4 font-marker text-xl tilt-left transition-transform hover:scale-105"
+          className="float-left mt-10 inline-block rounded-full px-10 py-4 font-marker text-xl transition-transform hover:scale-105"
           style={{ background: "var(--cocoa)", color: "var(--cream)" }}
         >
           hello@baracustom.fr
