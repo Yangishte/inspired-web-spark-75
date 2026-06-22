@@ -103,7 +103,6 @@ function Index() {
           <NavLink label="L'atelier" href="#atelier" />
           <NavLink label="Qui sommes-nous" href="#about" />
           <NavLink label="Services" href="#services" />
-          <NavLink label="Galerie" href="#galerie" />
           <NavLink label="Tarifs" href="#tarifs" />
           <NavLink label="FAQ" href="#faq" />
           <NavLink label="Réserver" href="#reserver" />
@@ -137,11 +136,11 @@ function Index() {
               Réserver une session
             </a>
             <a
-              href="#galerie"
+              href="#services"
               className="rounded-full border-2 px-7 py-3 font-marker text-lg tilt-right transition-transform hover:scale-105"
               style={{ borderColor: "var(--clay)", color: "var(--clay)" }}
             >
-              Voir la galerie
+              Découvrir les services
             </a>
           </div>
         </div>
@@ -265,42 +264,6 @@ function Index() {
         </div>
       </section>
 
-      {/* GALERIE */}
-      <section id="galerie" className="relative z-10 mx-auto max-w-6xl px-6 pb-28">
-        <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
-          Quelques pièces qui sont sorties d'ici.
-        </h2>
-        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {[
-            "Veste denim — fleurs",
-            "Sneakers — lettrage",
-            "Tote bag — patches",
-            "Sweat — broderie",
-            "Casquette — peint",
-            "Chemise — upcycling",
-            "Jean — étoiles",
-            "Foulard — main libre",
-          ].map((label, i) => (
-            <div
-              key={label}
-              className="group relative aspect-square overflow-hidden rounded-2xl border-2 transition-transform hover:-rotate-1"
-              style={{
-                borderColor: "var(--cocoa)",
-                background: i % 2 === 0 ? "var(--sand)" : "var(--clay)",
-              }}
-            >
-              <div className="absolute inset-0 grid place-items-center px-3 text-center">
-                <span
-                  className="font-handwritten text-2xl"
-                  style={{ color: i % 2 === 0 ? "var(--cocoa)" : "var(--cream)" }}
-                >
-                  {label}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* TARIFS */}
       <section
