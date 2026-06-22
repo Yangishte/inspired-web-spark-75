@@ -145,17 +145,18 @@ function Index() {
 
         <div className="relative mx-auto">
           <div
-            className="relative h-80 w-80 rotate-3 overflow-hidden rounded-[2rem] border-4 shadow-2xl md:h-96 md:w-96"
+            className="animate-float-hero relative h-80 w-80 overflow-hidden rounded-[2rem] border-4 shadow-2xl md:h-96 md:w-96"
             style={{ borderColor: "var(--cocoa)", background: "var(--sand)" }}
           >
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-center">
-                <div className="font-display text-7xl" style={{ color: "var(--cocoa)" }}>★</div>
-                <p className="mt-4 font-handwritten text-3xl" style={{ color: "var(--cocoa)" }}>
-                  Pièce unique<br />n°327
-                </p>
-              </div>
-            </div>
+            {heroImages.map((img, i) => (
+              <img
+                key={i}
+                src={img.url}
+                alt={`Création Bar à custom ${i + 1}`}
+                className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
+                style={{ opacity: i === heroIndex ? 1 : 0 }}
+              />
+            ))}
           </div>
           <span
             className="absolute -bottom-4 -left-4 rotate-[-8deg] rounded-full border-2 px-4 py-2 font-handwritten text-xl"
