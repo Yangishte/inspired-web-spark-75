@@ -265,34 +265,6 @@ function Index() {
       </section>
 
 
-      {/* TARIFS */}
-      <section
-        id="tarifs"
-        className="relative border-y-2"
-        style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
-      >
-        <div className="mx-auto grid max-w-5xl gap-10 px-6 py-24 md:grid-cols-3">
-          {[
-            { name: "La petite touche", price: "25€", desc: "Un patch, un mot, une étoile. Pour goûter." },
-            { name: "Le total look", price: "65€", desc: "Une pièce entière revisitée. Le best-seller.", featured: true },
-            { name: "Le sur-mesure", price: "Sur devis", desc: "Projet long, mariage, cadeau. On en parle." },
-          ].map((p) => (
-            <div
-              key={p.name}
-              className="rounded-3xl border-2 p-8 text-center"
-              style={{
-                borderColor: "var(--cocoa)",
-                background: p.featured ? "var(--cocoa)" : "transparent",
-                color: p.featured ? "var(--cream)" : "var(--cocoa)",
-              }}
-            >
-              <h3 className="font-display text-2xl">{p.name}</h3>
-              <p className="mt-4 font-display text-5xl">{p.price}</p>
-              <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* FAQ */}
       <section id="faq" className="relative z-10 mx-auto max-w-4xl px-6 py-28">
