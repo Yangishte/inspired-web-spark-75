@@ -275,10 +275,10 @@ function Index() {
           {[
             { name: "Adulte", price: "CHF 49.-", desc: "2 heures d'atelier, boisson offerte, support inclus." },
             { name: "Enfant", price: "CHF 39.-", desc: "2 heures d'atelier, boisson offerte, support inclus.", featured: true },
-          ].map((p) => (
+          ].map((p, i) => (
             <div
               key={p.name}
-              className="rounded-3xl border-2 p-8 text-center"
+              className={`rounded-3xl border-2 p-8 text-center ${i === 0 ? "float-left" : "float-right float-delay-2"}`}
               style={{
                 borderColor: "var(--cocoa)",
                 background: p.featured ? "var(--cocoa)" : "transparent",
