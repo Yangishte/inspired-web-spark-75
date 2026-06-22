@@ -43,6 +43,24 @@ function NavLink({ label, href }: { label: string; href: string }) {
 }
 
 function Index() {
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://embed.acuityscheduling.com/embed/button/32315373.css";
+    link.id = "acuity-button-styles";
+    document.head.appendChild(link);
+
+    const script = document.createElement("script");
+    script.src = "https://embed.acuityscheduling.com/embed/button/32315373.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.head.removeChild(link);
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
       {/* subtle grain overlay */}
