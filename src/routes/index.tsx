@@ -360,11 +360,11 @@ function Index() {
           Réserve ta session, ramène ta pièce, on s'occupe du reste.
         </p>
         <a
-          href="mailto:hello@baracustom.fr"
+          href="mailto:moonwalcoeur@outlook.com"
           className="float-left mt-10 inline-block rounded-full px-10 py-4 font-marker text-xl transition-transform hover:scale-105"
           style={{ background: "var(--cocoa)", color: "var(--cream)" }}
         >
-          hello@baracustom.fr
+          moonwalcoeur@outlook.com
         </a>
         <p className="mt-6 text-sm" style={{ color: "var(--cocoa)" }}>
           12 rue des Artisans · Ouvert du mercredi au samedi · 10h–19h
