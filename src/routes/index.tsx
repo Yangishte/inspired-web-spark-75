@@ -176,13 +176,21 @@ function Index() {
         className="relative border-y-2"
         style={{ borderColor: "var(--clay)", background: "var(--sand)" }}
       >
-        <div className="mx-auto max-w-5xl px-6 py-24 text-center">
+        <div className="mx-auto max-w-6xl px-6 py-24 text-center">
           <h2 className="font-display text-4xl leading-tight md:text-6xl" style={{ color: "var(--cocoa)" }}>
             Un comptoir, des pinceaux, ton imagination.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl font-handwritten text-3xl" style={{ color: "var(--clay)" }}>
             Pas de série, pas de standard — chaque pièce raconte ton histoire.
           </p>
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            <div className="overflow-hidden rounded-3xl border-4 shadow-xl tilt-left" style={{ borderColor: "var(--cocoa)" }}>
+              <img src={atelierImg1.url} alt="Atelier Bar à custom — espace de création" className="h-72 w-full object-cover md:h-96" />
+            </div>
+            <div className="overflow-hidden rounded-3xl border-4 shadow-xl tilt-right" style={{ borderColor: "var(--cocoa)" }}>
+              <img src={atelierImg2.url} alt="Atelier Bar à custom — préparation" className="h-72 w-full object-cover md:h-96" />
+            </div>
+          </div>
         </div>
       </section>
 
