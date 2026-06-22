@@ -11,6 +11,9 @@ import heroImg7 from "@/assets/hero/IMG_7448.jpeg.asset.json";
 import heroImg8 from "@/assets/hero/IMG_7459.jpeg.asset.json";
 import heroImg9 from "@/assets/hero/IMG_7474.jpeg.asset.json";
 
+import atelierImg1 from "@/assets/atelier/IMG_0367.jpeg.asset.json";
+import atelierImg2 from "@/assets/atelier/IMG_0360.jpeg.asset.json";
+
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
 export const Route = createFileRoute("/")({
