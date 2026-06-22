@@ -183,10 +183,10 @@ function Index() {
             Pas de série, pas de standard — chaque pièce raconte ton histoire.
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            <div className="overflow-hidden rounded-3xl border-4 shadow-xl tilt-left" style={{ borderColor: "var(--cocoa)" }}>
+            <div className="float-left overflow-hidden rounded-3xl border-4 shadow-xl" style={{ borderColor: "var(--cocoa)" }}>
               <img src={atelierImg1.url} alt="Atelier Bar à custom — espace de création" className="h-72 w-full object-cover md:h-96" />
             </div>
-            <div className="overflow-hidden rounded-3xl border-4 shadow-xl tilt-right" style={{ borderColor: "var(--cocoa)" }}>
+            <div className="float-right float-delay-2 overflow-hidden rounded-3xl border-4 shadow-xl" style={{ borderColor: "var(--cocoa)" }}>
               <img src={atelierImg2.url} alt="Atelier Bar à custom — préparation" className="h-72 w-full object-cover md:h-96" />
             </div>
           </div>
