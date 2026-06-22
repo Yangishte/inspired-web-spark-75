@@ -390,7 +390,7 @@ function Index() {
       {/* CONTACT */}
 
       <section id="contact" className="relative z-10 mx-auto max-w-4xl px-6 py-28 text-center">
-        <Doodle className="mx-auto mb-6 w-32" color="var(--clay)" />
+        
         <h2 className="font-display text-4xl leading-tight md:text-6xl" style={{ color: "var(--cocoa)" }}>
           On se retrouve à l'atelier&nbsp;?
         </h2>
