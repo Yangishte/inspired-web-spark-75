@@ -384,10 +384,10 @@ function Index() {
       <section id="contact" className="relative z-10 mx-auto max-w-4xl px-6 py-28 text-center">
         
         <h2 className="font-display text-4xl leading-tight md:text-6xl" style={{ color: "var(--cocoa)" }}>
-          On se retrouve à l'atelier&nbsp;?
+          Des questions ?
         </h2>
         <p className="mt-6 font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
-          Réserve ta session, ramène ta pièce, on s'occupe du reste.
+          On se fera un plaisir de te répondre dans les meilleurs délais!
         </p>
         <a
           href="mailto:moonwalcoeur@outlook.com"
