@@ -132,3 +132,9 @@
 @utility float-slow {
   animation: float-slow 6s ease-in-out infinite;
 }
+
+@keyframes float-hero {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+.animate-float-hero { animation: float-hero 6s ease-in-out infinite; }
