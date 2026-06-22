@@ -44,11 +44,11 @@ function Doodle({ className = "", color = "var(--clay)" }: { className?: string;
   );
 }
 
-function NavLink({ label, href }: { label: string; href: string }) {
+function NavLink({ label, href, delay = 0 }: { label: string; href: string; delay?: number }) {
   return (
     <a
       href={href}
-      className="font-marker text-sm tracking-wide transition-transform hover:-translate-y-0.5"
+      className={`float-soft float-delay-${delay} font-marker text-sm tracking-wide transition-transform hover:-translate-y-0.5`}
       style={{ color: "var(--cocoa)" }}
     >
       {label}
