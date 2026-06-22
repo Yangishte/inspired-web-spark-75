@@ -366,9 +366,6 @@ function Index() {
         >
           moonwalcoeur@outlook.com
         </a>
-        <p className="mt-6 text-sm" style={{ color: "var(--cocoa)" }}>
-          12 rue des Artisans · Ouvert du mercredi au samedi · 10h–19h
-        </p>
       </section>
 
       <footer
