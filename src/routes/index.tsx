@@ -130,14 +130,14 @@ function Index() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#reserver"
-              className="rounded-full px-7 py-3 font-marker text-lg tilt-left transition-transform hover:scale-105"
+              className="float-left rounded-full px-7 py-3 font-marker text-lg transition-transform hover:scale-105"
               style={{ background: "var(--cocoa)", color: "var(--cream)" }}
             >
               Réserver une session
             </a>
             <a
               href="#services"
-              className="rounded-full border-2 px-7 py-3 font-marker text-lg tilt-right transition-transform hover:scale-105"
+              className="float-right float-delay-2 rounded-full border-2 px-7 py-3 font-marker text-lg transition-transform hover:scale-105"
               style={{ borderColor: "var(--clay)", color: "var(--clay)" }}
             >
               Découvrir les services
