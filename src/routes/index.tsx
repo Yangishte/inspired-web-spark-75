@@ -103,7 +103,7 @@ function Index() {
           <NavLink label="L'atelier" href="#atelier" />
           <NavLink label="Qui sommes-nous" href="#about" />
           <NavLink label="Services" href="#services" />
-          <NavLink label="Tarifs" href="#tarifs" />
+          <NavLink label="Tarifs" href="#faq" />
           <NavLink label="FAQ" href="#faq" />
           <NavLink label="Réserver" href="#reserver" />
           <NavLink label="Contact" href="#contact" />
@@ -265,34 +265,6 @@ function Index() {
       </section>
 
 
-      {/* TARIFS */}
-      <section
-        id="tarifs"
-        className="relative border-y-2"
-        style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
-      >
-        <div className="mx-auto grid max-w-5xl gap-10 px-6 py-24 md:grid-cols-3">
-          {[
-            { name: "La petite touche", price: "25€", desc: "Un patch, un mot, une étoile. Pour goûter." },
-            { name: "Le total look", price: "65€", desc: "Une pièce entière revisitée. Le best-seller.", featured: true },
-            { name: "Le sur-mesure", price: "Sur devis", desc: "Projet long, mariage, cadeau. On en parle." },
-          ].map((p) => (
-            <div
-              key={p.name}
-              className="rounded-3xl border-2 p-8 text-center"
-              style={{
-                borderColor: "var(--cocoa)",
-                background: p.featured ? "var(--cocoa)" : "transparent",
-                color: p.featured ? "var(--cream)" : "var(--cocoa)",
-              }}
-            >
-              <h3 className="font-display text-2xl">{p.name}</h3>
-              <p className="mt-4 font-display text-5xl">{p.price}</p>
-              <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* FAQ */}
       <section id="faq" className="relative z-10 mx-auto max-w-4xl px-6 py-28">
@@ -323,7 +295,29 @@ function Index() {
                   </div>
                 </div>
               ) },
-              { q: "Tarifs ?", a: "Prix: Adulte CHF49.- Enfant CHF39.-" },
+              { q: "Tarifs ?", a: (
+                <div className="grid gap-4 md:grid-cols-3">
+                  {[
+                    { name: "La petite touche", price: "25€", desc: "Un patch, un mot, une étoile. Pour goûter." },
+                    { name: "Le total look", price: "65€", desc: "Une pièce entière revisitée. Le best-seller.", featured: true },
+                    { name: "Le sur-mesure", price: "Sur devis", desc: "Projet long, mariage, cadeau. On en parle." },
+                  ].map((p) => (
+                    <div
+                      key={p.name}
+                      className="rounded-3xl border-2 p-6 text-center"
+                      style={{
+                        borderColor: "var(--cocoa)",
+                        background: p.featured ? "var(--cocoa)" : "transparent",
+                        color: p.featured ? "var(--cream)" : "var(--cocoa)",
+                      }}
+                    >
+                      <h3 className="font-display text-xl">{p.name}</h3>
+                      <p className="mt-3 font-display text-4xl">{p.price}</p>
+                      <p className="mt-3 text-sm leading-relaxed opacity-90">{p.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              ) },
               { q: "Durée ?", a: "2 heures avec boisson offertes !" },
               { q: "Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
               { q: "Ensuite ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
