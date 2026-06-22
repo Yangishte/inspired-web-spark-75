@@ -1,6 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
+import heroImg2 from "@/assets/hero/IMG_3609.jpeg.asset.json";
+import heroImg3 from "@/assets/hero/IMG_6192.jpeg.asset.json";
+import heroImg4 from "@/assets/hero/IMG_6209.jpeg.asset.json";
+import heroImg5 from "@/assets/hero/IMG_6211.jpeg.asset.json";
+import heroImg6 from "@/assets/hero/IMG_6623.jpeg.asset.json";
+import heroImg7 from "@/assets/hero/IMG_7448.jpeg.asset.json";
+import heroImg8 from "@/assets/hero/IMG_7459.jpeg.asset.json";
+import heroImg9 from "@/assets/hero/IMG_7474.jpeg.asset.json";
+
+const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
 export const Route = createFileRoute("/")({
   head: () => ({
