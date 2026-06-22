@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
@@ -103,6 +103,7 @@ function Index() {
           <NavLink label="L'atelier" href="#atelier" />
           <NavLink label="Qui sommes-nous" href="#about" />
           <NavLink label="Services" href="#services" />
+          <NavLink label="Tarifs" href="#tarifs" />
           <NavLink label="FAQ" href="#faq" />
           <NavLink label="Réserver" href="#reserver" />
           <NavLink label="Contact" href="#contact" />
@@ -262,6 +263,47 @@ function Index() {
           ))}
         </div>
       </section>
+
+
+      {/* TARIFS */}
+      <section
+        id="tarifs"
+        className="relative border-y-2"
+        style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
+      >
+        <div className="mx-auto grid max-w-5xl gap-10 px-6 py-24 md:grid-cols-3">
+          {[
+            { name: "Adulte", price: "CHF 49.-", desc: "2 heures d'atelier, boisson offerte, support inclus." },
+            { name: "Enfant", price: "CHF 39.-", desc: "2 heures d'atelier, boisson offerte, support inclus.", featured: true },
+          ].map((p) => (
+            <div
+              key={p.name}
+              className="rounded-3xl border-2 p-8 text-center"
+              style={{
+                borderColor: "var(--cocoa)",
+                background: p.featured ? "var(--cocoa)" : "transparent",
+                color: p.featured ? "var(--cream)" : "var(--cocoa)",
+              }}
+            >
+              <h3 className="font-display text-2xl">{p.name}</h3>
+              <p className="mt-4 font-display text-5xl">{p.price}</p>
+              <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
+            </div>
+          ))}
+          <Link
+            to="/moonwalcoeur"
+            className="animate-shimmer-glow group rounded-3xl border-2 p-8 text-center transition-transform hover:scale-[1.03]"
+            style={{ borderColor: "var(--clay)", background: "var(--cream)", color: "var(--cocoa)" }}
+          >
+            <h3 className="font-display text-2xl">Le sur-mesure</h3>
+            <p className="mt-4 font-display text-4xl" style={{ color: "var(--clay)" }}>Sur devis</p>
+            <p className="mt-4 text-base leading-relaxed opacity-90">Projet long, mariage, cadeau. On en parle.</p>
+            <p className="mt-4 font-handwritten text-xl" style={{ color: "var(--clay)" }}>Découvrir Moonwalcoeur →</p>
+          </Link>
+        </div>
+      </section>
+
+      {/* FAQ */}
       <section id="faq" className="relative z-10 mx-auto max-w-4xl px-6 py-28">
         <div className="mb-10 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Les questions ↓</span>
