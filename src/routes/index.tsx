@@ -253,7 +253,7 @@ function Index() {
           ].map((s, i) => (
             <div
               key={s.title}
-              className={`rounded-3xl border-2 p-8 transition-transform hover:-translate-y-1 ${i % 2 === 0 ? "tilt-left" : "tilt-right"}`}
+              className={`rounded-3xl border-2 p-8 transition-transform hover:-translate-y-1 ${i === 0 ? "float-left" : i === 1 ? "float-neutral float-delay-2" : "float-right float-delay-3"}`}
               style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
             >
               <div className="font-display text-5xl" style={{ color: "var(--clay)" }}>{s.tag}</div>
