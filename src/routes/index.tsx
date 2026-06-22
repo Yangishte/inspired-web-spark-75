@@ -327,9 +327,7 @@ function Index() {
         </div>
       </section>
 
-      <FloatingClouds />
-
-      {/* RESERVER */}
+      {/* QUI SOMMES-NOUS */}
       <section id="reserver" className="relative z-10 py-28">
         <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Prends ton créneau</span>
