@@ -369,7 +369,7 @@ function Index() {
             href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
             target="_blank"
             rel="noopener noreferrer"
-            className="acuity-embed-button inline-block rounded-full px-8 py-4 font-marker text-lg transition-transform hover:scale-105"
+            className="acuity-embed-button float-neutral inline-block rounded-full px-8 py-4 font-marker text-lg transition-transform hover:scale-105"
             style={{ background: "var(--cocoa)", color: "var(--cream)", textDecoration: "none" }}
           >
             Prendre rendez-vous
