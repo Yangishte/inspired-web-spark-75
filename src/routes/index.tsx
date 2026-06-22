@@ -363,12 +363,16 @@ function Index() {
             Choisis ta date, ton créneau et viens customiser ta pièce.
           </p>
         </div>
-        {/* WIDGET ACUITY SCHEDULING — code d'intégration à insérer ici par la suite */}
-        <div
-          className="flex w-full items-center justify-center border-y-2"
-          style={{ borderColor: "var(--clay)", background: "var(--cream)", minHeight: "500px", color: "var(--cocoa)" }}
-        >
-          <p className="font-handwritten text-2xl">Widget Acuity Scheduling — bientôt disponible ✿</p>
+        <div className="mx-auto flex max-w-5xl justify-center px-6">
+          <a
+            href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="acuity-embed-button inline-block rounded-full px-8 py-4 font-marker text-lg transition-transform hover:scale-105"
+            style={{ background: "var(--cocoa)", color: "var(--cream)", textDecoration: "none" }}
+          >
+            Prendre rendez-vous
+          </a>
         </div>
       </section>
 
