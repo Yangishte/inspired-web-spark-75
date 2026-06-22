@@ -36,14 +36,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function Doodle({ className = "", color = "var(--clay)" }: { className?: string; color?: string }) {
-  return (
-    <svg viewBox="0 0 120 60" className={className} fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round">
-      <path d="M5 30 Q 30 5 60 30 T 115 25" />
-      <path d="M105 18 L 115 25 L 108 35" />
-    </svg>
-  );
-}
 
 function NavLink({ label, href, delay = 0 }: { label: string; href: string; delay?: number }) {
   return (
