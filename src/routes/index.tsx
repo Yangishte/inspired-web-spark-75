@@ -96,17 +96,17 @@ function Index() {
 
       {/* NAV */}
       <header className="relative z-10 mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 pt-8">
-        <a href="#" className="font-display text-2xl tracking-tight tilt-left" style={{ color: "var(--cocoa)" }}>
+        <a href="#" className="float-soft font-display text-2xl tracking-tight" style={{ color: "var(--cocoa)" }}>
           Bar à custom
         </a>
         <nav className="flex flex-wrap items-center gap-7">
-          <NavLink label="L'atelier" href="#atelier" />
-          <NavLink label="Qui sommes-nous" href="#about" />
-          <NavLink label="Services" href="#services" />
-          <NavLink label="Tarifs" href="#tarifs" />
-          <NavLink label="FAQ" href="#faq" />
-          <NavLink label="Réserver" href="#reserver" />
-          <NavLink label="Contact" href="#contact" />
+          <NavLink label="L'atelier" href="#atelier" delay={1} />
+          <NavLink label="Qui sommes-nous" href="#about" delay={2} />
+          <NavLink label="Services" href="#services" delay={3} />
+          <NavLink label="Tarifs" href="#tarifs" delay={4} />
+          <NavLink label="FAQ" href="#faq" delay={5} />
+          <NavLink label="Réserver" href="#reserver" delay={6} />
+          <NavLink label="Contact" href="#contact" delay={1} />
         </nav>
       </header>
 
