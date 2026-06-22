@@ -54,6 +54,12 @@ function NavLink({ label, href }: { label: string; href: string }) {
 }
 
 function Index() {
+  const [heroIndex, setHeroIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setHeroIndex((i) => (i + 1) % heroImages.length), 5000);
+    return () => clearInterval(id);
+  }, []);
+
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
