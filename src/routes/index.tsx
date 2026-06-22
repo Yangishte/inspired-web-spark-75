@@ -327,6 +327,8 @@ function Index() {
         </div>
       </section>
 
+      <FloatingClouds />
+
       {/* RESERVER */}
       <section id="reserver" className="relative z-10 py-28">
         <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
