@@ -13,6 +13,7 @@ import heroImg9 from "@/assets/hero/IMG_7474.jpeg.asset.json";
 
 import atelierImg1 from "@/assets/atelier/IMG_0367.jpeg.asset.json";
 import atelierImg2 from "@/assets/atelier/IMG_0360.jpeg.asset.json";
+import BagsCarousel3D from "@/components/BagsCarousel3D";
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
@@ -225,43 +226,15 @@ function Index() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* SERVICES — Carrousel 3D */}
       <section id="services" className="relative z-10 mx-auto max-w-6xl px-6 py-28">
         <div className="mb-12 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Ce qu'on fait ↓</span>
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Choisis ton support ↓</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
-            Trois manières de customiser
+            Nos supports à customiser
           </h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "Peinture textile",
-              desc: "Vestes, jeans, baskets — on peint à la main, à ton style.",
-              tag: "★",
-            },
-            {
-              title: "Broderie & patches",
-              desc: "Lettrages, motifs, écussons cousus avec amour.",
-              tag: "✿",
-            },
-            {
-              title: "Upcycling",
-              desc: "On transforme l'ancien en pièce qu'on a envie de re-porter.",
-              tag: "✦",
-            },
-          ].map((s, i) => (
-            <div
-              key={s.title}
-              className={`rounded-3xl border-2 p-8 transition-transform hover:-translate-y-1 ${i === 0 ? "float-left" : i === 1 ? "float-neutral float-delay-2" : "float-right float-delay-3"}`}
-              style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
-            >
-              <div className="font-display text-5xl" style={{ color: "var(--clay)" }}>{s.tag}</div>
-              <h3 className="mt-4 font-display text-2xl" style={{ color: "var(--cocoa)" }}>{s.title}</h3>
-              <p className="mt-3 text-base leading-relaxed" style={{ color: "var(--cocoa)" }}>{s.desc}</p>
-            </div>
-          ))}
-        </div>
+        <BagsCarousel3D />
       </section>
 
 
