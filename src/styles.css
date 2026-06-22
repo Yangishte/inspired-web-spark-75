@@ -156,3 +156,40 @@
   0% { transform: translateX(-100%); }
   60%, 100% { transform: translateX(100%); }
 }
+
+/* ===== Float animations (permanent gentle floating) ===== */
+@keyframes float-neutral-kf {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes float-left-kf {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-12px) rotate(-3deg); }
+}
+@keyframes float-right-kf {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+@keyframes float-soft-kf {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.float-neutral { animation: float-neutral-kf 5.5s ease-in-out infinite; }
+.float-left { animation: float-left-kf 6s ease-in-out infinite; }
+.float-right { animation: float-right-kf 6.5s ease-in-out infinite; }
+.float-soft { animation: float-soft-kf 4.5s ease-in-out infinite; display: inline-block; }
+
+.float-delay-1 { animation-delay: 0.4s; }
+.float-delay-2 { animation-delay: 0.8s; }
+.float-delay-3 { animation-delay: 1.2s; }
+.float-delay-4 { animation-delay: 1.6s; }
+.float-delay-5 { animation-delay: 2s; }
+.float-delay-6 { animation-delay: 2.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .float-neutral, .float-left, .float-right, .float-soft,
+  .animate-float-hero, .animate-shimmer-glow {
+    animation: none !important;
+  }
+}
