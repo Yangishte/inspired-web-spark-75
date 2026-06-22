@@ -15,20 +15,20 @@ function Moonwalcoeur() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 pt-8">
-        <Link to="/" className="font-display text-2xl tilt-left" style={{ color: "var(--cocoa)" }}>
+        <Link to="/" className="float-soft font-display text-2xl" style={{ color: "var(--cocoa)" }}>
           ← Bar à custom
         </Link>
       </header>
 
       <section className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 py-24 text-center">
-        <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
+        <span className="float-soft font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
           Notre univers ✿
         </span>
-        <h1 className="mt-4 font-display text-5xl md:text-7xl" style={{ color: "var(--cocoa)" }}>
+        <h1 className="float-soft float-delay-1 mt-4 font-display text-5xl md:text-7xl" style={{ color: "var(--cocoa)" }}>
           Moonwalcoeur
         </h1>
         <div
-          className="mt-12 rounded-3xl border-4 p-8 shadow-2xl md:p-14"
+          className="float-neutral mt-12 rounded-3xl border-4 p-8 shadow-2xl md:p-14"
           style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
         >
           <img src={signature.url} alt="Signature Moonwalcoeur" className="mx-auto w-full max-w-xl" />
@@ -38,7 +38,7 @@ function Moonwalcoeur() {
         </p>
         <Link
           to="/"
-          className="mt-12 rounded-full px-7 py-3 font-marker text-lg tilt-left transition-transform hover:scale-105"
+          className="float-left mt-12 rounded-full px-7 py-3 font-marker text-lg transition-transform hover:scale-105"
           style={{ background: "var(--cocoa)", color: "var(--cream)" }}
         >
           Retour à l'atelier

@@ -44,11 +44,11 @@ function Doodle({ className = "", color = "var(--clay)" }: { className?: string;
   );
 }
 
-function NavLink({ label, href }: { label: string; href: string }) {
+function NavLink({ label, href, delay = 0 }: { label: string; href: string; delay?: number }) {
   return (
     <a
       href={href}
-      className="font-marker text-sm tracking-wide transition-transform hover:-translate-y-0.5"
+      className={`float-soft float-delay-${delay} font-marker text-sm tracking-wide transition-transform hover:-translate-y-0.5`}
       style={{ color: "var(--cocoa)" }}
     >
       {label}
@@ -96,17 +96,17 @@ function Index() {
 
       {/* NAV */}
       <header className="relative z-10 mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 pt-8">
-        <a href="#" className="font-display text-2xl tracking-tight tilt-left" style={{ color: "var(--cocoa)" }}>
+        <a href="#" className="float-soft font-display text-2xl tracking-tight" style={{ color: "var(--cocoa)" }}>
           Bar à custom
         </a>
         <nav className="flex flex-wrap items-center gap-7">
-          <NavLink label="L'atelier" href="#atelier" />
-          <NavLink label="Qui sommes-nous" href="#about" />
-          <NavLink label="Services" href="#services" />
-          <NavLink label="Tarifs" href="#tarifs" />
-          <NavLink label="FAQ" href="#faq" />
-          <NavLink label="Réserver" href="#reserver" />
-          <NavLink label="Contact" href="#contact" />
+          <NavLink label="L'atelier" href="#atelier" delay={1} />
+          <NavLink label="Qui sommes-nous" href="#about" delay={2} />
+          <NavLink label="Services" href="#services" delay={3} />
+          <NavLink label="Tarifs" href="#tarifs" delay={4} />
+          <NavLink label="FAQ" href="#faq" delay={5} />
+          <NavLink label="Réserver" href="#reserver" delay={6} />
+          <NavLink label="Contact" href="#contact" delay={1} />
         </nav>
       </header>
 
@@ -130,14 +130,14 @@ function Index() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#reserver"
-              className="rounded-full px-7 py-3 font-marker text-lg tilt-left transition-transform hover:scale-105"
+              className="float-left rounded-full px-7 py-3 font-marker text-lg transition-transform hover:scale-105"
               style={{ background: "var(--cocoa)", color: "var(--cream)" }}
             >
               Réserver une session
             </a>
             <a
               href="#services"
-              className="rounded-full border-2 px-7 py-3 font-marker text-lg tilt-right transition-transform hover:scale-105"
+              className="float-right float-delay-2 rounded-full border-2 px-7 py-3 font-marker text-lg transition-transform hover:scale-105"
               style={{ borderColor: "var(--clay)", color: "var(--clay)" }}
             >
               Découvrir les services
@@ -183,10 +183,10 @@ function Index() {
             Pas de série, pas de standard — chaque pièce raconte ton histoire.
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            <div className="overflow-hidden rounded-3xl border-4 shadow-xl tilt-left" style={{ borderColor: "var(--cocoa)" }}>
+            <div className="float-left overflow-hidden rounded-3xl border-4 shadow-xl" style={{ borderColor: "var(--cocoa)" }}>
               <img src={atelierImg1.url} alt="Atelier Bar à custom — espace de création" className="h-72 w-full object-cover md:h-96" />
             </div>
-            <div className="overflow-hidden rounded-3xl border-4 shadow-xl tilt-right" style={{ borderColor: "var(--cocoa)" }}>
+            <div className="float-right float-delay-2 overflow-hidden rounded-3xl border-4 shadow-xl" style={{ borderColor: "var(--cocoa)" }}>
               <img src={atelierImg2.url} alt="Atelier Bar à custom — préparation" className="h-72 w-full object-cover md:h-96" />
             </div>
           </div>
@@ -253,7 +253,7 @@ function Index() {
           ].map((s, i) => (
             <div
               key={s.title}
-              className={`rounded-3xl border-2 p-8 transition-transform hover:-translate-y-1 ${i % 2 === 0 ? "tilt-left" : "tilt-right"}`}
+              className={`rounded-3xl border-2 p-8 transition-transform hover:-translate-y-1 ${i === 0 ? "float-left" : i === 1 ? "float-neutral float-delay-2" : "float-right float-delay-3"}`}
               style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
             >
               <div className="font-display text-5xl" style={{ color: "var(--clay)" }}>{s.tag}</div>
@@ -275,10 +275,10 @@ function Index() {
           {[
             { name: "Adulte", price: "CHF 49.-", desc: "2 heures d'atelier, boisson offerte, support inclus." },
             { name: "Enfant", price: "CHF 39.-", desc: "2 heures d'atelier, boisson offerte, support inclus.", featured: true },
-          ].map((p) => (
+          ].map((p, i) => (
             <div
               key={p.name}
-              className="rounded-3xl border-2 p-8 text-center"
+              className={`rounded-3xl border-2 p-8 text-center ${i === 0 ? "float-left" : "float-right float-delay-2"}`}
               style={{
                 borderColor: "var(--cocoa)",
                 background: p.featured ? "var(--cocoa)" : "transparent",
@@ -369,7 +369,7 @@ function Index() {
             href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
             target="_blank"
             rel="noopener noreferrer"
-            className="acuity-embed-button inline-block rounded-full px-8 py-4 font-marker text-lg transition-transform hover:scale-105"
+            className="acuity-embed-button float-neutral inline-block rounded-full px-8 py-4 font-marker text-lg transition-transform hover:scale-105"
             style={{ background: "var(--cocoa)", color: "var(--cream)", textDecoration: "none" }}
           >
             Prendre rendez-vous
@@ -388,7 +388,7 @@ function Index() {
         </p>
         <a
           href="mailto:hello@baracustom.fr"
-          className="mt-10 inline-block rounded-full px-10 py-4 font-marker text-xl tilt-left transition-transform hover:scale-105"
+          className="float-left mt-10 inline-block rounded-full px-10 py-4 font-marker text-xl transition-transform hover:scale-105"
           style={{ background: "var(--cocoa)", color: "var(--cream)" }}
         >
           hello@baracustom.fr
