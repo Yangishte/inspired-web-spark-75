@@ -1,6 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
+import heroImg2 from "@/assets/hero/IMG_3609.jpeg.asset.json";
+import heroImg3 from "@/assets/hero/IMG_6192.jpeg.asset.json";
+import heroImg4 from "@/assets/hero/IMG_6209.jpeg.asset.json";
+import heroImg5 from "@/assets/hero/IMG_6211.jpeg.asset.json";
+import heroImg6 from "@/assets/hero/IMG_6623.jpeg.asset.json";
+import heroImg7 from "@/assets/hero/IMG_7448.jpeg.asset.json";
+import heroImg8 from "@/assets/hero/IMG_7459.jpeg.asset.json";
+import heroImg9 from "@/assets/hero/IMG_7474.jpeg.asset.json";
+
+const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,6 +54,12 @@ function NavLink({ label, href }: { label: string; href: string }) {
 }
 
 function Index() {
+  const [heroIndex, setHeroIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setHeroIndex((i) => (i + 1) % heroImages.length), 5000);
+    return () => clearInterval(id);
+  }, []);
+
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
@@ -128,17 +145,18 @@ function Index() {
 
         <div className="relative mx-auto">
           <div
-            className="relative h-80 w-80 rotate-3 overflow-hidden rounded-[2rem] border-4 shadow-2xl md:h-96 md:w-96"
+            className="animate-float-hero relative h-80 w-80 overflow-hidden rounded-[2rem] border-4 shadow-2xl md:h-96 md:w-96"
             style={{ borderColor: "var(--cocoa)", background: "var(--sand)" }}
           >
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-center">
-                <div className="font-display text-7xl" style={{ color: "var(--cocoa)" }}>★</div>
-                <p className="mt-4 font-handwritten text-3xl" style={{ color: "var(--cocoa)" }}>
-                  Pièce unique<br />n°327
-                </p>
-              </div>
-            </div>
+            {heroImages.map((img, i) => (
+              <img
+                key={i}
+                src={img.url}
+                alt={`Création Bar à custom ${i + 1}`}
+                className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
+                style={{ opacity: i === heroIndex ? 1 : 0 }}
+              />
+            ))}
           </div>
           <span
             className="absolute -bottom-4 -left-4 rotate-[-8deg] rounded-full border-2 px-4 py-2 font-handwritten text-xl"
