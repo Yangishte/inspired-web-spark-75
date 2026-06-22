@@ -273,9 +273,8 @@ function Index() {
       >
         <div className="mx-auto grid max-w-5xl gap-10 px-6 py-24 md:grid-cols-3">
           {[
-            { name: "La petite touche", price: "25€", desc: "Un patch, un mot, une étoile. Pour goûter." },
-            { name: "Le total look", price: "65€", desc: "Une pièce entière revisitée. Le best-seller.", featured: true },
-            { name: "Le sur-mesure", price: "Sur devis", desc: "Projet long, mariage, cadeau. On en parle." },
+            { name: "Adulte", price: "CHF 49.-", desc: "2 heures d'atelier, boisson offerte, support inclus." },
+            { name: "Enfant", price: "CHF 39.-", desc: "2 heures d'atelier, boisson offerte, support inclus.", featured: true },
           ].map((p) => (
             <div
               key={p.name}
@@ -291,6 +290,16 @@ function Index() {
               <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
             </div>
           ))}
+          <Link
+            to="/moonwalcoeur"
+            className="animate-shimmer-glow group rounded-3xl border-2 p-8 text-center transition-transform hover:scale-[1.03]"
+            style={{ borderColor: "var(--clay)", background: "var(--cream)", color: "var(--cocoa)" }}
+          >
+            <h3 className="font-display text-2xl">Le sur-mesure</h3>
+            <p className="mt-4 font-display text-4xl" style={{ color: "var(--clay)" }}>Sur devis</p>
+            <p className="mt-4 text-base leading-relaxed opacity-90">Projet long, mariage, cadeau. On en parle.</p>
+            <p className="mt-4 font-handwritten text-xl" style={{ color: "var(--clay)" }}>Découvrir Moonwalcoeur →</p>
+          </Link>
         </div>
       </section>
 
@@ -323,7 +332,7 @@ function Index() {
                   </div>
                 </div>
               ) },
-              { q: "Tarifs ?", a: "Prix: Adulte CHF49.- Enfant CHF39.-" },
+              { q: "Tarifs ?", a: "Adulte : CHF 49.- · Enfant : CHF 39.-" },
               { q: "Durée ?", a: "2 heures avec boisson offertes !" },
               { q: "Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
               { q: "Ensuite ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
