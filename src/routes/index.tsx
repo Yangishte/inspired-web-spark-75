@@ -14,7 +14,6 @@ import heroImg9 from "@/assets/hero/IMG_7474.jpeg.asset.json";
 import atelierImg1 from "@/assets/atelier/IMG_0367.jpeg.asset.json";
 import atelierImg2 from "@/assets/atelier/IMG_0360.jpeg.asset.json";
 import BagsCarousel3D from "@/components/BagsCarousel3D";
-import { FloatingClouds } from "@/components/FloatingClouds";
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
@@ -195,10 +194,6 @@ function Index() {
         </div>
       </section>
 
-      <div className="relative z-10" style={{ background: "var(--sand)" }}>
-        <FloatingClouds />
-      </div>
-
       {/* QUI SOMMES-NOUS */}
       <section id="about" className="relative z-10 mx-auto max-w-5xl px-6 py-28">
         <div className="mb-10 text-center">
@@ -331,7 +326,7 @@ function Index() {
         </div>
       </section>
 
-      {/* QUI SOMMES-NOUS */}
+      {/* RESERVER */}
       <section id="reserver" className="relative z-10 py-28">
         <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Prends ton créneau</span>
