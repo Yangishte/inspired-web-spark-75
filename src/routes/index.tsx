@@ -350,7 +350,45 @@ function Index() {
         </div>
       </section>
 
+      {/* Nuages croquis flottants entre Réserver et Contact */}
+      <div className="relative z-10 h-28 w-full overflow-hidden" aria-hidden="true">
+        <svg
+          className="float-soft absolute left-[12%] top-6 w-20"
+          viewBox="0 0 100 60"
+          fill="none"
+          stroke="var(--clay)"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M15 48 C 15 30, 35 20, 48 30 C 55 15, 80 15, 88 35 C 95 38, 95 48, 85 48 L 15 48 Z" />
+        </svg>
+        <svg
+          className="float-neutral float-delay-2 absolute left-[42%] top-2 w-28"
+          viewBox="0 0 100 60"
+          fill="none"
+          stroke="var(--clay)"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 46 C 12 24, 38 14, 50 26 C 58 10, 86 12, 90 34 C 96 38, 92 46, 82 46 L 12 46 Z" />
+        </svg>
+        <svg
+          className="float-soft float-delay-4 absolute left-[72%] top-8 w-16"
+          viewBox="0 0 100 60"
+          fill="none"
+          stroke="var(--clay)"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M18 47 C 18 28, 36 22, 46 31 C 54 18, 78 20, 84 36 C 90 40, 88 47, 78 47 L 18 47 Z" />
+        </svg>
+      </div>
+
       {/* CONTACT */}
+
       <section id="contact" className="relative z-10 mx-auto max-w-4xl px-6 py-28 text-center">
         <Doodle className="mx-auto mb-6 w-32" color="var(--clay)" />
         <h2 className="font-display text-4xl leading-tight md:text-6xl" style={{ color: "var(--cocoa)" }}>
