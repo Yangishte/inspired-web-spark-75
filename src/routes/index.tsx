@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
@@ -42,6 +43,24 @@ function NavLink({ label, href }: { label: string; href: string }) {
 }
 
 function Index() {
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://embed.acuityscheduling.com/embed/button/32315373.css";
+    link.id = "acuity-button-styles";
+    document.head.appendChild(link);
+
+    const script = document.createElement("script");
+    script.src = "https://embed.acuityscheduling.com/embed/button/32315373.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.head.removeChild(link);
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
       {/* subtle grain overlay */}
@@ -344,12 +363,16 @@ function Index() {
             Choisis ta date, ton créneau et viens customiser ta pièce.
           </p>
         </div>
-        {/* WIDGET ACUITY SCHEDULING — code d'intégration à insérer ici par la suite */}
-        <div
-          className="flex w-full items-center justify-center border-y-2"
-          style={{ borderColor: "var(--clay)", background: "var(--cream)", minHeight: "500px", color: "var(--cocoa)" }}
-        >
-          <p className="font-handwritten text-2xl">Widget Acuity Scheduling — bientôt disponible ✿</p>
+        <div className="mx-auto flex max-w-5xl justify-center px-6">
+          <a
+            href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="acuity-embed-button inline-block rounded-full px-8 py-4 font-marker text-lg transition-transform hover:scale-105"
+            style={{ background: "var(--cocoa)", color: "var(--cream)", textDecoration: "none" }}
+          >
+            Prendre rendez-vous
+          </a>
         </div>
       </section>
 
