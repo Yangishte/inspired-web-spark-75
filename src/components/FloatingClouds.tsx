@@ -7,10 +7,16 @@ export function FloatingClouds({ className = "" }: { className?: string }) {
           viewBox="0 0 120 70"
           width="130"
           height="76"
-          style={{ position: "absolute", left: "2%", top: "12%", color: "var(--cream)" }}
+          style={{
+            position: "absolute",
+            left: "2%",
+            top: "12%",
+            color: "var(--cream)",
+            filter: "drop-shadow(0 4px 6px oklch(0.32 0.05 45 / 0.15))",
+          }}
           fill="currentColor"
-          stroke="var(--clay)"
-          strokeWidth="2.5"
+          stroke="var(--cocoa)"
+          strokeWidth="3"
           strokeLinejoin="round"
         >
           <path d="M25 55C11.2 55 0 44.4 0 31.5 0 21.5 7.2 13.2 17 11c2.8-10.2 13.6-18 26.5-18 13.6 0 25 8.7 28.2 20.5 1.2-.2 2.5-.3 3.8-.3 13.3 0 24 10.3 24 23 0 12.5-10.1 22.8-22.5 23H25z" />
@@ -21,10 +27,16 @@ export function FloatingClouds({ className = "" }: { className?: string }) {
           viewBox="0 0 160 90"
           width="170"
           height="96"
-          style={{ position: "absolute", left: "32%", top: "0%", color: "var(--cream)" }}
+          style={{
+            position: "absolute",
+            left: "32%",
+            top: "0%",
+            color: "var(--cream)",
+            filter: "drop-shadow(0 4px 6px oklch(0.32 0.05 45 / 0.15))",
+          }}
           fill="currentColor"
-          stroke="var(--clay)"
-          strokeWidth="2.5"
+          stroke="var(--cocoa)"
+          strokeWidth="3"
           strokeLinejoin="round"
         >
           <path d="M35 72C16.2 72 0 57.6 0 39.5 0 26 10 14.7 24 11.5c3.8-13.5 18-23.5 35-23.5 18 0 33.2 11.5 37.5 27 1.5-.2 3.2-.3 4.8-.3 17.7 0 32 13.7 32 30.5 0 16.6-13.4 30.3-30 30.8H35z" />
@@ -35,10 +47,16 @@ export function FloatingClouds({ className = "" }: { className?: string }) {
           viewBox="0 0 120 70"
           width="130"
           height="76"
-          style={{ position: "absolute", right: "4%", top: "18%", color: "var(--cream)" }}
+          style={{
+            position: "absolute",
+            right: "4%",
+            top: "18%",
+            color: "var(--cream)",
+            filter: "drop-shadow(0 4px 6px oklch(0.32 0.05 45 / 0.15))",
+          }}
           fill="currentColor"
-          stroke="var(--clay)"
-          strokeWidth="2.5"
+          stroke="var(--cocoa)"
+          strokeWidth="3"
           strokeLinejoin="round"
         >
           <path d="M25 55C11.2 55 0 44.4 0 31.5 0 21.5 7.2 13.2 17 11c2.8-10.2 13.6-18 26.5-18 13.6 0 25 8.7 28.2 20.5 1.2-.2 2.5-.3 3.8-.3 13.3 0 24 10.3 24 23 0 12.5-10.1 22.8-22.5 23H25z" />
@@ -49,9 +67,15 @@ export function FloatingClouds({ className = "" }: { className?: string }) {
           viewBox="0 0 80 50"
           width="90"
           height="56"
-          style={{ position: "absolute", left: "18%", top: "55%", color: "var(--sand)" }}
+          style={{
+            position: "absolute",
+            left: "18%",
+            top: "55%",
+            color: "var(--sand)",
+            filter: "drop-shadow(0 3px 4px oklch(0.32 0.05 45 / 0.12))",
+          }}
           fill="currentColor"
-          stroke="var(--clay)"
+          stroke="var(--cocoa)"
           strokeWidth="2.5"
           strokeLinejoin="round"
         >
@@ -63,9 +87,15 @@ export function FloatingClouds({ className = "" }: { className?: string }) {
           viewBox="0 0 80 50"
           width="90"
           height="56"
-          style={{ position: "absolute", right: "18%", top: "60%", color: "var(--sand)" }}
+          style={{
+            position: "absolute",
+            right: "18%",
+            top: "60%",
+            color: "var(--sand)",
+            filter: "drop-shadow(0 3px 4px oklch(0.32 0.05 45 / 0.12))",
+          }}
           fill="currentColor"
-          stroke="var(--clay)"
+          stroke="var(--cocoa)"
           strokeWidth="2.5"
           strokeLinejoin="round"
         >
