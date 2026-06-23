@@ -56,6 +56,7 @@ function NavLink({ label, href, delay = 0 }: { label: string; href: string; dela
 
 function Index() {
   const [heroIndex, setHeroIndex] = useState(0);
+  const [faqVisible, setFaqVisible] = useState(false);
   useEffect(() => {
     const id = setInterval(() => setHeroIndex((i) => (i + 1) % heroImages.length), 5000);
     return () => clearInterval(id);
@@ -77,6 +78,24 @@ function Index() {
       document.head.removeChild(link);
       document.body.removeChild(script);
     };
+  }, []);
+
+  useEffect(() => {
+    const section = document.getElementById("faq");
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setFaqVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -411,6 +430,34 @@ function Index() {
 
       {/* FAQ */}
       <section id="faq" className="relative z-10 mx-auto max-w-4xl px-6 py-28">
+        {/* Floating question marks that appear on scroll */}
+        {[
+          { top: "2%", left: "4%", size: "text-5xl", delay: "0ms", rotate: "-12deg", float: "float-left" },
+          { top: "8%", right: "6%", size: "text-4xl", delay: "150ms", rotate: "10deg", float: "float-right" },
+          { top: "32%", left: "-2%", size: "text-6xl", delay: "300ms", rotate: "-6deg", float: "float-neutral" },
+          { top: "28%", right: "-1%", size: "text-5xl", delay: "450ms", rotate: "14deg", float: "float-right" },
+          { top: "55%", left: "3%", size: "text-4xl", delay: "600ms", rotate: "8deg", float: "float-soft" },
+          { top: "62%", right: "4%", size: "text-6xl", delay: "750ms", rotate: "-10deg", float: "float-left" },
+          { top: "85%", left: "10%", size: "text-5xl", delay: "900ms", rotate: "-4deg", float: "float-neutral" },
+          { top: "88%", right: "8%", size: "text-4xl", delay: "1050ms", rotate: "12deg", float: "float-right" },
+        ].map((q, i) => (
+          <span
+            key={i}
+            aria-hidden
+            className={`pointer-events-none absolute hidden font-marker ${q.size} ${q.float} transition-opacity duration-700 ease-out sm:block`}
+            style={{
+              top: q.top,
+              left: q.left,
+              right: q.right,
+              rotate: q.rotate,
+              color: i % 2 === 0 ? "var(--clay)" : "var(--cocoa)",
+              opacity: faqVisible ? 0.55 : 0,
+              transitionDelay: q.delay,
+            }}
+          >
+            ?
+          </span>
+        ))}
         <div className="mb-10 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Les questions ↓</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
