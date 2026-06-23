@@ -163,7 +163,7 @@ function Moonwalcoeur() {
           className="font-handwritten text-2xl tracking-wide"
           style={{ color: "#E8B86D" }}
         >
-          ✦ entrée en orbite ✦
+          {"\n"}
         </span>
         <h1 className="mt-4 mx-auto w-full max-w-3xl">
           <span className="sr-only">Moonwalcoeur</span>
