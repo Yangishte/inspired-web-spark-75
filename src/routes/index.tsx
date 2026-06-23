@@ -15,6 +15,7 @@ import heroImg9 from "@/assets/hero/IMG_7474.jpeg.asset.json";
 import atelierImg1 from "@/assets/atelier/IMG_0367.jpeg.asset.json";
 import atelierImg2 from "@/assets/atelier/IMG_0360.jpeg.asset.json";
 import BagsCarousel3D from "@/components/BagsCarousel3D";
+import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png.asset.json";
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
@@ -267,7 +268,10 @@ function Index() {
             <h3 className="font-display text-2xl">Le sur-mesure</h3>
             <p className="mt-4 font-display text-4xl" style={{ color: "var(--clay)" }}>Sur devis</p>
             <p className="mt-4 text-base leading-relaxed opacity-90">Projet long, mariage, cadeau. On en parle.</p>
-            <p className="mt-4 font-handwritten text-xl" style={{ color: "var(--clay)" }}>Découvrir Moonwalcoeur →</p>
+            <div className="mt-4 flex items-center justify-center gap-2">
+              <img src={moonwalcoeurLogo.url} alt="Moonwalcoeur" className="h-8 w-auto" />
+              <p className="font-handwritten text-xl" style={{ color: "var(--clay)" }}>Découvrir Moonwalcoeur →</p>
+            </div>
           </Link>
         </div>
       </section>
