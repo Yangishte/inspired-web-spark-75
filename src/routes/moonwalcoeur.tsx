@@ -98,9 +98,9 @@ function useScrollY() {
 
 function Moonwalcoeur() {
   const y = useScrollY();
-  const astroRef = useRef<HTMLDivElement>(null);
 
   return (
+
     <div className="relative min-h-screen overflow-hidden text-[#F2F0E9]">
       <style>{`
         @keyframes mw-twinkle { 0%,100% { opacity: 0.25 } 50% { opacity: 1 } }
