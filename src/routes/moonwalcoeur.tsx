@@ -243,20 +243,31 @@ function Moonwalcoeur() {
 
         <div>
           <span className="font-handwritten text-2xl" style={{ color: "#E8B86D" }}>
-            ✦ Le manifeste
+            ✦ Notre histoire
           </span>
           <h2 className="mt-3 font-display text-4xl leading-tight md:text-5xl">
-            Faire entrer un peu de cosmos dans le quotidien.
+            Qui sommes-nous
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-[#A8AEC9]">
-            Moonwalcoeur, c'est la signature créative qui anime le Bar à custom.
-            Chaque pièce est pensée comme une capsule&nbsp;: un fragment de notre
-            ciel intérieur, peint, brodé, ramené sur Terre pour vous accompagner.
+          <p className="mt-6 text-xl leading-relaxed text-[#F2F0E9]">
+            Bienvenue chez <span className="font-handwritten" style={{ color: "#E8B86D" }}>Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-[#A8AEC9]">
-            On aime les matières qui vieillissent bien, les détails dessinés à la
-            main, et les objets qui se transmettent.
-          </p>
+          <div className="mt-6 space-y-5 text-lg leading-relaxed text-[#A8AEC9]">
+            <p>
+              Depuis notre tendre enfance, le dessin a été notre refuge, notre moyen d'expression. Chaque trait, chaque éclat de couleur raconte une histoire, reflète une émotion et nous transporte dans un univers où la créativité n'a pas de limites.
+            </p>
+            <p>
+              Nous sommes animés par une vision commune : celle de créer des souvenirs intemporels pour les petits et les grands "walcoeurs". Parce que nous croyons en la magie des souvenirs, en leur capacité à évoquer des sourires et à tisser des liens précieux. Nous mettons tout notre talent et notre passion au service de la création d'objets uniques et personnalisés.
+            </p>
+            <p>
+              Notre équipe dévouée est là pour concrétiser vos rêves et donner vie à vos idées. Que ce soit pour personnaliser des vêtements, des chaussures, des casquettes, des accessoires ou même les baskets de vos enfants, nous mettons notre expertise à votre disposition. Chaque création est pensée avec soin et réalisée avec "cœur", pour que chaque pièce devienne un véritable trésor, porteur d'histoires et de souvenirs inoubliables.
+            </p>
+            <p className="font-handwritten text-xl" style={{ color: "#E8B86D" }}>
+              Chez Moonwalcoeur, nous croyons en la beauté du custom et en son pouvoir de rassembler. Nous sommes impatients de partager notre passion avec vous et de créer ensemble des moments magiques et uniques.
+            </p>
+            <p className="font-handwritten text-xl" style={{ color: "#FF6B5C" }}>
+              Bienvenue dans notre univers, où chaque création est une invitation au voyage sur la lune.
+            </p>
+          </div>
         </div>
       </section>
 
