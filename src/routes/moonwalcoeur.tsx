@@ -164,14 +164,16 @@ function Moonwalcoeur() {
         >
           ✦ entrée en orbite ✦
         </span>
-        <h1
-          className="mt-4 font-display text-6xl leading-[0.95] md:text-8xl"
-          style={{
-            color: "#F2F0E9",
-            textShadow: "0 0 32px rgba(75,63,140,0.8), 0 0 80px rgba(232,184,109,0.25)",
-          }}
-        >
-          Moonwalcoeur
+        <h1 className="mt-4 mx-auto w-full max-w-3xl">
+          <span className="sr-only">Moonwalcoeur</span>
+          <img
+            src={mwSignatureAsset.url}
+            alt="Moonwalcoeur"
+            className="mx-auto w-full h-auto"
+            style={{
+              filter: "invert(1) drop-shadow(0 0 24px rgba(232,184,109,0.35)) drop-shadow(0 0 60px rgba(75,63,140,0.6))",
+            }}
+          />
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-[#A8AEC9] md:text-xl">
           Un voyage cosmique au cœur de notre univers créatif. Deux frères, un atelier,
