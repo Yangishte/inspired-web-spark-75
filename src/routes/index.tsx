@@ -206,7 +206,7 @@ function Index() {
           {[
             {
               date: "Dimanche 7 juin 2026",
-              titre: "Vin & Créativité au Domaine Maison Blanche",
+              titre: "Wine & Paint au Domaine Maison Blanche",
               lieu: "Domaine Maison Blanche – Mont-sur-Rolle",
               time: "13h30 – 15h30",
               price: "CHF 65.- / personne",
