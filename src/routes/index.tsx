@@ -449,7 +449,7 @@ function Index() {
               top: q.top,
               left: q.left,
               right: q.right,
-              transform: `rotate(${q.rotate})`,
+              rotate: q.rotate,
               color: i % 2 === 0 ? "var(--clay)" : "var(--cocoa)",
               opacity: faqVisible ? 0.55 : 0,
               transitionDelay: q.delay,
