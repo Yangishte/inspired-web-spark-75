@@ -254,33 +254,34 @@ function Index() {
           </div>
 
           {/* AVIS BULLES */}
-          <div className="mt-16 grid gap-6 md:grid-cols-2">
+          <div className="mt-16 grid items-start gap-6 md:grid-cols-2">
             {[slot0, slot1].map((reviewIndex, slot) => {
               const review = reviews[reviewIndex];
               const isFading = fadingSlot === slot;
               return (
                 <div
                   key={slot}
-                  className={`relative rounded-3xl border-2 p-8 text-left shadow-xl transition-opacity duration-300 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
+                  className={`relative rounded-3xl border-2 p-6 text-left shadow-xl transition-opacity duration-300 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
                   style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
                 >
                   <span
-                    className="absolute -top-5 left-6 font-display text-6xl leading-none"
+                    className="absolute -top-5 left-6 font-display text-5xl leading-none"
                     style={{ color: "var(--clay)" }}
                     aria-hidden
                   >
                     "
                   </span>
-                  <p className="pt-4 font-handwritten text-2xl" style={{ color: "var(--cocoa)" }}>
+                  <p className="pt-3 font-handwritten text-xl" style={{ color: "var(--cocoa)" }}>
                     {review.text}
                   </p>
-                  <p className="mt-5 font-marker text-sm" style={{ color: "var(--clay)" }}>
+                  <p className="mt-4 font-marker text-sm" style={{ color: "var(--clay)" }}>
                     — {review.name}
                   </p>
                 </div>
               );
             })}
           </div>
+
         </div>
       </section>
 
