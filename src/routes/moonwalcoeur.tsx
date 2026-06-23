@@ -102,7 +102,6 @@ function Moonwalcoeur() {
         @keyframes mw-twinkle { 0%,100% { opacity: 0.25 } 50% { opacity: 1 } }
         @keyframes mw-drift { 0%,100% { transform: translateY(0) rotate(-2deg) } 50% { transform: translateY(-22px) rotate(2deg) } }
         @keyframes mw-orbit { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
-        @keyframes mw-pulse-glow { 0%,100% { opacity: 0.55 } 50% { opacity: 1 } }
         @keyframes mw-shoot { 0% { transform: translate3d(-10vw,-10vh,0) rotate(20deg); opacity: 0 } 10% { opacity: 1 } 100% { transform: translate3d(110vw,60vh,0) rotate(20deg); opacity: 0 } }
         .mw-bg { background: radial-gradient(1200px 800px at 70% 10%, rgba(75,63,140,0.55), transparent 60%), radial-gradient(900px 700px at 10% 90%, rgba(255,107,92,0.18), transparent 60%), linear-gradient(180deg, #0B0F2A 0%, #11142E 50%, #161B33 100%); }
         .mw-nebula { background: radial-gradient(closest-side, rgba(232,184,109,0.18), transparent 70%), radial-gradient(closest-side, rgba(75,63,140,0.55), transparent 70%); filter: blur(20px); }
@@ -214,7 +213,7 @@ function Moonwalcoeur() {
         </span>
       </section>
 
-      {/* SECTION 2 — Planète orbitale + manifeste */}
+      {/* SECTION 2 — Lune orbitale + histoire */}
       <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-16 px-6 py-32 md:grid-cols-2">
         <div className="relative mx-auto aspect-square w-full max-w-md">
           <img
