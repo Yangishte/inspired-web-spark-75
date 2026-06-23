@@ -238,19 +238,53 @@ function Index() {
                   className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center"
                   style={{ background: "rgba(255, 248, 240, 0.35)" }}
                 >
-                  <div
-                    className="flex items-center justify-center border-4 px-4 py-2 font-black uppercase tracking-widest"
-                    style={{
-                      color: "#b91c1c",
-                      borderColor: "#b91c1c",
-                      transform: "rotate(-12deg)",
-                      fontSize: "2rem",
-                      fontFamily: "system-ui, sans-serif",
-                      boxShadow: "inset 0 0 0 2px rgba(185, 28, 28, 0.25)",
-                    }}
+                  <svg
+                    className="w-44 rotate-[-12deg] opacity-[0.92]"
+                    viewBox="0 0 220 80"
+                    aria-hidden="true"
                   >
-                    PASSÉ
-                  </div>
+                    <defs>
+                      <filter id={`stamp-texture-${i}`}>
+                        <feTurbulence
+                          type="fractalNoise"
+                          baseFrequency="0.6"
+                          numOctaves="3"
+                          result="noise"
+                        />
+                        <feDisplacementMap
+                          in="SourceGraphic"
+                          in2="noise"
+                          scale="2"
+                          xChannelSelector="R"
+                          yChannelSelector="G"
+                        />
+                      </filter>
+                    </defs>
+                    <rect
+                      x="8"
+                      y="8"
+                      width="204"
+                      height="64"
+                      rx="2"
+                      fill="none"
+                      stroke="#b91c1c"
+                      strokeWidth="6"
+                      filter={`url(#stamp-texture-${i})`}
+                    />
+                    <text
+                      x="110"
+                      y="51"
+                      textAnchor="middle"
+                      fontSize="40"
+                      fontWeight="900"
+                      fontFamily="system-ui, sans-serif"
+                      fill="#b91c1c"
+                      letterSpacing="3"
+                      filter={`url(#stamp-texture-${i})`}
+                    >
+                      PASSÉ
+                    </text>
+                  </svg>
                 </div>
               )}
               <span className="font-marker text-sm tracking-wide" style={{ color: "var(--clay)" }}>{e.date}</span>
