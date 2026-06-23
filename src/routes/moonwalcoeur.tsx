@@ -217,14 +217,15 @@ function Moonwalcoeur() {
       {/* SECTION 2 — Planète orbitale + manifeste */}
       <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-16 px-6 py-32 md:grid-cols-2">
         <div className="relative mx-auto aspect-square w-full max-w-md">
-          <div
-            className="absolute inset-0 rounded-full"
+          <img
+            src={moonAsset.url}
+            alt="Lune Moonwalcoeur"
+            width={1024}
+            height={1024}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full rounded-full object-cover"
             style={{
-              background:
-                "radial-gradient(circle at 30% 30%, #E8B86D 0%, #FF6B5C 35%, #4B3F8C 75%, #0B0F2A 100%)",
-              boxShadow:
-                "0 0 80px rgba(232,184,109,0.4), inset -30px -30px 80px rgba(0,0,0,0.5)",
-              animation: "mw-pulse-glow 5s ease-in-out infinite",
+              boxShadow: "0 0 80px rgba(232,184,109,0.35), inset -30px -30px 80px rgba(0,0,0,0.35)",
               transform: `rotate(${y * 0.05}deg)`,
             }}
           />
