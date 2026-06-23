@@ -236,55 +236,38 @@ function Index() {
               {e.past && (
                 <div
                   className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center"
-                  style={{ background: "rgba(255, 248, 240, 0.35)" }}
+                  style={{ background: "rgba(255, 248, 240, 0.3)" }}
                 >
-                  <svg
-                    className="w-44 rotate-[-12deg] opacity-[0.92]"
-                    viewBox="0 0 220 80"
-                    aria-hidden="true"
-                  >
-                    <defs>
-                      <filter id={`stamp-texture-${i}`}>
-                        <feTurbulence
-                          type="fractalNoise"
-                          baseFrequency="0.6"
-                          numOctaves="3"
-                          result="noise"
-                        />
-                        <feDisplacementMap
-                          in="SourceGraphic"
-                          in2="noise"
-                          scale="2"
-                          xChannelSelector="R"
-                          yChannelSelector="G"
-                        />
-                      </filter>
-                    </defs>
-                    <rect
-                      x="8"
-                      y="8"
-                      width="204"
-                      height="64"
-                      rx="2"
-                      fill="none"
-                      stroke="#b91c1c"
-                      strokeWidth="6"
-                      filter={`url(#stamp-texture-${i})`}
-                    />
-                    <text
-                      x="110"
-                      y="51"
-                      textAnchor="middle"
-                      fontSize="40"
-                      fontWeight="900"
-                      fontFamily="system-ui, sans-serif"
-                      fill="#b91c1c"
-                      letterSpacing="3"
-                      filter={`url(#stamp-texture-${i})`}
+                  <div className="relative rotate-[-10deg]">
+                    <div
+                      className="font-marker rounded-2xl border-4 px-5 py-2 text-4xl uppercase tracking-widest"
+                      style={{
+                        color: "#dc2626",
+                        borderColor: "#dc2626",
+                        background: "rgba(255, 255, 255, 0.85)",
+                        boxShadow: "4px 4px 0 0 rgba(220, 38, 38, 0.35)",
+                        textShadow: "2px 2px 0 rgba(220, 38, 38, 0.15)",
+                      }}
                     >
-                      PASSÉ
-                    </text>
-                  </svg>
+                      Passé
+                    </div>
+                    <svg
+                      className="absolute -right-2 -top-2 w-7"
+                      viewBox="0 0 24 24"
+                      fill="#dc2626"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 6.5-5.5-3.5-5.5 3.5 1.5-6.5-5-4.5 6.5-0.5L12 2z" />
+                    </svg>
+                    <svg
+                      className="absolute -bottom-1 -left-2 w-5 rotate-[-20deg]"
+                      viewBox="0 0 24 24"
+                      fill="#dc2626"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 6.5-5.5-3.5-5.5 3.5 1.5-6.5-5-4.5 6.5-0.5L12 2z" />
+                    </svg>
+                  </div>
                 </div>
               )}
               <span className="font-marker text-sm tracking-wide" style={{ color: "var(--clay)" }}>{e.date}</span>
