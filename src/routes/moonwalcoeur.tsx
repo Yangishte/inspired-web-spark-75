@@ -145,7 +145,6 @@ function SpotlightSignature({
 
 function Moonwalcoeur() {
   const y = useScrollY();
-  const astroRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="relative min-h-screen overflow-hidden text-[#F2F0E9]">
