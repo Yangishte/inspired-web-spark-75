@@ -6,6 +6,9 @@ import moonAsset from "@/assets/moonwalcoeur/moon.png.asset.json";
 import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg.asset.json";
 import textileImg from "@/assets/moonwalcoeur/textile.jpg";
 import autresImg from "@/assets/moonwalcoeur/autres.jpg";
+import petits1Asset from "@/assets/moonwalcoeur/petits-1.jpeg.asset.json";
+import petits2Asset from "@/assets/moonwalcoeur/petits-2.jpeg.asset.json";
+import petits3Asset from "@/assets/moonwalcoeur/petits-3.jpeg.asset.json";
 
 export const Route = createFileRoute("/moonwalcoeur")({
   head: () => ({
