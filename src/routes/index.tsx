@@ -210,6 +210,46 @@ function Index() {
               <img src={atelierImg2.url} alt="Atelier Bar à custom — préparation" className="h-72 w-full object-cover md:h-96" />
             </div>
           </div>
+
+          {/* AVIS BULLES */}
+          <div className="mt-16 grid gap-6 md:grid-cols-2">
+            <div
+              className="relative float-left rounded-3xl border-2 p-8 text-left shadow-xl"
+              style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
+            >
+              <span
+                className="absolute -top-5 left-6 font-display text-6xl leading-none"
+                style={{ color: "var(--clay)" }}
+                aria-hidden
+              >
+                "
+              </span>
+              <p className="pt-4 font-handwritten text-2xl" style={{ color: "var(--cocoa)" }}>
+                Une expérience incroyable ! J'ai adoré personnaliser ma pièce dans une ambiance aussi chaleureuse.
+              </p>
+              <p className="mt-5 font-marker text-sm" style={{ color: "var(--clay)" }}>
+                — Camille, Lausanne
+              </p>
+            </div>
+            <div
+              className="relative float-right float-delay-2 rounded-3xl border-2 p-8 text-left shadow-xl"
+              style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
+            >
+              <span
+                className="absolute -top-5 left-6 font-display text-6xl leading-none"
+                style={{ color: "var(--clay)" }}
+                aria-hidden
+              >
+                "
+              </span>
+              <p className="pt-4 font-handwritten text-2xl" style={{ color: "var(--cocoa)" }}>
+                Antoine est un super animateur, on a passé un moment top entre amies. Je recommande à 100% !
+              </p>
+              <p className="mt-5 font-marker text-sm" style={{ color: "var(--clay)" }}>
+                — Sophie, Genève
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
