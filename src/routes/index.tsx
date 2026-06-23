@@ -228,7 +228,7 @@ function Index() {
               desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍",
               past: true,
             },
-          ].map((e, i) => (
+          ].map((e) => (
             <div
               key={e.titre}
               className="relative overflow-hidden rounded-3xl border-2 p-6 transition-transform duration-300 hover:scale-[1.02]"
