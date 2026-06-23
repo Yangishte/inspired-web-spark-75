@@ -157,64 +157,6 @@ function Moonwalcoeur() {
         </span>
       </header>
 
-      {/* HERO */}
-      <section className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col items-center justify-center px-6 py-24 text-center">
-        <span
-          className="font-handwritten text-2xl tracking-wide"
-          style={{ color: "#E8B86D" }}
-        >
-          {"\n"}
-        </span>
-        <h1 className="mt-4 mx-auto w-full max-w-3xl">
-          <span className="sr-only">Moonwalcoeur</span>
-          <SpotlightSignature
-            src={mwSignatureAsset.url}
-            alt="Moonwalcoeur"
-            className="mx-auto w-full h-auto"
-          />
-        </h1>
-        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-[#A8AEC9] md:text-xl">
-          Un voyage cosmique au cœur de notre univers créatif. Deux frères, un atelier,
-          des pièces qui flottent quelque part entre la Terre et la Lune.
-        </p>
-
-        {/* Astronaute */}
-        <div
-          ref={astroRef}
-          className="relative mt-16 w-full max-w-sm"
-          style={{
-            transform: `translateY(${Math.min(y, 800) * 0.25}px) rotate(${y * 0.02}deg)`,
-            animation: "mw-drift 8s ease-in-out infinite",
-          }}
-        >
-          <div
-            className="mw-nebula absolute inset-0 -z-10 scale-150 rounded-full"
-            aria-hidden
-          />
-          <div
-            className="absolute left-1/2 top-1/2 -z-10 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full"
-            aria-hidden
-            style={{
-              background:
-                "radial-gradient(circle, rgba(242,240,233,0.95) 0%, rgba(232,184,109,0.55) 45%, rgba(75,63,140,0) 72%)",
-              filter: "blur(2px)",
-            }}
-          />
-          <img
-            src={astronaut}
-            alt="Astronaute Moonwalcoeur et son cœur"
-            className="relative mx-auto w-full"
-            style={{
-              filter:
-                "drop-shadow(0 0 18px rgba(232,184,109,0.5)) drop-shadow(0 20px 40px rgba(11,15,42,0.6))",
-            }}
-          />
-        </div>
-
-        <span className="mt-12 font-handwritten text-lg text-[#A8AEC9]">
-          ↓ continuez le voyage ↓
-        </span>
-      </section>
 
       {/* SECTION 2 — Lune orbitale + histoire */}
       <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-16 px-6 py-32 md:grid-cols-2">
