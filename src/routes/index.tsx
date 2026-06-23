@@ -207,7 +207,8 @@ function Index() {
               lieu: "Domaine Maison Blanche – Mont-sur-Rolle",
               time: "13h30 – 15h30",
               price: "CHF 65.- / personne",
-              desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante."
+              desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante.",
+              past: true,
             },
             {
               date: "Dimanche 31 mai 2026",
