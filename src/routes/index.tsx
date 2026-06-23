@@ -234,8 +234,9 @@ function Index() {
               price: "CHF 49.- / personne",
               desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍",
               past: true,
-              image: "",
-              instagramUrl: "",
+              image: manorLausanneImg.url,
+              imagePosition: "center 25%",
+              instagramUrl: "https://www.instagram.com/reel/DZK1T1woaFi/",
             },
           ].map((e) => (
             <div
