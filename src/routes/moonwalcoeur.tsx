@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import signature from "@/assets/brand/signature.png.asset.json";
 import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg.asset.json";
 import textileImg from "@/assets/moonwalcoeur/textile.jpg";
@@ -141,6 +141,50 @@ function SpotlightSignature({
   );
 }
 
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setVisible(true);
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(28px)",
+        transition: `opacity 900ms ease-out ${delay}ms, transform 900ms ease-out ${delay}ms`,
+        willChange: "opacity, transform",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 function Moonwalcoeur() {
   const y = useScrollY();
 
@@ -232,25 +276,37 @@ function Moonwalcoeur() {
           <h2 className="mt-3 font-display text-4xl leading-tight md:text-5xl">
             {"\n"}
           </h2>
-          <p className="mt-6 text-xl leading-relaxed text-[#F2F0E9]">
-            Bienvenue chez <span className="font-handwritten" style={{ color: "#E8B86D" }}>Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.
-          </p>
+          <Reveal>
+            <p className="mt-6 text-xl leading-relaxed text-[#F2F0E9]">
+              Bienvenue chez <span className="font-handwritten" style={{ color: "#E8B86D" }}>Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.
+            </p>
+          </Reveal>
           <div className="mt-6 space-y-5 text-lg leading-relaxed text-[#A8AEC9]">
-            <p>
-              Depuis notre tendre enfance, le dessin a été notre refuge, notre moyen d'expression. Chaque trait, chaque éclat de couleur raconte une histoire, reflète une émotion et nous transporte dans un univers où la créativité n'a pas de limites.
-            </p>
-            <p>
-              Nous sommes animés par une vision commune : celle de créer des souvenirs intemporels pour les petits et les grands "walcoeurs". Parce que nous croyons en la magie des souvenirs, en leur capacité à évoquer des sourires et à tisser des liens précieux. Nous mettons tout notre talent et notre passion au service de la création d'objets uniques et personnalisés.
-            </p>
-            <p>
-              Notre équipe dévouée est là pour concrétiser vos rêves et donner vie à vos idées. Que ce soit pour personnaliser des vêtements, des chaussures, des casquettes, des accessoires ou même les baskets de vos enfants, nous mettons notre expertise à votre disposition. Chaque création est pensée avec soin et réalisée avec "cœur", pour que chaque pièce devienne un véritable trésor, porteur d'histoires et de souvenirs inoubliables.
-            </p>
-            <p className="font-handwritten text-xl" style={{ color: "#E8B86D" }}>
-              Chez Moonwalcoeur, nous croyons en la beauté du custom et en son pouvoir de rassembler. Nous sommes impatients de partager notre passion avec vous et de créer ensemble des moments magiques et uniques.
-            </p>
-            <p className="font-handwritten text-xl" style={{ color: "#FF6B5C" }}>
-              Bienvenue dans notre univers, où chaque création est une invitation au voyage sur la lune.
-            </p>
+            <Reveal delay={80}>
+              <p>
+                Depuis notre tendre enfance, le dessin a été notre refuge, notre moyen d'expression. Chaque trait, chaque éclat de couleur raconte une histoire, reflète une émotion et nous transporte dans un univers où la créativité n'a pas de limites.
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <p>
+                Nous sommes animés par une vision commune : celle de créer des souvenirs intemporels pour les petits et les grands "walcoeurs". Parce que nous croyons en la magie des souvenirs, en leur capacité à évoquer des sourires et à tisser des liens précieux. Nous mettons tout notre talent et notre passion au service de la création d'objets uniques et personnalisés.
+              </p>
+            </Reveal>
+            <Reveal delay={160}>
+              <p>
+                Notre équipe dévouée est là pour concrétiser vos rêves et donner vie à vos idées. Que ce soit pour personnaliser des vêtements, des chaussures, des casquettes, des accessoires ou même les baskets de vos enfants, nous mettons notre expertise à votre disposition. Chaque création est pensée avec soin et réalisée avec "cœur", pour que chaque pièce devienne un véritable trésor, porteur d'histoires et de souvenirs inoubliables.
+              </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <p className="font-handwritten text-xl" style={{ color: "#E8B86D" }}>
+                Chez Moonwalcoeur, nous croyons en la beauté du custom et en son pouvoir de rassembler. Nous sommes impatients de partager notre passion avec vous et de créer ensemble des moments magiques et uniques.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <p className="font-handwritten text-xl" style={{ color: "#FF6B5C" }}>
+                Bienvenue dans notre univers, où chaque création est une invitation au voyage sur la lune.
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
