@@ -213,6 +213,7 @@ function Index() {
               desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante.",
               past: true,
               image: winePaintImg.url,
+              imagePosition: "center 30%",
               instagramUrl: "https://www.instagram.com/reel/DYxFsXAobkI/",
             },
             {
