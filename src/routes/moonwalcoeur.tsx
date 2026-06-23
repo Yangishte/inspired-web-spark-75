@@ -224,38 +224,8 @@ function Moonwalcoeur() {
         </span>
       </section>
 
-      {/* SECTION 2 — Lune orbitale + histoire */}
-      <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-16 px-6 py-32 md:grid-cols-2">
-        <div className="relative mx-auto aspect-square w-full max-w-md">
-          <img
-            src={moonAsset.url}
-            alt="Lune Moonwalcoeur"
-            width={1024}
-            height={1024}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full rounded-full object-cover"
-            style={{
-              boxShadow: "0 0 80px rgba(232,184,109,0.35), inset -30px -30px 80px rgba(0,0,0,0.35)",
-              transform: `rotate(${y * 0.05}deg)`,
-            }}
-          />
-          {/* anneau */}
-          <div
-            className="absolute inset-[-10%] rounded-full border border-[#A8AEC9]/40"
-            style={{ transform: `rotate3d(1,0.3,0,75deg)` }}
-          />
-          {/* lune en orbite */}
-          <div
-            className="absolute inset-0"
-            style={{ animation: "mw-orbit 18s linear infinite" }}
-          >
-            <div
-              className="absolute left-1/2 top-0 h-6 w-6 -translate-x-1/2 rounded-full bg-[#F2F0E9]"
-              style={{ boxShadow: "0 0 20px rgba(242,240,233,0.6)" }}
-            />
-          </div>
-        </div>
-
+      {/* SECTION 2 — Notre histoire */}
+      <section className="relative z-10 mx-auto max-w-3xl px-6 py-32 text-center">
         <div>
           <span className="font-handwritten text-2xl" style={{ color: "#E8B86D" }}>
             ✦ Notre histoire
