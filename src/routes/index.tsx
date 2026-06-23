@@ -433,6 +433,8 @@ function Index() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Voir ${e.titre} sur Instagram`}
+                  aria-hidden={!flippedEvents.has(e.titre)}
+                  tabIndex={flippedEvents.has(e.titre) ? 0 : -1}
                   className="absolute inset-0 block overflow-hidden rounded-3xl border-2 shadow-xl"
                   style={{
                     borderColor: "var(--cocoa)",
@@ -441,6 +443,7 @@ function Index() {
                     WebkitBackfaceVisibility: "hidden",
                     transform: "rotateY(180deg)",
                   }}
+                  onClick={(ev) => ev.stopPropagation()}
                 >
                   {e.image ? (
                     <img
