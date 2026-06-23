@@ -54,11 +54,36 @@ function NavLink({ label, href, delay = 0 }: { label: string; href: string; dela
   );
 }
 
+const reviews = [
+  {
+    name: "Helena M.",
+    text: "Super expérience, beaucoup de choix de créations ! Un joli moment passé entre copines! Je recommande",
+  },
+  {
+    name: "Gianluigi",
+    text: "Superbe espace créatif ! A deux pas du lac, l’inspiration s’y trouve facilement. Kévin est passionné par son art et cela se ressent dans son énergie. Une concept inédit dans la région. Un atelier à expérimenter en famille ou entre amis. Tout de bon pour la suite !",
+  },
+  {
+    name: "Isia Balestrini",
+    text: "Très belle expérience au bar à custom ! Beaucoup de supports à choix, très joli cadre et un moment de détente assuré ! Merci le bar à custom pour l’accueil chaleureux ! Je recommande",
+  },
+  {
+    name: "Christiane Krieg",
+    text: "Joli moment de détente et de créativité avec ma fille! Merci",
+  },
+];
+
 function Index() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [faqVisible, setFaqVisible] = useState(false);
+  const [avisIndex, setAvisIndex] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setHeroIndex((i) => (i + 1) % heroImages.length), 5000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => setAvisIndex((i) => (i + 1) % Math.ceil(reviews.length / 2)), 5000);
     return () => clearInterval(id);
   }, []);
 
@@ -212,43 +237,31 @@ function Index() {
           </div>
 
           {/* AVIS BULLES */}
-          <div className="mt-16 grid gap-6 md:grid-cols-2">
-            <div
-              className="relative float-left rounded-3xl border-2 p-8 text-left shadow-xl"
-              style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
-            >
-              <span
-                className="absolute -top-5 left-6 font-display text-6xl leading-none"
-                style={{ color: "var(--clay)" }}
-                aria-hidden
-              >
-                "
-              </span>
-              <p className="pt-4 font-handwritten text-2xl" style={{ color: "var(--cocoa)" }}>
-                Une expérience incroyable ! J'ai adoré personnaliser ma pièce dans une ambiance aussi chaleureuse.
-              </p>
-              <p className="mt-5 font-marker text-sm" style={{ color: "var(--clay)" }}>
-                — Camille, Lausanne
-              </p>
-            </div>
-            <div
-              className="relative float-right float-delay-2 rounded-3xl border-2 p-8 text-left shadow-xl"
-              style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
-            >
-              <span
-                className="absolute -top-5 left-6 font-display text-6xl leading-none"
-                style={{ color: "var(--clay)" }}
-                aria-hidden
-              >
-                "
-              </span>
-              <p className="pt-4 font-handwritten text-2xl" style={{ color: "var(--cocoa)" }}>
-                Antoine est un super animateur, on a passé un moment top entre amies. Je recommande à 100% !
-              </p>
-              <p className="mt-5 font-marker text-sm" style={{ color: "var(--clay)" }}>
-                — Sophie, Genève
-              </p>
-            </div>
+          <div className="mt-16 grid gap-6 md:grid-cols-2" key={avisIndex}>
+            {[0, 1].map((offset) => {
+              const review = reviews[(avisIndex * 2 + offset) % reviews.length];
+              return (
+                <div
+                  key={`${avisIndex}-${offset}`}
+                  className={`relative rounded-3xl border-2 p-8 text-left shadow-xl ${offset === 0 ? "float-left" : "float-right float-delay-2"}`}
+                  style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
+                >
+                  <span
+                    className="absolute -top-5 left-6 font-display text-6xl leading-none"
+                    style={{ color: "var(--clay)" }}
+                    aria-hidden
+                  >
+                    "
+                  </span>
+                  <p className="pt-4 font-handwritten text-2xl" style={{ color: "var(--cocoa)" }}>
+                    {review.text}
+                  </p>
+                  <p className="mt-5 font-marker text-sm" style={{ color: "var(--clay)" }}>
+                    — {review.name}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
