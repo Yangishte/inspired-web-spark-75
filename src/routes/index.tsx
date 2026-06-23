@@ -221,8 +221,8 @@ function Index() {
               price: "CHF 90.- / personne (brunch + atelier)",
               desc: "Le Bar à Custom déménage à l'hôtel pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩",
               past: true,
-              image: "",
-              instagramUrl: "",
+              image: brunchTerrasseImg.url,
+              instagramUrl: "https://www.instagram.com/p/DYKe5apsLhx/",
             },
             {
               date: "Samedi 25 avril 2026",
