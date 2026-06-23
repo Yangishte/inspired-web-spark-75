@@ -261,7 +261,7 @@ function Index() {
               return (
                 <div
                   key={slot}
-                  className={`relative rounded-3xl border-2 p-6 text-left shadow-xl transition-opacity duration-300 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
+                  className={`relative rounded-3xl border-2 p-5 text-left shadow-xl transition-opacity duration-300 sm:p-6 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
                   style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
                 >
                   <span
@@ -276,7 +276,7 @@ function Index() {
                       <Star key={i} size={18} fill="#FACC15" color="#FACC15" />
                     ))}
                   </div>
-                  <p className="font-handwritten text-xl" style={{ color: "var(--cocoa)" }}>
+                  <p className="font-handwritten text-lg sm:text-xl" style={{ color: "var(--cocoa)" }}>
                     {review.text}
                   </p>
                   <p className="mt-4 font-marker text-sm" style={{ color: "var(--clay)" }}>
