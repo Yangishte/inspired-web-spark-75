@@ -96,7 +96,7 @@ function Index() {
         </a>
         <nav className="flex flex-wrap items-center gap-7">
           <NavLink label="L'atelier" href="#atelier" delay={1} />
-          <NavLink label="Qui sommes-nous" href="#about" delay={2} />
+          <NavLink label="Événements" href="#evenements" delay={2} />
           <NavLink label="Services" href="#services" delay={3} />
           <NavLink label="Tarifs" href="#tarifs" delay={4} />
           <NavLink label="FAQ" href="#faq" delay={5} />
@@ -192,34 +192,32 @@ function Index() {
       </section>
 
       {/* QUI SOMMES-NOUS */}
-      <section id="about" className="relative z-10 mx-auto max-w-5xl px-6 py-28">
+      <section id="evenements" className="relative z-10 mx-auto max-w-6xl px-6 py-28">
         <div className="mb-10 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Notre histoire ↓</span>
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Retour en images ↓</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
-            Qui sommes-nous
+            Événements passés
           </h2>
         </div>
-        <div className="rounded-3xl border-2 p-8 md:p-12" style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}>
-          <p className="font-handwritten text-2xl leading-relaxed md:text-3xl" style={{ color: "var(--cocoa)" }}>
-            Bienvenue chez <span className="scribble-underline">Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.
-          </p>
-          <div className="mt-8 space-y-6 text-base leading-relaxed md:text-lg" style={{ color: "var(--cocoa)" }}>
-            <p>
-              Depuis notre tendre enfance, le dessin a été notre refuge, notre moyen d'expression. Chaque trait, chaque éclat de couleur raconte une histoire, reflète une émotion et nous transporte dans un univers où la créativité n'a pas de limites.
-            </p>
-            <p>
-              Nous sommes animés par une vision commune : celle de créer des souvenirs intemporels pour les petits et les grands "walcoeurs". Parce que nous croyons en la magie des souvenirs, en leur capacité à évoquer des sourires et à tisser des liens précieux. Nous mettons tout notre talent et notre passion au service de la création d'objets uniques et personnalisés.
-            </p>
-            <p>
-              Notre équipe dévouée est là pour concrétiser vos rêves et donner vie à vos idées. Que ce soit pour personnaliser des vêtements, des chaussures, des casquettes, des accessoires ou même les baskets de vos enfants, nous mettons notre expertise à votre disposition. Chaque création est pensée avec soin et réalisée avec "cœur", pour que chaque pièce devienne un véritable trésor, porteur d'histoires et de souvenirs inoubliables.
-            </p>
-            <p className="font-handwritten text-xl md:text-2xl" style={{ color: "var(--clay)" }}>
-              Chez Moonwalcoeur, nous croyons en la beauté du custom et en son pouvoir de rassembler. Nous sommes impatients de partager notre passion avec vous et de créer ensemble des moments magiques et uniques.
-            </p>
-            <p className="font-handwritten text-xl md:text-2xl" style={{ color: "var(--clay)" }}>
-              Bienvenue dans notre univers, où chaque création est une invitation au voyage sur la lune.
-            </p>
-          </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { date: "Décembre 2024", titre: "Marché de Noël de Saint-Sulpice", lieu: "Saint-Sulpice, VD", desc: "Nos premiers pas sous la neige : customisation de tote bags et casquettes en direct au marché de Noël local." },
+            { date: "Février 2025", titre: "Atelier chez The Good Vibes", lieu: "Lausanne", desc: "Une après-midi créative autour du custom de baskets et sacs, entre bonne humeur et paillettes." },
+            { date: "Avril 2025", titre: "Brocante créative de Renens", lieu: "Renens, VD", desc: "Retour aux sources avec une sélection de pièces vintage personnalisées sur place." },
+            { date: "Juin 2025", titre: "Festival des artistes", lieu: "Lausanne", desc: "Musique, art de rue et un stand Moonwalcoeur où chacun est reparti avec un souvenir unique." },
+            { date: "Septembre 2025", titre: "Pop-up à la Manère", lieu: "Vevey", desc: "Collaboration éphémère dans une boutique locale pour présenter notre nouvelle collection." },
+          ].map((e) => (
+            <div
+              key={e.titre}
+              className="rounded-3xl border-2 p-6 transition-transform duration-300 hover:scale-[1.02]"
+              style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
+            >
+              <span className="font-marker text-sm tracking-wide" style={{ color: "var(--clay)" }}>{e.date}</span>
+              <h3 className="mt-3 font-display text-xl leading-tight" style={{ color: "var(--cocoa)" }}>{e.titre}</h3>
+              <p className="mt-1 font-handwritten text-lg" style={{ color: "var(--clay)" }}>{e.lieu}</p>
+              <p className="mt-4 text-base leading-relaxed opacity-90" style={{ color: "var(--cocoa)" }}>{e.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
