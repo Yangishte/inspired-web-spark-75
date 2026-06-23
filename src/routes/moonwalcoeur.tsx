@@ -141,7 +141,91 @@ function SpotlightSignature({
   );
 }
 
+function StarWarsCrawl() {
+  return (
+    <section
+      className="relative z-10"
+      style={{ height: "260vh" }}
+      aria-label="Notre histoire"
+    >
+      <div
+        className="sticky top-0 mx-auto flex h-screen w-full max-w-5xl items-end justify-center overflow-hidden px-6"
+        style={{ perspective: "400px" }}
+      >
+        {/* Fade overlay at top */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 z-20 h-2/3"
+          style={{
+            background:
+              "linear-gradient(180deg, #0B0F2A 0%, rgba(11,15,42,0.85) 30%, rgba(11,15,42,0.4) 60%, transparent 100%)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="relative w-full text-center"
+          style={{
+            transform: "rotateX(22deg)",
+            transformOrigin: "50% 100%",
+          }}
+        >
+          <div
+            className="mx-auto max-w-2xl"
+            style={{
+              color: "#E8B86D",
+              animation: "mw-crawl 60s linear infinite",
+              textShadow: "0 0 20px rgba(232,184,109,0.4)",
+            }}
+          >
+            <p className="mb-10 font-display text-3xl md:text-4xl leading-tight">
+              Notre histoire
+            </p>
+            <p className="mb-8 text-xl leading-relaxed">
+              Bienvenue chez{" "}
+              <span className="font-handwritten">Moonwalcoeur</span>, un tandem
+              créatif formé par deux frères passionnés : Nicola et Kevin.
+            </p>
+            <p className="mb-8 text-lg leading-relaxed">
+              Depuis notre tendre enfance, le dessin a été notre refuge, notre
+              moyen d'expression. Chaque trait, chaque éclat de couleur raconte
+              une histoire, reflète une émotion et nous transporte dans un
+              univers où la créativité n'a pas de limites.
+            </p>
+            <p className="mb-8 text-lg leading-relaxed">
+              Nous sommes animés par une vision commune : celle de créer des
+              souvenirs intemporels pour les petits et les grands "walcoeurs".
+              Parce que nous croyons en la magie des souvenirs, en leur
+              capacité à évoquer des sourires et à tisser des liens précieux.
+              Nous mettons tout notre talent et notre passion au service de la
+              création d'objets uniques et personnalisés.
+            </p>
+            <p className="mb-8 text-lg leading-relaxed">
+              Notre équipe dévouée est là pour concrétiser vos rêves et donner
+              vie à vos idées. Que ce soit pour personnaliser des vêtements,
+              des chaussures, des casquettes, des accessoires ou même les
+              baskets de vos enfants, nous mettons notre expertise à votre
+              disposition. Chaque création est pensée avec soin et réalisée
+              avec "cœur", pour que chaque pièce devienne un véritable trésor,
+              porteur d'histoires et de souvenirs inoubliables.
+            </p>
+            <p className="mb-8 font-handwritten text-2xl">
+              Chez Moonwalcoeur, nous croyons en la beauté du custom et en son
+              pouvoir de rassembler. Nous sommes impatients de partager notre
+              passion avec vous et de créer ensemble des moments magiques et
+              uniques.
+            </p>
+            <p className="mb-8 font-handwritten text-2xl" style={{ color: "#FF6B5C" }}>
+              Bienvenue dans notre univers, où chaque création est une
+              invitation au voyage sur la lune.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Moonwalcoeur() {
+
   const y = useScrollY();
 
   return (
