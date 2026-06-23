@@ -176,7 +176,7 @@ function Reveal({
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(28px)",
-        transition: `opacity 900ms ease-out ${delay}ms, transform 900ms ease-out ${delay}ms`,
+        transition: `opacity 1600ms ease-out ${delay}ms, transform 1600ms ease-out ${delay}ms`,
         willChange: "opacity, transform",
       }}
     >
@@ -277,33 +277,33 @@ function Moonwalcoeur() {
             {"\n"}
           </h2>
           <Reveal>
-            <p className="mt-6 text-xl leading-relaxed text-[#F2F0E9]">
+            <p className="mt-6 text-2xl leading-relaxed text-[#F2F0E9]">
               Bienvenue chez <span className="font-handwritten" style={{ color: "#E8B86D" }}>Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.
             </p>
           </Reveal>
-          <div className="mt-4 space-y-3 text-lg leading-relaxed text-[#A8AEC9]">
-            <Reveal delay={80}>
+          <div className="mt-6 space-y-5 text-xl leading-relaxed text-[#A8AEC9]">
+            <Reveal delay={180}>
               <p>
                 Depuis notre tendre enfance, le dessin a été notre refuge, notre moyen d'expression. Chaque trait, chaque éclat de couleur raconte une histoire, reflète une émotion et nous transporte dans un univers où la créativité n'a pas de limites.
               </p>
             </Reveal>
-            <Reveal delay={120}>
+            <Reveal delay={300}>
               <p>
                 Nous sommes animés par une vision commune : celle de créer des souvenirs intemporels pour les petits et les grands "walcoeurs". Parce que nous croyons en la magie des souvenirs, en leur capacité à évoquer des sourires et à tisser des liens précieux. Nous mettons tout notre talent et notre passion au service de la création d'objets uniques et personnalisés.
               </p>
             </Reveal>
-            <Reveal delay={160}>
+            <Reveal delay={420}>
               <p>
                 Notre équipe dévouée est là pour concrétiser vos rêves et donner vie à vos idées. Que ce soit pour personnaliser des vêtements, des chaussures, des casquettes, des accessoires ou même les baskets de vos enfants, nous mettons notre expertise à votre disposition. Chaque création est pensée avec soin et réalisée avec "cœur", pour que chaque pièce devienne un véritable trésor, porteur d'histoires et de souvenirs inoubliables.
               </p>
             </Reveal>
-            <Reveal delay={200}>
-              <p className="font-handwritten text-xl" style={{ color: "#E8B86D" }}>
+            <Reveal delay={540}>
+              <p className="font-handwritten text-2xl" style={{ color: "#E8B86D" }}>
                 Chez Moonwalcoeur, nous croyons en la beauté du custom et en son pouvoir de rassembler. Nous sommes impatients de partager notre passion avec vous et de créer ensemble des moments magiques et uniques.
               </p>
             </Reveal>
-            <Reveal delay={240}>
-              <p className="font-handwritten text-xl" style={{ color: "#FF6B5C" }}>
+            <Reveal delay={660}>
+              <p className="font-handwritten text-2xl" style={{ color: "#FF6B5C" }}>
                 Bienvenue dans notre univers, où chaque création est une invitation au voyage sur la lune.
               </p>
             </Reveal>
