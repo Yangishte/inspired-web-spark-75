@@ -444,7 +444,7 @@ function Index() {
           <span
             key={i}
             aria-hidden
-            className={`pointer-events-none absolute font-marker ${q.size} ${q.float} transition-all duration-700 ease-out`}
+            className={`pointer-events-none absolute hidden font-marker ${q.size} ${q.float} transition-opacity duration-700 ease-out sm:block`}
             style={{
               top: q.top,
               left: q.left,
@@ -452,7 +452,6 @@ function Index() {
               transform: `rotate(${q.rotate})`,
               color: i % 2 === 0 ? "var(--clay)" : "var(--cocoa)",
               opacity: faqVisible ? 0.55 : 0,
-              translate: faqVisible ? "0 0" : "0 20px",
               transitionDelay: q.delay,
             }}
           >
