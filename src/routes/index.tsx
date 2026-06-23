@@ -202,12 +202,12 @@ function Index() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              date: "Samedi 25 avril 2026",
-              titre: "Atelier au Restaurant Manor Lausanne",
-              lieu: "Restaurant Manor Lausanne",
-              time: "Durée : 2 heures",
-              price: "CHF 49.- / personne",
-              desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍"
+              date: "Dimanche 7 juin 2026",
+              titre: "Vin & Créativité au Domaine Maison Blanche",
+              lieu: "Domaine Maison Blanche – Mont-sur-Rolle",
+              time: "13h30 – 15h30",
+              price: "CHF 65.- / personne",
+              desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante."
             },
             {
               date: "Dimanche 31 mai 2026",
@@ -218,15 +218,15 @@ function Index() {
               desc: "Le Bar à Custom déménage à l'hôtel pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩"
             },
             {
-              date: "Dimanche 7 juin 2026",
-              titre: "Vin & Créativité au Domaine Maison Blanche",
-              lieu: "Domaine Maison Blanche – Mont-sur-Rolle",
-              time: "13h30 – 15h30",
-              price: "CHF 65.- / personne",
-              desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante."
+              date: "Samedi 25 avril 2026",
+              titre: "Atelier au Restaurant Manor Lausanne",
+              lieu: "Restaurant Manor Lausanne",
+              time: "Durée : 2 heures",
+              price: "CHF 49.- / personne",
+              desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍"
             },
-            { date: "Juin 2025", titre: "Festival des artistes", lieu: "Lausanne", desc: "Musique, art de rue et un stand Moonwalcoeur où chacun est reparti avec un souvenir unique." },
             { date: "Septembre 2025", titre: "Pop-up à la Manère", lieu: "Vevey", desc: "Collaboration éphémère dans une boutique locale pour présenter notre nouvelle collection." },
+            { date: "Juin 2025", titre: "Festival des artistes", lieu: "Lausanne", desc: "Musique, art de rue et un stand Moonwalcoeur où chacun est reparti avec un souvenir unique." },
           ].map((e) => (
             <div
               key={e.titre}
