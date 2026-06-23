@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import signature from "@/assets/brand/signature.png.asset.json";
-import astronaut from "@/assets/moonwalcoeur/astronaut.png";
+import astronaut from "@/assets/moonwalcoeur/astronaut-line-transparent.png";
 
 export const Route = createFileRoute("/moonwalcoeur")({
   head: () => ({
@@ -175,22 +175,33 @@ function Moonwalcoeur() {
         {/* Astronaute */}
         <div
           ref={astroRef}
-          className="relative mt-16 w-full max-w-md"
+          className="relative mt-16 w-full max-w-sm"
           style={{
             transform: `translateY(${Math.min(y, 800) * 0.25}px) rotate(${y * 0.02}deg)`,
             animation: "mw-drift 8s ease-in-out infinite",
           }}
         >
           <div
-            className="mw-nebula absolute inset-0 -z-10 scale-125 rounded-full"
+            className="mw-nebula absolute inset-0 -z-10 scale-150 rounded-full"
             aria-hidden
+          />
+          <div
+            className="absolute left-1/2 top-1/2 -z-10 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+            aria-hidden
+            style={{
+              background:
+                "radial-gradient(circle, rgba(242,240,233,0.95) 0%, rgba(232,184,109,0.55) 45%, rgba(75,63,140,0) 72%)",
+              filter: "blur(2px)",
+            }}
           />
           <img
             src={astronaut}
-            alt="Astronaute Moonwalcoeur tenant un pinceau et un tote bag"
-            width={1024}
-            height={1536}
-            className="mx-auto w-full drop-shadow-[0_30px_60px_rgba(75,63,140,0.7)]"
+            alt="Astronaute Moonwalcoeur et son cœur"
+            className="relative mx-auto w-full"
+            style={{
+              filter:
+                "drop-shadow(0 0 18px rgba(232,184,109,0.5)) drop-shadow(0 20px 40px rgba(11,15,42,0.6))",
+            }}
           />
         </div>
 
