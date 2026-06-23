@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import signature from "@/assets/brand/signature.png.asset.json";
 import astronaut from "@/assets/moonwalcoeur/astronaut-line-transparent.png";
+import moonAsset from "@/assets/moonwalcoeur/moon.png.asset.json";
 import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg.asset.json";
 import textileImg from "@/assets/moonwalcoeur/textile.jpg";
 import autresImg from "@/assets/moonwalcoeur/autres.jpg";
