@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Instagram } from "lucide-react";
+import { Instagram, Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
@@ -271,7 +271,12 @@ function Index() {
                   >
                     "
                   </span>
-                  <p className="pt-3 font-handwritten text-xl" style={{ color: "var(--cocoa)" }}>
+                  <div className="mb-3 flex gap-1 pt-3" aria-label="5 étoiles">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={18} fill="#FACC15" color="#FACC15" />
+                    ))}
+                  </div>
+                  <p className="font-handwritten text-xl" style={{ color: "var(--cocoa)" }}>
                     {review.text}
                   </p>
                   <p className="mt-4 font-marker text-sm" style={{ color: "var(--clay)" }}>
