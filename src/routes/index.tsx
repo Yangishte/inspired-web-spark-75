@@ -225,7 +225,8 @@ function Index() {
               lieu: "Restaurant Manor Lausanne",
               time: "Durée : 2 heures",
               price: "CHF 49.- / personne",
-              desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍"
+              desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍",
+              past: true,
             },
             { date: "Septembre 2025", titre: "Pop-up à la Manère", lieu: "Vevey", desc: "Collaboration éphémère dans une boutique locale pour présenter notre nouvelle collection.", past: true },
             { date: "Juin 2025", titre: "Festival des artistes", lieu: "Lausanne", desc: "Musique, art de rue et un stand Moonwalcoeur où chacun est reparti avec un souvenir unique.", past: true },
