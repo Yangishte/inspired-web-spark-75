@@ -169,7 +169,14 @@ function Scene({ activeIndex }: { activeIndex: number }) {
 export default function BagsCarousel3D() {
   const [active, setActive] = useState(0);
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const prev = () => setActive((i) => (i - 1 + ITEMS.length) % ITEMS.length);
   const next = () => setActive((i) => (i + 1) % ITEMS.length);
