@@ -471,7 +471,7 @@ function Index() {
         style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
       >
         <div className="mx-auto max-w-5xl px-6 py-24">
-          <div className="group mx-auto grid max-w-3xl gap-10 md:grid-cols-2">
+          <div className="group mx-auto grid max-w-3xl gap-6 md:grid-cols-2 md:gap-10">
             {[
               { name: "Adulte", price: "CHF 49.-", desc: "2 heures d'atelier, boisson offerte, support inclus." },
               { name: "Enfant", price: "CHF 39.-", desc: "2 heures d'atelier, boisson offerte, support inclus.", featured: true },
@@ -481,7 +481,7 @@ function Index() {
                 href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`rounded-3xl border-2 p-8 text-center transition-all duration-300 hover:scale-105 focus-visible:outline-hidden ${i === 0 ? "float-left" : "float-right float-delay-2"} group-hover:[&:not(:hover)]:scale-95 group-hover:[&:not(:hover)]:opacity-60`}
+                className={`rounded-3xl border-2 p-5 text-center text-lg transition-all duration-300 hover:scale-105 focus-visible:outline-hidden sm:p-8 sm:text-base ${i === 0 ? "float-left" : "float-right float-delay-2"} group-hover:[&:not(:hover)]:scale-95 group-hover:[&:not(:hover)]:opacity-60`}
                 style={{
                   borderColor: "var(--cocoa)",
                   background: p.featured ? "var(--cocoa)" : "transparent",
@@ -490,8 +490,8 @@ function Index() {
                 }}
               >
                 <h3 className="font-display text-2xl">{p.name}</h3>
-                <p className="mt-4 font-display text-5xl">{p.price}</p>
-                <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
+                <p className="mt-4 font-display text-4xl md:text-5xl">{p.price}</p>
+                <p className="mt-4 leading-relaxed opacity-90">{p.desc}</p>
               </a>
             ))}
           </div>
