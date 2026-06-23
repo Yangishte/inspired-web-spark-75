@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import signature from "@/assets/brand/signature.png.asset.json";
 import astronaut from "@/assets/moonwalcoeur/astronaut-line-transparent.png";
+import moonAsset from "@/assets/moonwalcoeur/moon.png.asset.json";
 import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg.asset.json";
 import textileImg from "@/assets/moonwalcoeur/textile.jpg";
 import autresImg from "@/assets/moonwalcoeur/autres.jpg";
@@ -101,7 +102,6 @@ function Moonwalcoeur() {
         @keyframes mw-twinkle { 0%,100% { opacity: 0.25 } 50% { opacity: 1 } }
         @keyframes mw-drift { 0%,100% { transform: translateY(0) rotate(-2deg) } 50% { transform: translateY(-22px) rotate(2deg) } }
         @keyframes mw-orbit { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
-        @keyframes mw-pulse-glow { 0%,100% { opacity: 0.55 } 50% { opacity: 1 } }
         @keyframes mw-shoot { 0% { transform: translate3d(-10vw,-10vh,0) rotate(20deg); opacity: 0 } 10% { opacity: 1 } 100% { transform: translate3d(110vw,60vh,0) rotate(20deg); opacity: 0 } }
         .mw-bg { background: radial-gradient(1200px 800px at 70% 10%, rgba(75,63,140,0.55), transparent 60%), radial-gradient(900px 700px at 10% 90%, rgba(255,107,92,0.18), transparent 60%), linear-gradient(180deg, #0B0F2A 0%, #11142E 50%, #161B33 100%); }
         .mw-nebula { background: radial-gradient(closest-side, rgba(232,184,109,0.18), transparent 70%), radial-gradient(closest-side, rgba(75,63,140,0.55), transparent 70%); filter: blur(20px); }
@@ -213,17 +213,18 @@ function Moonwalcoeur() {
         </span>
       </section>
 
-      {/* SECTION 2 — Planète orbitale + manifeste */}
+      {/* SECTION 2 — Lune orbitale + histoire */}
       <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-16 px-6 py-32 md:grid-cols-2">
         <div className="relative mx-auto aspect-square w-full max-w-md">
-          <div
-            className="absolute inset-0 rounded-full"
+          <img
+            src={moonAsset.url}
+            alt="Lune Moonwalcoeur"
+            width={1024}
+            height={1024}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full rounded-full object-cover"
             style={{
-              background:
-                "radial-gradient(circle at 30% 30%, #E8B86D 0%, #FF6B5C 35%, #4B3F8C 75%, #0B0F2A 100%)",
-              boxShadow:
-                "0 0 80px rgba(232,184,109,0.4), inset -30px -30px 80px rgba(0,0,0,0.5)",
-              animation: "mw-pulse-glow 5s ease-in-out infinite",
+              boxShadow: "0 0 80px rgba(232,184,109,0.35), inset -30px -30px 80px rgba(0,0,0,0.35)",
               transform: `rotate(${y * 0.05}deg)`,
             }}
           />
