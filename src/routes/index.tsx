@@ -56,6 +56,7 @@ function NavLink({ label, href, delay = 0 }: { label: string; href: string; dela
 
 function Index() {
   const [heroIndex, setHeroIndex] = useState(0);
+  const [faqVisible, setFaqVisible] = useState(false);
   useEffect(() => {
     const id = setInterval(() => setHeroIndex((i) => (i + 1) % heroImages.length), 5000);
     return () => clearInterval(id);
