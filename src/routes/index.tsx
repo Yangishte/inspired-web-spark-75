@@ -681,13 +681,13 @@ function Index() {
         <p className="mt-6 font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
           On se fera un plaisir de te répondre dans les meilleurs délais!
         </p>
-        <a
-          href="mailto:moonwalcoeur@outlook.com"
-          className="mx-auto mt-10 inline-block rounded-full px-10 py-4 font-marker text-xl transition-transform hover:scale-105"
-          style={{ background: "var(--cocoa)", color: "var(--cream)" }}
-        >
-          moonwalcoeur@outlook.com
-        </a>
+          <a
+            href="mailto:moonwalcoeur@outlook.com"
+            className="mx-auto mt-10 inline-block max-w-full break-words rounded-full px-6 py-4 font-marker text-lg transition-transform hover:scale-105 sm:px-10 sm:text-xl"
+            style={{ background: "var(--cocoa)", color: "var(--cream)" }}
+          >
+            moonwalcoeur@outlook.com
+          </a>
       </section>
 
       <footer
