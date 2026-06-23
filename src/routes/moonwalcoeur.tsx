@@ -95,52 +95,6 @@ function useScrollY() {
   return y;
 }
 
-function SpotlightSignature({
-  src,
-  alt,
-  className,
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-}) {
-  const [pos, setPos] = useState({ x: 50, y: 50 });
-  const [hover, setHover] = useState(false);
-
-  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setPos({
-      x: ((e.clientX - rect.left) / rect.width) * 100,
-      y: ((e.clientY - rect.top) / rect.height) * 100,
-    });
-  };
-
-  return (
-    <div
-      className={`relative ${className ?? ""}`}
-      onMouseMove={handleMove}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <img src={src} alt={alt} className="relative z-10 w-full h-auto" />
-      <img
-        src={src}
-        alt=""
-        aria-hidden
-        className="absolute inset-0 z-20 w-full h-auto"
-        style={{
-          opacity: hover ? 1 : 0,
-          transition: "opacity 0.25s ease-out",
-          filter:
-            "invert(1) brightness(1.15) drop-shadow(0 0 16px rgba(232,184,109,0.9)) drop-shadow(0 0 32px rgba(242,240,233,0.45))",
-          maskImage: `radial-gradient(circle at ${pos.x}% ${pos.y}%, black 0%, transparent 110px)`,
-          WebkitMaskImage: `radial-gradient(circle at ${pos.x}% ${pos.y}%, black 0%, transparent 110px)`,
-          pointerEvents: "none",
-        }}
-      />
-    </div>
-  );
-}
 
 function Moonwalcoeur() {
   const y = useScrollY();
