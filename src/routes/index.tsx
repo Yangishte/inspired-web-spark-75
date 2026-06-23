@@ -74,8 +74,6 @@ const reviews = [
 ];
 
 function Index() {
-
-function Index() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [faqVisible, setFaqVisible] = useState(false);
   const [avisIndex, setAvisIndex] = useState(0);
