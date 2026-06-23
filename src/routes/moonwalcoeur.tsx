@@ -277,29 +277,29 @@ function Moonwalcoeur() {
             {"\n"}
           </h2>
           <Reveal>
-            <p className="mt-6 text-2xl leading-relaxed text-[#F2F0E9]">
-              Bienvenue chez <span className="font-handwritten" style={{ color: "#E8B86D" }}>Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.
+            <p className="mt-6 text-2xl leading-relaxed text-[#F2F0E9] whitespace-pre-line">
+              Bienvenue chez <span className="font-handwritten" style={{ color: "#E8B86D" }}>Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.{"\n\n\n"}
             </p>
           </Reveal>
           <div className="mt-6 space-y-5 text-xl leading-relaxed text-[#A8AEC9]">
             <Reveal delay={180}>
-              <p>
-                Depuis notre tendre enfance, le dessin a été notre refuge, notre moyen d'expression. Chaque trait, chaque éclat de couleur raconte une histoire, reflète une émotion et nous transporte dans un univers où la créativité n'a pas de limites.
+              <p className="whitespace-pre-line">
+                Depuis notre tendre enfance, le dessin a été notre refuge, notre moyen d'expression. Chaque trait, chaque éclat de couleur raconte une histoire, reflète une émotion et nous transporte dans un univers où la créativité n'a pas de limites.{"\n\n"}
               </p>
             </Reveal>
             <Reveal delay={300}>
-              <p>
-                Nous sommes animés par une vision commune : celle de créer des souvenirs intemporels pour les petits et les grands "walcoeurs". Parce que nous croyons en la magie des souvenirs, en leur capacité à évoquer des sourires et à tisser des liens précieux. Nous mettons tout notre talent et notre passion au service de la création d'objets uniques et personnalisés.
+              <p className="whitespace-pre-line">
+                Nous sommes animés par une vision commune : celle de créer des souvenirs intemporels pour les petits et les grands "walcoeurs". Parce que nous croyons en la magie des souvenirs, en leur capacité à évoquer des sourires et à tisser des liens précieux. Nous mettons tout notre talent et notre passion au service de la création d'objets uniques et personnalisés.{"\n\n"}
               </p>
             </Reveal>
             <Reveal delay={420}>
-              <p>
-                Notre équipe dévouée est là pour concrétiser vos rêves et donner vie à vos idées. Que ce soit pour personnaliser des vêtements, des chaussures, des casquettes, des accessoires ou même les baskets de vos enfants, nous mettons notre expertise à votre disposition. Chaque création est pensée avec soin et réalisée avec "cœur", pour que chaque pièce devienne un véritable trésor, porteur d'histoires et de souvenirs inoubliables.
+              <p className="whitespace-pre-line">
+                Notre équipe dévouée est là pour concrétiser vos rêves et donner vie à vos idées. Que ce soit pour personnaliser des vêtements, des chaussures, des casquettes, des accessoires ou même les baskets de vos enfants, nous mettons notre expertise à votre disposition. Chaque création est pensée avec soin et réalisée avec "cœur", pour que chaque pièce devienne un véritable trésor, porteur d'histoires et de souvenirs inoubliables.{"\n\n"}
               </p>
             </Reveal>
             <Reveal delay={540}>
-              <p className="font-handwritten text-2xl" style={{ color: "#E8B86D" }}>
-                Chez Moonwalcoeur, nous croyons en la beauté du custom et en son pouvoir de rassembler. Nous sommes impatients de partager notre passion avec vous et de créer ensemble des moments magiques et uniques.
+              <p className="font-handwritten text-2xl whitespace-pre-line" style={{ color: "#E8B86D" }}>
+                Chez Moonwalcoeur, nous croyons en la beauté du custom et en son pouvoir de rassembler. Nous sommes impatients de partager notre passion avec vous et de créer ensemble des moments magiques et uniques.{"\n\n"}
               </p>
             </Reveal>
             <Reveal delay={660}>
