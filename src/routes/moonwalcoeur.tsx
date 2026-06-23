@@ -227,10 +227,10 @@ function Moonwalcoeur() {
       <section className="relative z-10 mx-auto max-w-3xl px-6 py-32 text-center">
         <div>
           <span className="font-handwritten text-2xl" style={{ color: "#E8B86D" }}>
-            ✦ Notre histoire
+            {""}
           </span>
           <h2 className="mt-3 font-display text-4xl leading-tight md:text-5xl">
-            Qui sommes-nous
+            {"\n"}
           </h2>
           <p className="mt-6 text-xl leading-relaxed text-[#F2F0E9]">
             Bienvenue chez <span className="font-handwritten" style={{ color: "#E8B86D" }}>Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.
