@@ -327,6 +327,7 @@ function Index() {
                       src={e.image}
                       alt={e.titre}
                       className="h-full w-full object-cover"
+                      style={{ objectPosition: (e as { imagePosition?: string }).imagePosition || "center" }}
                     />
                   ) : (
                     <div
