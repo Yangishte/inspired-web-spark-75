@@ -281,7 +281,7 @@ function Moonwalcoeur() {
               Bienvenue chez <span className="font-handwritten" style={{ color: "#E8B86D" }}>Moonwalcoeur</span>, un tandem créatif formé par deux frères passionnés : Nicola et Kevin.
             </p>
           </Reveal>
-          <div className="mt-6 space-y-5 text-lg leading-relaxed text-[#A8AEC9]">
+          <div className="mt-4 space-y-3 text-lg leading-relaxed text-[#A8AEC9]">
             <Reveal delay={80}>
               <p>
                 Depuis notre tendre enfance, le dessin a été notre refuge, notre moyen d'expression. Chaque trait, chaque éclat de couleur raconte une histoire, reflète une émotion et nous transporte dans un univers où la créativité n'a pas de limites.
