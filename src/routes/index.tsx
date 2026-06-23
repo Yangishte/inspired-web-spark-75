@@ -234,39 +234,23 @@ function Index() {
               style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
             >
               {e.past && (
-                <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
-                  <svg className="w-44 rotate-[-12deg] opacity-90" viewBox="0 0 220 90">
-                    <defs>
-                      <filter id={`stamp-grunge-${i}`}>
-                        <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" result="noise" />
-                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" />
-                      </filter>
-                    </defs>
-                    <rect
-                      x="8"
-                      y="8"
-                      width="204"
-                      height="74"
-                      rx="4"
-                      fill="none"
-                      stroke="#dc2626"
-                      strokeWidth="7"
-                      filter={`url(#stamp-grunge-${i})`}
-                    />
-                    <text
-                      x="110"
-                      y="58"
-                      textAnchor="middle"
-                      fontSize="46"
-                      fontWeight="900"
-                      fontFamily="system-ui, sans-serif"
-                      fill="#dc2626"
-                      letterSpacing="2"
-                      filter={`url(#stamp-grunge-${i})`}
-                    >
-                      PASSÉ
-                    </text>
-                  </svg>
+                <div
+                  className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center"
+                  style={{ background: "rgba(255, 248, 240, 0.35)" }}
+                >
+                  <div
+                    className="flex items-center justify-center border-4 px-4 py-2 font-black uppercase tracking-widest"
+                    style={{
+                      color: "#b91c1c",
+                      borderColor: "#b91c1c",
+                      transform: "rotate(-12deg)",
+                      fontSize: "2rem",
+                      fontFamily: "system-ui, sans-serif",
+                      boxShadow: "inset 0 0 0 2px rgba(185, 28, 28, 0.25)",
+                    }}
+                  >
+                    PASSÉ
+                  </div>
                 </div>
               )}
               <span className="font-marker text-sm tracking-wide" style={{ color: "var(--clay)" }}>{e.date}</span>
