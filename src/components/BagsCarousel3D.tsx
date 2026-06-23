@@ -190,14 +190,14 @@ export default function BagsCarousel3D() {
         style={{
           borderColor: "var(--cocoa)",
           background: "linear-gradient(180deg, #f6ecd9 0%, #ede0c4 100%)",
-          height: 460,
+          height: isMobile ? 520 : 460,
         }}
       >
         {mounted && (
           <Canvas
             shadows
             dpr={[1, 2]}
-            camera={{ position: [0, 0.6, 5.2], fov: 38 }}
+            camera={{ position: [0, 0.5, isMobile ? 5.8 : 5.2], fov: isMobile ? 42 : 38 }}
             gl={{ antialias: true }}
           >
             <Suspense fallback={null}>
