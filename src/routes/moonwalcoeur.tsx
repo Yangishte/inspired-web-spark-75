@@ -6,6 +6,9 @@ import moonAsset from "@/assets/moonwalcoeur/moon.png.asset.json";
 import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg.asset.json";
 import textileImg from "@/assets/moonwalcoeur/textile.jpg";
 import autresImg from "@/assets/moonwalcoeur/autres.jpg";
+import petits1Asset from "@/assets/moonwalcoeur/petits-1.jpeg.asset.json";
+import petits2Asset from "@/assets/moonwalcoeur/petits-2.jpeg.asset.json";
+import petits3Asset from "@/assets/moonwalcoeur/petits-3.jpeg.asset.json";
 
 export const Route = createFileRoute("/moonwalcoeur")({
   head: () => ({
@@ -291,6 +294,62 @@ function Moonwalcoeur() {
             { title: "Chaussure", img: chaussureAsset.url },
             { title: "Textile", img: textileImg },
             { title: "Autres supports", img: autresImg },
+          ].map((card, i) => (
+            <div
+              key={card.title}
+              className="group relative overflow-hidden rounded-3xl border border-[#A8AEC9]/20 bg-[#0B0F2A]/60 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-[#E8B86D]/60"
+              style={{
+                boxShadow: "inset 0 1px 0 rgba(242,240,233,0.08)",
+              }}
+            >
+              <div className="relative aspect-square overflow-hidden">
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(11,15,42,0.85) 0%, rgba(11,15,42,0.1) 60%)",
+                  }}
+                />
+                <div
+                  className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full opacity-40 blur-3xl transition-opacity group-hover:opacity-70"
+                  style={{
+                    background:
+                      i % 2 === 0
+                        ? "radial-gradient(circle, #4B3F8C, transparent 70%)"
+                        : "radial-gradient(circle, #FF6B5C, transparent 70%)",
+                  }}
+                />
+                <h3 className="absolute bottom-5 left-6 font-display text-2xl text-[#F2F0E9]">
+                  {card.title}
+                </h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 3b — Pour les petits */}
+      <section className="relative z-10 mx-auto max-w-6xl px-6 pb-32">
+        <div className="text-center">
+          <span className="font-handwritten text-2xl" style={{ color: "#E8B86D" }}>
+            ✦ Pour les petits
+          </span>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl">
+            Pour les petits
+          </h2>
+        </div>
+
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+          {[
+            { title: "Ethan", img: petits1Asset.url },
+            { title: "Gear 5", img: petits2Asset.url },
+            { title: "Roshan", img: petits3Asset.url },
           ].map((card, i) => (
             <div
               key={card.title}
