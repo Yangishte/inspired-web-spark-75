@@ -142,38 +142,62 @@ function SpotlightSignature({
 }
 
 function StarWarsCrawl() {
+  const ref = useState<HTMLElement | null>(null);
+  const [el, setEl] = ref;
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    if (!el) return;
+    const onScroll = () => {
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      // progress 0 when section top hits viewport top, 1 when section bottom hits viewport bottom
+      const total = rect.height - vh;
+      const scrolled = Math.min(Math.max(-rect.top, 0), total);
+      setProgress(total > 0 ? scrolled / total : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [el]);
+
+  // translate text from below viewport (100%) to far above (-120%)
+  const translateY = 100 - progress * 220;
+
   return (
     <section
+      ref={setEl}
       className="relative z-10"
-      style={{ height: "260vh" }}
+      style={{ height: "320vh" }}
       aria-label="Notre histoire"
     >
       <div
-        className="sticky top-0 mx-auto flex h-screen w-full max-w-5xl items-end justify-center overflow-hidden px-6"
+        className="sticky top-0 mx-auto flex h-screen w-full max-w-5xl items-center justify-center overflow-hidden px-6"
         style={{ perspective: "400px" }}
       >
         {/* Fade overlay at top */}
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 z-20 h-2/3"
+          className="pointer-events-none absolute inset-x-0 top-0 z-20 h-1/2"
           style={{
             background:
-              "linear-gradient(180deg, #0B0F2A 0%, rgba(11,15,42,0.85) 30%, rgba(11,15,42,0.4) 60%, transparent 100%)",
+              "linear-gradient(180deg, #0B0F2A 0%, rgba(11,15,42,0.7) 40%, transparent 100%)",
           }}
           aria-hidden
         />
         <div
-          className="relative w-full text-center"
+          className="relative h-full w-full"
           style={{
-            transform: "rotateX(22deg)",
-            transformOrigin: "50% 100%",
+            transform: "rotateX(25deg)",
+            transformOrigin: "50% 50%",
           }}
         >
           <div
-            className="mx-auto max-w-2xl"
+            className="absolute left-1/2 w-full max-w-2xl -translate-x-1/2 text-center"
             style={{
+              top: `${translateY}%`,
               color: "#E8B86D",
-              animation: "mw-crawl 60s linear infinite",
-              textShadow: "0 0 20px rgba(232,184,109,0.4)",
+              textShadow: "0 0 24px rgba(232,184,109,0.45)",
+              willChange: "top",
             }}
           >
             <p className="mb-10 font-display text-3xl md:text-4xl leading-tight">
@@ -223,6 +247,7 @@ function StarWarsCrawl() {
     </section>
   );
 }
+
 
 function Moonwalcoeur() {
 
