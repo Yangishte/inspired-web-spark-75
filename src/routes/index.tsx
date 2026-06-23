@@ -191,19 +191,40 @@ function Index() {
         </div>
       </section>
 
-      {/* QUI SOMMES-NOUS */}
+      {/* ÉVÉNEMENTS */}
       <section id="evenements" className="relative z-10 mx-auto max-w-6xl px-6 py-28">
         <div className="mb-10 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Retour en images ↓</span>
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Réserve ta place ↓</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
-            Événements passés
+            Nos événements
           </h2>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { date: "Décembre 2024", titre: "Marché de Noël de Saint-Sulpice", lieu: "Saint-Sulpice, VD", desc: "Nos premiers pas sous la neige : customisation de tote bags et casquettes en direct au marché de Noël local." },
-            { date: "Février 2025", titre: "Atelier chez The Good Vibes", lieu: "Lausanne", desc: "Une après-midi créative autour du custom de baskets et sacs, entre bonne humeur et paillettes." },
-            { date: "Avril 2025", titre: "Brocante créative de Renens", lieu: "Renens, VD", desc: "Retour aux sources avec une sélection de pièces vintage personnalisées sur place." },
+            {
+              date: "Samedi 25 avril 2026",
+              titre: "Atelier au Restaurant Manor Lausanne",
+              lieu: "Restaurant Manor Lausanne",
+              time: "Durée : 2 heures",
+              price: "CHF 49.- / personne",
+              desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍"
+            },
+            {
+              date: "Dimanche 31 mai 2026",
+              titre: "Brunch & Paint à l'Hôtel En Bellevue",
+              lieu: "En Bellevue 1, 1163 Etoy",
+              time: "10h – 14h",
+              price: "CHF 90.- / personne (brunch + atelier)",
+              desc: "Le Bar à Custom déménage à l'hôtel pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩"
+            },
+            {
+              date: "Dimanche 7 juin 2026",
+              titre: "Vin & Créativité au Domaine Maison Blanche",
+              lieu: "Domaine Maison Blanche – Mont-sur-Rolle",
+              time: "13h30 – 15h30",
+              price: "CHF 65.- / personne",
+              desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante."
+            },
             { date: "Juin 2025", titre: "Festival des artistes", lieu: "Lausanne", desc: "Musique, art de rue et un stand Moonwalcoeur où chacun est reparti avec un souvenir unique." },
             { date: "Septembre 2025", titre: "Pop-up à la Manère", lieu: "Vevey", desc: "Collaboration éphémère dans une boutique locale pour présenter notre nouvelle collection." },
           ].map((e) => (
@@ -215,6 +236,12 @@ function Index() {
               <span className="font-marker text-sm tracking-wide" style={{ color: "var(--clay)" }}>{e.date}</span>
               <h3 className="mt-3 font-display text-xl leading-tight" style={{ color: "var(--cocoa)" }}>{e.titre}</h3>
               <p className="mt-1 font-handwritten text-lg" style={{ color: "var(--clay)" }}>{e.lieu}</p>
+              {(e.time || e.price) && (
+                <div className="mt-3 space-y-1 text-sm font-marker" style={{ color: "var(--cocoa)" }}>
+                  {e.time && <p>🗓️ {e.time}</p>}
+                  {e.price && <p>🏷️ {e.price}</p>}
+                </div>
+              )}
               <p className="mt-4 text-base leading-relaxed opacity-90" style={{ color: "var(--cocoa)" }}>{e.desc}</p>
             </div>
           ))}
