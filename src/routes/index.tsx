@@ -91,7 +91,7 @@ function Index() {
     const id = setInterval(() => {
       const slotToUpdate = activeSlotRef.current;
       setFadingSlot(slotToUpdate);
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         const next = nextReviewRef.current;
         if (slotToUpdate === 0) setSlot0(next);
         else setSlot1(next);
@@ -99,6 +99,7 @@ function Index() {
         activeSlotRef.current = slotToUpdate === 0 ? 1 : 0;
         requestAnimationFrame(() => setFadingSlot(null));
       }, 300);
+      return () => clearTimeout(timeoutId);
     }, 5000);
     return () => clearInterval(id);
   }, []);
