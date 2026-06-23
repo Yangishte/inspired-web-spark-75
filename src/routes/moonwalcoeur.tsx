@@ -1,14 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import signature from "@/assets/brand/signature.png.asset.json";
+import astronaut from "@/assets/moonwalcoeur/astronaut-line-transparent.png";
 import moonAsset from "@/assets/moonwalcoeur/moon.png.asset.json";
 import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg.asset.json";
 import textileImg from "@/assets/moonwalcoeur/textile.jpg";
 import autresImg from "@/assets/moonwalcoeur/autres.jpg";
+import mwSignatureAsset from "@/assets/moonwalcoeur/signature.png.asset.json";
 import petits1Asset from "@/assets/moonwalcoeur/petits-1.jpeg.asset.json";
 import petits2Asset from "@/assets/moonwalcoeur/petits-2.jpeg.asset.json";
 import petits3Asset from "@/assets/moonwalcoeur/petits-3.jpeg.asset.json";
-
 
 export const Route = createFileRoute("/moonwalcoeur")({
   head: () => ({
@@ -95,12 +96,58 @@ function useScrollY() {
   return y;
 }
 
+function SpotlightSignature({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  const [pos, setPos] = useState({ x: 50, y: 50 });
+  const [hover, setHover] = useState(false);
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPos({
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100,
+    });
+  };
+
+  return (
+    <div
+      className={`relative ${className ?? ""}`}
+      onMouseMove={handleMove}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <img src={src} alt={alt} className="relative z-10 w-full h-auto" />
+      <img
+        src={src}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 z-20 w-full h-auto"
+        style={{
+          opacity: hover ? 1 : 0,
+          transition: "opacity 0.25s ease-out",
+          filter:
+            "invert(1) brightness(1.15) drop-shadow(0 0 16px rgba(232,184,109,0.9)) drop-shadow(0 0 32px rgba(242,240,233,0.45))",
+          maskImage: `radial-gradient(circle at ${pos.x}% ${pos.y}%, black 0%, transparent 110px)`,
+          WebkitMaskImage: `radial-gradient(circle at ${pos.x}% ${pos.y}%, black 0%, transparent 110px)`,
+          pointerEvents: "none",
+        }}
+      />
+    </div>
+  );
+}
 
 function Moonwalcoeur() {
   const y = useScrollY();
+  const astroRef = useRef<HTMLDivElement>(null);
 
   return (
-
     <div className="relative min-h-screen overflow-hidden text-[#F2F0E9]">
       <style>{`
         @keyframes mw-twinkle { 0%,100% { opacity: 0.25 } 50% { opacity: 1 } }
@@ -157,6 +204,64 @@ function Moonwalcoeur() {
         </span>
       </header>
 
+      {/* HERO */}
+      <section className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col items-center justify-center px-6 py-24 text-center">
+        <span
+          className="font-handwritten text-2xl tracking-wide"
+          style={{ color: "#E8B86D" }}
+        >
+          {"\n"}
+        </span>
+        <h1 className="mt-4 mx-auto w-full max-w-3xl">
+          <span className="sr-only">Moonwalcoeur</span>
+          <SpotlightSignature
+            src={mwSignatureAsset.url}
+            alt="Moonwalcoeur"
+            className="mx-auto w-full h-auto"
+          />
+        </h1>
+        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-[#A8AEC9] md:text-xl">
+          Un voyage cosmique au cœur de notre univers créatif. Deux frères, un atelier,
+          des pièces qui flottent quelque part entre la Terre et la Lune.
+        </p>
+
+        {/* Astronaute */}
+        <div
+          ref={astroRef}
+          className="relative mt-16 w-full max-w-sm"
+          style={{
+            transform: `translateY(${Math.min(y, 800) * 0.25}px) rotate(${y * 0.02}deg)`,
+            animation: "mw-drift 8s ease-in-out infinite",
+          }}
+        >
+          <div
+            className="mw-nebula absolute inset-0 -z-10 scale-150 rounded-full"
+            aria-hidden
+          />
+          <div
+            className="absolute left-1/2 top-1/2 -z-10 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+            aria-hidden
+            style={{
+              background:
+                "radial-gradient(circle, rgba(242,240,233,0.95) 0%, rgba(232,184,109,0.55) 45%, rgba(75,63,140,0) 72%)",
+              filter: "blur(2px)",
+            }}
+          />
+          <img
+            src={astronaut}
+            alt="Astronaute Moonwalcoeur et son cœur"
+            className="relative mx-auto w-full"
+            style={{
+              filter:
+                "drop-shadow(0 0 18px rgba(232,184,109,0.5)) drop-shadow(0 20px 40px rgba(11,15,42,0.6))",
+            }}
+          />
+        </div>
+
+        <span className="mt-12 font-handwritten text-lg text-[#A8AEC9]">
+          ↓ continuez le voyage ↓
+        </span>
+      </section>
 
       {/* SECTION 2 — Lune orbitale + histoire */}
       <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-16 px-6 py-32 md:grid-cols-2">
