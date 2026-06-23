@@ -176,7 +176,7 @@ function Index() {
             Atelier de personnalisation — St-Sulpice&nbsp;
           </span>
           <h1
-            className="mt-4 font-display text-5xl leading-[0.95] md:text-7xl"
+            className="mt-4 break-words font-display text-4xl leading-[0.95] sm:text-5xl md:text-7xl"
             style={{ color: "var(--cocoa)" }}
           >
             Et si ta pièce préférée n'existait qu'en un seul exemplaire&nbsp;?
