@@ -181,13 +181,13 @@ function Index() {
           >
             Et si ta pièce préférée n'existait qu'en un seul exemplaire&nbsp;?
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed" style={{ color: "var(--cocoa)" }}>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed md:mt-8" style={{ color: "var(--cocoa)" }}>
             Bienvenue au <span className="scribble-underline">Bar à custom</span>. On peint, on brode, on transforme les supports vierges et
             accessoires en pièces uniques — autour d'une boisson, dans une ambiance douce et
             ensoleillée.
-            <br />
-            <br />
-            Accessible dès 6ans.
+          </p>
+          <p className="mt-3 text-base" style={{ color: "var(--clay)" }}>
+            Accessible dès 6 ans.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
