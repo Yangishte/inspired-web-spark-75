@@ -54,11 +54,38 @@ function NavLink({ label, href, delay = 0 }: { label: string; href: string; dela
   );
 }
 
+const reviews = [
+  {
+    name: "Helena M.",
+    text: "Super expérience, beaucoup de choix de créations ! Un joli moment passé entre copines! Je recommande",
+  },
+  {
+    name: "Gianluigi",
+    text: "Superbe espace créatif ! A deux pas du lac, l’inspiration s’y trouve facilement. Kévin est passionné par son art et cela se ressent dans son énergie. Une concept inédit dans la région. Un atelier à expérimenter en famille ou entre amis. Tout de bon pour la suite !",
+  },
+  {
+    name: "Isia Balestrini",
+    text: "Très belle expérience au bar à custom ! Beaucoup de supports à choix, très joli cadre et un moment de détente assuré ! Merci le bar à custom pour l’accueil chaleureux ! Je recommande",
+  },
+  {
+    name: "Christiane Krieg",
+    text: "Joli moment de détente et de créativité avec ma fille! Merci",
+  },
+];
+
+function Index() {
+
 function Index() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [faqVisible, setFaqVisible] = useState(false);
+  const [avisIndex, setAvisIndex] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setHeroIndex((i) => (i + 1) % heroImages.length), 5000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => setAvisIndex((i) => (i + 1) % Math.ceil(reviews.length / 2)), 5000);
     return () => clearInterval(id);
   }, []);
 
