@@ -17,6 +17,7 @@ import atelierImg2 from "@/assets/atelier/IMG_0360.jpeg.asset.json";
 import BagsCarousel3D from "@/components/BagsCarousel3D";
 import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png.asset.json";
 import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg.asset.json";
+import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
