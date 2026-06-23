@@ -171,9 +171,6 @@ function Moonwalcoeur() {
             src={mwSignatureAsset.url}
             alt="Moonwalcoeur"
             className="mx-auto w-full h-auto"
-            style={{
-              filter: "invert(1) drop-shadow(0 0 24px rgba(232,184,109,0.35)) drop-shadow(0 0 60px rgba(75,63,140,0.6))",
-            }}
           />
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-[#A8AEC9] md:text-xl">
