@@ -211,8 +211,8 @@ function Index() {
               price: "CHF 65.- / personne",
               desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante.",
               past: true,
-              image: "",
-              instagramUrl: "",
+              image: winePaintImg.url,
+              instagramUrl: "https://www.instagram.com/reel/DYxFsXAobkI/",
             },
             {
               date: "Dimanche 31 mai 2026",
