@@ -185,13 +185,22 @@ function Moonwalcoeur() {
             className="mw-nebula absolute inset-0 -z-10 scale-150 rounded-full"
             aria-hidden
           />
+          <div
+            className="absolute left-1/2 top-1/2 -z-10 h-[120%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+            aria-hidden
+            style={{
+              background:
+                "radial-gradient(circle, rgba(242,240,233,0.95) 0%, rgba(232,184,109,0.55) 45%, rgba(75,63,140,0) 72%)",
+              filter: "blur(2px)",
+            }}
+          />
           <img
             src={astronaut}
             alt="Astronaute Moonwalcoeur et son cœur"
-            className="mx-auto w-full"
+            className="relative mx-auto w-full"
             style={{
               filter:
-                "invert(1) drop-shadow(0 0 24px rgba(232,184,109,0.45)) drop-shadow(0 20px 40px rgba(11,15,42,0.8))",
+                "drop-shadow(0 0 18px rgba(232,184,109,0.5)) drop-shadow(0 20px 40px rgba(11,15,42,0.6))",
             }}
           />
         </div>
