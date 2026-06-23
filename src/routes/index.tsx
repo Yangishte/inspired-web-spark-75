@@ -225,14 +225,68 @@ function Index() {
               price: "CHF 49.- / personne",
               desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍"
             },
-            { date: "Septembre 2025", titre: "Pop-up à la Manère", lieu: "Vevey", desc: "Collaboration éphémère dans une boutique locale pour présenter notre nouvelle collection." },
-            { date: "Juin 2025", titre: "Festival des artistes", lieu: "Lausanne", desc: "Musique, art de rue et un stand Moonwalcoeur où chacun est reparti avec un souvenir unique." },
-          ].map((e) => (
+            { date: "Septembre 2025", titre: "Pop-up à la Manère", lieu: "Vevey", desc: "Collaboration éphémère dans une boutique locale pour présenter notre nouvelle collection.", past: true },
+            { date: "Juin 2025", titre: "Festival des artistes", lieu: "Lausanne", desc: "Musique, art de rue et un stand Moonwalcoeur où chacun est reparti avec un souvenir unique.", past: true },
+          ].map((e, i) => (
             <div
               key={e.titre}
-              className="rounded-3xl border-2 p-6 transition-transform duration-300 hover:scale-[1.02]"
+              className="relative overflow-hidden rounded-3xl border-2 p-6 transition-transform duration-300 hover:scale-[1.02]"
               style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
             >
+              {e.past && (
+                <div
+                  className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center"
+                  style={{ background: "rgba(255, 248, 240, 0.35)" }}
+                >
+                  <svg
+                    className="w-44 rotate-[-12deg] opacity-[0.92]"
+                    viewBox="0 0 220 80"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <filter id={`stamp-texture-${i}`}>
+                        <feTurbulence
+                          type="fractalNoise"
+                          baseFrequency="0.6"
+                          numOctaves="3"
+                          result="noise"
+                        />
+                        <feDisplacementMap
+                          in="SourceGraphic"
+                          in2="noise"
+                          scale="2"
+                          xChannelSelector="R"
+                          yChannelSelector="G"
+                        />
+                      </filter>
+                    </defs>
+                    <rect
+                      x="8"
+                      y="8"
+                      width="204"
+                      height="64"
+                      rx="2"
+                      fill="none"
+                      stroke="#b91c1c"
+                      strokeWidth="6"
+                      filter={`url(#stamp-texture-${i})`}
+                    />
+                    <text
+                      x="110"
+                      y="51"
+                      textAnchor="middle"
+                      fontSize="40"
+                      fontWeight="900"
+                      fontFamily="system-ui, sans-serif"
+                      fill="#b91c1c"
+                      letterSpacing="3"
+                      filter={`url(#stamp-texture-${i})`}
+                    >
+                      PASSÉ
+                    </text>
+                  </svg>
+                </div>
+              )}
               <span className="font-marker text-sm tracking-wide" style={{ color: "var(--clay)" }}>{e.date}</span>
               <h3 className="mt-3 font-display text-xl leading-tight" style={{ color: "var(--cocoa)" }}>{e.titre}</h3>
               <p className="mt-1 font-handwritten text-lg" style={{ color: "var(--clay)" }}>{e.lieu}</p>
