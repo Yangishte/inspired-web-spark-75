@@ -214,7 +214,7 @@ function Moonwalcoeur() {
         </span>
         <h1 className="mt-4 mx-auto w-full max-w-3xl">
           <span className="sr-only">Moonwalcoeur</span>
-          <img
+          <SpotlightSignature
             src={mwSignatureAsset.url}
             alt="Moonwalcoeur"
             className="mx-auto w-full h-auto"
