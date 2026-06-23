@@ -16,6 +16,7 @@ import atelierImg1 from "@/assets/atelier/IMG_0367.jpeg.asset.json";
 import atelierImg2 from "@/assets/atelier/IMG_0360.jpeg.asset.json";
 import BagsCarousel3D from "@/components/BagsCarousel3D";
 import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png.asset.json";
+import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg.asset.json";
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
@@ -220,8 +221,8 @@ function Index() {
               price: "CHF 90.- / personne (brunch + atelier)",
               desc: "Le Bar à Custom déménage à l'hôtel pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩",
               past: true,
-              image: "",
-              instagramUrl: "",
+              image: brunchTerrasseImg.url,
+              instagramUrl: "https://www.instagram.com/p/DYKe5apsLhx/",
             },
             {
               date: "Samedi 25 avril 2026",
