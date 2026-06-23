@@ -79,6 +79,8 @@ function Index() {
   const [slot0, setSlot0] = useState(0);
   const [slot1, setSlot1] = useState(1);
   const [fadingSlot, setFadingSlot] = useState<0 | 1 | null>(null);
+  const [flippedEvents, setFlippedEvents] = useState<Set<string>>(new Set());
+  const [flippedPricing, setFlippedPricing] = useState<Set<string>>(new Set());
   const nextReviewRef = useRef(2);
   const activeSlotRef = useRef<0 | 1>(0);
 
