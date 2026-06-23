@@ -253,13 +253,14 @@ function Index() {
           </div>
 
           {/* AVIS BULLES */}
-          <div className="mt-16 grid gap-6 md:grid-cols-2" key={avisIndex}>
-            {[0, 1].map((offset) => {
-              const review = reviews[(avisIndex * 2 + offset) % reviews.length];
+          <div className="mt-16 grid gap-6 md:grid-cols-2">
+            {[slot0, slot1].map((reviewIndex, slot) => {
+              const review = reviews[reviewIndex];
+              const isFading = fadingSlot === slot;
               return (
                 <div
-                  key={`${avisIndex}-${offset}`}
-                  className={`relative rounded-3xl border-2 p-8 text-left shadow-xl ${offset === 0 ? "float-left" : "float-right float-delay-2"}`}
+                  key={slot}
+                  className={`relative rounded-3xl border-2 p-8 text-left shadow-xl transition-opacity duration-300 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
                   style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
                 >
                   <span
