@@ -399,10 +399,12 @@ function Index() {
       </section>
 
       <footer
-        className="relative z-10 border-t-2 px-6 py-8 text-center font-handwritten text-lg"
+        className="relative z-10 border-t-2 px-6 py-8 text-center font-handwritten text-lg whitespace-pre-line"
         style={{ borderColor: "var(--clay)", color: "var(--cocoa)" }}
       >
-        Bar à custom — fait main avec beaucoup de café · © {new Date().getFullYear()}
+        Bar à custom & MoonWalcoeur
+        {"\n"}
+        © 2026
       </footer>
     </div>
   );
