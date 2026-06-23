@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
 import heroImg2 from "@/assets/hero/IMG_3609.jpeg.asset.json";
@@ -76,14 +76,31 @@ const reviews = [
 function Index() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [faqVisible, setFaqVisible] = useState(false);
-  const [avisIndex, setAvisIndex] = useState(0);
+  const [slot0, setSlot0] = useState(0);
+  const [slot1, setSlot1] = useState(1);
+  const [fadingSlot, setFadingSlot] = useState<0 | 1 | null>(null);
+  const nextReviewRef = useRef(2);
+  const activeSlotRef = useRef<0 | 1>(0);
+
   useEffect(() => {
     const id = setInterval(() => setHeroIndex((i) => (i + 1) % heroImages.length), 5000);
     return () => clearInterval(id);
   }, []);
 
   useEffect(() => {
-    const id = setInterval(() => setAvisIndex((i) => (i + 1) % Math.ceil(reviews.length / 2)), 5000);
+    const id = setInterval(() => {
+      const slotToUpdate = activeSlotRef.current;
+      setFadingSlot(slotToUpdate);
+      const timeoutId = setTimeout(() => {
+        const next = nextReviewRef.current;
+        if (slotToUpdate === 0) setSlot0(next);
+        else setSlot1(next);
+        nextReviewRef.current = (next + 1) % reviews.length;
+        activeSlotRef.current = slotToUpdate === 0 ? 1 : 0;
+        requestAnimationFrame(() => setFadingSlot(null));
+      }, 300);
+      return () => clearTimeout(timeoutId);
+    }, 5000);
     return () => clearInterval(id);
   }, []);
 
@@ -237,13 +254,14 @@ function Index() {
           </div>
 
           {/* AVIS BULLES */}
-          <div className="mt-16 grid gap-6 md:grid-cols-2" key={avisIndex}>
-            {[0, 1].map((offset) => {
-              const review = reviews[(avisIndex * 2 + offset) % reviews.length];
+          <div className="mt-16 grid gap-6 md:grid-cols-2">
+            {[slot0, slot1].map((reviewIndex, slot) => {
+              const review = reviews[reviewIndex];
+              const isFading = fadingSlot === slot;
               return (
                 <div
-                  key={`${avisIndex}-${offset}`}
-                  className={`relative rounded-3xl border-2 p-8 text-left shadow-xl ${offset === 0 ? "float-left" : "float-right float-delay-2"}`}
+                  key={slot}
+                  className={`relative rounded-3xl border-2 p-8 text-left shadow-xl transition-opacity duration-300 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
                   style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
                 >
                   <span
