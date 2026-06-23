@@ -340,12 +340,33 @@ function Index() {
           ].map((e) => (
             <div
               key={e.titre}
-              className="group min-h-[440px]"
+              className="group min-h-[440px] cursor-pointer"
               style={{ perspective: "1200px" }}
+              onClick={() => {
+                setFlippedEvents((prev) => {
+                  const next = new Set(prev);
+                  if (next.has(e.titre)) next.delete(e.titre);
+                  else next.add(e.titre);
+                  return next;
+                });
+              }}
+              role="button"
+              aria-label={`Carte ${e.titre}, cliquez pour retourner`}
+              tabIndex={0}
+              onKeyDown={(ev) => {
+                if (ev.key === "Enter" || ev.key === " ") {
+                  ev.preventDefault();
+                  setFlippedEvents((prev) => {
+                    const next = new Set(prev);
+                    if (next.has(e.titre)) next.delete(e.titre);
+                    else next.add(e.titre);
+                    return next;
+                  });
+                }
+              }}
             >
               <div
-                className="relative h-full w-full transition-transform duration-700 group-hover:[transform:rotateY(180deg)]"
-                style={{ transformStyle: "preserve-3d" }}
+                className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedEvents.has(e.titre) ? "[transform:rotateY(180deg)]" : ""} group-hover:[transform:rotateY(180deg)]`}
               >
                 {/* FRONT */}
                 <div
