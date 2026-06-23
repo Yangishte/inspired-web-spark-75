@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Instagram } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
@@ -300,6 +301,24 @@ function Index() {
               { q: "Tarifs ?", a: "Adulte : CHF 49.- · Enfant : CHF 39.-" },
               { q: "Durée ?", a: "2 heures avec boisson offertes !" },
               { q: "Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
+              {
+                q: "Réseaux sociaux ?",
+                a: (
+                  <>
+                    Instagram{" "}
+                    <a
+                      href="https://www.instagram.com/_baracustom/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-marker underline"
+                      style={{ color: "var(--clay)" }}
+                    >
+                      <Instagram size={18} />
+                      @_baracustom
+                    </a>
+                  </>
+                ),
+              },
               { q: "Ensuite ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
             ].map((item) => (
               <AccordionItem key={item.q} value={item.q} className="border-0">
