@@ -22,6 +22,7 @@ import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
 import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 import visilabLogo from "@/assets/partners/visilab.png";
+import archeNoeLogo from "@/assets/partners/arche-noe.png";
 import interviewImg from "@/assets/clique-pour-voir-interview.png.asset.json";
 
 const partners = [
