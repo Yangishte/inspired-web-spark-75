@@ -493,13 +493,23 @@ function Index() {
           </h2>
         </div>
         <div className="relative overflow-hidden">
-          <div className="flex gap-10 marquee-track w-max">
+          <div className="flex items-center gap-10 marquee-track w-max">
             {[...partners, ...partners].map((p, i) => (
               <div
                 key={i}
-                className="shrink-0 h-24 w-24 md:h-28 md:w-28 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-[var(--sand)]"
+                className={`shrink-0 overflow-hidden bg-white shadow-lg ring-2 ring-[var(--sand)] ${
+                  p.shape === "circle"
+                    ? "h-24 w-24 md:h-28 md:w-28 rounded-full"
+                    : "h-16 md:h-20 rounded-md"
+                }`}
+                style={p.shape === "rect" ? { aspectRatio: "3 / 1" } : undefined}
               >
-                <img src={p.url} alt={p.name} className="h-full w-full object-cover" loading="lazy" />
+                <img
+                  src={p.url}
+                  alt={p.name}
+                  className={`h-full w-full bg-white ${p.shape === "circle" ? "object-cover" : "object-contain px-2"}`}
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
