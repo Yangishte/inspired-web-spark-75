@@ -502,7 +502,7 @@ function Index() {
           {[...partners, ...partners].map((p, i) => (
             <div
               key={i}
-              className={`shrink-0 overflow-hidden ${
+              className={`relative shrink-0 overflow-hidden ${
                 p.shape === "circle"
                   ? "h-24 w-24 md:h-28 md:w-28 rounded-full"
                   : "h-16 md:h-20 rounded-md"
@@ -515,6 +515,16 @@ function Index() {
                 className={`h-full w-full ${p.shape === "circle" ? "object-cover" : "object-contain px-2"}`}
                 loading="lazy"
               />
+              {p.name === "LFM La Radio" && (
+                <div className="absolute inset-0 flex items-center justify-center p-1">
+                  <img
+                    src={interviewImg.url}
+                    alt="Clique pour voir l'interview"
+                    className="h-full w-auto animate-zoom-pulse object-contain drop-shadow-md"
+                    style={{ transformOrigin: "center center" }}
+                  />
+                </div>
+              )}
             </div>
           ))}
           </div>
