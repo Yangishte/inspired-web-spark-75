@@ -526,24 +526,6 @@ function Index() {
                   loading="lazy"
                 />
               )}
-              {p.name === "LFM La Radio" && (
-                <span
-                  className="relative z-10 flex items-center justify-center animate-zoom-pulse"
-                  aria-hidden
-                >
-                  <span
-                    className="whitespace-nowrap font-marker text-[10px] leading-none tracking-wide"
-                    style={{
-                      writingMode: "vertical-rl",
-                      textOrientation: "mixed",
-                      color: "#ff8da1",
-                      textShadow: "0 1px 3px rgba(0,0,0,0.5)",
-                    }}
-                  >
-                    CLIQUE POUR VOIR L'INTERVIEW !
-                  </span>
-                </span>
-              )}
             </div>
           ))}
           </div>
