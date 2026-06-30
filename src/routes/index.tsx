@@ -31,11 +31,11 @@ type Partner = {
   url: string;
   shape: "circle" | "rect";
   link?: string;
-  shine?: boolean;
+  text?: string;
 };
 
 const partners: Partner[] = [
-  { name: "LFM La Radio", url: lfmLogo.url, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", shine: true },
+  { name: "LFM La Radio", url: lfmLogo.url, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", text: "Ecoute le podcast ici!" },
   { name: "L'Illustré", url: illustreLogo.url, shape: "rect" },
   { name: "Visilab", url: visilabLogo.url, shape: "rect" },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" },
@@ -512,15 +512,15 @@ function Index() {
           {[...partners, ...partners].map((p, i) => (
             <div
               key={i}
-              className={`relative shrink-0 flex items-center justify-center ${
+              className={`relative shrink-0 flex items-center justify-center ${p.text ? "flex-col gap-1" : ""} ${
                 p.shape === "circle"
-                  ? "h-24 w-24 md:h-28 md:w-28"
-                  : "h-16 md:h-20 overflow-hidden rounded-md"
+                  ? p.text ? "h-auto w-auto" : "h-24 w-24 md:h-28 md:w-28"
+                  : p.text ? "h-auto w-auto overflow-visible rounded-md" : "h-16 md:h-20 overflow-hidden rounded-md"
               }`}
-              style={p.shape === "rect" ? { aspectRatio: "3 / 1" } : undefined}
+              style={p.shape === "rect" && !p.text ? { aspectRatio: "3 / 1" } : undefined}
             >
               {p.shape === "circle" ? (
-                <div className={`absolute inset-0 overflow-hidden rounded-full ${p.shine ? "animate-shimmer-glow" : ""}`}>
+                <div className={`overflow-hidden rounded-full ${p.text ? "relative h-24 w-24 md:h-28 md:w-28" : "absolute inset-0"}`}>
                   {p.link ? (
                     <a
                       href={p.link}
@@ -565,6 +565,11 @@ function Index() {
                   className="h-full w-full object-contain px-2"
                   loading="lazy"
                 />
+              )}
+              {p.text && (
+                <span className="font-marker text-xs tracking-wide" style={{ color: "var(--cream)" }}>
+                  {p.text}
+                </span>
               )}
             </div>
           ))}
