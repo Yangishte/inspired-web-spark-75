@@ -19,6 +19,9 @@ import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png.asset.json";
 import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg.asset.json";
 import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
+import lfmLogo from "@/assets/partners/lfm.png.asset.json";
+
+const partners = [{ name: "LFM La Radio", url: lfmLogo.url }];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
@@ -475,6 +478,27 @@ function Index() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* PARTENAIRES — Bandeau défilant */}
+      <section aria-label="Ils nous font confiance" className="relative z-10 py-12 overflow-hidden" style={{ background: "var(--cocoa)" }}>
+        <div className="mb-6 text-center">
+          <h2 className="font-display text-2xl md:text-3xl" style={{ color: "var(--cream)" }}>
+            Ils nous font confiance
+          </h2>
+        </div>
+        <div className="relative overflow-hidden">
+          <div className="flex gap-10 marquee-track w-max">
+            {[...partners, ...partners, ...partners, ...partners, ...partners, ...partners, ...partners, ...partners].map((p, i) => (
+              <div
+                key={i}
+                className="shrink-0 h-24 w-24 md:h-28 md:w-28 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-[var(--sand)]"
+              >
+                <img src={p.url} alt={p.name} className="h-full w-full object-cover" loading="lazy" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
