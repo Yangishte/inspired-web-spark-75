@@ -24,6 +24,7 @@ import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 import visilabLogo from "@/assets/partners/visilab.png";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
 
+
 const partners = [
   { name: "LFM La Radio", url: lfmLogo.url, shape: "circle" as const },
   { name: "L'Illustré", url: illustreLogo.url, shape: "rect" as const },
@@ -501,19 +502,48 @@ function Index() {
           {[...partners, ...partners].map((p, i) => (
             <div
               key={i}
-              className={`shrink-0 overflow-hidden ${
+              className={`relative shrink-0 flex items-center justify-center ${
                 p.shape === "circle"
-                  ? "h-24 w-24 md:h-28 md:w-28 rounded-full"
-                  : "h-16 md:h-20 rounded-md"
+                  ? "h-24 w-24 md:h-28 md:w-28"
+                  : "h-16 md:h-20 overflow-hidden rounded-md"
               }`}
               style={p.shape === "rect" ? { aspectRatio: "3 / 1" } : undefined}
             >
-              <img
-                src={p.url}
-                alt={p.name}
-                className={`h-full w-full ${p.shape === "circle" ? "object-cover" : "object-contain px-2"}`}
-                loading="lazy"
-              />
+              {p.shape === "circle" ? (
+                <div className="absolute inset-0 overflow-hidden rounded-full">
+                  <img
+                    src={p.url}
+                    alt={p.name}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <img
+                  src={p.url}
+                  alt={p.name}
+                  className="h-full w-full object-contain px-2"
+                  loading="lazy"
+                />
+              )}
+              {p.name === "LFM La Radio" && (
+                <span
+                  className="relative z-10 flex items-center justify-center animate-zoom-pulse"
+                  aria-hidden
+                >
+                  <span
+                    className="whitespace-nowrap font-marker text-[10px] leading-none tracking-wide"
+                    style={{
+                      writingMode: "vertical-rl",
+                      textOrientation: "mixed",
+                      color: "#ff8da1",
+                      textShadow: "0 1px 3px rgba(0,0,0,0.5)",
+                    }}
+                  >
+                    CLIQUE POUR VOIR L'INTERVIEW !
+                  </span>
+                </span>
+              )}
             </div>
           ))}
           </div>
