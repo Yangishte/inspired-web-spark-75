@@ -26,12 +26,20 @@ import archeNoeLogo from "@/assets/partners/arche-noe.png";
 import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset.json";
 
 
-const partners = [
-  { name: "LFM La Radio", url: lfmLogo.url, shape: "circle" as const, link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", shine: true },
-  { name: "L'Illustré", url: illustreLogo.url, shape: "rect" as const },
-  { name: "Visilab", url: visilabLogo.url, shape: "rect" as const },
-  { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" as const },
-  { name: "Little Green House", url: littleGreenHouseLogo.url, shape: "rect" as const },
+type Partner = {
+  name: string;
+  url: string;
+  shape: "circle" | "rect";
+  link?: string;
+  shine?: boolean;
+};
+
+const partners: Partner[] = [
+  { name: "LFM La Radio", url: lfmLogo.url, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", shine: true },
+  { name: "L'Illustré", url: illustreLogo.url, shape: "rect" },
+  { name: "Visilab", url: visilabLogo.url, shape: "rect" },
+  { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" },
+  { name: "Little Green House", url: littleGreenHouseLogo.url, shape: "rect" },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
