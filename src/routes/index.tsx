@@ -512,14 +512,44 @@ function Index() {
               style={p.shape === "rect" ? { aspectRatio: "3 / 1" } : undefined}
             >
               {p.shape === "circle" ? (
-                <div className="absolute inset-0 overflow-hidden rounded-full">
+                <div className={`absolute inset-0 overflow-hidden rounded-full ${p.shine ? "animate-shimmer-glow" : ""}`}>
+                  {p.link ? (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block h-full w-full"
+                    >
+                      <img
+                        src={p.url}
+                        alt={p.name}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </a>
+                  ) : (
+                    <img
+                      src={p.url}
+                      alt={p.name}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+              ) : p.link ? (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-full w-full items-center justify-center px-2"
+                >
                   <img
                     src={p.url}
                     alt={p.name}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-contain"
                     loading="lazy"
                   />
-                </div>
+                </a>
               ) : (
                 <img
                   src={p.url}
