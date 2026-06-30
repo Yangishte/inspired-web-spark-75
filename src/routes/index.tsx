@@ -21,7 +21,7 @@ import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
 import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
-import visilabLogo from "@/assets/partners/visilab.png";
+import visilabLogo from "@/assets/partners/visilab.jpg.asset.json";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
 import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset.json";
 
@@ -29,7 +29,7 @@ import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset
 const partners = [
   { name: "LFM La Radio", url: lfmLogo.url, shape: "circle" as const },
   { name: "L'Illustré", url: illustreLogo.url, shape: "rect" as const },
-  { name: "Visilab", url: visilabLogo, shape: "rect" as const },
+  { name: "Visilab", url: visilabLogo.url, shape: "rect" as const },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" as const },
   { name: "Little Green House", url: littleGreenHouseLogo.url, shape: "rect" as const },
 ];
