@@ -494,7 +494,7 @@ function Index() {
         </div>
         <div className="relative overflow-hidden">
           <div className="flex gap-10 marquee-track w-max">
-            {[...partners, ...partners, ...partners, ...partners, ...partners, ...partners, ...partners, ...partners].map((p, i) => (
+            {[...partners, ...partners].map((p, i) => (
               <div
                 key={i}
                 className="shrink-0 h-24 w-24 md:h-28 md:w-28 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-[var(--sand)]"
