@@ -20,8 +20,12 @@ import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg.asset.json";
 import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
 import lfmLogo from "@/assets/partners/lfm.png.asset.json";
+import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 
-const partners = [{ name: "LFM La Radio", url: lfmLogo.url }];
+const partners = [
+  { name: "LFM La Radio", url: lfmLogo.url },
+  { name: "L'Illustré", url: illustreLogo.url },
+];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
 
