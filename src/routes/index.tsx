@@ -23,8 +23,8 @@ import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 
 const partners = [
-  { name: "LFM La Radio", url: lfmLogo.url },
-  { name: "L'Illustré", url: illustreLogo.url },
+  { name: "LFM La Radio", url: lfmLogo.url, shape: "circle" as const },
+  { name: "L'Illustré", url: illustreLogo.url, shape: "rect" as const },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
