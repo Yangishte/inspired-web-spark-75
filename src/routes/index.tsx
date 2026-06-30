@@ -23,7 +23,7 @@ import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 import visilabLogo from "@/assets/partners/visilab.png";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
-import interviewImg from "@/assets/clique-pour-voir-interview.png.asset.json";
+
 
 const partners = [
   { name: "LFM La Radio", url: lfmLogo.url, shape: "circle" as const },
