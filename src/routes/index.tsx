@@ -27,7 +27,7 @@ import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset
 
 
 const partners = [
-  { name: "LFM La Radio", url: lfmLogo.url, shape: "circle" as const },
+  { name: "LFM La Radio", url: lfmLogo.url, shape: "circle" as const, link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", shine: true },
   { name: "L'Illustré", url: illustreLogo.url, shape: "rect" as const },
   { name: "Visilab", url: visilabLogo.url, shape: "rect" as const },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" as const },
