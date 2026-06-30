@@ -521,11 +521,12 @@ function Index() {
                   aria-hidden
                 >
                   <span
-                    className="whitespace-nowrap font-marker text-[8px] leading-none tracking-wide drop-shadow-md"
+                    className="whitespace-nowrap font-marker text-[10px] leading-none tracking-wide"
                     style={{
                       writingMode: "vertical-rl",
                       textOrientation: "mixed",
-                      color: "#ffb6c1",
+                      color: "#ff8da1",
+                      textShadow: "0 1px 3px rgba(0,0,0,0.5)",
                     }}
                   >
                     CLIQUE POUR VOIR L'INTERVIEW !
