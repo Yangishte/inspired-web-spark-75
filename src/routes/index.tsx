@@ -23,6 +23,7 @@ import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 import visilabLogo from "@/assets/partners/visilab.png";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
+import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset.json";
 
 
 const partners = [
@@ -30,6 +31,7 @@ const partners = [
   { name: "L'Illustré", url: illustreLogo.url, shape: "rect" as const },
   { name: "Visilab", url: visilabLogo, shape: "rect" as const },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" as const },
+  { name: "Little Green House", url: littleGreenHouseLogo.url, shape: "rect" as const },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
