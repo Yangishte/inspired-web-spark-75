@@ -172,7 +172,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .float-neutral, .float-left, .float-right, .float-soft,
-  .animate-float-hero, .animate-shimmer-glow {
+  .animate-float-hero {
     animation: none !important;
   }
 }
