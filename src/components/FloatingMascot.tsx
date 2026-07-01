@@ -1,71 +1,149 @@
-import { useEffect, useState } from "react";
-import mascotAsset from "@/assets/mascot/plank-mascot.png.asset.json";
+import { useEffect, useRef, useState } from "react";
+import mascotAsset from "@/assets/mascot/mascot.png.asset.json";
+
+const WIDTH_DESKTOP = 100;
+const HEIGHT_DESKTOP = 120;
+const WIDTH_MOBILE = 70;
+const HEIGHT_MOBILE = 84;
+const SPEED_DESKTOP = 1.5 * 60; // px/s, normalisé à 60 FPS (~1.5 px/frame)
+const SPEED_MOBILE = 1 * 60; // px/s, normalisé à 60 FPS (~1 px/frame)
 
 /**
- * Floating plank mascot.
- * - Drifts gently across the viewport on its own (no scroll dependency).
- * - Visible in every section because it is fixed to the viewport.
- * - Slow, small-amplitude motion so it livens the page without blocking content.
+ * Floating mascot — DVD screensaver style.
+ * - Fixed on the viewport, independent of scroll.
+ * - Bounces off the 4 edges of the window.
+ * - Picks a new random direction on every collision.
+ * - Renders at the root level, outside of every page/route.
  */
 export function FloatingMascot() {
-  const [time, setTime] = useState(0);
+  const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const posRef = useRef({ x: 0, y: 0 });
+  const velRef = useRef({ x: 0, y: 0 });
+  const rafRef = useRef<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let raf = 0;
-    let start = performance.now();
+    setMounted(true);
+    const checkMobile = () => window.innerWidth < 768;
+    setIsMobile(checkMobile());
 
-    const tick = (now: number) => {
-      setTime((now - start) / 1000);
-      raf = requestAnimationFrame(tick);
+    const handleResize = () => {
+      setIsMobile(checkMobile());
+      const width = checkMobile() ? WIDTH_MOBILE : WIDTH_DESKTOP;
+      const height = checkMobile() ? HEIGHT_MOBILE : HEIGHT_DESKTOP;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      // Clamp inside the viewport after a resize.
+      posRef.current.x = Math.min(Math.max(posRef.current.x, 0), w - width);
+      posRef.current.y = Math.min(Math.max(posRef.current.y, 0), h - height);
     };
 
-    raf = requestAnimationFrame(tick);
-    return () => {
-      if (raf) cancelAnimationFrame(raf);
-    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Slow, gentle drift along the far right edge: covers the whole page
-  // vertically without crossing the main content area.
-  // Long periods (50–80s) keep the motion calm and unobtrusive.
-  const leftPct = 90 + Math.sin(time * 0.10) * 5;   // 85% .. 95%
-  const topPct = 50 + Math.cos(time * 0.06) * 28;    // 22% .. 78%
-  const tilt = Math.sin(time * 0.07) * 6;            // -6° .. 6°
+  useEffect(() => {
+    if (!mounted) return;
+
+    const speed = isMobile ? SPEED_MOBILE : SPEED_DESKTOP;
+    const width = isMobile ? WIDTH_MOBILE : WIDTH_DESKTOP;
+    const height = isMobile ? HEIGHT_MOBILE : HEIGHT_DESKTOP;
+
+    // Random initial direction.
+    const angle = Math.random() * Math.PI * 2;
+    velRef.current = {
+      x: Math.cos(angle) * speed,
+      y: Math.sin(angle) * speed,
+    };
+    posRef.current = { x: 0, y: 0 };
+
+    let last = performance.now();
+
+    const randomizeDirection = () => {
+      const speed = isMobile ? SPEED_MOBILE : SPEED_DESKTOP;
+      const angle = Math.random() * Math.PI * 2;
+      velRef.current = {
+        x: Math.cos(angle) * speed,
+        y: Math.sin(angle) * speed,
+      };
+    };
+
+    const tick = (now: number) => {
+      const delta = Math.min((now - last) / 1000, 0.05); // cap delta to avoid jumps
+      last = now;
+
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      posRef.current.x += velRef.current.x * delta;
+      posRef.current.y += velRef.current.y * delta;
+
+      // Bounce off the four edges and pick a new random direction each time.
+      if (posRef.current.x <= 0) {
+        posRef.current.x = 0;
+        randomizeDirection();
+        velRef.current.x = Math.abs(velRef.current.x);
+      } else if (posRef.current.x >= w - width) {
+        posRef.current.x = w - width;
+        randomizeDirection();
+        velRef.current.x = -Math.abs(velRef.current.x);
+      }
+
+      if (posRef.current.y <= 0) {
+        posRef.current.y = 0;
+        randomizeDirection();
+        velRef.current.y = Math.abs(velRef.current.y);
+      } else if (posRef.current.y >= h - height) {
+        posRef.current.y = h - height;
+        randomizeDirection();
+        velRef.current.y = -Math.abs(velRef.current.y);
+      }
+
+      if (containerRef.current) {
+        containerRef.current.style.transform = `translate(${posRef.current.x}px, ${posRef.current.y}px)`;
+      }
+
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [mounted, isMobile]);
+
+  if (!mounted) return null;
+
+  const width = isMobile ? WIDTH_MOBILE : WIDTH_DESKTOP;
+  const height = isMobile ? HEIGHT_MOBILE : HEIGHT_DESKTOP;
 
   return (
     <div
+      ref={containerRef}
       aria-hidden
-      className="pointer-events-none fixed z-[60] hidden md:block"
+      className="pointer-events-none fixed"
       style={{
-        left: `${leftPct}%`,
-        top: `${topPct}%`,
-        transform: `translate(-50%, -50%) rotate(${tilt}deg)`,
-        transition:
-          "left 1.4s cubic-bezier(.22,.61,.36,1), top 1.4s cubic-bezier(.22,.61,.36,1), transform 1.4s cubic-bezier(.22,.61,.36,1)",
-        willChange: "left, top, transform",
+        top: 0,
+        left: 0,
+        zIndex: 9999,
+        width,
+        height,
+        willChange: "transform",
       }}
     >
-      <style>{`
-        @keyframes mascot-float {
-          0%, 100% { transform: translateY(0) rotate(0deg); }
-          50%      { transform: translateY(-6px) rotate(2deg); }
-        }
-        .mascot-inner {
-          animation: mascot-float 5s ease-in-out infinite;
-          filter: drop-shadow(0 8px 16px rgba(11,15,42,0.30))
-                  drop-shadow(0 0 12px rgba(232,184,109,0.20));
-        }
-      `}</style>
-      <div className="mascot-inner">
-        <img
-          src={mascotAsset.url}
-          alt=""
-          className="h-auto w-14 lg:w-16 select-none"
-          draggable={false}
-        />
-      </div>
+      <img
+        src={mascotAsset.url}
+        alt=""
+        width={width}
+        height={height}
+        draggable={false}
+        className="select-none"
+        style={{
+          width: `${width}px`,
+          height: `${height}px`,
+          transform: "rotate(-15deg)",
+          display: "block",
+        }}
+      />
     </div>
   );
 }
-
-
