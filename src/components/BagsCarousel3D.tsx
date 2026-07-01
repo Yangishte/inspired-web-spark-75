@@ -198,9 +198,9 @@ function Model({ kind }: { kind: ItemKey }) {
 type SlotPosition = "left" | "center" | "right";
 
 const TARGETS: Record<SlotPosition, { pos: [number, number, number]; rot: [number, number, number]; scale: number }> = {
-  left: { pos: [-2.6, 0, -0.4], rot: [0, 1.2, 0], scale: 0.75 },
+  left: { pos: [-2.6, 0, -0.4], rot: [0, 1.57, 0], scale: 0.75 },
   center: { pos: [0, 0, 0], rot: [0, 0, 0], scale: 1.15 },
-  right: { pos: [2.6, 0, -0.4], rot: [0, -1.2, 0], scale: 0.75 },
+  right: { pos: [2.6, 0, -0.4], rot: [0, -1.57, 0], scale: 0.75 },
 };
 
 function CarouselItem({
