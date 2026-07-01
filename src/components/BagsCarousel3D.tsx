@@ -1,6 +1,11 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
+import toteBagAsset from "@/assets/models/jute-tote-bag.glb.asset.json";
+
+const TOTE_BAG_URL = toteBagAsset.url;
+useGLTF.preload(TOTE_BAG_URL);
 
 type ItemKey = "tote" | "trousse" | "sac";
 
