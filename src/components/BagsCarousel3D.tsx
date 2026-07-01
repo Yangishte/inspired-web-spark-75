@@ -7,19 +7,22 @@ import wm604Asset from "@/assets/models/wm604-tote-bag.glb.asset.json";
 import wm110Asset from "@/assets/models/wm110-drawstring-bag.glb.asset.json";
 import wm101Asset from "@/assets/models/wm101-canvas-tote.glb.asset.json";
 import wm880Asset from "@/assets/models/wm880-beige-backpack.glb.asset.json";
+import wm552Asset from "@/assets/models/wm552-beige-zippered-pouches.glb.asset.json";
 
 const TOTE_BAG_URL = toteBagAsset.url;
 const WM604_URL = wm604Asset.url;
 const WM110_URL = wm110Asset.url;
 const WM101_URL = wm101Asset.url;
 const WM880_URL = wm880Asset.url;
+const WM552_URL = wm552Asset.url;
 useGLTF.preload(TOTE_BAG_URL);
 useGLTF.preload(WM604_URL);
 useGLTF.preload(WM110_URL);
 useGLTF.preload(WM101_URL);
 useGLTF.preload(WM880_URL);
+useGLTF.preload(WM552_URL);
 
-type ItemKey = "tote" | "trousse" | "sac" | "canvas" | "backpack";
+type ItemKey = "tote" | "trousse" | "sac" | "canvas" | "backpack" | "pouches";
 
 const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
   { key: "tote", title: "Tote bag", desc: "Toile écrue, peinte ou brodée à la main." },
@@ -27,6 +30,7 @@ const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
   { key: "sac", title: "Sac cabas WM604", desc: "Un modèle généreux en toile naturelle, prêt à recevoir vos créations." },
   { key: "canvas", title: "Tote bag WM101", desc: "Toile canvas robuste, parfaite pour vos illustrations." },
   { key: "backpack", title: "Sac à dos WM880", desc: "Sac à dos beige en toile, une grande surface pour laisser libre cours à ta créativité." },
+  { key: "pouches", title: "Pochettes WM552", desc: "Trio de pochettes zippées en toile beige, parfait pour organiser vos petits essentiels." },
 ];
 
 
@@ -153,11 +157,36 @@ function Backpack() {
   return <primitive object={cloned} />;
 }
 
+function ZipperedPouches() {
+  const { scene } = useGLTF(WM552_URL);
+  const cloned = useMemo(() => {
+    const s = scene.clone(true);
+    const box = new THREE.Box3().setFromObject(s);
+    const size = new THREE.Vector3();
+    const center = new THREE.Vector3();
+    box.getSize(size);
+    box.getCenter(center);
+    s.position.sub(center);
+    const target = 1.5;
+    const scale = target / Math.max(size.x, size.y, size.z);
+    s.scale.setScalar(scale);
+    s.traverse((o) => {
+      if ((o as THREE.Mesh).isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+      }
+    });
+    return s;
+  }, [scene]);
+  return <primitive object={cloned} />;
+}
+
 function Model({ kind }: { kind: ItemKey }) {
   if (kind === "tote") return <ToteBag />;
   if (kind === "trousse") return <Trousse />;
   if (kind === "canvas") return <CanvasTote />;
   if (kind === "backpack") return <Backpack />;
+  if (kind === "pouches") return <ZipperedPouches />;
   return <SacADos />;
 }
 
