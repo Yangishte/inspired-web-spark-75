@@ -49,19 +49,27 @@ function ToteBag() {
 }
 
 function Trousse() {
-  return (
-    <group>
-      <mesh castShadow receiveShadow>
-        <capsuleGeometry args={[0.35, 1.1, 8, 24]} />
-        <meshStandardMaterial color="#c89f7b" roughness={0.9} />
-      </mesh>
-      {/* zip */}
-      <mesh position={[0, 0.36, 0]} rotation={[0, 0, Math.PI / 2]}>
-        <cylinderGeometry args={[0.015, 0.015, 1.05, 12]} />
-        <meshStandardMaterial color="#6b4a2e" roughness={0.6} metalness={0.3} />
-      </mesh>
-    </group>
-  );
+  const { scene } = useGLTF(WM110_URL);
+  const cloned = useMemo(() => {
+    const s = scene.clone(true);
+    const box = new THREE.Box3().setFromObject(s);
+    const size = new THREE.Vector3();
+    const center = new THREE.Vector3();
+    box.getSize(size);
+    box.getCenter(center);
+    s.position.sub(center);
+    const target = 1.5;
+    const scale = target / Math.max(size.x, size.y, size.z);
+    s.scale.setScalar(scale);
+    s.traverse((o) => {
+      if ((o as THREE.Mesh).isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+      }
+    });
+    return s;
+  }, [scene]);
+  return <primitive object={cloned} />;
 }
 
 function SacADos() {
