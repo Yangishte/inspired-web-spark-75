@@ -278,7 +278,8 @@ function Index() {
       {/* ATELIER BAND */}
       <section
         id="atelier"
-        className="relative border-y-2"
+        data-reveal="fade-up"
+        className="reveal relative border-y-2"
         style={{ borderColor: "var(--clay)", background: "var(--sand)" }}
       >
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
