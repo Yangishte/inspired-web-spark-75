@@ -48,10 +48,10 @@ export function FloatingMascot() {
       <style>{`
         @keyframes mascot-float {
           0%, 100% { transform: translateY(0) rotate(0deg); }
-          50%      { transform: translateY(-8px) rotate(2.5deg); }
+          50%      { transform: translateY(-6px) rotate(2deg); }
         }
         .mascot-inner {
-          animation: mascot-float 4s ease-in-out infinite;
+          animation: mascot-float 5s ease-in-out infinite;
           filter: drop-shadow(0 8px 16px rgba(11,15,42,0.30))
                   drop-shadow(0 0 12px rgba(232,184,109,0.20));
         }
