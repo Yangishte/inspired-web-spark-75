@@ -320,7 +320,7 @@ export default function BagsCarousel3D() {
 
         {/* libellé courant intégré au carousel */}
         <div
-          className="absolute bottom-0 left-0 right-0 z-10 px-6 py-5 text-center"
+          className="absolute bottom-0 left-0 right-0 z-10 flex h-24 flex-col items-center justify-center px-6 py-3 text-center md:h-28"
           style={{
             background: "rgba(255, 253, 247, 0.82)",
             backdropFilter: "blur(4px)",
@@ -330,7 +330,7 @@ export default function BagsCarousel3D() {
           <h3 className="font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
             {current.title}
           </h3>
-          <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed md:text-base" style={{ color: "var(--cocoa)" }}>
+          <p className="mx-auto mt-1 max-w-md line-clamp-2 text-sm leading-relaxed md:text-base" style={{ color: "var(--cocoa)" }}>
             {current.desc}
           </p>
         </div>
