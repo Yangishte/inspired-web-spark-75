@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import mascotAsset from "@/assets/mascot/mascot.png.asset.json";
 
-const WIDTH_DESKTOP = 100;
-const HEIGHT_DESKTOP = 120;
-const WIDTH_MOBILE = 70;
-const HEIGHT_MOBILE = 84;
+const WIDTH_DESKTOP = 60;
+const HEIGHT_DESKTOP = 88;
+const WIDTH_MOBILE = 42;
+const HEIGHT_MOBILE = 62;
 const SPEED_DESKTOP = 1.5 * 60; // px/s, normalisé à 60 FPS (~1.5 px/frame)
 const SPEED_MOBILE = 1 * 60; // px/s, normalisé à 60 FPS (~1 px/frame)
 
@@ -14,6 +14,7 @@ const SPEED_MOBILE = 1 * 60; // px/s, normalisé à 60 FPS (~1 px/frame)
  * - Bounces off the 4 edges of the window.
  * - Picks a new random direction on every collision.
  * - Renders at the root level, outside of every page/route.
+ * - Image is preserved (object-fit: contain) so the PNG is never stretched.
  */
 export function FloatingMascot() {
   const [mounted, setMounted] = useState(false);
@@ -130,20 +131,32 @@ export function FloatingMascot() {
         willChange: "transform",
       }}
     >
-      <img
-        src={mascotAsset.url}
-        alt=""
-        width={width}
-        height={height}
-        draggable={false}
-        className="select-none"
-        style={{
-          width: `${width}px`,
-          height: `${height}px`,
-          transform: "rotate(-15deg)",
-          display: "block",
-        }}
-      />
+      <style>{`
+        @keyframes mascot-tilt {
+          0%, 100% { transform: rotate(-3deg); }
+          50% { transform: rotate(3deg); }
+        }
+        .mascot-inner {
+          animation: mascot-tilt 5s ease-in-out infinite;
+          transform-origin: center center;
+        }
+      `}</style>
+      <div className="mascot-inner" style={{ width: "100%", height: "100%" }}>
+        <img
+          src={mascotAsset.url}
+          alt=""
+          width={width}
+          height={height}
+          draggable={false}
+          className="select-none"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
+      </div>
     </div>
   );
 }
