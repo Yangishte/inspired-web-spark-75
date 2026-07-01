@@ -8,6 +8,8 @@ import wm110Asset from "@/assets/models/wm110-drawstring-bag.glb.asset.json";
 import wm101Asset from "@/assets/models/wm101-canvas-tote.glb.asset.json";
 import wm880Asset from "@/assets/models/wm880-beige-backpack.glb.asset.json";
 import wm552Asset from "@/assets/models/wm552-beige-zippered-pouches.glb.asset.json";
+import bgRoom from "@/assets/backgrounds/bar-a-custom-room.png.asset.json";
+
 
 const TOTE_BAG_URL = toteBagAsset.url;
 const WM604_URL = wm604Asset.url;
