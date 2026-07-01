@@ -25,11 +25,12 @@ export function FloatingMascot() {
     };
   }, []);
 
-  // Slow, independent Lissajous-style drift across the whole viewport.
-  // Long periods (50–70s) keep the motion calm and unobtrusive.
-  const leftPct = 50 + Math.sin(time * 0.10) * 35;   // 15% .. 85%
-  const topPct = 50 + Math.cos(time * 0.08) * 30;    // 20% .. 80%
-  const tilt = Math.sin(time * 0.12) * 8;             // -8° .. 8°
+  // Slow, gentle drift: mostly along the right edge so it stays out of the
+  // main content, while still covering the whole page vertically.
+  // Long periods (50–80s) make the motion calm and unobtrusive.
+  const leftPct = 82 + Math.sin(time * 0.08) * 10;  // 72% .. 92%
+  const topPct = 50 + Math.cos(time * 0.06) * 28;    // 22% .. 78%
+  const tilt = Math.sin(time * 0.07) * 6;            // -6° .. 6°
 
   return (
     <div
