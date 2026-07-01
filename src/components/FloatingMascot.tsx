@@ -1,59 +1,36 @@
 import { useEffect, useState } from "react";
-import mascotImg from "@/assets/mascot/plank-no-helmet.png";
+import mascotAsset from "@/assets/mascot/plank-mascot.png.asset.json";
 
 /**
- * Floating wooden plank mascot (no helmet) drifting around the site.
- * - Fixed on the viewport so it appears in every section.
- * - Scroll-driven horizontal/vertical sway plus a continuous time-based drift.
- * - CSS bobbing + rotation keeps it in motion even when the page isn't scrolling.
+ * Floating plank mascot.
+ * - Drifts gently across the viewport on its own (no scroll dependency).
+ * - Visible in every section because it is fixed to the viewport.
+ * - Slow, small-amplitude motion so it livens the page without blocking content.
  */
 export function FloatingMascot() {
-  const [scrollY, setScrollY] = useState(0);
   const [time, setTime] = useState(0);
 
   useEffect(() => {
-    let scrollRaf = 0;
-    let timeRaf = 0;
+    let raf = 0;
     let start = performance.now();
-
-    const onScroll = () => {
-      if (scrollRaf) return;
-      scrollRaf = requestAnimationFrame(() => {
-        setScrollY(window.scrollY);
-        scrollRaf = 0;
-      });
-    };
 
     const tick = (now: number) => {
       setTime((now - start) / 1000);
-      timeRaf = requestAnimationFrame(tick);
+      raf = requestAnimationFrame(tick);
     };
 
-    onScroll();
-    timeRaf = requestAnimationFrame(tick);
-    window.addEventListener("scroll", onScroll, { passive: true });
-
+    raf = requestAnimationFrame(tick);
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (scrollRaf) cancelAnimationFrame(scrollRaf);
-      if (timeRaf) cancelAnimationFrame(timeRaf);
+      if (raf) cancelAnimationFrame(raf);
     };
   }, []);
 
-  // Scroll-driven sway: horizontal 5% .. 85%, vertical 18% .. 78%.
-  const swayPhase = (scrollY / 600) % (Math.PI * 2);
-  const scrollLeft = 45 + Math.sin(swayPhase) * 38;
-  const scrollTop = 20 + ((Math.cos(swayPhase * 0.7) + 1) / 2) * 55;
-  const scrollTilt = Math.sin(swayPhase) * 10;
-
-  // Continuous time-based drift so it never stays perfectly still.
-  const driftLeft = Math.sin(time * 0.4) * 3; // +/- 3%
-  const driftTop = Math.cos(time * 0.35) * 4; // +/- 4%
-  const driftRotate = Math.sin(time * 0.6) * 6;
-
-  const leftPct = scrollLeft + driftLeft;
-  const topPct = scrollTop + driftTop;
-  const tilt = scrollTilt + driftRotate;
+  // Slow, gentle drift along the far right edge: covers the whole page
+  // vertically without crossing the main content area.
+  // Long periods (50–80s) keep the motion calm and unobtrusive.
+  const leftPct = 90 + Math.sin(time * 0.10) * 5;   // 85% .. 95%
+  const topPct = 50 + Math.cos(time * 0.06) * 28;    // 22% .. 78%
+  const tilt = Math.sin(time * 0.07) * 6;            // -6° .. 6°
 
   return (
     <div
@@ -64,32 +41,31 @@ export function FloatingMascot() {
         top: `${topPct}%`,
         transform: `translate(-50%, -50%) rotate(${tilt}deg)`,
         transition:
-          "left 700ms cubic-bezier(.22,.61,.36,1), top 700ms cubic-bezier(.22,.61,.36,1), transform 700ms cubic-bezier(.22,.61,.36,1)",
+          "left 1.4s cubic-bezier(.22,.61,.36,1), top 1.4s cubic-bezier(.22,.61,.36,1), transform 1.4s cubic-bezier(.22,.61,.36,1)",
         willChange: "left, top, transform",
       }}
     >
       <style>{`
         @keyframes mascot-float {
           0%, 100% { transform: translateY(0) rotate(0deg); }
-          25%      { transform: translateY(-10px) rotate(2.5deg); }
-          50%      { transform: translateY(-18px) rotate(0deg); }
-          75%      { transform: translateY(-8px) rotate(-2.5deg); }
+          50%      { transform: translateY(-6px) rotate(2deg); }
         }
         .mascot-inner {
-          animation: mascot-float 3.2s ease-in-out infinite;
-          filter: drop-shadow(0 10px 20px rgba(11,15,42,0.35))
-                  drop-shadow(0 0 14px rgba(232,184,109,0.25));
+          animation: mascot-float 5s ease-in-out infinite;
+          filter: drop-shadow(0 8px 16px rgba(11,15,42,0.30))
+                  drop-shadow(0 0 12px rgba(232,184,109,0.20));
         }
       `}</style>
       <div className="mascot-inner">
         <img
-          src={mascotImg}
+          src={mascotAsset.url}
           alt=""
-          className="h-auto w-16 lg:w-20 select-none"
+          className="h-auto w-14 lg:w-16 select-none"
           draggable={false}
         />
       </div>
     </div>
   );
 }
+
 
