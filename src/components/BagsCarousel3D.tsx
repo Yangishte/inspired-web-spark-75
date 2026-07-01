@@ -298,12 +298,33 @@ export default function BagsCarousel3D() {
           height: isMobile ? 520 : 460,
         }}
       >
+        {/* Background image blurred */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${bgRoom.url})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "blur(14px) saturate(1.05)",
+            transform: "scale(1.1)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(246,236,217,0.55) 0%, rgba(237,224,196,0.65) 100%)",
+          }}
+        />
         {mounted && (
           <Canvas
             shadows
             dpr={[1, 2]}
             camera={{ position: [0, 0.5, isMobile ? 5.8 : 5.2], fov: isMobile ? 42 : 38 }}
-            gl={{ antialias: true }}
+            gl={{ antialias: true, alpha: true }}
+            style={{ position: "relative", background: "transparent" }}
           >
             <Suspense fallback={null}>
               <Scene activeIndex={active} />
@@ -311,6 +332,7 @@ export default function BagsCarousel3D() {
           </Canvas>
         )}
       </div>
+
 
       {/* contrôles */}
       <div className="mt-6 flex items-center justify-center gap-6">
