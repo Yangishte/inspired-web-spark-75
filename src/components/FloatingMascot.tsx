@@ -25,10 +25,10 @@ export function FloatingMascot() {
     };
   }, []);
 
-  // Slow, gentle drift: mostly along the right edge so it stays out of the
-  // main content, while still covering the whole page vertically.
-  // Long periods (50–80s) make the motion calm and unobtrusive.
-  const leftPct = 82 + Math.sin(time * 0.08) * 10;  // 72% .. 92%
+  // Slow, gentle drift along the far right edge: covers the whole page
+  // vertically without crossing the main content area.
+  // Long periods (50–80s) keep the motion calm and unobtrusive.
+  const leftPct = 90 + Math.sin(time * 0.10) * 5;   // 85% .. 95%
   const topPct = 50 + Math.cos(time * 0.06) * 28;    // 22% .. 78%
   const tilt = Math.sin(time * 0.07) * 6;            // -6° .. 6°
 
