@@ -614,6 +614,14 @@ function Index() {
 
       {/* SERVICES — Carrousel 3D */}
       <section id="services" data-reveal="flip-up" className="reveal relative z-10 mx-auto max-w-6xl px-6 py-28">
+        <img
+          src={goodDayTote.url}
+          alt="Tote bag Have a Good Day peint à la main"
+          data-reveal="fade-left"
+          className="reveal pointer-events-none absolute left-0 top-1/2 hidden -translate-y-1/2 lg:block xl:-left-8"
+          style={{ width: "clamp(180px, 22vw, 320px)" }}
+          loading="lazy"
+        />
         <div className="mb-12 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Choisis ton support ↓</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
@@ -622,6 +630,7 @@ function Index() {
         </div>
         <BagsCarousel3D />
       </section>
+
 
 
       {/* TARIFS */}
