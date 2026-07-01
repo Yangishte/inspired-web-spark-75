@@ -263,12 +263,6 @@ function Scene({ activeIndex }: { activeIndex: number }) {
       <CarouselItem kind={ITEMS[left].key} slot="left" isCenter={false} />
       <CarouselItem kind={ITEMS[activeIndex].key} slot="center" isCenter />
       <CarouselItem kind={ITEMS[right].key} slot="right" isCenter={false} />
-
-      {/* sol discret */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.1, 0]} receiveShadow>
-        <circleGeometry args={[5, 64]} />
-        <meshStandardMaterial color="#f0e6d2" roughness={1} />
-      </mesh>
     </>
   );
 }
