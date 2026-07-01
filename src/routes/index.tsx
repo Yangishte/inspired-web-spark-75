@@ -336,7 +336,7 @@ function Index() {
       </section>
 
       {/* ÉVÉNEMENTS */}
-      <section id="evenements" className="relative z-10 mx-auto max-w-6xl px-6 py-28">
+      <section id="evenements" data-reveal="zoom-in" className="reveal relative z-10 mx-auto max-w-6xl px-6 py-28">
         <div className="mb-10 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Réserve ta place ↓</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
