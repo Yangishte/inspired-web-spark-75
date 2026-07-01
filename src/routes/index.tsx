@@ -28,6 +28,7 @@ import clientCherry from "@/assets/clients/client-cherry.png.asset.json";
 import clientDolphin from "@/assets/clients/client-dolphin.png.asset.json";
 import clientLemon from "@/assets/clients/client-lemon.png.asset.json";
 import clientBordel from "@/assets/clients/client-bordel.png.asset.json";
+import clientRockpaper from "@/assets/clients/client-rockpaper.png.asset.json";
 
 
 type Partner = {
@@ -833,22 +834,9 @@ function Index() {
         className="reveal relative z-10 py-28"
         style={{ background: "var(--cream)", overflow: "visible" }}
       >
-        {/* Créations clients qui apparaissent/disparaissent */}
-        {[
-          { src: clientCherry.url, alt: "Sac cerises peint main", cls: "left-[-2%] top-5 w-28 md:w-36", rot: "-8deg", delay: "0s" },
-          { src: clientDolphin.url, alt: "Trousse dauphins peinte main", cls: "right-[-1%] top-2 w-28 md:w-40", rot: "10deg", delay: "3s" },
-          { src: clientLemon.url, alt: "Sac citrons peint main", cls: "left-[6%] bottom-[-3%] w-24 md:w-32", rot: "6deg", delay: "6s" },
-          { src: clientBordel.url, alt: "Trousse Mon bordel artistique", cls: "right-[4%] bottom-[-2%] w-28 md:w-40", rot: "-6deg", delay: "9s" },
-        ].map((img) => (
-          <img
-            key={img.src}
-            src={img.src}
-            alt={img.alt}
-            aria-hidden="true"
-            className={`pointer-events-none absolute z-0 client-peek hidden sm:block ${img.cls}`}
-            style={{ ["--peek-rot" as string]: img.rot, animationDelay: img.delay }}
-          />
-        ))}
+        {/* Créations clients qui apparaissent/disparaissent — positions permutées à chaque cycle */}
+        <ClientPeeks />
+
 
         <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Prends ton créneau</span>
