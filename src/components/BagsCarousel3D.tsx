@@ -3,16 +3,19 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import toteBagAsset from "@/assets/models/jute-tote-bag.glb.asset.json";
+import wm604Asset from "@/assets/models/wm604-tote-bag.glb.asset.json";
 
 const TOTE_BAG_URL = toteBagAsset.url;
+const WM604_URL = wm604Asset.url;
 useGLTF.preload(TOTE_BAG_URL);
+useGLTF.preload(WM604_URL);
 
 type ItemKey = "tote" | "trousse" | "sac";
 
 const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
   { key: "tote", title: "Tote bag", desc: "Toile écrue, peinte ou brodée à la main." },
   { key: "trousse", title: "Trousse", desc: "Format compact, parfaite pour s'initier au custom." },
-  { key: "sac", title: "Sac à dos", desc: "Une toile généreuse pour les pièces ambitieuses." },
+  { key: "sac", title: "Sac cabas WM604", desc: "Un modèle généreux en toile naturelle, prêt à recevoir vos créations." },
 ];
 
 /* ============== Placeholder GLB-like meshes ============== */
@@ -59,34 +62,27 @@ function Trousse() {
 }
 
 function SacADos() {
-  return (
-    <group>
-      {/* corps */}
-      <mesh castShadow receiveShadow>
-        <boxGeometry args={[1.1, 1.5, 0.55]} />
-        <meshStandardMaterial color="#b89373" roughness={0.95} />
-      </mesh>
-      {/* poche avant */}
-      <mesh position={[0, -0.25, 0.3]}>
-        <boxGeometry args={[0.8, 0.6, 0.12]} />
-        <meshStandardMaterial color="#a07e60" roughness={0.95} />
-      </mesh>
-      {/* bretelles */}
-      <mesh position={[-0.35, 0.4, -0.32]}>
-        <boxGeometry args={[0.12, 0.9, 0.06]} />
-        <meshStandardMaterial color="#7a5a3e" roughness={0.9} />
-      </mesh>
-      <mesh position={[0.35, 0.4, -0.32]}>
-        <boxGeometry args={[0.12, 0.9, 0.06]} />
-        <meshStandardMaterial color="#7a5a3e" roughness={0.9} />
-      </mesh>
-      {/* poignée */}
-      <mesh position={[0, 0.85, -0.2]}>
-        <torusGeometry args={[0.12, 0.03, 12, 24, Math.PI]} />
-        <meshStandardMaterial color="#7a5a3e" roughness={0.9} />
-      </mesh>
-    </group>
-  );
+  const { scene } = useGLTF(WM604_URL);
+  const cloned = useMemo(() => {
+    const s = scene.clone(true);
+    const box = new THREE.Box3().setFromObject(s);
+    const size = new THREE.Vector3();
+    const center = new THREE.Vector3();
+    box.getSize(size);
+    box.getCenter(center);
+    s.position.sub(center);
+    const target = 1.5;
+    const scale = target / Math.max(size.x, size.y, size.z);
+    s.scale.setScalar(scale);
+    s.traverse((o) => {
+      if ((o as THREE.Mesh).isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+      }
+    });
+    return s;
+  }, [scene]);
+  return <primitive object={cloned} />;
 }
 
 function Model({ kind }: { kind: ItemKey }) {
