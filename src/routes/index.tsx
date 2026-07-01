@@ -520,12 +520,14 @@ function Index() {
                       </p>
                     </div>
                   )}
-                  <div
-                    className="absolute bottom-3 right-3 rounded-full px-3 py-1 font-marker text-xs"
-                    style={{ background: "var(--cocoa)", color: "var(--cream)" }}
-                  >
-                    Voir sur Instagram ↗
-                  </div>
+                  {e.instagramUrl && (
+                    <div
+                      className="absolute bottom-3 right-3 rounded-full px-3 py-1 font-marker text-xs"
+                      style={{ background: "var(--cocoa)", color: "var(--cream)" }}
+                    >
+                      Voir sur Instagram ↗
+                    </div>
+                  )}
                 </a>
               </div>
             </div>
