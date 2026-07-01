@@ -751,7 +751,7 @@ function Index() {
         <div className="rounded-3xl border-2 p-4 md:p-8" style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}>
           <Accordion type="single" collapsible className="w-full space-y-2">
             {[
-              { q: "Où ?", a: (
+              { q: "📍 Où ?", a: (
                 <div className="space-y-1">
                   <p>Rue Centre 37</p>
                   <p>1025 St-Sulpice</p>
@@ -769,11 +769,11 @@ function Index() {
                   </div>
                 </div>
               ) },
-              { q: "Tarifs ?", a: "Adulte : CHF 49.- · Enfant : CHF 39.-" },
-              { q: "Durée ?", a: "2 heures avec boisson offertes !" },
-              { q: "Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
+              { q: "💰 Tarifs ?", a: "Adulte : CHF 49.- · Enfant : CHF 39.-" },
+              { q: "⏱️ Durée ?", a: "2 heures avec boisson offertes !" },
+              { q: "👜 Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
               {
-                q: "Réseaux sociaux ?",
+                q: "📱 Réseaux sociaux ?",
                 a: (
                   <>
                     Instagram{" "}
@@ -790,7 +790,7 @@ function Index() {
                   </>
                 ),
               },
-              { q: "Ensuite ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
+              { q: "✨ Ensuite ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
             ].map((item) => (
               <AccordionItem key={item.q} value={item.q} className="border-0">
                 <AccordionTrigger 
