@@ -317,6 +317,23 @@ export default function BagsCarousel3D() {
             </Suspense>
           </Canvas>
         )}
+
+        {/* libellé courant intégré au carousel */}
+        <div
+          className="absolute bottom-0 left-0 right-0 z-10 px-6 py-5 text-center"
+          style={{
+            background: "rgba(255, 253, 247, 0.82)",
+            backdropFilter: "blur(4px)",
+            borderTop: "2px solid var(--cocoa)",
+          }}
+        >
+          <h3 className="font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
+            {current.title}
+          </h3>
+          <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed md:text-base" style={{ color: "var(--cocoa)" }}>
+            {current.desc}
+          </p>
+        </div>
       </div>
 
 
@@ -355,16 +372,6 @@ export default function BagsCarousel3D() {
         >
           ›
         </button>
-      </div>
-
-      {/* libellé courant */}
-      <div className="mt-8 text-center">
-        <h3 className="font-display text-3xl" style={{ color: "var(--cocoa)" }}>
-          {current.title}
-        </h3>
-        <p className="mx-auto mt-3 max-w-md text-base leading-relaxed" style={{ color: "var(--cocoa)" }}>
-          {current.desc}
-        </p>
       </div>
     </div>
   );
