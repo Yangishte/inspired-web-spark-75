@@ -373,16 +373,6 @@ export default function BagsCarousel3D() {
           ›
         </button>
       </div>
-
-      {/* libellé courant */}
-      <div className="mt-8 text-center">
-        <h3 className="font-display text-3xl" style={{ color: "var(--cocoa)" }}>
-          {current.title}
-        </h3>
-        <p className="mx-auto mt-3 max-w-md text-base leading-relaxed" style={{ color: "var(--cocoa)" }}>
-          {current.desc}
-        </p>
-      </div>
     </div>
   );
 }
