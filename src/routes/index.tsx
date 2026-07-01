@@ -811,7 +811,8 @@ function Index() {
       {/* RESERVER */}
       <section
         id="reserver"
-        className="relative z-10 py-28"
+        data-reveal="rotate-in"
+        className="reveal relative z-10 py-28"
         style={{ background: "var(--cream)" }}
       >
         <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
