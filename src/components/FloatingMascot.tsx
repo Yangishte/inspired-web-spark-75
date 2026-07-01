@@ -9,7 +9,6 @@ import mascotImg from "@/assets/mascot/plank-no-helmet.png";
  */
 export function FloatingMascot() {
   const [scrollY, setScrollY] = useState(0);
-  const [vh, setVh] = useState(800);
   const [time, setTime] = useState(0);
 
   useEffect(() => {
@@ -25,22 +24,17 @@ export function FloatingMascot() {
       });
     };
 
-    const onResize = () => setVh(window.innerHeight);
-
     const tick = (now: number) => {
       setTime((now - start) / 1000);
       timeRaf = requestAnimationFrame(tick);
     };
 
-    onResize();
     onScroll();
     timeRaf = requestAnimationFrame(tick);
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
       if (scrollRaf) cancelAnimationFrame(scrollRaf);
       if (timeRaf) cancelAnimationFrame(timeRaf);
     };
