@@ -101,11 +101,37 @@ function SacADos() {
   return <primitive object={cloned} />;
 }
 
+function CanvasTote() {
+  const { scene } = useGLTF(WM101_URL);
+  const cloned = useMemo(() => {
+    const s = scene.clone(true);
+    const box = new THREE.Box3().setFromObject(s);
+    const size = new THREE.Vector3();
+    const center = new THREE.Vector3();
+    box.getSize(size);
+    box.getCenter(center);
+    s.position.sub(center);
+    const target = 1.5;
+    const scale = target / Math.max(size.x, size.y, size.z);
+    s.scale.setScalar(scale);
+    s.traverse((o) => {
+      if ((o as THREE.Mesh).isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+      }
+    });
+    return s;
+  }, [scene]);
+  return <primitive object={cloned} />;
+}
+
 function Model({ kind }: { kind: ItemKey }) {
   if (kind === "tote") return <ToteBag />;
   if (kind === "trousse") return <Trousse />;
+  if (kind === "canvas") return <CanvasTote />;
   return <SacADos />;
 }
+
 
 /* ============== Slot wrapper with smooth lerp ============== */
 
