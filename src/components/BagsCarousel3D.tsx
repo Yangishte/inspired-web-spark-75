@@ -8,6 +8,8 @@ import wm110Asset from "@/assets/models/wm110-drawstring-bag.glb.asset.json";
 import wm101Asset from "@/assets/models/wm101-canvas-tote.glb.asset.json";
 import wm880Asset from "@/assets/models/wm880-beige-backpack.glb.asset.json";
 import wm552Asset from "@/assets/models/wm552-beige-zippered-pouches.glb.asset.json";
+import bgRoom from "@/assets/backgrounds/bar-a-custom-room.png.asset.json";
+
 
 const TOTE_BAG_URL = toteBagAsset.url;
 const WM604_URL = wm604Asset.url;
@@ -298,12 +300,33 @@ export default function BagsCarousel3D() {
           height: isMobile ? 520 : 460,
         }}
       >
+        {/* Background image blurred */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${bgRoom.url})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "blur(14px) saturate(1.05)",
+            transform: "scale(1.1)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(246,236,217,0.55) 0%, rgba(237,224,196,0.65) 100%)",
+          }}
+        />
         {mounted && (
           <Canvas
             shadows
             dpr={[1, 2]}
             camera={{ position: [0, 0.5, isMobile ? 5.8 : 5.2], fov: isMobile ? 42 : 38 }}
-            gl={{ antialias: true }}
+            gl={{ antialias: true, alpha: true }}
+            style={{ position: "relative", background: "transparent" }}
           >
             <Suspense fallback={null}>
               <Scene activeIndex={active} />
@@ -311,6 +334,7 @@ export default function BagsCarousel3D() {
           </Canvas>
         )}
       </div>
+
 
       {/* contrôles */}
       <div className="mt-6 flex items-center justify-center gap-6">
