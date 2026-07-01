@@ -263,12 +263,6 @@ function Scene({ activeIndex }: { activeIndex: number }) {
       <CarouselItem kind={ITEMS[left].key} slot="left" isCenter={false} />
       <CarouselItem kind={ITEMS[activeIndex].key} slot="center" isCenter />
       <CarouselItem kind={ITEMS[right].key} slot="right" isCenter={false} />
-
-      {/* sol discret */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.1, 0]} receiveShadow>
-        <circleGeometry args={[5, 64]} />
-        <meshStandardMaterial color="#f0e6d2" roughness={1} />
-      </mesh>
     </>
   );
 }
@@ -300,7 +294,7 @@ export default function BagsCarousel3D() {
           height: isMobile ? 520 : 460,
         }}
       >
-        {/* Background image blurred */}
+        {/* Background image */}
         <div
           aria-hidden
           className="absolute inset-0"
@@ -308,16 +302,6 @@ export default function BagsCarousel3D() {
             backgroundImage: `url(${bgRoom.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "blur(14px) saturate(1.05)",
-            transform: "scale(1.1)",
-          }}
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(246,236,217,0.55) 0%, rgba(237,224,196,0.65) 100%)",
           }}
         />
         {mounted && (
