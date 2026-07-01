@@ -7,19 +7,22 @@ import wm604Asset from "@/assets/models/wm604-tote-bag.glb.asset.json";
 import wm110Asset from "@/assets/models/wm110-drawstring-bag.glb.asset.json";
 import wm101Asset from "@/assets/models/wm101-canvas-tote.glb.asset.json";
 import wm880Asset from "@/assets/models/wm880-beige-backpack.glb.asset.json";
+import wm552Asset from "@/assets/models/wm552-beige-zippered-pouches.glb.asset.json";
 
 const TOTE_BAG_URL = toteBagAsset.url;
 const WM604_URL = wm604Asset.url;
 const WM110_URL = wm110Asset.url;
 const WM101_URL = wm101Asset.url;
 const WM880_URL = wm880Asset.url;
+const WM552_URL = wm552Asset.url;
 useGLTF.preload(TOTE_BAG_URL);
 useGLTF.preload(WM604_URL);
 useGLTF.preload(WM110_URL);
 useGLTF.preload(WM101_URL);
 useGLTF.preload(WM880_URL);
+useGLTF.preload(WM552_URL);
 
-type ItemKey = "tote" | "trousse" | "sac" | "canvas" | "backpack";
+type ItemKey = "tote" | "trousse" | "sac" | "canvas" | "backpack" | "pouches";
 
 const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
   { key: "tote", title: "Tote bag", desc: "Toile écrue, peinte ou brodée à la main." },
@@ -27,6 +30,7 @@ const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
   { key: "sac", title: "Sac cabas WM604", desc: "Un modèle généreux en toile naturelle, prêt à recevoir vos créations." },
   { key: "canvas", title: "Tote bag WM101", desc: "Toile canvas robuste, parfaite pour vos illustrations." },
   { key: "backpack", title: "Sac à dos WM880", desc: "Sac à dos beige en toile, une grande surface pour laisser libre cours à ta créativité." },
+  { key: "pouches", title: "Pochettes WM552", desc: "Trio de pochettes zippées en toile beige, parfait pour organiser vos petits essentiels." },
 ];
 
 
