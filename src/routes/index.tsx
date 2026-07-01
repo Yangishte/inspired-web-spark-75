@@ -89,46 +89,71 @@ const CLIENT_IMAGES = [
   { src: clientRockpaper.url, alt: "Sac Rock Paper Scissors chats peint main" },
 ];
 
-const CLIENT_SLOTS = [
-  { cls: "left-[-2%] top-10 w-20 md:w-32", rot: "-8deg", delay: "0s" },
-  { cls: "right-[-2%] top-8 w-20 md:w-32", rot: "10deg", delay: "5s" },
-  { cls: "left-[38%] top-2 md:-top-8 w-20 md:w-28", rot: "-4deg", delay: "10s" },
+const POSITIONS = [
+  { cls: "left-[-2%] top-6 w-20 md:w-32", rot: "-8deg" },
+  { cls: "right-[-2%] top-4 w-20 md:w-32", rot: "10deg" },
+  { cls: "left-[36%] top-2 w-20 md:w-28", rot: "-4deg" },
+  { cls: "left-[-2%] bottom-6 w-20 md:w-32", rot: "6deg" },
+  { cls: "right-[-2%] bottom-4 w-20 md:w-32", rot: "-6deg" },
+  { cls: "left-[38%] bottom-2 w-20 md:w-28", rot: "4deg" },
 ];
 
+function shuffle<T>(array: T[]): T[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 function ClientPeeks() {
-  const [order, setOrder] = useState<number[]>(() => {
-    const arr = CLIENT_IMAGES.map((_, i) => i);
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr.slice(0, CLIENT_SLOTS.length);
+  const [slots, setSlots] = useState<{ image: number; position: number }[]>(() => {
+    const images = shuffle(CLIENT_IMAGES.map((_, i) => i));
+    const positions = shuffle(POSITIONS.map((_, i) => i));
+    return Array.from({ length: 3 }, (_, i) => ({ image: images[i], position: positions[i] }));
   });
 
   const cycleSlot = (slotIdx: number) => {
-    setOrder((prev) => {
-      const used = new Set(prev);
-      const available = CLIENT_IMAGES.map((_, i) => i).filter((i) => !used.has(i));
-      const pool = available.length ? available : CLIENT_IMAGES.map((_, i) => i).filter((i) => i !== prev[slotIdx]);
-      const next = pool[Math.floor(Math.random() * pool.length)];
+    setSlots((prev) => {
+      const currentImages = prev.map((s) => s.image);
+      const currentPositions = prev.map((s) => s.position);
+
+      const usedImages = new Set(currentImages);
+      usedImages.delete(prev[slotIdx].image);
+      const availableImages = CLIENT_IMAGES.map((_, i) => i).filter((i) => !usedImages.has(i) && i !== prev[slotIdx].image);
+      const imagePool = availableImages.length
+        ? availableImages
+        : CLIENT_IMAGES.map((_, i) => i).filter((i) => i !== prev[slotIdx].image);
+      const nextImage = imagePool[Math.floor(Math.random() * imagePool.length)];
+
+      const usedPositions = new Set(currentPositions);
+      usedPositions.delete(prev[slotIdx].position);
+      const availablePositions = POSITIONS.map((_, i) => i).filter((i) => !usedPositions.has(i) && i !== prev[slotIdx].position);
+      const positionPool = availablePositions.length
+        ? availablePositions
+        : POSITIONS.map((_, i) => i).filter((i) => i !== prev[slotIdx].position);
+      const nextPosition = positionPool[Math.floor(Math.random() * positionPool.length)];
+
       const copy = [...prev];
-      copy[slotIdx] = next;
+      copy[slotIdx] = { image: nextImage, position: nextPosition };
       return copy;
     });
   };
 
   return (
     <>
-      {CLIENT_SLOTS.map((slot, i) => {
-        const img = CLIENT_IMAGES[order[i]];
+      {slots.map((slot, i) => {
+        const pos = POSITIONS[slot.position];
+        const img = CLIENT_IMAGES[slot.image];
         return (
           <img
             key={i}
             src={img.src}
             alt={img.alt}
             aria-hidden="true"
-            className={`pointer-events-none absolute z-0 client-peek ${slot.cls}`}
-            style={{ ["--peek-rot" as string]: slot.rot, animationDelay: slot.delay }}
+            className={`pointer-events-none absolute z-0 client-peek ${pos.cls}`}
+            style={{ ["--peek-rot" as string]: pos.rot, animationDelay: `${i * 5}s` }}
             onAnimationIteration={() => cycleSlot(i)}
           />
         );
