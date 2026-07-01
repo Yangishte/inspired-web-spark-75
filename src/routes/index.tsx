@@ -853,40 +853,34 @@ function Index() {
 
       {/* Nuages croquis flottants entre Réserver et Contact */}
       <div className="relative z-10 h-28 w-full overflow-hidden" aria-hidden="true">
-        <svg
-          className="float-soft absolute left-[12%] top-6 w-20"
-          viewBox="0 0 100 60"
-          fill="none"
-          stroke="var(--clay)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M15 48 C 15 30, 35 20, 48 30 C 55 15, 80 15, 88 35 C 95 38, 95 48, 85 48 L 15 48 Z" />
-        </svg>
-        <svg
-          className="float-neutral float-delay-2 absolute left-[42%] top-2 w-28"
-          viewBox="0 0 100 60"
-          fill="none"
-          stroke="var(--clay)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 46 C 12 24, 38 14, 50 26 C 58 10, 86 12, 90 34 C 96 38, 92 46, 82 46 L 12 46 Z" />
-        </svg>
-        <svg
-          className="float-soft float-delay-4 absolute left-[72%] top-8 w-16"
-          viewBox="0 0 100 60"
-          fill="none"
-          stroke="var(--clay)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M18 47 C 18 28, 36 22, 46 31 C 54 18, 78 20, 84 36 C 90 40, 88 47, 78 47 L 18 47 Z" />
-        </svg>
+        {[
+          { cls: "float-soft absolute left-[12%] top-6 w-24" },
+          { cls: "float-neutral float-delay-2 absolute left-[42%] top-2 w-32" },
+          { cls: "float-soft float-delay-4 absolute left-[72%] top-8 w-20" },
+        ].map((c, i) => (
+          <svg
+            key={i}
+            className={c.cls}
+            viewBox="0 0 160 90"
+            fill="none"
+            stroke="var(--clay)"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            {/* puffy cloud body */}
+            <path
+              d="M20 72 C 6 72, 4 54, 18 50 C 14 34, 34 26, 46 36 C 50 18, 78 14, 88 30 C 98 20, 122 24, 124 42 C 142 40, 150 58, 138 68 C 144 76, 132 82, 122 78 L 32 78 C 22 82, 12 78, 20 72 Z"
+              fill="var(--cream)"
+            />
+            {/* inner highlights */}
+            <path d="M30 58 C 34 50, 44 50, 48 56" strokeWidth="1.8" opacity="0.7" />
+            <path d="M70 44 C 76 36, 90 38, 94 46" strokeWidth="1.8" opacity="0.7" />
+            <path d="M108 54 C 114 48, 126 50, 128 58" strokeWidth="1.8" opacity="0.7" />
+          </svg>
+        ))}
       </div>
+
 
       {/* CONTACT */}
 
