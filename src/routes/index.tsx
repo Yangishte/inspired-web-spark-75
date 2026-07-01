@@ -713,7 +713,7 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="relative z-10 mx-auto max-w-4xl px-6 py-28">
+      <section id="faq" data-reveal="fade-right" className="reveal relative z-10 mx-auto max-w-4xl px-6 py-28">
         {/* Floating question marks that appear on scroll */}
         {[
           { top: "2%", left: "4%", size: "text-5xl", delay: "0ms", rotate: "-12deg", float: "float-left" },
