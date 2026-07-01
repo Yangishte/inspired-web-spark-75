@@ -43,28 +43,22 @@ export function FloatingMascot() {
 
   // Cycle automatique : une apparition toutes les 30s, puis pause.
   useEffect(() => {
-    console.log("[Mascot] useEffect mounted");
     const openTimer = window.setTimeout(() => {
-      console.log("[Mascot] initial open");
       setBubbleOpen(true);
       closeTimerRef.current = window.setTimeout(() => {
-        console.log("[Mascot] initial close");
         setBubbleOpen(false);
       }, BUBBLE_VISIBLE_DURATION);
     }, 1500);
 
     const cycleTimer = window.setInterval(() => {
-      console.log("[Mascot] cycle tick");
       setMessageIdx((i) => (i + 1) % MESSAGES.length);
       setBubbleOpen(true);
       closeTimerRef.current = window.setTimeout(() => {
-        console.log("[Mascot] cycle close");
         setBubbleOpen(false);
       }, BUBBLE_VISIBLE_DURATION);
     }, SPEAK_INTERVAL);
 
     return () => {
-      console.log("[Mascot] useEffect cleanup");
       window.clearTimeout(openTimer);
       window.clearInterval(cycleTimer);
       if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
