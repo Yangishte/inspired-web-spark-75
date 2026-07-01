@@ -32,6 +32,9 @@
   --color-clay: var(--clay);
   --color-cocoa: var(--cocoa);
   --color-cream: var(--cream);
+  --color-cloud-fill: var(--cloud-fill);
+  --color-cloud-shadow: var(--cloud-shadow);
+  --color-cloud-highlight: var(--cloud-highlight);
   --font-display: "Bowlby One", system-ui, sans-serif;
   --font-marker: "Permanent Marker", cursive;
   --font-handwritten: "Caveat", cursive;
@@ -55,6 +58,11 @@
   --sand: oklch(0.86 0.05 75);
   --clay: oklch(0.62 0.10 50);
   --cocoa: oklch(0.32 0.05 45);
+
+  /* Cloud palette */
+  --cloud-fill: oklch(0.88 0.04 240);
+  --cloud-shadow: oklch(0.72 0.08 240);
+  --cloud-highlight: oklch(0.97 0.01 240);
 
   --primary: var(--cocoa);
   --primary-foreground: var(--cream);
