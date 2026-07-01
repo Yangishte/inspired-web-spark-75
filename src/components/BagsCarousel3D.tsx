@@ -4,17 +4,20 @@ import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import toteBagAsset from "@/assets/models/jute-tote-bag.glb.asset.json";
 import wm604Asset from "@/assets/models/wm604-tote-bag.glb.asset.json";
+import wm110Asset from "@/assets/models/wm110-drawstring-bag.glb.asset.json";
 
 const TOTE_BAG_URL = toteBagAsset.url;
 const WM604_URL = wm604Asset.url;
+const WM110_URL = wm110Asset.url;
 useGLTF.preload(TOTE_BAG_URL);
 useGLTF.preload(WM604_URL);
+useGLTF.preload(WM110_URL);
 
 type ItemKey = "tote" | "trousse" | "sac";
 
 const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
   { key: "tote", title: "Tote bag", desc: "Toile écrue, peinte ou brodée à la main." },
-  { key: "trousse", title: "Trousse", desc: "Format compact, parfaite pour s'initier au custom." },
+  { key: "trousse", title: "Sac à cordon WM110", desc: "Compact et pratique, idéal pour s'initier au custom." },
   { key: "sac", title: "Sac cabas WM604", desc: "Un modèle généreux en toile naturelle, prêt à recevoir vos créations." },
 ];
 
