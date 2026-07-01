@@ -858,17 +858,17 @@ function Index() {
           className="float-soft absolute left-[10%] top-7 w-20"
           viewBox="0 0 160 90"
           fill="none"
-          stroke="var(--clay)"
+          stroke="var(--cloud-shadow)"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
           <path
             d="M28 70 C 10 70, 8 52, 22 48 C 18 32, 38 24, 52 34 C 56 16, 86 14, 96 30 C 108 22, 130 28, 132 46 C 150 44, 154 62, 142 70 L 36 70 C 30 74, 24 74, 28 70 Z"
-            fill="var(--cream)"
+            fill="var(--cloud-fill)"
           />
-          <path d="M42 52 C 48 46, 60 48, 64 54" strokeWidth="1.8" opacity="0.7" />
-          <path d="M84 40 C 90 34, 104 36, 108 44" strokeWidth="1.8" opacity="0.7" />
+          <path d="M42 52 C 48 46, 60 48, 64 54" stroke="var(--cloud-highlight)" strokeWidth="1.8" opacity="0.9" />
+          <path d="M84 40 C 90 34, 104 36, 108 44" stroke="var(--cloud-highlight)" strokeWidth="1.8" opacity="0.9" />
         </svg>
 
         {/* Nuage 2 : large et étiré */}
@@ -876,18 +876,18 @@ function Index() {
           className="float-neutral float-delay-2 absolute left-[38%] top-1 w-36"
           viewBox="0 0 180 90"
           fill="none"
-          stroke="var(--clay)"
+          stroke="var(--cloud-shadow)"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
           <path
             d="M18 68 C 2 68, 0 50, 16 46 C 12 30, 34 22, 48 32 C 52 14, 86 10, 98 26 C 112 16, 138 20, 142 38 C 162 36, 172 54, 158 64 C 164 72, 150 78, 138 74 L 32 74 C 20 78, 10 72, 18 68 Z"
-            fill="var(--cream)"
+            fill="var(--cloud-fill)"
           />
-          <path d="M34 54 C 40 48, 54 50, 60 56" strokeWidth="1.8" opacity="0.7" />
-          <path d="M78 40 C 86 32, 104 34, 110 42" strokeWidth="1.8" opacity="0.7" />
-          <path d="M120 52 C 128 46, 142 48, 146 56" strokeWidth="1.8" opacity="0.7" />
+          <path d="M34 54 C 40 48, 54 50, 60 56" stroke="var(--cloud-highlight)" strokeWidth="1.8" opacity="0.9" />
+          <path d="M78 40 C 86 32, 104 34, 110 42" stroke="var(--cloud-highlight)" strokeWidth="1.8" opacity="0.9" />
+          <path d="M120 52 C 128 46, 142 48, 146 56" stroke="var(--cloud-highlight)" strokeWidth="1.8" opacity="0.9" />
         </svg>
 
         {/* Nuage 3 : moyen avec bosse haute */}
@@ -895,18 +895,18 @@ function Index() {
           className="float-soft float-delay-4 absolute left-[74%] top-8 w-24"
           viewBox="0 0 160 90"
           fill="none"
-          stroke="var(--clay)"
+          stroke="var(--cloud-shadow)"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
           <path
             d="M24 72 C 8 72, 6 52, 22 48 C 18 28, 42 18, 56 30 C 60 10, 94 8, 104 24 C 118 16, 138 22, 140 40 C 156 38, 162 56, 150 66 C 156 74, 142 80, 130 76 L 34 76 C 26 80, 16 76, 24 72 Z"
-            fill="var(--cream)"
+            fill="var(--cloud-fill)"
           />
-          <path d="M38 52 C 44 46, 56 48, 60 54" strokeWidth="1.8" opacity="0.7" />
-          <path d="M76 36 C 82 30, 96 32, 100 40" strokeWidth="1.8" opacity="0.7" />
-          <path d="M112 48 C 118 42, 130 44, 134 52" strokeWidth="1.8" opacity="0.7" />
+          <path d="M38 52 C 44 46, 56 48, 60 54" stroke="var(--cloud-highlight)" strokeWidth="1.8" opacity="0.9" />
+          <path d="M76 36 C 82 30, 96 32, 100 40" stroke="var(--cloud-highlight)" strokeWidth="1.8" opacity="0.9" />
+          <path d="M112 48 C 118 42, 130 44, 134 52" stroke="var(--cloud-highlight)" strokeWidth="1.8" opacity="0.9" />
         </svg>
       </div>
 
