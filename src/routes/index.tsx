@@ -90,11 +90,9 @@ const CLIENT_IMAGES = [
 ];
 
 const CLIENT_SLOTS = [
-  { cls: "left-[-2%] top-5 w-28 md:w-36", rot: "-8deg", delay: "0s" },
-  { cls: "right-[-1%] top-2 w-28 md:w-40", rot: "10deg", delay: "3s" },
-  { cls: "left-[6%] bottom-[-3%] w-24 md:w-32", rot: "6deg", delay: "6s" },
-  { cls: "right-[4%] bottom-[-2%] w-28 md:w-40", rot: "-6deg", delay: "9s" },
-  { cls: "left-[42%] top-[-4%] w-24 md:w-32", rot: "-4deg", delay: "12s" },
+  { cls: "left-[-2%] top-10 w-20 md:w-32", rot: "-8deg", delay: "0s" },
+  { cls: "right-[-2%] top-8 w-20 md:w-32", rot: "10deg", delay: "5s" },
+  { cls: "left-[38%] top-2 md:-top-8 w-20 md:w-28", rot: "-4deg", delay: "10s" },
 ];
 
 function ClientPeeks() {
@@ -104,14 +102,13 @@ function ClientPeeks() {
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-    return arr;
+    return arr.slice(0, CLIENT_SLOTS.length);
   });
 
   const cycleSlot = (slotIdx: number) => {
     setOrder((prev) => {
       const used = new Set(prev);
-      used.delete(prev[slotIdx]);
-      const available = CLIENT_IMAGES.map((_, i) => i).filter((i) => !used.has(i) && i !== prev[slotIdx]);
+      const available = CLIENT_IMAGES.map((_, i) => i).filter((i) => !used.has(i));
       const pool = available.length ? available : CLIENT_IMAGES.map((_, i) => i).filter((i) => i !== prev[slotIdx]);
       const next = pool[Math.floor(Math.random() * pool.length)];
       const copy = [...prev];
@@ -130,7 +127,7 @@ function ClientPeeks() {
             src={img.src}
             alt={img.alt}
             aria-hidden="true"
-            className={`pointer-events-none absolute z-0 client-peek hidden sm:block ${slot.cls}`}
+            className={`pointer-events-none absolute z-0 client-peek ${slot.cls}`}
             style={{ ["--peek-rot" as string]: slot.rot, animationDelay: slot.delay }}
             onAnimationIteration={() => cycleSlot(i)}
           />
