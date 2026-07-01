@@ -188,3 +188,37 @@
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none !important; }
 }
+
+/* Scroll reveal — varied transitions */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 1000ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    filter 900ms ease-out;
+  will-change: opacity, transform, filter;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none !important;
+  filter: none !important;
+}
+.reveal[data-reveal="fade-up"]     { transform: translateY(70px); }
+.reveal[data-reveal="fade-down"]   { transform: translateY(-60px); }
+.reveal[data-reveal="fade-left"]   { transform: translateX(-90px); }
+.reveal[data-reveal="fade-right"]  { transform: translateX(90px); }
+.reveal[data-reveal="zoom-in"]     { transform: scale(0.82); }
+.reveal[data-reveal="zoom-out"]    { transform: scale(1.12); }
+.reveal[data-reveal="rotate-in"]   { transform: rotate(-5deg) translateY(50px); }
+.reveal[data-reveal="skew-in"]     { transform: skewY(6deg) translateY(50px); }
+.reveal[data-reveal="blur-in"]     { filter: blur(16px); transform: translateY(24px); }
+.reveal[data-reveal="flip-up"]     { transform: perspective(1200px) rotateX(28deg) translateY(60px); transform-origin: bottom; }
+
+.reveal-delay-1.is-visible { transition-delay: 120ms; }
+.reveal-delay-2.is-visible { transition-delay: 240ms; }
+.reveal-delay-3.is-visible { transition-delay: 360ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+}
+

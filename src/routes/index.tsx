@@ -164,6 +164,26 @@ function Index() {
     return () => observer.disconnect();
   }, []);
 
+  // Scroll-reveal for sections
+  useEffect(() => {
+    const els = document.querySelectorAll<HTMLElement>(".reveal:not(.is-visible)");
+    if (!els.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
       {/* subtle grain overlay */}
@@ -258,7 +278,8 @@ function Index() {
       {/* ATELIER BAND */}
       <section
         id="atelier"
-        className="relative border-y-2"
+        data-reveal="fade-up"
+        className="reveal relative border-y-2"
         style={{ borderColor: "var(--clay)", background: "var(--sand)" }}
       >
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
@@ -315,7 +336,7 @@ function Index() {
       </section>
 
       {/* ÉVÉNEMENTS */}
-      <section id="evenements" className="relative z-10 mx-auto max-w-6xl px-6 py-28">
+      <section id="evenements" data-reveal="zoom-in" className="reveal relative z-10 mx-auto max-w-6xl px-6 py-28">
         <div className="mb-10 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Réserve ta place ↓</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
@@ -501,7 +522,7 @@ function Index() {
       </section>
 
       {/* PARTENAIRES — Bandeau défilant */}
-      <section aria-label="Ils nous font confiance" className="relative z-10 py-12 overflow-hidden" style={{ background: "var(--cocoa)" }}>
+      <section aria-label="Ils nous font confiance" data-reveal="fade-left" className="reveal relative z-10 py-12 overflow-hidden" style={{ background: "var(--cocoa)" }}>
         <div className="mb-6 text-center">
           <h2 className="font-display text-2xl md:text-3xl" style={{ color: "var(--cream)" }}>
             Ils nous font confiance
@@ -578,7 +599,7 @@ function Index() {
       </section>
 
       {/* SERVICES — Carrousel 3D */}
-      <section id="services" className="relative z-10 mx-auto max-w-6xl px-6 py-28">
+      <section id="services" data-reveal="flip-up" className="reveal relative z-10 mx-auto max-w-6xl px-6 py-28">
         <div className="mb-12 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Choisis ton support ↓</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
@@ -592,7 +613,8 @@ function Index() {
       {/* TARIFS */}
       <section
         id="tarifs"
-        className="relative border-y-2"
+        data-reveal="blur-in"
+        className="reveal relative border-y-2"
         style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
       >
         <div className="mx-auto max-w-5xl px-6 py-24">
@@ -691,7 +713,7 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="relative z-10 mx-auto max-w-4xl px-6 py-28">
+      <section id="faq" data-reveal="fade-right" className="reveal relative z-10 mx-auto max-w-4xl px-6 py-28">
         {/* Floating question marks that appear on scroll */}
         {[
           { top: "2%", left: "4%", size: "text-5xl", delay: "0ms", rotate: "-12deg", float: "float-left" },
@@ -789,7 +811,8 @@ function Index() {
       {/* RESERVER */}
       <section
         id="reserver"
-        className="relative z-10 py-28"
+        data-reveal="rotate-in"
+        className="reveal relative z-10 py-28"
         style={{ background: "var(--cream)" }}
       >
         <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
@@ -853,7 +876,7 @@ function Index() {
 
       {/* CONTACT */}
 
-      <section id="contact" className="relative z-10 mx-auto max-w-4xl px-6 py-28 text-center">
+      <section id="contact" data-reveal="zoom-out" className="reveal relative z-10 mx-auto max-w-4xl px-6 py-28 text-center">
         
         <h2 className="font-display text-4xl leading-tight md:text-6xl" style={{ color: "var(--cocoa)" }}>
           Des questions ?
