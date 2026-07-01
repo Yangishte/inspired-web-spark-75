@@ -230,3 +230,13 @@
   .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
 }
 
+@keyframes client-peek {
+  0%, 100% { opacity: 0; transform: translateY(20px) rotate(var(--peek-rot, 0deg)) scale(0.9); }
+  15%, 70% { opacity: 1; transform: translateY(0) rotate(var(--peek-rot, 0deg)) scale(1); }
+  85% { opacity: 0; transform: translateY(-14px) rotate(var(--peek-rot, 0deg)) scale(0.95); }
+}
+.client-peek { animation: client-peek 9s ease-in-out infinite; opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .client-peek { animation: none !important; opacity: 0.9 !important; }
+}
+
