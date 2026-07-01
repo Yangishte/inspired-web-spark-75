@@ -835,10 +835,10 @@ function Index() {
       >
         {/* Créations clients qui apparaissent/disparaissent */}
         {[
-          { src: clientCherry.url, alt: "Sac cerises peint main", cls: "left-[-3%] top-6 w-28 md:w-36", rot: "-8deg", delay: "0s" },
-          { src: clientDolphin.url, alt: "Trousse dauphins peinte main", cls: "right-[-2%] top-2 w-28 md:w-40", rot: "10deg", delay: "2.2s" },
-          { src: clientLemon.url, alt: "Sac citrons peint main", cls: "left-[6%] bottom-[-4%] w-24 md:w-32", rot: "6deg", delay: "4.4s" },
-          { src: clientBordel.url, alt: "Trousse Mon bordel artistique", cls: "right-[4%] bottom-[-3%] w-28 md:w-40", rot: "-6deg", delay: "6.6s" },
+          { src: clientCherry.url, alt: "Sac cerises peint main", cls: "left-[-2%] top-5 w-28 md:w-36", rot: "-8deg", delay: "0s" },
+          { src: clientDolphin.url, alt: "Trousse dauphins peinte main", cls: "right-[-1%] top-2 w-28 md:w-40", rot: "10deg", delay: "3s" },
+          { src: clientLemon.url, alt: "Sac citrons peint main", cls: "left-[6%] bottom-[-3%] w-24 md:w-32", rot: "6deg", delay: "6s" },
+          { src: clientBordel.url, alt: "Trousse Mon bordel artistique", cls: "right-[4%] bottom-[-2%] w-28 md:w-40", rot: "-6deg", delay: "9s" },
         ].map((img) => (
           <img
             key={img.src}
