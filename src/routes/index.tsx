@@ -522,7 +522,7 @@ function Index() {
       </section>
 
       {/* PARTENAIRES — Bandeau défilant */}
-      <section aria-label="Ils nous font confiance" className="relative z-10 py-12 overflow-hidden" style={{ background: "var(--cocoa)" }}>
+      <section aria-label="Ils nous font confiance" data-reveal="fade-left" className="reveal relative z-10 py-12 overflow-hidden" style={{ background: "var(--cocoa)" }}>
         <div className="mb-6 text-center">
           <h2 className="font-display text-2xl md:text-3xl" style={{ color: "var(--cream)" }}>
             Ils nous font confiance
