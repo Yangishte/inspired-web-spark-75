@@ -89,13 +89,22 @@ const CLIENT_IMAGES = [
   { src: clientRockpaper.url, alt: "Sac Rock Paper Scissors chats peint main" },
 ];
 
+// Chaque position appartient à une "zone" (coin de la section). On garantit
+// au plus une image par zone à un instant donné → pas de chevauchement entre
+// deux images, et rien au centre où se trouve le texte.
 const POSITIONS = [
-  { cls: "left-[-2%] top-6 w-20 md:w-32", rot: "-8deg" },
-  { cls: "right-[-2%] top-4 w-20 md:w-32", rot: "10deg" },
-  { cls: "left-[36%] top-2 w-20 md:w-28", rot: "-4deg" },
-  { cls: "left-[-2%] bottom-6 w-20 md:w-32", rot: "6deg" },
-  { cls: "right-[-2%] bottom-4 w-20 md:w-32", rot: "-6deg" },
-  { cls: "left-[38%] bottom-2 w-20 md:w-28", rot: "4deg" },
+  // Zone haut-gauche
+  { zone: "tl", cls: "left-[-1%] top-2 w-16 md:w-28", rot: "-8deg" },
+  { zone: "tl", cls: "left-[2%] top-10 w-16 md:w-28", rot: "-4deg" },
+  // Zone haut-droite
+  { zone: "tr", cls: "right-[-1%] top-2 w-16 md:w-28", rot: "10deg" },
+  { zone: "tr", cls: "right-[2%] top-10 w-16 md:w-28", rot: "6deg" },
+  // Zone bas-gauche
+  { zone: "bl", cls: "left-[-1%] bottom-2 w-16 md:w-28", rot: "6deg" },
+  { zone: "bl", cls: "left-[2%] bottom-10 w-16 md:w-28", rot: "-6deg" },
+  // Zone bas-droite
+  { zone: "br", cls: "right-[-1%] bottom-2 w-16 md:w-28", rot: "-6deg" },
+  { zone: "br", cls: "right-[2%] bottom-10 w-16 md:w-28", rot: "4deg" },
 ];
 
 function shuffle<T>(array: T[]): T[] {
@@ -107,19 +116,31 @@ function shuffle<T>(array: T[]): T[] {
   return arr;
 }
 
+function pickPosition(prevPosition: number, usedZones: Set<string>): number {
+  const candidates = POSITIONS
+    .map((p, i) => ({ i, zone: p.zone }))
+    .filter(({ i, zone }) => !usedZones.has(zone) && i !== prevPosition);
+  const pool = candidates.length
+    ? candidates
+    : POSITIONS.map((p, i) => ({ i, zone: p.zone })).filter(({ i }) => i !== prevPosition);
+  return pool[Math.floor(Math.random() * pool.length)].i;
+}
+
 function ClientPeeks() {
   const [slots, setSlots] = useState<{ image: number; position: number }[]>(() => {
     const images = shuffle(CLIENT_IMAGES.map((_, i) => i));
-    const positions = shuffle(POSITIONS.map((_, i) => i));
+    // Choisir 3 zones distinctes parmi les 4
+    const zones = shuffle(["tl", "tr", "bl", "br"]).slice(0, 3);
+    const positions = zones.map((z) => {
+      const inZone = POSITIONS.map((p, i) => ({ i, zone: p.zone })).filter((p) => p.zone === z);
+      return inZone[Math.floor(Math.random() * inZone.length)].i;
+    });
     return Array.from({ length: 3 }, (_, i) => ({ image: images[i], position: positions[i] }));
   });
 
   const cycleSlot = (slotIdx: number) => {
     setSlots((prev) => {
-      const currentImages = prev.map((s) => s.image);
-      const currentPositions = prev.map((s) => s.position);
-
-      const usedImages = new Set(currentImages);
+      const usedImages = new Set(prev.map((s) => s.image));
       usedImages.delete(prev[slotIdx].image);
       const availableImages = CLIENT_IMAGES.map((_, i) => i).filter((i) => !usedImages.has(i) && i !== prev[slotIdx].image);
       const imagePool = availableImages.length
@@ -127,19 +148,15 @@ function ClientPeeks() {
         : CLIENT_IMAGES.map((_, i) => i).filter((i) => i !== prev[slotIdx].image);
       const nextImage = imagePool[Math.floor(Math.random() * imagePool.length)];
 
-      const usedPositions = new Set(currentPositions);
-      usedPositions.delete(prev[slotIdx].position);
-      const availablePositions = POSITIONS.map((_, i) => i).filter((i) => !usedPositions.has(i) && i !== prev[slotIdx].position);
-      const positionPool = availablePositions.length
-        ? availablePositions
-        : POSITIONS.map((_, i) => i).filter((i) => i !== prev[slotIdx].position);
-      const nextPosition = positionPool[Math.floor(Math.random() * positionPool.length)];
+      const usedZones = new Set(prev.map((s, idx) => (idx === slotIdx ? null : POSITIONS[s.position].zone)).filter(Boolean) as string[]);
+      const nextPosition = pickPosition(prev[slotIdx].position, usedZones);
 
       const copy = [...prev];
       copy[slotIdx] = { image: nextImage, position: nextPosition };
       return copy;
     });
   };
+
 
   return (
     <>
