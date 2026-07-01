@@ -613,7 +613,8 @@ function Index() {
       {/* TARIFS */}
       <section
         id="tarifs"
-        className="relative border-y-2"
+        data-reveal="blur-in"
+        className="reveal relative border-y-2"
         style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
       >
         <div className="mx-auto max-w-5xl px-6 py-24">
