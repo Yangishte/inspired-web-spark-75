@@ -522,26 +522,26 @@ function Index() {
       </section>
 
       {/* PARTENAIRES — Bandeau défilant */}
-      <section aria-label="Ils nous font confiance" data-reveal="fade-left" className="reveal relative z-10 py-12 overflow-hidden" style={{ background: "var(--cocoa)" }}>
-        <div className="mb-6 text-center">
-          <h2 className="font-display text-2xl md:text-3xl" style={{ color: "var(--cream)" }}>
+      <section aria-label="Ils nous font confiance" data-reveal="fade-left" className="reveal relative z-10 py-6 overflow-hidden" style={{ background: "var(--cocoa)" }}>
+        <div className="mb-4 text-center">
+          <h2 className="font-display text-xl md:text-2xl" style={{ color: "var(--cream)" }}>
             Ils nous font confiance
           </h2>
         </div>
         <div className="relative overflow-hidden">
-          <div className="flex items-center gap-10 marquee-track w-max">
+          <div className="flex items-center gap-8 marquee-track w-max">
           {[...partners, ...partners].map((p, i) => (
             <div
               key={i}
               className={`relative shrink-0 flex items-center justify-center ${p.text ? "flex-col gap-1" : ""} ${
                 p.shape === "circle"
-                  ? p.text ? "h-auto w-auto" : "h-24 w-24 md:h-28 md:w-28"
-                  : p.text ? "h-auto w-auto overflow-visible rounded-md" : "h-16 md:h-20 overflow-hidden rounded-md"
+                  ? p.text ? "h-auto w-auto" : "h-16 w-16 md:h-20 md:w-20"
+                  : p.text ? "h-auto w-auto overflow-visible rounded-md" : "h-12 md:h-16 overflow-hidden rounded-md"
               }`}
               style={p.shape === "rect" && !p.text ? { aspectRatio: "3 / 1" } : undefined}
             >
               {p.shape === "circle" ? (
-                <div className={`overflow-hidden rounded-full ${p.text ? "relative h-24 w-24 md:h-28 md:w-28" : "absolute inset-0"}`}>
+                <div className={`overflow-hidden rounded-full ${p.text ? "relative h-16 w-16 md:h-20 md:w-20" : "absolute inset-0"}`}>
                   {p.link ? (
                     <a
                       href={p.link}
