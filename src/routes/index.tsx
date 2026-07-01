@@ -24,6 +24,10 @@ import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 import visilabLogo from "@/assets/partners/visilab.jpg.asset.json";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
 import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset.json";
+import clientCherry from "@/assets/clients/client-cherry.png.asset.json";
+import clientDolphin from "@/assets/clients/client-dolphin.png.asset.json";
+import clientLemon from "@/assets/clients/client-lemon.png.asset.json";
+import clientBordel from "@/assets/clients/client-bordel.png.asset.json";
 
 
 type Partner = {
@@ -827,8 +831,25 @@ function Index() {
         id="reserver"
         data-reveal="rotate-in"
         className="reveal relative z-10 py-28"
-        style={{ background: "var(--cream)" }}
+        style={{ background: "var(--cream)", overflow: "visible" }}
       >
+        {/* Créations clients qui apparaissent/disparaissent */}
+        {[
+          { src: clientCherry.url, alt: "Sac cerises peint main", cls: "left-[-3%] top-6 w-28 md:w-36", rot: "-8deg", delay: "0s" },
+          { src: clientDolphin.url, alt: "Trousse dauphins peinte main", cls: "right-[-2%] top-2 w-28 md:w-40", rot: "10deg", delay: "2.2s" },
+          { src: clientLemon.url, alt: "Sac citrons peint main", cls: "left-[6%] bottom-[-4%] w-24 md:w-32", rot: "6deg", delay: "4.4s" },
+          { src: clientBordel.url, alt: "Trousse Mon bordel artistique", cls: "right-[4%] bottom-[-3%] w-28 md:w-40", rot: "-6deg", delay: "6.6s" },
+        ].map((img) => (
+          <img
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            aria-hidden="true"
+            className={`pointer-events-none absolute z-0 client-peek hidden sm:block ${img.cls}`}
+            style={{ ["--peek-rot" as string]: img.rot, animationDelay: img.delay }}
+          />
+        ))}
+
         <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Prends ton créneau</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
