@@ -346,6 +346,18 @@ function Index() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
+              date: "Prochainement",
+              titre: "Prochain événement prochainement !",
+              lieu: "Reste connecté.e",
+              time: "Date & lieu à venir",
+              price: "Tarif à annoncer",
+              desc: "Un nouvel atelier inédit est en préparation... On te réserve une belle surprise très bientôt !",
+              past: false,
+              image: null,
+              imagePosition: "center",
+              instagramUrl: null,
+            },
+            {
               date: "Dimanche 7 juin 2026",
               titre: "Wine & Paint au Domaine Maison Blanche",
               lieu: "Domaine Maison Blanche – Mont-sur-Rolle",
