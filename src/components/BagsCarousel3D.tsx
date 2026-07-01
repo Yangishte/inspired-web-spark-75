@@ -1,6 +1,11 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
+import toteBagAsset from "@/assets/models/jute-tote-bag.glb.asset.json";
+
+const TOTE_BAG_URL = toteBagAsset.url;
+useGLTF.preload(TOTE_BAG_URL);
 
 type ItemKey = "tote" | "trousse" | "sac";
 
@@ -13,24 +18,28 @@ const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
 /* ============== Placeholder GLB-like meshes ============== */
 
 function ToteBag() {
-  return (
-    <group>
-      {/* corps */}
-      <mesh castShadow receiveShadow position={[0, 0, 0]}>
-        <boxGeometry args={[1.2, 1.3, 0.35]} />
-        <meshStandardMaterial color="#d9c7a8" roughness={0.95} metalness={0} />
-      </mesh>
-      {/* anses */}
-      <mesh position={[-0.4, 0.95, 0]} rotation={[0, 0, 0]}>
-        <torusGeometry args={[0.3, 0.04, 16, 32, Math.PI]} />
-        <meshStandardMaterial color="#9a7a55" roughness={0.9} />
-      </mesh>
-      <mesh position={[0.4, 0.95, 0]} rotation={[0, 0, 0]}>
-        <torusGeometry args={[0.3, 0.04, 16, 32, Math.PI]} />
-        <meshStandardMaterial color="#9a7a55" roughness={0.9} />
-      </mesh>
-    </group>
-  );
+  const { scene } = useGLTF(TOTE_BAG_URL);
+  const cloned = useMemo(() => {
+    const s = scene.clone(true);
+    // Center + normalize scale to ~1.5 units tall
+    const box = new THREE.Box3().setFromObject(s);
+    const size = new THREE.Vector3();
+    const center = new THREE.Vector3();
+    box.getSize(size);
+    box.getCenter(center);
+    s.position.sub(center);
+    const target = 1.5;
+    const scale = target / Math.max(size.x, size.y, size.z);
+    s.scale.setScalar(scale);
+    s.traverse((o) => {
+      if ((o as THREE.Mesh).isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
+      }
+    });
+    return s;
+  }, [scene]);
+  return <primitive object={cloned} />;
 }
 
 function Trousse() {
