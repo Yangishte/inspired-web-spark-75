@@ -300,7 +300,7 @@ export default function BagsCarousel3D() {
           height: isMobile ? 520 : 460,
         }}
       >
-        {/* Background image blurred */}
+        {/* Background image */}
         <div
           aria-hidden
           className="absolute inset-0"
@@ -308,16 +308,6 @@ export default function BagsCarousel3D() {
             backgroundImage: `url(${bgRoom.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "blur(14px) saturate(1.05)",
-            transform: "scale(1.1)",
-          }}
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(246,236,217,0.55) 0%, rgba(237,224,196,0.65) 100%)",
           }}
         />
         {mounted && (
