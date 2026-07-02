@@ -714,9 +714,9 @@ function Index() {
       {/* SERVICES — Carrousel 3D */}
       <section id="services" data-reveal="flip-up" className="reveal relative z-10 mx-auto max-w-6xl px-6 py-28">
         <div className="mb-12 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Choisis ton support ↓</span>
+          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Choisis ton support!</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
-            Nos supports à customiser
+            Exemples de supports
           </h2>
         </div>
         <BagsCarousel3D />
