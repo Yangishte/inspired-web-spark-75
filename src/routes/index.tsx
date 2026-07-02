@@ -49,6 +49,10 @@ const partners: Partner[] = [
   { name: "Visilab", url: visilabLogo.url, shape: "rect" },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" },
   { name: "Little Green House", url: littleGreenHouseLogo.url, shape: "rect" },
+  { name: "Corridor Lausanne", url: corridorLogo.url, shape: "rect" },
+  { name: "Manor", url: manorLogo.url, shape: "rect" },
+  { name: "Maison Blanche", url: maisonBlancheLogo.url, shape: "circle" },
+  { name: "Afterwork", url: afterworkLogo.url, shape: "rect" },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
