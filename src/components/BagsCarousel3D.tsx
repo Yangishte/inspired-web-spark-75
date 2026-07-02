@@ -313,10 +313,10 @@ export default function BagsCarousel3D() {
         />
         {mounted && (
           <Canvas
-            shadows
-            dpr={[1, 2]}
+            shadows={!isMobile}
+            dpr={isMobile ? [1, 1.5] : [1, 2]}
             camera={{ position: [0, 0.5, isMobile ? 5.8 : 5.2], fov: isMobile ? 42 : 38 }}
-            gl={{ antialias: true, alpha: true }}
+            gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
             style={{ position: "relative", background: "transparent" }}
           >
             <Suspense fallback={null}>
@@ -324,6 +324,7 @@ export default function BagsCarousel3D() {
             </Suspense>
           </Canvas>
         )}
+
 
         {/* libellé courant intégré au carousel */}
         <div
