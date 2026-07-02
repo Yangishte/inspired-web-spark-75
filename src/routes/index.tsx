@@ -647,10 +647,7 @@ function Index() {
 
               {/* PASSÉS */}
               <div>
-                <div className="mb-4 flex items-center gap-3">
-                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
-                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
-                </div>
+                <div className="mb-4 h-1 rounded-full" style={{ background: "var(--cocoa)" }} />
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {events.filter((e) => e.past).map(renderEventCard)}
                 </div>
