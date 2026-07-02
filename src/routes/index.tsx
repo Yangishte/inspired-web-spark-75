@@ -24,6 +24,10 @@ import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 import visilabLogo from "@/assets/partners/visilab.jpg.asset.json";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
 import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset.json";
+import corridorLogo from "@/assets/partners/corridor.webp.asset.json";
+import manorLogo from "@/assets/partners/manor.png.asset.json";
+import maisonBlancheLogo from "@/assets/partners/maison-blanche.png.asset.json";
+import afterworkLogo from "@/assets/partners/afterwork.png.asset.json";
 import clientCherry from "@/assets/clients/client-cherry.png.asset.json";
 import clientDolphin from "@/assets/clients/client-dolphin-new.png.asset.json";
 import clientLemon from "@/assets/clients/client-lemon.png.asset.json";
@@ -45,6 +49,10 @@ const partners: Partner[] = [
   { name: "Visilab", url: visilabLogo.url, shape: "rect" },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" },
   { name: "Little Green House", url: littleGreenHouseLogo.url, shape: "rect" },
+  { name: "Corridor Lausanne", url: corridorLogo.url, shape: "rect" },
+  { name: "Manor", url: manorLogo.url, shape: "rect" },
+  { name: "Maison Blanche", url: maisonBlancheLogo.url, shape: "circle" },
+  { name: "Afterwork", url: afterworkLogo.url, shape: "rect" },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
