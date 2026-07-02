@@ -443,8 +443,8 @@ function Index() {
             Nos événements
           </h2>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
+        {(() => {
+          const events = [
             {
               date: "Prochainement",
               titre: "Prochain événement prochainement !",
@@ -492,7 +492,9 @@ function Index() {
               imagePosition: "center 25%",
               instagramUrl: "https://www.instagram.com/reel/DZK1T1woaFi/",
             },
-          ].map((e) => (
+          ];
+
+          const renderEventCard = (e: typeof events[0]) => (
             <div
               key={e.titre}
               className="group min-h-[440px] cursor-pointer"
@@ -631,8 +633,32 @@ function Index() {
                 </a>
               </div>
             </div>
-          ))}
-        </div>
+          );
+
+          return (
+            <div className="space-y-16">
+              {/* À VENIR */}
+              <div>
+                <h3 className="mb-6 text-center font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
+                  À venir
+                </h3>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {events.filter((e) => !e.past).map(renderEventCard)}
+                </div>
+              </div>
+
+              {/* PASSÉS */}
+              <div>
+                <h3 className="mb-6 text-center font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
+                  Passés
+                </h3>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {events.filter((e) => e.past).map(renderEventCard)}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </section>
 
       {/* PARTENAIRES — Bandeau défilant */}
