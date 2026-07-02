@@ -30,7 +30,7 @@ const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
   { key: "tote", title: "Petit sac", desc: "Toile de jute 100% coton. Capacité 6L." },
   { key: "trousse", title: "Sac à cordon", desc: "Le fameux sac de gym : compact et pratique, idéal pour s'initier au custom." },
   { key: "sac", title: "Sac cabas", desc: "Un modèle généreux 100% coton aux 2 poches avant. Capacité de 23L." },
-  { key: "canvas", title: "Tote bag", desc: "Tote bag 100% coton.\nCapacité 10L." },
+  { key: "canvas", title: "Tote bag", desc: "Parfait pour un pique nique!\nTote bag 100% coton.\nCapacité 10L." },
   { key: "backpack", title: "Sac à dos WM880", desc: "Sac à dos beige en toile, une grande surface pour laisser libre cours à ta créativité." },
   { key: "pouches", title: "Pochettes WM552", desc: "Trio de pochettes zippées en toile beige, parfait pour organiser vos petits essentiels." },
 ];
