@@ -25,7 +25,7 @@ import visilabLogo from "@/assets/partners/visilab.jpg.asset.json";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
 import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset.json";
 import clientCherry from "@/assets/clients/client-cherry.png.asset.json";
-import clientDolphin from "@/assets/clients/client-dolphin.png.asset.json";
+import clientDolphin from "@/assets/clients/client-dolphin-new.png.asset.json";
 import clientLemon from "@/assets/clients/client-lemon.png.asset.json";
 import clientBordel from "@/assets/clients/client-bordel.png.asset.json";
 import clientRockpaper from "@/assets/clients/client-rockpaper.png.asset.json";
