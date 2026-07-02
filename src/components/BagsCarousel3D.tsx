@@ -202,18 +202,9 @@ function LotPochettes() {
     const scale = target / Math.max(size.x, size.y, size.z);
     s.scale.setScalar(scale);
     s.traverse((o) => {
-      const mesh = o as THREE.Mesh;
-      if (mesh.isMesh) {
-        mesh.castShadow = true;
-        mesh.receiveShadow = true;
-        const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
-        mats.forEach((m) => {
-          const mm = m as THREE.MeshStandardMaterial;
-          if (mm && "color" in mm && mm.color) {
-            // Force a warm cream tone while preserving 15% of the original hue
-            mm.color.lerp(new THREE.Color("#F5F2E8"), 0.85);
-          }
-        });
+      if ((o as THREE.Mesh).isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
       }
     });
 
