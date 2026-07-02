@@ -660,8 +660,6 @@ function Index() {
           );
         })()}
       </section>
-        </div>
-      </section>
 
       {/* PARTENAIRES — Bandeau défilant */}
       <section aria-label="Ils nous font confiance" data-reveal="fade-left" className="reveal relative z-10 py-6 overflow-hidden" style={{ background: "var(--cocoa)" }}>
