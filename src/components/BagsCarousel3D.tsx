@@ -29,7 +29,7 @@ type ItemKey = "tote" | "trousse" | "sac" | "canvas" | "backpack" | "pouches";
 const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
   { key: "tote", title: "Tote bag", desc: "Toile écrue, peinte ou brodée à la main." },
   { key: "trousse", title: "Sac à cordon", desc: "Le fameux sac de gym : compact et pratique, idéal pour s'initier au custom." },
-  { key: "sac", title: "Sac cabas WM604", desc: "Un modèle généreux en toile naturelle, prêt à recevoir vos créations." },
+  { key: "sac", title: "Sac cabas", desc: "Un modèle généreux aux 2 poches avant en toile naturelle. Capacité de 23L." },
   { key: "canvas", title: "Tote bag WM101", desc: "Toile canvas robuste, parfaite pour vos illustrations." },
   { key: "backpack", title: "Sac à dos WM880", desc: "Sac à dos beige en toile, une grande surface pour laisser libre cours à ta créativité." },
   { key: "pouches", title: "Pochettes WM552", desc: "Trio de pochettes zippées en toile beige, parfait pour organiser vos petits essentiels." },
