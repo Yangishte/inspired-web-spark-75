@@ -8,7 +8,7 @@ import wm110Asset from "@/assets/models/wm110-drawstring-bag.glb.asset.json";
 import wm101Asset from "@/assets/models/wm101-canvas-tote.glb.asset.json";
 import wm880Asset from "@/assets/models/wm880-beige-backpack.glb.asset.json";
 import wm552Asset from "@/assets/models/wm552-beige-zippered-pouches.glb.asset.json";
-import wm540Asset from "@/assets/models/wm540-fabric-zipper-pouch.glb.asset.json";
+import wm540Asset from "@/assets/models/cream-fabric-pouches.glb.asset.json";
 import bgRoom from "@/assets/backgrounds/bar-a-custom-room.png.asset.json";
 
 
@@ -202,18 +202,9 @@ function LotPochettes() {
     const scale = target / Math.max(size.x, size.y, size.z);
     s.scale.setScalar(scale);
     s.traverse((o) => {
-      const mesh = o as THREE.Mesh;
-      if (mesh.isMesh) {
-        mesh.castShadow = true;
-        mesh.receiveShadow = true;
-        const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
-        mats.forEach((m) => {
-          const mm = m as THREE.MeshStandardMaterial;
-          if (mm && "color" in mm && mm.color) {
-            // Force a warm cream tone while preserving 15% of the original hue
-            mm.color.lerp(new THREE.Color("#F5F2E8"), 0.85);
-          }
-        });
+      if ((o as THREE.Mesh).isMesh) {
+        o.castShadow = true;
+        o.receiveShadow = true;
       }
     });
 
