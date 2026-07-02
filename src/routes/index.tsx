@@ -636,12 +636,13 @@ function Index() {
           );
 
           return (
-            <div className="space-y-16">
+            <div className="space-y-10">
               {/* À VENIR */}
               <div>
-                <h3 className="mb-6 text-center font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
-                  À venir
-                </h3>
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
+                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
+                </div>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {events.filter((e) => !e.past).map(renderEventCard)}
                 </div>
@@ -649,9 +650,10 @@ function Index() {
 
               {/* PASSÉS */}
               <div>
-                <h3 className="mb-6 text-center font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
-                  Passés
-                </h3>
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
+                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
+                </div>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {events.filter((e) => e.past).map(renderEventCard)}
                 </div>
