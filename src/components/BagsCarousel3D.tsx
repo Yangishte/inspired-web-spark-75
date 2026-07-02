@@ -27,7 +27,7 @@ useGLTF.preload(WM552_URL);
 type ItemKey = "tote" | "trousse" | "sac" | "canvas" | "backpack" | "pouches";
 
 const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
-  { key: "tote", title: "Tote bag", desc: "Toile de jute 100% coton. Capacité 6L." },
+  { key: "tote", title: "Petit sac", desc: "Toile de jute 100% coton. Capacité 6L." },
   { key: "trousse", title: "Sac à cordon", desc: "Le fameux sac de gym : compact et pratique, idéal pour s'initier au custom." },
   { key: "sac", title: "Sac cabas", desc: "Un modèle généreux 100% coton aux 2 poches avant. Capacité de 23L." },
   { key: "canvas", title: "Tote bag WM101", desc: "Toile canvas robuste, parfaite pour vos illustrations." },
