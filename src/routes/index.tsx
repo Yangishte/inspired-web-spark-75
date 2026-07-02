@@ -443,195 +443,221 @@ function Index() {
             Nos événements
           </h2>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              date: "Prochainement",
-              titre: "Prochain événement prochainement !",
-              lieu: "Reste connecté.e",
-              time: "Date & lieu à venir",
-              price: "Tarif à annoncer",
-              desc: "Un nouvel atelier inédit est en préparation... On te réserve une belle surprise très bientôt !",
-              past: false,
-              image: null,
-              imagePosition: "center",
-              instagramUrl: null,
-            },
-            {
-              date: "Dimanche 7 juin 2026",
-              titre: "Wine & Paint au Domaine Maison Blanche",
-              lieu: "Domaine Maison Blanche – Mont-sur-Rolle",
-              time: "13h30 – 15h30",
-              price: "CHF 65.- / personne",
-              desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante.",
-              past: true,
-              image: winePaintImg.url,
-              imagePosition: "center 15%",
-              instagramUrl: "https://www.instagram.com/reel/DYxFsXAobkI/",
-            },
-            {
-              date: "Dimanche 31 mai 2026",
-              titre: "Brunch & Paint à l'Hôtel En Bellevue",
-              lieu: "En Bellevue 1, 1163 Etoy",
-              time: "10h – 14h",
-              price: "CHF 90.- / personne (brunch + atelier)",
-              desc: "Le Bar à Custom déménage à l'hôtel pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩",
-              past: true,
-              image: brunchTerrasseImg.url,
-              instagramUrl: "https://www.instagram.com/p/DYKe5apsLhx/",
-            },
-            {
-              date: "Samedi 25 avril 2026",
-              titre: "Atelier au Restaurant Manor Lausanne",
-              lieu: "Restaurant Manor Lausanne",
-              time: "Durée : 2 heures",
-              price: "CHF 49.- / personne",
-              desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍",
-              past: true,
-              image: manorLausanneImg.url,
-              imagePosition: "center 25%",
-              instagramUrl: "https://www.instagram.com/reel/DZK1T1woaFi/",
-            },
-          ].map((e) => (
-            <div
-              key={e.titre}
-              className="group min-h-[440px] cursor-pointer"
-              style={{ perspective: "1200px" }}
-              onClick={() => {
+        const events = [
+          {
+            date: "Prochainement",
+            titre: "Prochain événement prochainement !",
+            lieu: "Reste connecté.e",
+            time: "Date & lieu à venir",
+            price: "Tarif à annoncer",
+            desc: "Un nouvel atelier inédit est en préparation... On te réserve une belle surprise très bientôt !",
+            past: false,
+            image: null,
+            imagePosition: "center",
+            instagramUrl: null,
+          },
+          {
+            date: "Dimanche 7 juin 2026",
+            titre: "Wine & Paint au Domaine Maison Blanche",
+            lieu: "Domaine Maison Blanche – Mont-sur-Rolle",
+            time: "13h30 – 15h30",
+            price: "CHF 65.- / personne",
+            desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante.",
+            past: true,
+            image: winePaintImg.url,
+            imagePosition: "center 15%",
+            instagramUrl: "https://www.instagram.com/reel/DYxFsXAobkI/",
+          },
+          {
+            date: "Dimanche 31 mai 2026",
+            titre: "Brunch & Paint à l'Hôtel En Bellevue",
+            lieu: "En Bellevue 1, 1163 Etoy",
+            time: "10h – 14h",
+            price: "CHF 90.- / personne (brunch + atelier)",
+            desc: "Le Bar à Custom déménage à l'hôtel pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩",
+            past: true,
+            image: brunchTerrasseImg.url,
+            instagramUrl: "https://www.instagram.com/p/DYKe5apsLhx/",
+          },
+          {
+            date: "Samedi 25 avril 2026",
+            titre: "Atelier au Restaurant Manor Lausanne",
+            lieu: "Restaurant Manor Lausanne",
+            time: "Durée : 2 heures",
+            price: "CHF 49.- / personne",
+            desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍",
+            past: true,
+            image: manorLausanneImg.url,
+            imagePosition: "center 25%",
+            instagramUrl: "https://www.instagram.com/reel/DZK1T1woaFi/",
+          },
+        ];
+
+        const renderEventCard = (e: typeof events[0]) => (
+          <div
+            key={e.titre}
+            className="group min-h-[440px] cursor-pointer"
+            style={{ perspective: "1200px" }}
+            onClick={() => {
+              setFlippedEvents((prev) => {
+                const next = new Set(prev);
+                if (next.has(e.titre)) next.delete(e.titre);
+                else next.add(e.titre);
+                return next;
+              });
+            }}
+            role="button"
+            aria-label={`Carte ${e.titre}, cliquez pour retourner`}
+            tabIndex={0}
+            onKeyDown={(ev) => {
+              if (ev.key === "Enter" || ev.key === " ") {
+                ev.preventDefault();
                 setFlippedEvents((prev) => {
                   const next = new Set(prev);
                   if (next.has(e.titre)) next.delete(e.titre);
                   else next.add(e.titre);
                   return next;
                 });
-              }}
-              role="button"
-              aria-label={`Carte ${e.titre}, cliquez pour retourner`}
-              tabIndex={0}
-              onKeyDown={(ev) => {
-                if (ev.key === "Enter" || ev.key === " ") {
-                  ev.preventDefault();
-                  setFlippedEvents((prev) => {
-                    const next = new Set(prev);
-                    if (next.has(e.titre)) next.delete(e.titre);
-                    else next.add(e.titre);
-                    return next;
-                  });
-                }
-              }}
+              }
+            }}
+          >
+            <div
+              className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedEvents.has(e.titre) ? "[transform:rotateY(180deg)]" : ""} group-hover:[transform:rotateY(180deg)]`}
             >
+              {/* FRONT */}
               <div
-                className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedEvents.has(e.titre) ? "[transform:rotateY(180deg)]" : ""} group-hover:[transform:rotateY(180deg)]`}
+                className="absolute inset-0 overflow-hidden rounded-3xl border-2 p-6"
+                style={{
+                  borderColor: "var(--cocoa)",
+                  background: "var(--cream)",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
+                }}
               >
-                {/* FRONT */}
-                <div
-                  className="absolute inset-0 overflow-hidden rounded-3xl border-2 p-6"
-                  style={{
-                    borderColor: "var(--cocoa)",
-                    background: "var(--cream)",
-                    backfaceVisibility: "hidden",
-                    WebkitBackfaceVisibility: "hidden",
-                  }}
-                >
-                  {e.past && (
-                    <div
-                      className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center"
-                      style={{ background: "rgba(255, 248, 240, 0.3)" }}
-                    >
-                      <div className="relative rotate-[-10deg]">
-                        <div
-                          className="font-marker rounded-2xl border-4 px-5 py-2 text-4xl uppercase tracking-widest"
-                          style={{
-                            color: "#dc2626",
-                            borderColor: "#dc2626",
-                            background: "rgba(255, 255, 255, 0.85)",
-                            boxShadow: "4px 4px 0 0 rgba(220, 38, 38, 0.35)",
-                            textShadow: "2px 2px 0 rgba(220, 38, 38, 0.15)",
-                          }}
-                        >
-                          Passé
-                        </div>
-                        <svg
-                          className="absolute -right-2 -top-2 w-7"
-                          viewBox="0 0 24 24"
-                          fill="#dc2626"
-                          aria-hidden="true"
-                        >
-                          <path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 6.5-5.5-3.5-5.5 3.5 1.5-6.5-5-4.5 6.5-0.5L12 2z" />
-                        </svg>
-                        <svg
-                          className="absolute -bottom-1 -left-2 w-5 rotate-[-20deg]"
-                          viewBox="0 0 24 24"
-                          fill="#dc2626"
-                          aria-hidden="true"
-                        >
-                          <path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 6.5-5.5-3.5-5.5 3.5 1.5-6.5-5-4.5 6.5-0.5L12 2z" />
-                        </svg>
+                {e.past && (
+                  <div
+                    className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center"
+                    style={{ background: "rgba(255, 248, 240, 0.3)" }}
+                  >
+                    <div className="relative rotate-[-10deg]">
+                      <div
+                        className="font-marker rounded-2xl border-4 px-5 py-2 text-4xl uppercase tracking-widest"
+                        style={{
+                          color: "#dc2626",
+                          borderColor: "#dc2626",
+                          background: "rgba(255, 255, 255, 0.85)",
+                          boxShadow: "4px 4px 0 0 rgba(220, 38, 38, 0.35)",
+                          textShadow: "2px 2px 0 rgba(220, 38, 38, 0.15)",
+                        }}
+                      >
+                        Passé
                       </div>
+                      <svg
+                        className="absolute -right-2 -top-2 w-7"
+                        viewBox="0 0 24 24"
+                        fill="#dc2626"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 6.5-5.5-3.5-5.5 3.5 1.5-6.5-5-4.5 6.5-0.5L12 2z" />
+                      </svg>
+                      <svg
+                        className="absolute -bottom-1 -left-2 w-5 rotate-[-20deg]"
+                        viewBox="0 0 24 24"
+                        fill="#dc2626"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 6.5-5.5-3.5-5.5 3.5 1.5-6.5-5-4.5 6.5-0.5L12 2z" />
+                      </svg>
                     </div>
-                  )}
-                  <span className="font-marker text-sm tracking-wide" style={{ color: "var(--clay)" }}>{e.date}</span>
-                  <h3 className="mt-3 font-display text-xl leading-tight" style={{ color: "var(--cocoa)" }}>{e.titre}</h3>
-                  <p className="mt-1 font-handwritten text-lg" style={{ color: "var(--clay)" }}>{e.lieu}</p>
-                  {(e.time || e.price) && (
-                    <div className="mt-3 space-y-1 text-sm font-marker" style={{ color: "var(--cocoa)" }}>
-                      {e.time && <p>🗓️ {e.time}</p>}
-                      {e.price && <p>🏷️ {e.price}</p>}
-                    </div>
-                  )}
-                  <p className="mt-4 text-base leading-relaxed opacity-90" style={{ color: "var(--cocoa)" }}>{e.desc}</p>
-                </div>
+                  </div>
+                )}
+                <span className="font-marker text-sm tracking-wide" style={{ color: "var(--clay)" }}>{e.date}</span>
+                <h3 className="mt-3 font-display text-xl leading-tight" style={{ color: "var(--cocoa)" }}>{e.titre}</h3>
+                <p className="mt-1 font-handwritten text-lg" style={{ color: "var(--clay)" }}>{e.lieu}</p>
+                {(e.time || e.price) && (
+                  <div className="mt-3 space-y-1 text-sm font-marker" style={{ color: "var(--cocoa)" }}>
+                    {e.time && <p>🗓️ {e.time}</p>}
+                    {e.price && <p>🏷️ {e.price}</p>}
+                  </div>
+                )}
+                <p className="mt-4 text-base leading-relaxed opacity-90" style={{ color: "var(--cocoa)" }}>{e.desc}</p>
+              </div>
 
-                {/* BACK */}
-                <a
-                  href={e.instagramUrl || "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Voir ${e.titre} sur Instagram`}
-                  aria-hidden={!flippedEvents.has(e.titre)}
-                  tabIndex={flippedEvents.has(e.titre) ? 0 : -1}
-                  className="absolute inset-0 block overflow-hidden rounded-3xl border-2 shadow-xl"
-                  style={{
-                    borderColor: "var(--cocoa)",
-                    background: "var(--sand)",
-                    backfaceVisibility: "hidden",
-                    WebkitBackfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)",
-                  }}
-                  onClick={(ev) => ev.stopPropagation()}
-                >
-                  {e.image ? (
-                    <img
-                      src={e.image}
-                      alt={e.titre}
-                      className="h-full w-full object-cover"
-                      style={{ objectPosition: (e as { imagePosition?: string }).imagePosition || "center" }}
-                    />
-                  ) : (
-                    <div
-                      className="flex h-full w-full flex-col items-center justify-center gap-3 p-6 text-center"
-                      style={{ color: "var(--cocoa)" }}
-                    >
-                      <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
-                        Image à venir
-                      </span>
-                      <p className="font-marker text-sm opacity-70">
-                        Visuel & lien Instagram à ajouter
-                      </p>
-                    </div>
-                  )}
-                  {e.instagramUrl && (
-                    <div
-                      className="absolute bottom-3 right-3 rounded-full px-3 py-1 font-marker text-xs"
-                      style={{ background: "var(--cocoa)", color: "var(--cream)" }}
-                    >
-                      Voir sur Instagram ↗
-                    </div>
-                  )}
-                </a>
+              {/* BACK */}
+              <a
+                href={e.instagramUrl || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Voir ${e.titre} sur Instagram`}
+                aria-hidden={!flippedEvents.has(e.titre)}
+                tabIndex={flippedEvents.has(e.titre) ? 0 : -1}
+                className="absolute inset-0 block overflow-hidden rounded-3xl border-2 shadow-xl"
+                style={{
+                  borderColor: "var(--cocoa)",
+                  background: "var(--sand)",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
+                  transform: "rotateY(180deg)",
+                }}
+                onClick={(ev) => ev.stopPropagation()}
+              >
+                {e.image ? (
+                  <img
+                    src={e.image}
+                    alt={e.titre}
+                    className="h-full w-full object-cover"
+                    style={{ objectPosition: (e as { imagePosition?: string }).imagePosition || "center" }}
+                  />
+                ) : (
+                  <div
+                    className="flex h-full w-full flex-col items-center justify-center gap-3 p-6 text-center"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
+                      Image à venir
+                    </span>
+                    <p className="font-marker text-sm opacity-70">
+                      Visuel & lien Instagram à ajouter
+                    </p>
+                  </div>
+                )}
+                {e.instagramUrl && (
+                  <div
+                    className="absolute bottom-3 right-3 rounded-full px-3 py-1 font-marker text-xs"
+                    style={{ background: "var(--cocoa)", color: "var(--cream)" }}
+                  >
+                    Voir sur Instagram ↗
+                  </div>
+                )}
+              </a>
+            </div>
+          </div>
+        );
+
+        return (
+          <div className="space-y-16">
+            {/* À VENIR */}
+            <div>
+              <h3 className="mb-6 text-center font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
+                À venir
+              </h3>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {events.filter((e) => !e.past).map(renderEventCard)}
               </div>
             </div>
-          ))}
+
+            {/* PASSÉS */}
+            <div>
+              <h3 className="mb-6 text-center font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
+                Passés
+              </h3>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {events.filter((e) => e.past).map(renderEventCard)}
+              </div>
+            </div>
+          </div>
+        );
+      })()}
         </div>
       </section>
 
