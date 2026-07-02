@@ -202,6 +202,7 @@ function Index() {
   const [fadingSlot, setFadingSlot] = useState<0 | 1 | null>(null);
   const [flippedEvents, setFlippedEvents] = useState<Set<string>>(new Set());
   const [flippedPricing, setFlippedPricing] = useState<Set<string>>(new Set());
+  const [hoveredPricing, setHoveredPricing] = useState<string | null>(null);
   const nextReviewRef = useRef(2);
   const activeSlotRef = useRef<0 | 1>(0);
 
