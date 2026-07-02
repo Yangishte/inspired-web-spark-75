@@ -800,6 +800,9 @@ function Index() {
                     }}
                     onClick={(ev) => ev.stopPropagation()}
                   >
+                    <span className="font-handwritten text-xl" style={{ color: "var(--clay)" }}>
+                      {p.name}
+                    </span>
                     <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
                       Réserver
                     </span>
