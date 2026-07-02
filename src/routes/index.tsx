@@ -436,8 +436,8 @@ function Index() {
       </section>
 
       {/* ÉVÉNEMENTS */}
-      <section id="evenements" data-reveal="zoom-in" className="reveal relative z-10 mx-auto max-w-6xl px-6 py-28">
-        <div className="mb-10 text-center">
+      <section id="evenements" data-reveal="zoom-in" className="reveal relative z-10 mx-auto max-w-6xl px-6 py-20">
+        <div className="mb-6 text-center">
           <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Réserve ta place ↓</span>
           <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
             Nos événements
@@ -636,12 +636,13 @@ function Index() {
           );
 
           return (
-            <div className="space-y-16">
+            <div className="space-y-10">
               {/* À VENIR */}
               <div>
-                <h3 className="mb-6 text-center font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
-                  À venir
-                </h3>
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
+                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
+                </div>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {events.filter((e) => !e.past).map(renderEventCard)}
                 </div>
@@ -649,9 +650,10 @@ function Index() {
 
               {/* PASSÉS */}
               <div>
-                <h3 className="mb-6 text-center font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
-                  Passés
-                </h3>
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
+                  <div className="h-px flex-1" style={{ background: "var(--cocoa)" }} />
+                </div>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {events.filter((e) => e.past).map(renderEventCard)}
                 </div>
