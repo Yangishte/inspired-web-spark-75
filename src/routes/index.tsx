@@ -673,71 +673,63 @@ function Index() {
           </h2>
         </div>
         <div className="relative overflow-hidden">
-          <div className="flex items-center gap-8 marquee-track w-max">
-          {[...partners, ...partners].map((p, i) => (
-            <div
-              key={i}
-              className={`relative shrink-0 flex items-center justify-center ${p.text ? "flex-col gap-1" : ""} ${
-                p.shape === "circle"
-                  ? p.text ? "h-auto w-auto" : "h-16 w-16 md:h-20 md:w-20"
-                  : p.text ? "h-auto w-auto overflow-visible rounded-md" : "h-12 md:h-16 overflow-hidden rounded-md"
-              }`}
-              style={p.shape === "rect" && !p.text ? { aspectRatio: "3 / 1" } : undefined}
-            >
-              {p.shape === "circle" ? (
-                <div className={`overflow-hidden rounded-full ${p.text ? "relative h-16 w-16 md:h-20 md:w-20" : "absolute inset-0"}`}>
+          <div className="flex items-center gap-10 md:gap-12 marquee-track w-max">
+            {[...partners, ...partners].map((p, i) => (
+              <div
+                key={i}
+                className={`shrink-0 flex flex-col items-center justify-center ${p.text ? "gap-1" : ""}`}
+              >
+                <div className="flex h-16 w-28 md:h-20 md:w-36 items-center justify-center">
                   {p.link ? (
                     <a
                       href={p.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block h-full w-full"
+                      className="flex h-full w-full items-center justify-center"
                     >
+                      {p.shape === "circle" ? (
+                        <div className="h-16 w-16 md:h-20 md:w-20 overflow-hidden rounded-full">
+                          <img
+                            src={p.url}
+                            alt={p.name}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : (
+                        <img
+                          src={p.url}
+                          alt={p.name}
+                          className="h-full w-full object-contain px-2"
+                          loading="lazy"
+                        />
+                      )}
+                    </a>
+                  ) : p.shape === "circle" ? (
+                    <div className="h-16 w-16 md:h-20 md:w-20 overflow-hidden rounded-full">
                       <img
                         src={p.url}
                         alt={p.name}
                         className="h-full w-full object-cover"
                         loading="lazy"
                       />
-                    </a>
+                    </div>
                   ) : (
                     <img
                       src={p.url}
                       alt={p.name}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain px-2"
                       loading="lazy"
                     />
                   )}
                 </div>
-              ) : p.link ? (
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-full w-full items-center justify-center px-2"
-                >
-                  <img
-                    src={p.url}
-                    alt={p.name}
-                    className="h-full w-full object-contain"
-                    loading="lazy"
-                  />
-                </a>
-              ) : (
-                <img
-                  src={p.url}
-                  alt={p.name}
-                  className="h-full w-full object-contain px-2"
-                  loading="lazy"
-                />
-              )}
-              {p.text && (
-                <span className="font-marker text-xs tracking-wide" style={{ color: "var(--cream)" }}>
-                  {p.text}
-                </span>
-              )}
-            </div>
-          ))}
+                {p.text && (
+                  <span className="font-marker text-xs tracking-wide" style={{ color: "var(--cream)" }}>
+                    {p.text}
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
