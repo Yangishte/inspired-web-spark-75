@@ -969,6 +969,30 @@ function Index() {
             Prendre rendez-vous
           </a>
         </div>
+        <div className="mx-auto mt-6 flex max-w-5xl flex-wrap items-center justify-center gap-3 px-6">
+          <a
+            href="https://www.instagram.com/_baracustom/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2 font-marker transition-transform hover:scale-105"
+            style={{ background: "var(--sand)", color: "var(--cocoa)", textDecoration: "none" }}
+          >
+            <Instagram size={18} />
+            Instagram
+          </a>
+          <a
+            href="https://www.tiktok.com/@_baracustom"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2 font-marker transition-transform hover:scale-105"
+            style={{ background: "var(--sand)", color: "var(--cocoa)", textDecoration: "none" }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 12a4 4 0 1 0 4 4V4c.667 1.333 2.3 4 6 4" />
+            </svg>
+            TikTok
+          </a>
+        </div>
       </section>
 
       {/* Nuages croquis flottants entre Réserver et Contact */}
