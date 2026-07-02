@@ -210,7 +210,8 @@ function LotPochettes() {
         mats.forEach((m) => {
           const mm = m as THREE.MeshStandardMaterial;
           if (mm && "color" in mm && mm.color) {
-            mm.color.lerp(new THREE.Color("#ffffff"), 0.35);
+            // Force a warm cream tone while preserving 15% of the original hue
+            mm.color.lerp(new THREE.Color("#F5F2E8"), 0.85);
           }
         });
       }
