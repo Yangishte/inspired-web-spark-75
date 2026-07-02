@@ -739,8 +739,10 @@ function Index() {
             ].map((p, i) => (
               <div
                 key={p.name}
-                className={`group min-h-[280px] cursor-pointer ${i === 0 ? "float-left" : "float-right float-delay-2"}`}
+                className={`min-h-[280px] cursor-pointer transition-all duration-500 ease-out ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "z-10 scale-105" : hoveredPricing ? "scale-95 opacity-80" : ""}`}
                 style={{ perspective: "1200px" }}
+                onMouseEnter={() => setHoveredPricing(p.name)}
+                onMouseLeave={() => setHoveredPricing(null)}
                 onClick={() => {
                   setFlippedPricing((prev) => {
                     const next = new Set(prev);
@@ -765,7 +767,7 @@ function Index() {
                 }}
               >
                 <div
-                  className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedPricing.has(p.name) ? "[transform:rotateY(180deg)]" : ""} group-hover:[transform:rotateY(180deg)]`}
+                  className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedPricing.has(p.name) ? "[transform:rotateY(180deg)]" : ""} ${hoveredPricing === p.name ? "drop-shadow-[0_0_24px_rgba(191,146,99,0.45)]" : ""}`}
                 >
                   {/* FRONT */}
                   <div
