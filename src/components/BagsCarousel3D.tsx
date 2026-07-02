@@ -338,7 +338,7 @@ export default function BagsCarousel3D() {
           <h3 className="font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
             {current.title}
           </h3>
-          <p className="mx-auto mt-1 max-w-md whitespace-pre-wrap line-clamp-2 text-sm leading-relaxed md:text-base" style={{ color: "var(--cocoa)" }}>
+          <p className="mx-auto mt-1 max-w-md whitespace-pre-wrap line-clamp-3 text-sm leading-relaxed md:text-base" style={{ color: "var(--cocoa)" }}>
             {current.desc}
           </p>
         </div>
