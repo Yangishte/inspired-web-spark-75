@@ -215,20 +215,26 @@ function CarouselItem({
   const group = useRef<THREE.Group>(null);
   const target = TARGETS[slot];
   const spinRef = useRef(0);
+  // reusable temp objects to avoid per-frame allocations
+  const tmpVec = useRef(new THREE.Vector3());
+  const tmpEuler = useRef(new THREE.Euler());
+  const tmpQuat = useRef(new THREE.Quaternion());
 
   useFrame((_, delta) => {
     if (!group.current) return;
-    // smooth lerp ~0.6s
-    const k = 1 - Math.exp(-delta / 0.12);
-    group.current.position.lerp(new THREE.Vector3(...target.pos), k);
-    const targetEuler = new THREE.Euler(...target.rot);
-    const targetQuat = new THREE.Quaternion().setFromEuler(targetEuler);
+    const d = Math.min(delta, 0.05); // clamp big frame gaps
+    const k = 1 - Math.exp(-d / 0.12);
+    tmpVec.current.set(target.pos[0], target.pos[1], target.pos[2]);
+    group.current.position.lerp(tmpVec.current, k);
     if (isCenter) {
-      spinRef.current += delta * 0.35;
-      const spinQuat = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, spinRef.current, 0));
-      group.current.quaternion.slerp(spinQuat, k);
+      spinRef.current += d * 0.35;
+      tmpEuler.current.set(0, spinRef.current, 0);
+      tmpQuat.current.setFromEuler(tmpEuler.current);
+      group.current.quaternion.slerp(tmpQuat.current, k);
     } else {
-      group.current.quaternion.slerp(targetQuat, k);
+      tmpEuler.current.set(target.rot[0], target.rot[1], target.rot[2]);
+      tmpQuat.current.setFromEuler(tmpEuler.current);
+      group.current.quaternion.slerp(tmpQuat.current, k);
       spinRef.current = 0;
     }
     const s = THREE.MathUtils.lerp(group.current.scale.x, target.scale, k);
@@ -241,6 +247,7 @@ function CarouselItem({
     </group>
   );
 }
+
 
 function Scene({ activeIndex }: { activeIndex: number }) {
   const left = (activeIndex - 1 + ITEMS.length) % ITEMS.length;
