@@ -94,17 +94,13 @@ const CLIENT_IMAGES = [
 // deux images, et rien au centre où se trouve le texte.
 const POSITIONS = [
   // Zone haut-gauche
-  { zone: "tl", cls: "left-[-1%] top-2 w-16 md:w-28", rot: "-8deg" },
-  { zone: "tl", cls: "left-[2%] top-10 w-16 md:w-28", rot: "-4deg" },
+  { zone: "tl", cls: "left-[6%] top-[12%] w-20 md:w-32", rot: "-8deg" },
   // Zone haut-droite
-  { zone: "tr", cls: "right-[-1%] top-2 w-16 md:w-28", rot: "10deg" },
-  { zone: "tr", cls: "right-[2%] top-10 w-16 md:w-28", rot: "6deg" },
+  { zone: "tr", cls: "right-[6%] top-[8%] w-20 md:w-32", rot: "10deg" },
   // Zone bas-gauche
-  { zone: "bl", cls: "left-[-1%] bottom-2 w-16 md:w-28", rot: "6deg" },
-  { zone: "bl", cls: "left-[2%] bottom-10 w-16 md:w-28", rot: "-6deg" },
+  { zone: "bl", cls: "left-[8%] bottom-[20%] w-20 md:w-32", rot: "6deg" },
   // Zone bas-droite
-  { zone: "br", cls: "right-[-1%] bottom-2 w-16 md:w-28", rot: "-6deg" },
-  { zone: "br", cls: "right-[2%] bottom-10 w-16 md:w-28", rot: "4deg" },
+  { zone: "br", cls: "right-[8%] bottom-[20%] w-20 md:w-32", rot: "-6deg" },
 ];
 
 function shuffle<T>(array: T[]): T[] {
