@@ -1048,6 +1048,30 @@ function Index() {
           >
             moonwalcoeur@outlook.com
           </a>
+          <div className="mx-auto mt-6 flex items-center justify-center gap-4">
+            <a
+              href="https://www.instagram.com/_baracustom/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="inline-flex items-center justify-center rounded-full p-3 transition-transform hover:scale-110"
+              style={{ background: "var(--cocoa)", color: "var(--cream)" }}
+            >
+              <Instagram size={24} />
+            </a>
+            <a
+              href="https://www.tiktok.com/@_baracustom"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="inline-flex items-center justify-center rounded-full p-3 transition-transform hover:scale-110"
+              style={{ background: "var(--cocoa)", color: "var(--cream)" }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4c.667 1.333 2.3 4 6 4" />
+              </svg>
+            </a>
+          </div>
       </section>
 
       <footer
