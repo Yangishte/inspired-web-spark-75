@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Instagram, Star } from "lucide-react";
+import { Instagram, Star, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
@@ -211,6 +211,7 @@ function Index() {
   const [flippedEvents, setFlippedEvents] = useState<Set<string>>(new Set());
   
   const [hoveredPricing, setHoveredPricing] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const nextReviewRef = useRef(2);
   const activeSlotRef = useRef<0 | 1>(0);
 
@@ -306,11 +307,12 @@ function Index() {
       />
 
       {/* NAV */}
-      <header className="relative z-10 mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 pt-8">
+      <header className="relative z-20 mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 pt-8">
         <a href="#" className="float-soft font-display text-2xl tracking-tight" style={{ color: "var(--cocoa)" }}>
           Bar à custom
         </a>
-        <nav className="flex flex-wrap items-center gap-7">
+        {/* Desktop nav */}
+        <nav className="hidden md:flex flex-wrap items-center gap-7">
           <NavLink label="L'atelier" href="#atelier" delay={1} />
           <NavLink label="Événements" href="#evenements" delay={2} />
           <NavLink label="Services" href="#services" delay={3} />
@@ -319,6 +321,44 @@ function Index() {
           <NavLink label="Réserver" href="#reserver" delay={6} />
           <NavLink label="Contact" href="#contact" delay={1} />
         </nav>
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={mobileMenuOpen}
+          onClick={() => setMobileMenuOpen((v) => !v)}
+          className="md:hidden grid h-11 w-11 place-items-center rounded-full border-2 transition-transform active:scale-95"
+          style={{ borderColor: "var(--cocoa)", color: "var(--cocoa)", background: "var(--cream)" }}
+        >
+          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+        {/* Mobile dropdown */}
+        {mobileMenuOpen && (
+          <nav
+            className="md:hidden w-full mt-2 flex flex-col gap-4 rounded-2xl border-2 p-5"
+            style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
+          >
+            {[
+              { label: "L'atelier", href: "#atelier" },
+              { label: "Événements", href: "#evenements" },
+              { label: "Services", href: "#services" },
+              { label: "Tarifs", href: "#tarifs" },
+              { label: "FAQ", href: "#faq" },
+              { label: "Réserver", href: "#reserver" },
+              { label: "Contact", href: "#contact" },
+            ].map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-marker text-base tracking-wide"
+                style={{ color: "var(--cocoa)" }}
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+        )}
       </header>
 
       {/* HERO */}
