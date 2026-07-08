@@ -759,60 +759,36 @@ function Index() {
               { name: "Adulte", price: "CHF 49.-", desc: "2 heures d'atelier, boisson offerte, support inclus." },
               { name: "Enfant", price: "CHF 39.-", desc: "2 heures d'atelier, boisson offerte, support inclus.", featured: true },
             ].map((p, i) => (
-              <div
+              <a
                 key={p.name}
-                className={`relative min-h-[280px] cursor-pointer transition-all duration-500 ease-out ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "z-10 scale-105" : hoveredPricing ? "scale-95 opacity-80" : ""}`}
+                href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`relative flex min-h-[280px] flex-col items-center justify-center overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "z-10 scale-105" : hoveredPricing ? "scale-95 opacity-80" : ""}`}
+                style={{
+                  borderColor: "var(--cocoa)",
+                  background: p.featured ? "var(--cocoa)" : "transparent",
+                  color: p.featured ? "var(--cream)" : "var(--cocoa)",
+                  textDecoration: "none",
+                }}
                 onMouseEnter={() => setHoveredPricing(p.name)}
                 onMouseLeave={() => setHoveredPricing(null)}
-                role="button"
-                aria-label={`Carte ${p.name}, survolez pour voir le verso`}
-                tabIndex={0}
-                onKeyDown={(ev) => {
-                  if (ev.key === "Enter" || ev.key === " ") {
-                    ev.preventDefault();
-                    setHoveredPricing((prev) => (prev === p.name ? null : p.name));
-                  }
-                }}
+                aria-label={`Carte ${p.name}, ${p.price}, réserver`}
               >
-                {/* FRONT */}
-                <div
-                  className={`absolute inset-0 overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${hoveredPricing === p.name ? "pointer-events-none scale-95 opacity-0" : "opacity-100"}`}
+                <h3 className="font-display text-2xl">{p.name}</h3>
+                <p className="mt-4 font-display text-4xl md:text-5xl">{p.price}</p>
+                <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
+                <span
+                  className={`mt-6 inline-flex items-center justify-center rounded-full border-2 px-6 py-2 font-handwritten text-lg transition-all duration-500 ease-out ${hoveredPricing === p.name ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
                   style={{
-                    borderColor: "var(--cocoa)",
-                    background: p.featured ? "var(--cocoa)" : "transparent",
-                    color: p.featured ? "var(--cream)" : "var(--cocoa)",
-                  }}
-                >
-                  <h3 className="font-display text-2xl">{p.name}</h3>
-                  <p className="mt-4 font-display text-4xl md:text-5xl">{p.price}</p>
-                  <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
-                </div>
-                {/* BACK */}
-                <a
-                  href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-hidden={hoveredPricing !== p.name}
-                  tabIndex={hoveredPricing === p.name ? 0 : -1}
-                  className={`absolute inset-0 flex flex-col items-center justify-center overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${hoveredPricing === p.name ? "opacity-100" : "pointer-events-none scale-95 opacity-0"}`}
-                  style={{
-                    borderColor: "var(--cocoa)",
+                    borderColor: "var(--clay)",
                     background: "var(--sand)",
                     color: "var(--cocoa)",
-                    textDecoration: "none",
                   }}
-                  onClick={(ev) => ev.stopPropagation()}
                 >
-                  <span className="font-handwritten text-xl" style={{ color: "var(--clay)" }}>
-                    {p.name}
-                  </span>
-                  <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
-                    Réserver
-                  </span>
-                  <p className="mt-2 font-display text-3xl">{p.price}</p>
-                  <p className="mt-4 font-marker text-lg">{p.desc}</p>
-                </a>
-              </div>
+                  Réserver
+                </span>
+              </a>
             ))}
           </div>
 
