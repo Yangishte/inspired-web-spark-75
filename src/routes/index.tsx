@@ -209,7 +209,7 @@ function Index() {
   const [slot1, setSlot1] = useState(1);
   const [fadingSlot, setFadingSlot] = useState<0 | 1 | null>(null);
   const [flippedEvents, setFlippedEvents] = useState<Set<string>>(new Set());
-  const [flippedPricing, setFlippedPricing] = useState<Set<string>>(new Set());
+  
   const [hoveredPricing, setHoveredPricing] = useState<string | null>(null);
   const nextReviewRef = useRef(2);
   const activeSlotRef = useRef<0 | 1>(0);
@@ -761,80 +761,57 @@ function Index() {
             ].map((p, i) => (
               <div
                 key={p.name}
-                className={`min-h-[280px] cursor-pointer transition-all duration-500 ease-out ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "z-10 scale-105" : hoveredPricing ? "scale-95 opacity-80" : ""}`}
-                style={{ perspective: "1200px" }}
+                className={`relative min-h-[280px] cursor-pointer transition-all duration-500 ease-out ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "z-10 scale-105" : hoveredPricing ? "scale-95 opacity-80" : ""}`}
                 onMouseEnter={() => setHoveredPricing(p.name)}
                 onMouseLeave={() => setHoveredPricing(null)}
-                onClick={() => {
-                  setFlippedPricing((prev) => {
-                    const next = new Set(prev);
-                    if (next.has(p.name)) next.delete(p.name);
-                    else next.add(p.name);
-                    return next;
-                  });
-                }}
                 role="button"
-                aria-label={`Carte ${p.name}, cliquez pour retourner`}
+                aria-label={`Carte ${p.name}, survolez pour voir le verso`}
                 tabIndex={0}
                 onKeyDown={(ev) => {
                   if (ev.key === "Enter" || ev.key === " ") {
                     ev.preventDefault();
-                    setFlippedPricing((prev) => {
-                      const next = new Set(prev);
-                      if (next.has(p.name)) next.delete(p.name);
-                      else next.add(p.name);
-                      return next;
-                    });
+                    setHoveredPricing((prev) => (prev === p.name ? null : p.name));
                   }
                 }}
               >
+                {/* FRONT */}
                 <div
-                  className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedPricing.has(p.name) ? "[transform:rotateY(180deg)]" : ""} ${hoveredPricing === p.name ? "drop-shadow-[0_0_24px_rgba(191,146,99,0.45)]" : ""}`}
+                  className={`absolute inset-0 overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${hoveredPricing === p.name ? "pointer-events-none scale-95 opacity-0" : "opacity-100"}`}
+                  style={{
+                    borderColor: "var(--cocoa)",
+                    background: p.featured ? "var(--cocoa)" : "transparent",
+                    color: p.featured ? "var(--cream)" : "var(--cocoa)",
+                  }}
                 >
-                  {/* FRONT */}
-                  <div
-                    className="absolute inset-0 overflow-hidden rounded-3xl border-2 p-5 text-center sm:p-8"
-                    style={{
-                      borderColor: "var(--cocoa)",
-                      background: p.featured ? "var(--cocoa)" : "transparent",
-                      color: p.featured ? "var(--cream)" : "var(--cocoa)",
-                      backfaceVisibility: "hidden",
-                      WebkitBackfaceVisibility: "hidden",
-                    }}
-                  >
-                    <h3 className="font-display text-2xl">{p.name}</h3>
-                    <p className="mt-4 font-display text-4xl md:text-5xl">{p.price}</p>
-                    <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
-                  </div>
-                  {/* BACK */}
-                  <a
-                    href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-hidden={!flippedPricing.has(p.name)}
-                    tabIndex={flippedPricing.has(p.name) ? 0 : -1}
-                    className="absolute inset-0 flex flex-col items-center justify-center overflow-hidden rounded-3xl border-2 p-5 text-center sm:p-8"
-                    style={{
-                      borderColor: "var(--cocoa)",
-                      background: "var(--sand)",
-                      color: "var(--cocoa)",
-                      backfaceVisibility: "hidden",
-                      WebkitBackfaceVisibility: "hidden",
-                      transform: "rotateY(180deg)",
-                      textDecoration: "none",
-                    }}
-                    onClick={(ev) => ev.stopPropagation()}
-                  >
-                    <span className="font-handwritten text-xl" style={{ color: "var(--clay)" }}>
-                      {p.name}
-                    </span>
-                    <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
-                      Réserver
-                    </span>
-                    <p className="mt-2 font-display text-3xl">{p.price}</p>
-                    <p className="mt-4 font-marker text-lg">{p.desc}</p>
-                  </a>
+                  <h3 className="font-display text-2xl">{p.name}</h3>
+                  <p className="mt-4 font-display text-4xl md:text-5xl">{p.price}</p>
+                  <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
                 </div>
+                {/* BACK */}
+                <a
+                  href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-hidden={hoveredPricing !== p.name}
+                  tabIndex={hoveredPricing === p.name ? 0 : -1}
+                  className={`absolute inset-0 flex flex-col items-center justify-center overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${hoveredPricing === p.name ? "opacity-100" : "pointer-events-none scale-95 opacity-0"}`}
+                  style={{
+                    borderColor: "var(--cocoa)",
+                    background: "var(--sand)",
+                    color: "var(--cocoa)",
+                    textDecoration: "none",
+                  }}
+                  onClick={(ev) => ev.stopPropagation()}
+                >
+                  <span className="font-handwritten text-xl" style={{ color: "var(--clay)" }}>
+                    {p.name}
+                  </span>
+                  <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
+                    Réserver
+                  </span>
+                  <p className="mt-2 font-display text-3xl">{p.price}</p>
+                  <p className="mt-4 font-marker text-lg">{p.desc}</p>
+                </a>
               </div>
             ))}
           </div>
