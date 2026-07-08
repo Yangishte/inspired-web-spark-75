@@ -804,7 +804,7 @@ function Index() {
                 href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`relative flex min-h-[280px] flex-col items-center justify-center overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "z-10 scale-105" : hoveredPricing ? "scale-95 opacity-80" : ""}`}
+                className={`relative flex min-h-[280px] flex-col items-center justify-center overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "md:z-10 md:scale-105" : hoveredPricing ? "md:scale-95 md:opacity-80" : ""}`}
                 style={{
                   borderColor: "var(--cocoa)",
                   background: p.featured ? "var(--cocoa)" : "transparent",
@@ -819,7 +819,7 @@ function Index() {
                 <p className="mt-4 font-display text-4xl md:text-5xl">{p.price}</p>
                 <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
                 <span
-                  className={`mt-6 inline-flex items-center justify-center rounded-full border-2 px-6 py-2 font-handwritten text-lg transition-all duration-500 ease-out ${hoveredPricing === p.name ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                  className={`mt-6 inline-flex items-center justify-center rounded-full border-2 px-6 py-2 font-handwritten text-lg transition-all duration-500 ease-out opacity-100 translate-y-0 ${hoveredPricing === p.name ? "md:translate-y-0 md:opacity-100" : "md:translate-y-4 md:opacity-0"}`}
                   style={{
                     borderColor: p.featured ? "var(--cream)" : "var(--cocoa)",
                     background: "transparent",
