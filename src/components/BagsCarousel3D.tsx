@@ -35,7 +35,7 @@ const ITEMS: { key: ItemKey; title: string; desc: string }[] = [
   { key: "sac", title: "Sac cabas", desc: "Un modèle généreux 100% coton aux 2 poches avant. Capacité de 23L." },
   { key: "canvas", title: "Tote bag", desc: "Parfait pour un pique nique!\nTote bag 100% coton.\nCapacité 10L." },
   { key: "backpack", title: "Sac à dos", desc: "Sac à dos beige en toile, une grande surface pour laisser libre cours à ta créativité." },
-  { key: "pouches", title: "Pochettes WM552", desc: "Trio de pochettes zippées en toile beige, parfait pour organiser vos petits essentiels." },
+  { key: "pouches", title: "Pochettes", desc: "Trio de pochettes zippées en toile beige, parfait pour organiser vos petits essentiels." },
   { key: "lotpochettes", title: "Lot pochettes", desc: "Pochettes multi-usages en 100% coton." },
 ];
 
