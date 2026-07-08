@@ -21,7 +21,7 @@ import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
 import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
-import visilabLogo from "@/assets/partners/visilab.jpg.asset.json";
+import visanaLogo from "@/assets/partners/visana.jpg.asset.json";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
 import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset.json";
 import corridorLogo from "@/assets/partners/corridor.webp.asset.json";
@@ -46,7 +46,7 @@ type Partner = {
 const partners: Partner[] = [
   { name: "LFM La Radio", url: lfmLogo.url, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", text: "Ecoute le podcast ici!" },
   { name: "L'Illustré", url: illustreLogo.url, shape: "rect" },
-  { name: "Visilab", url: visilabLogo.url, shape: "rect" },
+  { name: "Visana", url: visanaLogo.url, shape: "rect" },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" },
   { name: "Little Green House", url: littleGreenHouseLogo.url, shape: "rect" },
   { name: "Corridor Lausanne", url: corridorLogo.url, shape: "rect" },
