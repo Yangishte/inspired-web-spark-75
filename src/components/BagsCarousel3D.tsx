@@ -205,12 +205,25 @@ function LotPochettes() {
       if ((o as THREE.Mesh).isMesh) {
         o.castShadow = true;
         o.receiveShadow = true;
+        // éclaircir le modèle pour qu'il corresponde aux autres articles
+        const mat = (o as THREE.Mesh).material as THREE.MeshStandardMaterial | undefined;
+        if (mat && (mat as THREE.MeshStandardMaterial).isMeshStandardMaterial) {
+          const standardMat = mat as THREE.MeshStandardMaterial;
+          standardMat.roughness = Math.max(0.35, standardMat.roughness * 0.65);
+          standardMat.color = standardMat.color.clone().offsetHSL(0, 0, 0.08);
+        }
       }
     });
 
     return s;
   }, [scene]);
-  return <primitive object={cloned} />;
+  return (
+    <>
+      <primitive object={cloned} />
+      {/* lumière complémentaire pour illuminer le lot de pochettes */}
+      <pointLight position={[0, 1.2, 1.8]} intensity={2.2} color="#fff7e6" distance={6} decay={2} />
+    </>
+  );
 }
 
 function Model({ kind }: { kind: ItemKey }) {
