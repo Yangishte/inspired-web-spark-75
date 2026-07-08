@@ -240,9 +240,6 @@ function Moonwalcoeur() {
         >
           ← Bar à custom
         </Link>
-        <span className="font-handwritten text-xl text-[#A8AEC9]">
-          Mission · Moonwalcoeur
-        </span>
       </header>
 
       {/* HERO */}
@@ -423,59 +420,8 @@ function Moonwalcoeur() {
         </div>
       </section>
 
-      {/* SECTION 4 — Signature dans une capsule */}
-      <section className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 py-32 text-center">
-        <span className="font-handwritten text-2xl" style={{ color: "#E8B86D" }}>
-          ✦ La signature
-        </span>
-        <h2 className="mt-3 font-display text-4xl md:text-5xl">
-          Posée comme un drapeau sur la Lune.
-        </h2>
-
-        <div
-          className="relative mt-14 w-full max-w-2xl rounded-[2rem] border border-[#A8AEC9]/25 p-10 md:p-16"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(242,240,233,0.06), rgba(75,63,140,0.18))",
-            boxShadow:
-              "0 30px 80px rgba(11,15,42,0.6), inset 0 1px 0 rgba(242,240,233,0.15)",
-          }}
-        >
-          <div
-            className="absolute -inset-1 -z-10 rounded-[2.2rem] opacity-70 blur-2xl"
-            style={{
-              background:
-                "linear-gradient(135deg, #4B3F8C, #FF6B5C, #E8B86D)",
-            }}
-            aria-hidden
-          />
-          <img
-            src={signature.url}
-            alt="Signature Moonwalcoeur"
-            className="mx-auto w-full max-w-lg"
-            style={{ filter: "invert(1) brightness(1.15) hue-rotate(-10deg)" }}
-          />
-        </div>
-
-        <p className="mx-auto mt-12 max-w-2xl font-handwritten text-2xl text-[#F2F0E9] md:text-3xl">
-          Un tandem créatif, deux frères, et l'envie de créer des pièces qui
-          racontent une histoire.
-        </p>
-
-        <Link
-          to="/"
-          className="mt-14 inline-flex items-center gap-3 rounded-full px-8 py-4 font-marker text-lg text-[#0B0F2A] transition-all hover:scale-105"
-          style={{
-            background:
-              "linear-gradient(135deg, #E8B86D 0%, #FF6B5C 100%)",
-            boxShadow: "0 0 40px rgba(232,184,109,0.5)",
-          }}
-        >
-          ⟵ Retour sur Terre
-        </Link>
-      </section>
-
       <footer className="relative z-10 mx-auto max-w-6xl px-6 pb-12 pt-8 text-center text-sm text-[#A8AEC9]">
+        Moonwalcoeur · transmission depuis l'atelier · © 2026
         Moonwalcoeur · transmission depuis l'atelier · © 2026
       </footer>
     </div>
