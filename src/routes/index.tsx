@@ -832,7 +832,7 @@ function Index() {
                       Réserver
                     </span>
                     <p className="mt-2 font-display text-3xl">{p.price}</p>
-                    <p className="mt-4 font-marker text-lg">Prendre rendez-vous →</p>
+                    <p className="mt-4 font-marker text-lg">{p.desc}</p>
                   </a>
                 </div>
               </div>
