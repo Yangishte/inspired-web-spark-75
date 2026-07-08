@@ -358,24 +358,24 @@ export default function BagsCarousel3D() {
         )}
 
 
-        {/* libellé courant intégré au carousel */}
-        <div
-          className="absolute bottom-0 left-0 right-0 z-10 flex min-h-[6.5rem] flex-col items-center justify-center px-6 py-5 text-center md:min-h-28 md:py-6"
-          style={{
-            background: "rgba(255, 253, 247, 0.82)",
-            backdropFilter: "blur(4px)",
-            borderTop: "2px solid var(--cocoa)",
-          }}
-        >
-          <h3 className="font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
-            {current.title}
-          </h3>
-          <p className="mx-auto mt-2 max-w-md whitespace-pre-wrap text-sm leading-relaxed md:mt-3 md:text-base" style={{ color: "var(--cocoa)" }}>
-            {current.desc}
-          </p>
-        </div>
       </div>
 
+      {/* libellé courant détaché sous le carousel */}
+      <div
+        className="mx-auto flex min-h-[6.5rem] w-full flex-col items-center justify-center rounded-b-3xl border-x-2 border-b-2 px-6 py-5 text-center md:min-h-28 md:py-6"
+        style={{
+          background: "rgba(255, 253, 247, 0.82)",
+          backdropFilter: "blur(4px)",
+          borderColor: "var(--cocoa)",
+        }}
+      >
+        <h3 className="font-display text-2xl md:text-3xl" style={{ color: "var(--cocoa)" }}>
+          {current.title}
+        </h3>
+        <p className="mx-auto mt-2 max-w-md whitespace-pre-wrap text-sm leading-relaxed md:mt-3 md:text-base" style={{ color: "var(--cocoa)" }}>
+          {current.desc}
+        </p>
+      </div>
 
       {/* contrôles */}
       <div className="mt-6 flex items-center justify-center gap-6">
