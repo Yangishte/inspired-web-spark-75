@@ -46,7 +46,7 @@ type Partner = {
 const partners: Partner[] = [
   { name: "LFM La Radio", url: lfmLogo.url, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", text: "Ecoute le podcast ici!" },
   { name: "L'Illustré", url: illustreLogo.url, shape: "rect" },
-  { name: "Visilab", url: visilabLogo.url, shape: "rect" },
+  { name: "Visana", url: visanaLogo.url, shape: "rect" },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" },
   { name: "Little Green House", url: littleGreenHouseLogo.url, shape: "rect" },
   { name: "Corridor Lausanne", url: corridorLogo.url, shape: "rect" },
