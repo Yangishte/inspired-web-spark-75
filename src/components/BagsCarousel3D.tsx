@@ -345,10 +345,13 @@ export default function BagsCarousel3D() {
     <div className="w-full">
       <div
         className="relative mx-auto w-full overflow-hidden rounded-3xl border-2"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
         style={{
           borderColor: "var(--cocoa)",
           background: "linear-gradient(180deg, #f6ecd9 0%, #ede0c4 100%)",
           height: isMobile ? 520 : 460,
+          touchAction: "pan-y",
         }}
       >
         {/* Background image */}
