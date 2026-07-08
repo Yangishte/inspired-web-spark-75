@@ -804,7 +804,7 @@ function Index() {
                 href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`relative flex min-h-[280px] flex-col items-center justify-center overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "z-10 scale-105" : hoveredPricing ? "scale-95 opacity-80" : ""}`}
+                className={`relative flex min-h-[280px] flex-col items-center justify-center overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "md:z-10 md:scale-105" : hoveredPricing ? "md:scale-95 md:opacity-80" : ""}`}
                 style={{
                   borderColor: "var(--cocoa)",
                   background: p.featured ? "var(--cocoa)" : "transparent",
