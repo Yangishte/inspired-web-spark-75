@@ -819,7 +819,7 @@ function Index() {
                 <p className="mt-4 font-display text-4xl md:text-5xl">{p.price}</p>
                 <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
                 <span
-                  className={`mt-6 inline-flex items-center justify-center rounded-full border-2 px-6 py-2 font-handwritten text-lg transition-all duration-500 ease-out ${hoveredPricing === p.name ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                  className={`mt-6 inline-flex items-center justify-center rounded-full border-2 px-6 py-2 font-handwritten text-lg transition-all duration-500 ease-out translate-y-0 opacity-100 md:${hoveredPricing === p.name ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
                   style={{
                     borderColor: p.featured ? "var(--cream)" : "var(--cocoa)",
                     background: "transparent",
