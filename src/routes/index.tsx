@@ -21,7 +21,7 @@ import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
 import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
-import visilabLogo from "@/assets/partners/visilab.jpg.asset.json";
+import visanaLogo from "@/assets/partners/visana.jpg.asset.json";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
 import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset.json";
 import corridorLogo from "@/assets/partners/corridor.webp.asset.json";
