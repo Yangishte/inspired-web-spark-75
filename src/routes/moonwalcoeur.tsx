@@ -258,9 +258,6 @@ function Moonwalcoeur() {
           />
         </h1>
 
-        <span className="mt-12 font-handwritten text-lg text-[#A8AEC9]">
-          ↓ continuez le voyage ↓
-        </span>
       </section>
 
       {/* SECTION 2 — Notre histoire */}
