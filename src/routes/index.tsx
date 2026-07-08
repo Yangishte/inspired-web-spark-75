@@ -781,9 +781,9 @@ function Index() {
                 <span
                   className={`mt-6 inline-flex items-center justify-center rounded-full border-2 px-6 py-2 font-handwritten text-lg transition-all duration-500 ease-out ${hoveredPricing === p.name ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
                   style={{
-                    borderColor: "var(--clay)",
-                    background: "var(--sand)",
-                    color: "var(--cocoa)",
+                    borderColor: p.featured ? "var(--cream)" : "var(--cocoa)",
+                    background: "transparent",
+                    color: p.featured ? "var(--cream)" : "var(--cocoa)",
                   }}
                 >
                   Réserver
