@@ -198,19 +198,25 @@ function LotPochettes() {
     box.getSize(size);
     box.getCenter(center);
     s.position.sub(center);
-    const target = 1.5;
+    // légèrement plus grand pour bien remplir la vignette
+    const target = 1.65;
     const scale = target / Math.max(size.x, size.y, size.z);
     s.scale.setScalar(scale);
+    // orienter le lot face à la caméra, légèrement incliné pour la perspective
+    s.rotation.set(0.05, -0.15, 0);
     s.traverse((o) => {
       if ((o as THREE.Mesh).isMesh) {
         o.castShadow = true;
         o.receiveShadow = true;
-        // éclaircir le modèle pour qu'il corresponde aux autres articles
         const mat = (o as THREE.Mesh).material as THREE.MeshStandardMaterial | undefined;
         if (mat && (mat as THREE.MeshStandardMaterial).isMeshStandardMaterial) {
           const standardMat = mat as THREE.MeshStandardMaterial;
-          standardMat.roughness = Math.max(0.3, standardMat.roughness * 0.55);
-          standardMat.color = standardMat.color.clone().offsetHSL(0, -0.08, 0.18);
+          // tissu coton clair et chaud
+          standardMat.roughness = Math.max(0.35, standardMat.roughness * 0.45);
+          standardMat.metalness = Math.min(0.05, standardMat.metalness * 0.25);
+          standardMat.color = new THREE.Color("#f5efe3");
+          standardMat.emissive = new THREE.Color("#fff4e0");
+          standardMat.emissiveIntensity = 0.12;
         }
       }
     });
@@ -221,8 +227,9 @@ function LotPochettes() {
     <>
       <primitive object={cloned} />
       {/* lumières complémentaires pour illuminer le lot de pochettes */}
-      <pointLight position={[0, 1.4, 1.8]} intensity={3.5} color="#fff7e6" distance={6} decay={2} />
-      <pointLight position={[-1.2, 0.8, 1.5]} intensity={1.8} color="#ffffff" distance={5} decay={2} />
+      <pointLight position={[0, 1.6, 2.0]} intensity={4.5} color="#fff7e6" distance={6} decay={2} />
+      <pointLight position={[-1.4, 1.0, 1.6]} intensity={2.4} color="#ffffff" distance={5} decay={2} />
+      <pointLight position={[1.4, 0.6, 1.6]} intensity={2.0} color="#fff0d6" distance={5} decay={2} />
     </>
   );
 }
