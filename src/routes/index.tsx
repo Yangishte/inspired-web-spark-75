@@ -607,17 +607,19 @@ function Index() {
                   >
                     {e.titre}
                   </h3>
-                  <p
-                    className="mt-3 text-base leading-relaxed opacity-90"
-                    style={{ color: "var(--cocoa)" }}
-                  >
-                    {e.desc}
-                  </p>
-                  {e.time && (
-                    <p className="mt-3 font-marker text-sm" style={{ color: "var(--cocoa)" }}>
-                      🗓️ {e.time}
+                  <div className="flex flex-1 flex-col">
+                    <p
+                      className="mt-3 text-base leading-relaxed opacity-90"
+                      style={{ color: "var(--cocoa)" }}
+                    >
+                      {e.desc}
                     </p>
-                  )}
+                    {e.time && (
+                      <p className="mt-auto font-marker text-sm" style={{ color: "var(--cocoa)" }}>
+                        🗓️ {e.time}
+                      </p>
+                    )}
+                  </div>
 
                   <div className="mt-auto flex flex-wrap items-center gap-3">
                     <a
