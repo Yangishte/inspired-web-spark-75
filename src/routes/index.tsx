@@ -595,12 +595,6 @@ function Index() {
                 {/* CONTENT */}
                 <div className="flex flex-1 flex-col px-6 pb-6 pt-2">
                   <div className="space-y-1">
-                    {e.time && (
-                      <p className="text-sm" style={{ color: "var(--cocoa)" }}>
-                        <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>🗓️</span>{" "}
-                        <span className="font-marker">{e.time}</span>
-                      </p>
-                    )}
                     {e.lieu && (
                       <p className="text-sm" style={{ color: "var(--cocoa)" }}>
                         <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>📍</span>{" "}
@@ -611,6 +605,12 @@ function Index() {
                       <p className="text-sm" style={{ color: "var(--cocoa)" }}>
                         <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>📅</span>{" "}
                         <span className="font-marker">{e.date}</span>
+                      </p>
+                    )}
+                    {e.time && (
+                      <p className="text-sm" style={{ color: "var(--cocoa)" }}>
+                        <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>🗓️</span>{" "}
+                        <span className="font-marker">{e.time}</span>
                       </p>
                     )}
                   </div>
