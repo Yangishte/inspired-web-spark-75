@@ -532,7 +532,7 @@ function Index() {
               date: "Samedi 25 avril 2026",
               titre: "Atelier au Restaurant Manor Lausanne",
               lieu: "Restaurant Manor Lausanne",
-              time: "Durée : 2 heures",
+              time: "2 heures",
               price: "CHF 49.- / personne",
               desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍",
               past: true,
@@ -604,13 +604,13 @@ function Index() {
                     {e.lieu && (
                       <p className="text-sm" style={{ color: "var(--cocoa)" }}>
                         <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>📍</span>{" "}
-                        <span className="font-marker">Le lieu : {e.lieu}</span>
+                        <span className="font-marker">{e.lieu}</span>
                       </p>
                     )}
                     {e.date && (
                       <p className="text-sm" style={{ color: "var(--cocoa)" }}>
                         <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>📅</span>{" "}
-                        <span className="font-marker">Quand : {e.date}</span>
+                        <span className="font-marker">{e.date}</span>
                       </p>
                     )}
                   </div>
