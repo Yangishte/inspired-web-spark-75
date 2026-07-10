@@ -631,10 +631,15 @@ function Index() {
                     </a>
                     {e.price && (
                       <span
-                        className="rounded-xl px-5 py-3 font-marker text-base whitespace-pre-line text-center"
+                        className="rounded-xl px-5 py-3 font-marker text-base whitespace-pre-line text-center leading-tight"
                         style={{ background: "#e8b84a", color: "var(--cocoa)" }}
                       >
-                        {e.price}
+                        {e.price.split("\n")[0]}
+                        {e.price.includes("\n") && (
+                          <span className="block text-xs opacity-90">
+                            {e.price.split("\n").slice(1).join(" ")}
+                          </span>
+                        )}
                       </span>
                     )}
                   </div>
