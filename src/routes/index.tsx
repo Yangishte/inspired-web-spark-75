@@ -631,7 +631,7 @@ function Index() {
                     </a>
                     {e.price && (
                       <span
-                        className="rounded-xl px-5 py-3 font-marker text-base"
+                        className="rounded-xl px-5 py-3 font-marker text-base whitespace-pre-line text-center"
                         style={{ background: "#e8b84a", color: "var(--cocoa)" }}
                       >
                         {e.price}
