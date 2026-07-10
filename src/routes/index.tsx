@@ -327,8 +327,8 @@ function Index() {
           aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen((v) => !v)}
-          className="md:hidden grid h-11 w-11 place-items-center rounded-full border-2 transition-transform active:scale-95"
-          style={{ borderColor: "var(--cocoa)", color: "var(--cocoa)", background: "var(--cream)" }}
+          className="md:hidden grid h-11 w-11 place-items-center transition-transform active:scale-95"
+          style={{ color: "var(--cocoa)" }}
         >
           {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
