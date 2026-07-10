@@ -594,13 +594,26 @@ function Index() {
 
                 {/* CONTENT */}
                 <div className="flex flex-1 flex-col px-6 pb-6 pt-2">
-                  <span
-                    className="font-marker text-xs uppercase tracking-widest"
-                    style={{ color: "var(--clay)" }}
-                  >
-                    {e.date}
-                    {e.lieu ? ` — ${e.lieu}` : ""}
-                  </span>
+                  <div className="space-y-1">
+                    {e.time && (
+                      <p className="text-sm" style={{ color: "var(--cocoa)" }}>
+                        <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>🗓️</span>{" "}
+                        <span className="font-marker">{e.time}</span>
+                      </p>
+                    )}
+                    {e.lieu && (
+                      <p className="text-sm" style={{ color: "var(--cocoa)" }}>
+                        <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>📍</span>{" "}
+                        <span className="font-marker">Le lieu : {e.lieu}</span>
+                      </p>
+                    )}
+                    {e.date && (
+                      <p className="text-sm" style={{ color: "var(--cocoa)" }}>
+                        <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>📅</span>{" "}
+                        <span className="font-marker">Quand : {e.date}</span>
+                      </p>
+                    )}
+                  </div>
                   <h3
                     className="mt-3 font-display text-2xl leading-tight"
                     style={{ color: "var(--cocoa)" }}
@@ -614,11 +627,6 @@ function Index() {
                     >
                       {e.desc}
                     </p>
-                    {e.time && (
-                      <p className="mt-auto font-marker text-sm" style={{ color: "var(--cocoa)" }}>
-                        🗓️ {e.time}
-                      </p>
-                    )}
                   </div>
 
                   <div className="mt-auto flex flex-wrap items-center gap-3">
