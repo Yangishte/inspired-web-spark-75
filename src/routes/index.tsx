@@ -532,7 +532,7 @@ function Index() {
               date: "Samedi 25 avril 2026",
               titre: "Atelier au Restaurant Manor Lausanne",
               lieu: "Restaurant Manor Lausanne",
-              time: "Durée : 2 heures",
+              time: "2 heures",
               price: "CHF 49.- / personne",
               desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍",
               past: true,
