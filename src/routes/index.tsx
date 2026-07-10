@@ -619,7 +619,7 @@ function Index() {
                     </p>
                   )}
 
-                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                  <div className="mt-auto flex flex-wrap items-center gap-3">
                     <a
                       href={ctaHref}
                       target={e.instagramUrl ? "_blank" : undefined}
