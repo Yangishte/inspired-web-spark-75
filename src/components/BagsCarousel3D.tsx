@@ -212,16 +212,16 @@ function LotPochettes() {
         const oldMat = mesh.material as THREE.MeshStandardMaterial | undefined;
         // remplacer par un matériau coton clair et chaud pour uniformiser le rendu
         const newMat = new THREE.MeshStandardMaterial({
-          color: new THREE.Color("#f8f0e3"),
-          roughness: 0.55,
+          color: new THREE.Color("#f5e6d3"),
+          roughness: 0.65,
           metalness: 0.0,
           emissive: new THREE.Color("#fff4e0"),
-          emissiveIntensity: 0.18,
+          emissiveIntensity: 0.12,
         });
         if (oldMat && (oldMat as THREE.MeshStandardMaterial).isMeshStandardMaterial) {
           const standardOld = oldMat as THREE.MeshStandardMaterial;
           newMat.bumpMap = standardOld.bumpMap ?? standardOld.normalMap;
-          newMat.bumpScale = 0.015;
+          newMat.bumpScale = 0.012;
         }
         mesh.material = newMat;
       }
