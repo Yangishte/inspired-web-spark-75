@@ -208,7 +208,7 @@ function Index() {
   const [slot0, setSlot0] = useState(0);
   const [slot1, setSlot1] = useState(1);
   const [fadingSlot, setFadingSlot] = useState<0 | 1 | null>(null);
-  const [flippedEvents, setFlippedEvents] = useState<Set<string>>(new Set());
+  
   
   const [hoveredPricing, setHoveredPricing] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -542,114 +542,17 @@ function Index() {
             },
           ];
 
-          const renderEventCard = (e: typeof events[0]) => (
-            <div
-              key={e.titre}
-              className="group min-h-[440px] cursor-pointer"
-              style={{ perspective: "1200px" }}
-              onClick={() => {
-                setFlippedEvents((prev) => {
-                  const next = new Set(prev);
-                  if (next.has(e.titre)) next.delete(e.titre);
-                  else next.add(e.titre);
-                  return next;
-                });
-              }}
-              role="button"
-              aria-label={`Carte ${e.titre}, cliquez pour retourner`}
-              tabIndex={0}
-              onKeyDown={(ev) => {
-                if (ev.key === "Enter" || ev.key === " ") {
-                  ev.preventDefault();
-                  setFlippedEvents((prev) => {
-                    const next = new Set(prev);
-                    if (next.has(e.titre)) next.delete(e.titre);
-                    else next.add(e.titre);
-                    return next;
-                  });
-                }
-              }}
-            >
+          const renderEventCard = (e: typeof events[0]) => {
+            const ctaHref = e.instagramUrl || "#reserver";
+            const ctaLabel = e.past ? "Voir" : "Réserver";
+            return (
               <div
-                className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${flippedEvents.has(e.titre) ? "[transform:rotateY(180deg)]" : ""} group-hover:[transform:rotateY(180deg)]`}
+                key={e.titre}
+                className="flex flex-col overflow-hidden rounded-3xl border-2 shadow-xl"
+                style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
               >
-                {/* FRONT */}
-                <div
-                  className="absolute inset-0 overflow-hidden rounded-3xl border-2 p-6"
-                  style={{
-                    borderColor: "var(--cocoa)",
-                    background: "var(--cream)",
-                    backfaceVisibility: "hidden",
-                    WebkitBackfaceVisibility: "hidden",
-                  }}
-                >
-                  {e.past && (
-                    <div
-                      className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center"
-                      style={{ background: "rgba(255, 248, 240, 0.3)" }}
-                    >
-                      <div className="relative rotate-[-10deg]">
-                        <div
-                          className="font-marker rounded-2xl border-4 px-5 py-2 text-4xl uppercase tracking-widest"
-                          style={{
-                            color: "#dc2626",
-                            borderColor: "#dc2626",
-                            background: "rgba(255, 255, 255, 0.85)",
-                            boxShadow: "4px 4px 0 0 rgba(220, 38, 38, 0.35)",
-                            textShadow: "2px 2px 0 rgba(220, 38, 38, 0.15)",
-                          }}
-                        >
-                          Passé
-                        </div>
-                        <svg
-                          className="absolute -right-2 -top-2 w-7"
-                          viewBox="0 0 24 24"
-                          fill="#dc2626"
-                          aria-hidden="true"
-                        >
-                          <path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 6.5-5.5-3.5-5.5 3.5 1.5-6.5-5-4.5 6.5-0.5L12 2z" />
-                        </svg>
-                        <svg
-                          className="absolute -bottom-1 -left-2 w-5 rotate-[-20deg]"
-                          viewBox="0 0 24 24"
-                          fill="#dc2626"
-                          aria-hidden="true"
-                        >
-                          <path d="M12 2l2.5 6.5L21 9l-5 4.5 1.5 6.5-5.5-3.5-5.5 3.5 1.5-6.5-5-4.5 6.5-0.5L12 2z" />
-                        </svg>
-                      </div>
-                    </div>
-                  )}
-                  <span className="font-marker text-sm tracking-wide" style={{ color: "var(--clay)" }}>{e.date}</span>
-                  <h3 className="mt-3 font-display text-xl leading-tight" style={{ color: "var(--cocoa)" }}>{e.titre}</h3>
-                  <p className="mt-1 font-handwritten text-lg" style={{ color: "var(--clay)" }}>{e.lieu}</p>
-                  {(e.time || e.price) && (
-                    <div className="mt-3 space-y-1 text-sm font-marker" style={{ color: "var(--cocoa)" }}>
-                      {e.time && <p>🗓️ {e.time}</p>}
-                      {e.price && <p>🏷️ {e.price}</p>}
-                    </div>
-                  )}
-                  <p className="mt-4 text-base leading-relaxed opacity-90" style={{ color: "var(--cocoa)" }}>{e.desc}</p>
-                </div>
-
-                {/* BACK */}
-                <a
-                  href={e.instagramUrl || "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Voir ${e.titre} sur Instagram`}
-                  aria-hidden={!flippedEvents.has(e.titre)}
-                  tabIndex={flippedEvents.has(e.titre) ? 0 : -1}
-                  className="absolute inset-0 block overflow-hidden rounded-3xl border-2 shadow-xl"
-                  style={{
-                    borderColor: "var(--cocoa)",
-                    background: "var(--sand)",
-                    backfaceVisibility: "hidden",
-                    WebkitBackfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)",
-                  }}
-                  onClick={(ev) => ev.stopPropagation()}
-                >
+                {/* IMAGE / TOP BUBBLE */}
+                <div className="relative m-3 h-48 overflow-hidden rounded-2xl sm:h-56">
                   {e.image ? (
                     <img
                       src={e.image}
@@ -659,29 +562,86 @@ function Index() {
                     />
                   ) : (
                     <div
-                      className="flex h-full w-full flex-col items-center justify-center gap-3 p-6 text-center"
-                      style={{ color: "var(--cocoa)" }}
+                      className="flex h-full w-full items-center justify-center"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, #f4d9a0 0%, #f5c9b0 50%, #f0bcc0 100%)",
+                      }}
                     >
-                      <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
-                        Image à venir
+                      <span className="font-handwritten text-2xl" style={{ color: "var(--cocoa)" }}>
+                        Bientôt dévoilé ✨
                       </span>
-                      <p className="font-marker text-sm opacity-70">
-                        Visuel & lien Instagram à ajouter
-                      </p>
                     </div>
                   )}
-                  {e.instagramUrl && (
-                    <div
-                      className="absolute bottom-3 right-3 rounded-full px-3 py-1 font-marker text-xs"
+                  {e.past && (
+                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                      <div className="relative rotate-[-10deg]">
+                        <div
+                          className="font-marker rounded-2xl border-4 px-5 py-2 text-3xl uppercase tracking-widest"
+                          style={{
+                            color: "#dc2626",
+                            borderColor: "#dc2626",
+                            background: "rgba(255, 255, 255, 0.85)",
+                            boxShadow: "4px 4px 0 0 rgba(220, 38, 38, 0.35)",
+                          }}
+                        >
+                          Passé
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* CONTENT */}
+                <div className="flex flex-1 flex-col px-6 pb-6 pt-2">
+                  <span
+                    className="font-marker text-xs uppercase tracking-widest"
+                    style={{ color: "var(--clay)" }}
+                  >
+                    {e.date}
+                    {e.lieu ? ` — ${e.lieu}` : ""}
+                  </span>
+                  <h3
+                    className="mt-3 font-display text-2xl leading-tight"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    {e.titre}
+                  </h3>
+                  <p
+                    className="mt-3 text-base leading-relaxed opacity-90"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    {e.desc}
+                  </p>
+                  {e.time && (
+                    <p className="mt-3 font-marker text-sm" style={{ color: "var(--cocoa)" }}>
+                      🗓️ {e.time}
+                    </p>
+                  )}
+
+                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                    <a
+                      href={ctaHref}
+                      target={e.instagramUrl ? "_blank" : undefined}
+                      rel={e.instagramUrl ? "noopener noreferrer" : undefined}
+                      className="rounded-xl px-6 py-3 font-marker text-base transition-transform hover:scale-105"
                       style={{ background: "var(--cocoa)", color: "var(--cream)" }}
                     >
-                      Voir sur Instagram ↗
-                    </div>
-                  )}
-                </a>
+                      {ctaLabel}
+                    </a>
+                    {e.price && (
+                      <span
+                        className="rounded-xl px-5 py-3 font-marker text-base"
+                        style={{ background: "#e8b84a", color: "var(--cocoa)" }}
+                      >
+                        {e.price}
+                      </span>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-          );
+            );
+          };
 
           return (
             <div className="space-y-10">
