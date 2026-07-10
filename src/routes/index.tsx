@@ -569,7 +569,7 @@ function Index() {
                       }}
                     >
                       <span className="font-handwritten text-2xl" style={{ color: "var(--cocoa)" }}>
-                        Bientôt dévoilé ✨
+                        PROCHAINEMENT
                       </span>
                     </div>
                   )}
