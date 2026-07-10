@@ -208,7 +208,7 @@ function Index() {
   const [slot0, setSlot0] = useState(0);
   const [slot1, setSlot1] = useState(1);
   const [fadingSlot, setFadingSlot] = useState<0 | 1 | null>(null);
-  const [flippedEvents, setFlippedEvents] = useState<Set<string>>(new Set());
+  
   
   const [hoveredPricing, setHoveredPricing] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
