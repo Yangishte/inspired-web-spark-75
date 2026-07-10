@@ -498,7 +498,7 @@ function Index() {
               titre: "Prochain événement prochainement !",
               lieu: "Reste connecté.e",
               time: "Date & lieu à venir",
-              price: "Tarif à annoncer",
+              price: "Tarif à venir",
               desc: "Un nouvel atelier inédit est en préparation... On te réserve une belle surprise très bientôt !",
               past: false,
               image: null,
