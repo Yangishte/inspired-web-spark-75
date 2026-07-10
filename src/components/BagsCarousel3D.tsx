@@ -199,25 +199,31 @@ function LotPochettes() {
     box.getCenter(center);
     s.position.sub(center);
     // légèrement plus grand pour bien remplir la vignette
-    const target = 1.65;
+    const target = 1.75;
     const scale = target / Math.max(size.x, size.y, size.z);
     s.scale.setScalar(scale);
     // orienter le lot face à la caméra, légèrement incliné pour la perspective
-    s.rotation.set(0.05, -0.15, 0);
+    s.rotation.set(0.08, -0.12, 0);
     s.traverse((o) => {
       if ((o as THREE.Mesh).isMesh) {
         o.castShadow = true;
         o.receiveShadow = true;
-        const mat = (o as THREE.Mesh).material as THREE.MeshStandardMaterial | undefined;
-        if (mat && (mat as THREE.MeshStandardMaterial).isMeshStandardMaterial) {
-          const standardMat = mat as THREE.MeshStandardMaterial;
-          // tissu coton clair et chaud
-          standardMat.roughness = Math.max(0.35, standardMat.roughness * 0.45);
-          standardMat.metalness = Math.min(0.05, standardMat.metalness * 0.25);
-          standardMat.color = new THREE.Color("#f5efe3");
-          standardMat.emissive = new THREE.Color("#fff4e0");
-          standardMat.emissiveIntensity = 0.12;
+        const mesh = o as THREE.Mesh;
+        const oldMat = mesh.material as THREE.MeshStandardMaterial | undefined;
+        // remplacer par un matériau coton clair et chaud pour uniformiser le rendu
+        const newMat = new THREE.MeshStandardMaterial({
+          color: new THREE.Color("#f8f0e3"),
+          roughness: 0.55,
+          metalness: 0.0,
+          emissive: new THREE.Color("#fff4e0"),
+          emissiveIntensity: 0.18,
+        });
+        if (oldMat && (oldMat as THREE.MeshStandardMaterial).isMeshStandardMaterial) {
+          const standardOld = oldMat as THREE.MeshStandardMaterial;
+          newMat.bumpMap = standardOld.bumpMap ?? standardOld.normalMap;
+          newMat.bumpScale = 0.015;
         }
+        mesh.material = newMat;
       }
     });
 
@@ -227,9 +233,9 @@ function LotPochettes() {
     <>
       <primitive object={cloned} />
       {/* lumières complémentaires pour illuminer le lot de pochettes */}
-      <pointLight position={[0, 1.6, 2.0]} intensity={4.5} color="#fff7e6" distance={6} decay={2} />
-      <pointLight position={[-1.4, 1.0, 1.6]} intensity={2.4} color="#ffffff" distance={5} decay={2} />
-      <pointLight position={[1.4, 0.6, 1.6]} intensity={2.0} color="#fff0d6" distance={5} decay={2} />
+      <pointLight position={[0, 1.6, 2.2]} intensity={5.0} color="#fff7e6" distance={6} decay={2} />
+      <pointLight position={[-1.4, 1.0, 1.8]} intensity={2.8} color="#ffffff" distance={5} decay={2} />
+      <pointLight position={[1.4, 0.6, 1.8]} intensity={2.4} color="#fff0d6" distance={5} decay={2} />
     </>
   );
 }
