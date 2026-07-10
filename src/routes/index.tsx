@@ -607,7 +607,7 @@ function Index() {
                   >
                     {e.titre}
                   </h3>
-                  <div className="flex flex-1 flex-col">
+                  <div className="mb-4 flex flex-1 flex-col">
                     <p
                       className="mt-3 text-base leading-relaxed opacity-90"
                       style={{ color: "var(--cocoa)" }}
