@@ -1046,6 +1046,7 @@ function Index() {
                   </div>
                 ),
               },
+              { q: "⏱️ Quelle est la durée de l'atelier ?", a: "2 heures avec boisson offerte !" },
               {
                 q: "👧 Comment réserver pour les enfants ?",
                 a: (
@@ -1058,7 +1059,6 @@ function Index() {
                   </div>
                 ),
               },
-              { q: "⏱️ Quelle est la durée de l'atelier ?", a: "2 heures avec boisson offerte !" },
               {
                 q: "📝 Comment annuler ou modifier ma réservation ?",
                 a: (
