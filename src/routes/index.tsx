@@ -551,8 +551,9 @@ function Index() {
           ];
 
           const renderEventCard = (e: typeof events[0]) => {
-            const ctaHref = e.instagramUrl || "#reserver";
+            const ctaHref = e.past ? e.instagramUrl || "#reserver" : "#reserver";
             const ctaLabel = e.past ? "Voir" : "Réserver";
+            const ctaIsExternal = ctaHref.startsWith("http");
             return (
               <div
                 key={e.titre}
