@@ -522,7 +522,7 @@ function Index() {
               date: "Dimanche 31 mai 2026",
               titre: "Brunch & Paint à l'Hôtel En Bellevue",
               lieu: "En Bellevue 1, 1163 Etoy",
-              time: "10h – 14h",
+              time: "10h00 – 14h00",
               price: "CHF 90.- / personne",
               desc: "Le Bar à Custom déménage à l'hôtel pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩",
               past: true,
