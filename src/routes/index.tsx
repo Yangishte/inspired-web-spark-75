@@ -690,9 +690,6 @@ function Index() {
           };
 
           const scrollRef = useRef<HTMLDivElement>(null);
-          const [showAll, setShowAll] = useState(false);
-          const visibleEvents = showAll ? events : events.slice(0, 3);
-          const hasMore = events.length > 3;
 
           const scrollBy = (dir: "left" | "right") => {
             const el = scrollRef.current;
