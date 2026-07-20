@@ -872,6 +872,57 @@ function Index() {
             ))}
           </div>
 
+          <Dialog open={bookingModalOpen} onOpenChange={setBookingModalOpen}>
+            <DialogContent
+              className="max-h-[90vh] max-w-lg overflow-y-auto rounded-2xl border-2 p-6 sm:p-8"
+              style={{ borderColor: "var(--cocoa)", background: "var(--cream)", color: "var(--cocoa)" }}
+            >
+              <DialogHeader>
+                <DialogTitle className="font-display text-2xl" style={{ color: "var(--cocoa)" }}>
+                  Conditions de réservation
+                </DialogTitle>
+                <DialogDescription className="sr-only">
+                  Veuillez lire et accepter les conditions avant de réserver.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="mt-4 space-y-4 text-sm leading-relaxed" style={{ color: "var(--cocoa)" }}>
+                <p>
+                  Vous avez la possibilité de modifier la date de votre réservation jusqu'à 48 heures avant le début de l'atelier. Ce délai passé, aucune modification ne sera acceptée.
+                </p>
+                <p>
+                  La modification de votre réservation est possible via le lien correspondant donné dans le courriel de confirmation ou par e-mail à :{" "}
+                  <a
+                    href="mailto:lebaracustom@gmail.com"
+                    className="underline"
+                    style={{ color: "var(--clay)" }}
+                  >
+                    lebaracustom@gmail.com
+                  </a>
+                </p>
+                <p>
+                  Dans aucun cas, nous ne procéderons au remboursement d'une réservation. Deux possibilités sont proposées :
+                </p>
+                <ul className="list-disc space-y-1 pl-5">
+                  <li>Replanifier un rendez-vous</li>
+                  <li>Recevoir un bon valeur pour une prochaine réservation.</li>
+                </ul>
+                <p>Nous vous remercions pour votre compréhension.</p>
+              </div>
+              <div className="mt-6 flex justify-end">
+                <a
+                  href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setBookingModalOpen(false)}
+                  className="inline-flex items-center justify-center rounded-full px-8 py-3 font-handwritten text-lg transition-transform hover:scale-[1.03]"
+                  style={{ background: "var(--cocoa)", color: "var(--cream)" }}
+                >
+                  Je suis d'accord
+                </a>
+              </div>
+            </DialogContent>
+          </Dialog>
+
           <div className="mt-10 flex justify-center">
             <Link
               to="/moonwalcoeur"
