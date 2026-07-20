@@ -563,7 +563,7 @@ function Index() {
             return (
               <div
                 key={e.titre}
-                className={`flex flex-col overflow-hidden rounded-3xl border-2 shadow-xl transition-all ${e.past ? "opacity-60 grayscale" : ""}`}
+                className={`flex flex-col overflow-hidden rounded-3xl border-2 shadow-xl transition-all duration-300 ${e.past ? "opacity-80 grayscale-[50%] contrast-[0.92] hover:opacity-100 hover:grayscale-0 hover:contrast-100" : ""}`}
                 style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
               >
                 {/* IMAGE / TOP BUBBLE */}
