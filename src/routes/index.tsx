@@ -765,7 +765,7 @@ function Index() {
               )}
             </div>
           );
-        })()
+        })()}
       </section>
 
       {/* PARTENAIRES — Bandeau défilant */}
