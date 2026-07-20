@@ -878,7 +878,16 @@ function Index() {
                   </div>
                 </div>
               ) },
-              { q: "💰 Quels sont les tarifs ?", a: "Adulte : CHF 49.- · Enfant : CHF 39.-" },
+              { 
+                q: "💰 Quels sont les tarifs ?", 
+                a: (
+                  <div className="whitespace-pre-line">
+                    Adulte : CHF 49.-&nbsp;{"\n"}
+                    Enfant : CHF 39.- (pour les enfants de 13 ans ou moins, au tarif standard de CHF 49.-{"\n"}
+                    En présentant la carte d'identité de l'enfant sur place, CHF 10.- vous seront remboursés.)
+                  </div>
+                ) 
+              },
               {
                 q: "📅 Comment réserver ?",
                 a: (
