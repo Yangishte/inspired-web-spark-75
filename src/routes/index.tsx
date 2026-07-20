@@ -885,7 +885,7 @@ function Index() {
           </div>
 
           <p className="mt-10 text-center text-sm opacity-70" style={{ color: "var(--cocoa)" }}>
-            Prix pour une réservations dans nos locaux à St-Sulpice - hors événements
+            *Prix pour une réservations dans nos locaux à St-Sulpice - hors événements
           </p>
         </div>
       </section>
