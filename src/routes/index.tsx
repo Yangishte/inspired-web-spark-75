@@ -388,13 +388,6 @@ function Index() {
             >
               Réserver une session
             </a>
-            <a
-              href="#services"
-              className="float-right float-delay-2 rounded-full border-2 px-7 py-3 font-marker text-lg transition-transform hover:scale-105"
-              style={{ borderColor: "var(--clay)", color: "var(--clay)" }}
-            >
-              Découvrir les services
-            </a>
           </div>
         </div>
 
