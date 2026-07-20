@@ -618,7 +618,7 @@ function Index() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="flex flex-1 flex-col px-6 pb-6 pt-2">
+                <div className="flex flex-1 flex-col px-6 pb-6 pt-2 md:pl-4 md:pr-8">
                   <div className="space-y-1">
                     {e.lieu && (
                       <p className="text-sm" style={{ color: "var(--cocoa)" }}>
