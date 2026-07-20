@@ -663,7 +663,7 @@ function Index() {
                       href={ctaHref}
                       target={e.instagramUrl ? "_blank" : undefined}
                       rel={e.instagramUrl ? "noopener noreferrer" : undefined}
-                      className="flex h-[52px] min-w-[120px] items-center justify-center rounded-xl px-6 font-marker text-base transition-transform hover:scale-105"
+                      className="flex h-[52px] w-[120px] items-center justify-center rounded-xl px-6 font-marker text-base transition-transform hover:scale-105 md:w-[140px]"
                       style={{ background: "var(--cocoa)", color: "var(--cream)" }}
                     >
                       {ctaLabel}
