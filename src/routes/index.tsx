@@ -943,7 +943,7 @@ function Index() {
                       </a>
                     </p>
                     <p>
-                      Dans aucun cas, nous ne procéderons au remboursement d'une réservation logservation. Deux possibilités sont proposées :
+                      Dans aucun cas, nous ne procéderons au remboursement d'une réservation. Deux possibilités sont proposées :
                     </p>
                     <ol className="list-decimal space-y-1 pl-5">
                       <li>Replanifier un rendez-vous</li>
