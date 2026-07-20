@@ -929,42 +929,6 @@ function Index() {
                 ),
               },
               { q: "⏱️ Quelle est la durée de l'atelier ?", a: "2 heures avec boisson offertes !" },
-              { q: "👜 Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
-              {
-                q: "📱 Avez-vous des réseaux sociaux ?",
-                a: (
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <span>Instagram</span>
-                      <a
-                        href="https://www.instagram.com/_baracustom/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 font-marker underline"
-                        style={{ color: "var(--clay)" }}
-                      >
-                        <Instagram size={18} />
-                        @_baracustom
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span>TikTok</span>
-                      <a
-                        href="https://www.tiktok.com/@_baracustom"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 font-marker underline"
-                        style={{ color: "var(--clay)" }}
-                      >
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M9 12a4 4 0 1 0 4 4V4c.667 1.333 2.3 4 6 4" />
-                        </svg>
-                        @_baracustom
-                      </a>
-                    </div>
-                  </div>
-                ),
-              },
               {
                 q: "📝 Comment annuler ou modifier ma réservation ?",
                 a: (
@@ -989,6 +953,9 @@ function Index() {
                   </div>
                 ),
               },
+              { q: "👜 Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
+              {
+                q: "📱 Avez-vous des réseaux sociaux ?",
               {
                 q: "🎁 Possibilité de faire des bons cadeaux, événements ou privatiser ?",
                 a: (
