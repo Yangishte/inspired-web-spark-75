@@ -563,7 +563,7 @@ function Index() {
             return (
               <div
                 key={e.titre}
-                className={`flex flex-col overflow-hidden rounded-3xl border-2 shadow-xl transition-all duration-300 ${e.past ? "opacity-80 grayscale-[50%] contrast-[0.92] hover:opacity-100 hover:grayscale-0 hover:contrast-100" : ""}`}
+                className={`flex h-full flex-col overflow-hidden rounded-3xl border-2 shadow-xl transition-all duration-300 ${e.past ? "opacity-80 grayscale-[50%] contrast-[0.92] hover:opacity-100 hover:grayscale-0 hover:contrast-100" : ""}`}
                 style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
               >
                 {/* IMAGE / TOP BUBBLE */}
@@ -689,18 +689,66 @@ function Index() {
             );
           };
 
+          const scrollRef = useRef<HTMLDivElement>(null);
           const [showAll, setShowAll] = useState(false);
           const visibleEvents = showAll ? events : events.slice(0, 3);
           const hasMore = events.length > 3;
 
+          const scrollBy = (dir: "left" | "right") => {
+            const el = scrollRef.current;
+            if (!el) return;
+            const card = el.firstElementChild as HTMLElement | null;
+            const step = card ? card.offsetWidth + 24 : 320;
+            el.scrollBy({ left: dir === "left" ? -step : step, behavior: "smooth" });
+          };
+
           return (
             <div>
               <div className="mb-4 h-1 rounded-full" style={{ background: "var(--cocoa)" }} />
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {visibleEvents.map(renderEventCard)}
+
+              {/* Carousel wrapper */}
+              <div className="relative">
+                {/* Left arrow */}
+                <button
+                  type="button"
+                  onClick={() => scrollBy("left")}
+                  className="absolute -left-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border-2 shadow-lg transition-transform hover:scale-110 active:scale-95 md:flex"
+                  style={{ borderColor: "var(--cocoa)", color: "var(--cocoa)", background: "var(--cream)" }}
+                  aria-label="Défiler vers la gauche"
+                >
+                  <ChevronRight className="h-6 w-6 rotate-180" />
+                </button>
+
+                {/* Right arrow */}
+                <button
+                  type="button"
+                  onClick={() => scrollBy("right")}
+                  className="absolute -right-4 top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border-2 shadow-lg transition-transform hover:scale-110 active:scale-95 md:flex"
+                  style={{ borderColor: "var(--cocoa)", color: "var(--cocoa)", background: "var(--cream)" }}
+                  aria-label="Défiler vers la droite"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+
+                {/* Track */}
+                <div
+                  ref={scrollRef}
+                  className="scrollbar-hide -mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-6 md:mx-0 md:px-0"
+                  style={{ scrollPaddingLeft: "1.5rem" }}
+                >
+                  {visibleEvents.map((e) => (
+                    <div
+                      key={e.titre}
+                      className="flex h-full w-[85vw] shrink-0 snap-start sm:w-[60vw] md:w-[calc(33.333%-1rem)]"
+                    >
+                      {renderEventCard(e)}
+                    </div>
+                  ))}
+                </div>
               </div>
+
               {hasMore && (
-                <div className="mt-8 flex flex-col items-center gap-3">
+                <div className="mt-4 flex flex-col items-center gap-3">
                   <button
                     type="button"
                     onClick={() => setShowAll((s) => !s)}
