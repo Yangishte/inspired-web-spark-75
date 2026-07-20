@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram, Star, Menu, X, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
 import heroImg2 from "@/assets/hero/IMG_3609.jpeg.asset.json";
 import heroImg3 from "@/assets/hero/IMG_6192.jpeg.asset.json";
@@ -213,6 +214,7 @@ function Index() {
   
   const [hoveredPricing, setHoveredPricing] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const nextReviewRef = useRef(2);
   const activeSlotRef = useRef<0 | 1>(0);
 
@@ -839,17 +841,13 @@ function Index() {
               { name: "Adulte", price: "CHF 49.-*", desc: "2 heures d'atelier, boisson offerte, support inclus." },
               { name: "Enfant", price: "CHF 39.-*", desc: "2 heures d'atelier, boisson offerte, support inclus.", featured: true },
             ].map((p, i) => (
-              <a
+              <div
                 key={p.name}
-                href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
-                target="_blank"
-                rel="noopener noreferrer"
                 className={`relative flex min-h-[280px] flex-col items-center justify-center overflow-hidden rounded-3xl border-2 p-5 text-center transition-all duration-500 ease-out sm:p-8 ${i === 0 ? "float-left" : "float-right float-delay-2"} ${hoveredPricing === p.name ? "md:z-10 md:scale-105" : hoveredPricing ? "md:scale-95 md:opacity-80" : ""}`}
                 style={{
                   borderColor: "var(--cocoa)",
                   background: p.featured ? "var(--cocoa)" : "transparent",
                   color: p.featured ? "var(--cream)" : "var(--cocoa)",
-                  textDecoration: "none",
                 }}
                 onMouseEnter={() => setHoveredPricing(p.name)}
                 onMouseLeave={() => setHoveredPricing(null)}
@@ -858,7 +856,9 @@ function Index() {
                 <h3 className="font-display text-2xl">{p.name}</h3>
                 <p className="mt-4 font-display text-4xl md:text-5xl">{p.price}</p>
                 <p className="mt-4 text-base leading-relaxed opacity-90">{p.desc}</p>
-                <span
+                <button
+                  type="button"
+                  onClick={() => setBookingModalOpen(true)}
                   className={`mt-6 inline-flex items-center justify-center rounded-full border-2 px-6 py-2 font-handwritten text-lg transition-all duration-500 ease-out opacity-100 translate-y-0 ${hoveredPricing === p.name ? "md:translate-y-0 md:opacity-100" : "md:translate-y-4 md:opacity-0"}`}
                   style={{
                     borderColor: p.featured ? "var(--cream)" : "var(--cocoa)",
@@ -867,10 +867,61 @@ function Index() {
                   }}
                 >
                   Réserver
-                </span>
-              </a>
+                </button>
+              </div>
             ))}
           </div>
+
+          <Dialog open={bookingModalOpen} onOpenChange={setBookingModalOpen}>
+            <DialogContent
+              className="max-h-[90vh] max-w-lg overflow-y-auto rounded-2xl border-2 p-6 sm:p-8"
+              style={{ borderColor: "var(--cocoa)", background: "var(--cream)", color: "var(--cocoa)" }}
+            >
+              <DialogHeader>
+                <DialogTitle className="font-display text-2xl" style={{ color: "var(--cocoa)" }}>
+                  Conditions de réservation
+                </DialogTitle>
+                <DialogDescription className="sr-only">
+                  Veuillez lire et accepter les conditions avant de réserver.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="mt-4 space-y-4 text-sm leading-relaxed" style={{ color: "var(--cocoa)" }}>
+                <p>
+                  Vous avez la possibilité de modifier la date de votre réservation jusqu'à 48 heures avant le début de l'atelier. Ce délai passé, aucune modification ne sera acceptée.
+                </p>
+                <p>
+                  La modification de votre réservation est possible via le lien correspondant donné dans le courriel de confirmation ou par e-mail à :{" "}
+                  <a
+                    href="mailto:lebaracustom@gmail.com"
+                    className="underline"
+                    style={{ color: "var(--clay)" }}
+                  >
+                    lebaracustom@gmail.com
+                  </a>
+                </p>
+                <p>
+                  Dans aucun cas, nous ne procéderons au remboursement d'une réservation. Deux possibilités sont proposées :
+                </p>
+                <ul className="list-disc space-y-1 pl-5">
+                  <li>Replanifier un rendez-vous</li>
+                  <li>Recevoir un bon valeur pour une prochaine réservation.</li>
+                </ul>
+                <p>Nous vous remercions pour votre compréhension.</p>
+              </div>
+              <div className="mt-6 flex justify-end">
+                <a
+                  href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setBookingModalOpen(false)}
+                  className="inline-flex items-center justify-center rounded-full px-8 py-3 font-handwritten text-lg transition-transform hover:scale-[1.03]"
+                  style={{ background: "var(--cocoa)", color: "var(--cream)" }}
+                >
+                  Je suis d'accord
+                </a>
+              </div>
+            </DialogContent>
+          </Dialog>
 
           <div className="mt-10 flex justify-center">
             <Link
