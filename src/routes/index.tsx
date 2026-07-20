@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Instagram, Star, Menu, X } from "lucide-react";
+import { Instagram, Star, Menu, X, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
@@ -689,12 +689,32 @@ function Index() {
             );
           };
 
+          const [showAll, setShowAll] = useState(false);
+          const visibleEvents = showAll ? events : events.slice(0, 3);
+          const hasMore = events.length > 3;
+
           return (
             <div>
               <div className="mb-4 h-1 rounded-full" style={{ background: "var(--cocoa)" }} />
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {events.map(renderEventCard)}
+                {visibleEvents.map(renderEventCard)}
               </div>
+              {hasMore && (
+                <div className="mt-8 flex flex-col items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setShowAll((s) => !s)}
+                    className="flex h-14 w-14 items-center justify-center rounded-full border-[3px] transition-transform hover:scale-110 active:scale-95"
+                    style={{ borderColor: "var(--cocoa)", color: "var(--cocoa)", background: "var(--cream)" }}
+                    aria-label={showAll ? "Réduire les événements" : "Voir les événements passés"}
+                  >
+                    <ChevronRight className={`h-7 w-7 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} />
+                  </button>
+                  <span className="font-marker text-sm" style={{ color: "var(--cocoa)" }}>
+                    {showAll ? "Réduire" : "Voir les événements passés"}
+                  </span>
+                </div>
+              )}
             </div>
           );
         })()}
