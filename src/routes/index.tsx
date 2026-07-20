@@ -907,6 +907,15 @@ function Index() {
                   <li>Recevoir un bon valeur pour une prochaine réservation.</li>
                 </ul>
                 <p>Nous vous remercions pour votre compréhension.</p>
+
+                <h3 className="font-display text-lg" style={{ color: "var(--cocoa)" }}>
+                  Réservation pour enfants
+                </h3>
+                <p>
+                  Réservez directement sur le site web pour les enfants de 13 ans ou moins, au tarif standard de CHF 49.-. En présentant la carte d'identité de l'enfant sur place, CHF 10.- vous seront remboursés, réduisant ainsi le prix final de l'enfant à CHF 39.-.
+                </p>
+                <p>5 à 13 ans (CHF 39.- / dont CHF 10.- des CHF 49.- remboursés sur place)</p>
+                <p>La présence d'un participant adulte est obligatoire pour les enfants de moins de 14 ans.</p>
               </div>
               <div className="mt-6 flex justify-end">
                 <a
