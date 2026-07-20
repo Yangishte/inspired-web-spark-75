@@ -836,8 +836,8 @@ function Index() {
           </h2>
           <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2 md:gap-10">
             {[
-              { name: "Adulte", price: "CHF 49.-", desc: "2 heures d'atelier, boisson offerte, support inclus." },
-              { name: "Enfant", price: "CHF 39.-", desc: "2 heures d'atelier, boisson offerte, support inclus.", featured: true },
+              { name: "Adulte", price: "CHF 49.-*", desc: "2 heures d'atelier, boisson offerte, support inclus." },
+              { name: "Enfant", price: "CHF 39.-*", desc: "2 heures d'atelier, boisson offerte, support inclus.", featured: true },
             ].map((p, i) => (
               <a
                 key={p.name}
@@ -885,7 +885,7 @@ function Index() {
           </div>
 
           <p className="mt-10 text-center text-sm opacity-70" style={{ color: "var(--cocoa)" }}>
-            Prix pour une réservations dans nos locaux à St-Sulpice - hors événements
+            *Prix pour une réservations dans nos locaux à St-Sulpice - hors événements
           </p>
         </div>
       </section>
