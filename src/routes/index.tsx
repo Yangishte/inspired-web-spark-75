@@ -316,10 +316,9 @@ function Index() {
         <nav className="hidden md:flex flex-wrap items-center gap-7">
           <NavLink label="L'atelier" href="#atelier" delay={1} />
           <NavLink label="Événements" href="#evenements" delay={2} />
-          <NavLink label="Services" href="#services" delay={3} />
-          <NavLink label="Tarifs" href="#tarifs" delay={4} />
-          <NavLink label="FAQ" href="#faq" delay={5} />
-          <NavLink label="Réserver" href="#reserver" delay={6} />
+          <NavLink label="Tarifs" href="#tarifs" delay={3} />
+          <NavLink label="FAQ" href="#faq" delay={4} />
+          <NavLink label="Réserver" href="#reserver" delay={5} />
           <NavLink label="Contact" href="#contact" delay={1} />
         </nav>
         {/* Mobile menu button */}
@@ -342,7 +341,6 @@ function Index() {
             {[
               { label: "L'atelier", href: "#atelier" },
               { label: "Événements", href: "#evenements" },
-              { label: "Services", href: "#services" },
               { label: "Tarifs", href: "#tarifs" },
               { label: "FAQ", href: "#faq" },
               { label: "Réserver", href: "#reserver" },
