@@ -214,6 +214,7 @@ function Index() {
   
   const [hoveredPricing, setHoveredPricing] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const nextReviewRef = useRef(2);
   const activeSlotRef = useRef<0 | 1>(0);
 
