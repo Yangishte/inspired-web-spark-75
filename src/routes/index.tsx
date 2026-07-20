@@ -860,7 +860,7 @@ function Index() {
         <div className="rounded-3xl border-2 p-4 md:p-8" style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}>
           <Accordion type="single" collapsible className="w-full space-y-2">
             {[
-              { q: "📍 Où ?", a: (
+              { q: "📍 Où se déroule l'atelier ?", a: (
                 <div className="space-y-1">
                   <p>Rue Centre 37</p>
                   <p>1025 St-Sulpice</p>
@@ -878,7 +878,7 @@ function Index() {
                   </div>
                 </div>
               ) },
-              { q: "💰 Tarifs ?", a: "Adulte : CHF 49.- · Enfant : CHF 39.-" },
+              { q: "💰 Quels sont les tarifs ?", a: "Adulte : CHF 49.- · Enfant : CHF 39.-" },
               {
                 q: "👧 Comment réserver pour les enfants ?",
                 a: (
@@ -891,10 +891,10 @@ function Index() {
                   </div>
                 ),
               },
-              { q: "⏱️ Durée ?", a: "2 heures avec boisson offertes !" },
+              { q: "⏱️ Quelle est la durée de l'atelier ?", a: "2 heures avec boisson offertes !" },
               { q: "👜 Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
               {
-                q: "📱 Réseaux sociaux ?",
+                q: "📱 Avez-vous des réseaux sociaux ?",
                 a: (
                   <div className="space-y-2">
                     <div className="flex items-center gap-3">
@@ -928,9 +928,9 @@ function Index() {
                   </div>
                 ),
               },
-              { q: "✨ Ensuite ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
+              { q: "✨ Après l'atelier ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
               {
-                q: "📝 Annulation ou modification de la réservation ?",
+                q: "📝 Comment annuler ou modifier ma réservation ?",
                 a: (
                   <div className="space-y-3">
                     <p>
@@ -954,7 +954,7 @@ function Index() {
                 ),
               },
               {
-                q: "🎁 Bons cadeaux, évènements et privatisation ?",
+                q: "🎁 Possibilité de faire des bons cadeaux, événements ou privatiser ?",
                 a: (
                   <p>
                     Pour les bons cadeaux, les évènements privés, team-building, anniversaires, EVJF, EVJG, etc. veuillez nous contacter par e-mail :{" "}
