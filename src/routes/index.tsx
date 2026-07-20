@@ -19,6 +19,7 @@ import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png.asset.json";
 import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg.asset.json";
 import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
+import matchaPaintImg from "@/assets/events/matcha-paint.jpg.asset.json";
 import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 import visanaLogo from "@/assets/partners/visana.jpg.asset.json";
