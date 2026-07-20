@@ -502,7 +502,7 @@ function Index() {
               price: "Tarif à venir",
               desc: "✨ SAVE THE DATE ✨ Retrouve-nous le 5 septembre pour un atelier en collaboration entre My Matcha Harmony et Le Bar à Custom. Pendant que tu laisses parler ta créativité, Michela sera là pour te faire découvrir de délicieux matcha latte préparés avec le matcha cérémonial de Shizuoka. 🍵🎨",
               past: false,
-              image: matchaPaintImg.url,
+              image: matchaPaintImg,
               imagePosition: "center",
               instagramUrl: null,
             },
