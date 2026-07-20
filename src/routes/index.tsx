@@ -953,6 +953,17 @@ function Index() {
                   </div>
                 ),
               },
+              {
+                q: "🎁 Bons cadeaux, évènements et privatisation ?",
+                a: (
+                  <p>
+                    Pour les bons cadeaux, les évènements privés, team-building, anniversaires, EVJF, EVJG, etc. veuillez nous contacter par e-mail :{" "}
+                    <a href="mailto:moonwalcoeur@outlook.com" className="underline" style={{ color: "var(--clay)" }}>
+                      moonwalcoeur@outlook.com
+                    </a>
+                  </p>
+                ),
+              },
             ].map((item) => (
               <AccordionItem key={item.q} value={item.q} className="border-0">
                 <AccordionTrigger 
