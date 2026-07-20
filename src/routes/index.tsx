@@ -529,7 +529,7 @@ function Index() {
               lieu: "En Bellevue 1, 1163 Etoy",
               time: "10h00 – 14h00",
               price: "CHF 90.- / personne",
-              desc: "Le Bar à Custom déménage à l'hôtel pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩",
+              desc: "Le Bar à Custom déménage à l'hôtel Afterwork pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩",
               past: true,
               image: brunchTerrasseImg.url,
               instagramUrl: "https://www.instagram.com/p/DZK1T1woaFi/",
