@@ -894,7 +894,7 @@ function Index() {
               { q: "⏱️ Quelle est la durée de l'atelier ?", a: "2 heures avec boisson offertes !" },
               { q: "👜 Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
               {
-                q: "📱 Réseaux sociaux ?",
+                q: "📱 Avez-vous des réseaux sociaux ?",
                 a: (
                   <div className="space-y-2">
                     <div className="flex items-center gap-3">
