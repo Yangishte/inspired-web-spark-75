@@ -736,7 +736,7 @@ function Index() {
                   {events.map((e) => (
                     <div
                       key={e.titre}
-                      className="flex h-full w-[85vw] shrink-0 snap-start sm:w-[60vw] md:w-[calc(33.333%-1rem)]"
+                      className="flex w-[85vw] shrink-0 snap-start sm:w-[60vw] md:w-[calc(33.333%-1rem)]"
                     >
                       {renderEventCard(e)}
                     </div>
