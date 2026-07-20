@@ -883,6 +883,10 @@ function Index() {
               <span className="hidden font-handwritten text-sm sm:inline" style={{ color: "var(--clay)" }}>Projets longs, mariage, cadeau →</span>
             </Link>
           </div>
+
+          <p className="mt-10 text-center text-sm opacity-70" style={{ color: "var(--cocoa)" }}>
+            Prix dans les locaux à St-Sulpice - hors événements
+          </p>
         </div>
       </section>
 
