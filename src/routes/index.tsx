@@ -690,21 +690,10 @@ function Index() {
           };
 
           return (
-            <div className="space-y-10">
-              {/* À VENIR */}
-              <div>
-                <div className="mb-4 h-1 rounded-full" style={{ background: "var(--cocoa)" }} />
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {events.filter((e) => !e.past).map(renderEventCard)}
-                </div>
-              </div>
-
-              {/* PASSÉS */}
-              <div>
-                <div className="mb-4 h-1 rounded-full" style={{ background: "var(--cocoa)" }} />
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {events.filter((e) => e.past).map(renderEventCard)}
-                </div>
+            <div>
+              <div className="mb-4 h-1 rounded-full" style={{ background: "var(--cocoa)" }} />
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {events.map(renderEventCard)}
               </div>
             </div>
           );
