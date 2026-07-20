@@ -928,7 +928,6 @@ function Index() {
                   </div>
                 ),
               },
-              { q: "✨ Après l'atelier ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
               {
                 q: "📝 Comment annuler ou modifier ma réservation ?",
                 a: (
@@ -964,6 +963,7 @@ function Index() {
                   </p>
                 ),
               },
+              { q: "✨ Après l'atelier ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
             ].map((item) => (
               <AccordionItem key={item.q} value={item.q} className="border-0">
                 <AccordionTrigger 
