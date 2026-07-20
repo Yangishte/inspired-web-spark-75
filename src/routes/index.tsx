@@ -830,7 +830,10 @@ function Index() {
         className="reveal relative border-y-2"
         style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
       >
-        <div className="mx-auto max-w-5xl px-6 py-24">
+      <div className="mx-auto max-w-5xl px-6 py-24">
+          <h2 className="mb-12 text-center font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+            Tarifs
+          </h2>
           <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2 md:gap-10">
             {[
               { name: "Adulte", price: "CHF 49.-", desc: "2 heures d'atelier, boisson offerte, support inclus." },
