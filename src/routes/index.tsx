@@ -733,7 +733,7 @@ function Index() {
                   className="scrollbar-hide -mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-6 md:mx-0 md:px-0"
                   style={{ scrollPaddingLeft: "1.5rem" }}
                 >
-                  {visibleEvents.map((e) => (
+                  {events.map((e) => (
                     <div
                       key={e.titre}
                       className="flex h-full w-[85vw] shrink-0 snap-start sm:w-[60vw] md:w-[calc(33.333%-1rem)]"
@@ -744,22 +744,6 @@ function Index() {
                 </div>
               </div>
 
-              {hasMore && (
-                <div className="mt-4 flex flex-col items-center gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setShowAll((s) => !s)}
-                    className="flex h-14 w-14 items-center justify-center rounded-full border-[3px] transition-transform hover:scale-110 active:scale-95"
-                    style={{ borderColor: "var(--cocoa)", color: "var(--cocoa)", background: "var(--cream)" }}
-                    aria-label={showAll ? "Réduire les événements" : "Voir les événements passés"}
-                  >
-                    <ChevronRight className={`h-7 w-7 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} />
-                  </button>
-                  <span className="font-marker text-sm" style={{ color: "var(--cocoa)" }}>
-                    {showAll ? "Réduire" : "Voir les événements passés"}
-                  </span>
-                </div>
-              )}
             </div>
           );
         })()}
