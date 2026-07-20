@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram, Star, Menu, X, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
 import heroImg2 from "@/assets/hero/IMG_3609.jpeg.asset.json";
 import heroImg3 from "@/assets/hero/IMG_6192.jpeg.asset.json";
