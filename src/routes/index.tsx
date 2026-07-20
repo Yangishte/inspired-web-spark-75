@@ -730,15 +730,17 @@ function Index() {
                 {/* Track */}
                 <div
                   ref={scrollRef}
-                  className="scrollbar-hide -mx-6 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-6 md:mx-0 md:px-0"
+                  className="scrollbar-hide -mx-6 flex items-stretch snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-6 md:mx-0 md:px-0"
                   style={{ scrollPaddingLeft: "1.5rem" }}
                 >
                   {events.map((e) => (
                     <div
                       key={e.titre}
-                      className="flex h-full w-[85vw] shrink-0 snap-start sm:w-[60vw] md:w-[calc(33.333%-1rem)]"
+                      className="flex w-[85vw] shrink-0 snap-start sm:w-[60vw] md:w-[calc(33.333%-1rem)]"
                     >
-                      {renderEventCard(e)}
+                      <div className="w-full">
+                        {renderEventCard(e)}
+                      </div>
                     </div>
                   ))}
                 </div>
