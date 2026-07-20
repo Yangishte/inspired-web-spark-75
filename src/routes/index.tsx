@@ -670,7 +670,7 @@ function Index() {
                     </a>
                     {e.price && (
                       <span
-                        className="min-w-[140px] rounded-xl px-5 py-3 font-marker text-base whitespace-pre-line text-center leading-tight"
+                        className="flex h-[52px] w-[180px] shrink-0 items-center justify-center rounded-full px-4 font-marker text-base uppercase leading-none tracking-wide text-center"
                         style={{ background: "#e8b84a", color: "var(--cocoa)" }}
                       >
                         {e.price.split("\n")[0]}
