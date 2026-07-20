@@ -500,7 +500,21 @@ function Index() {
               lieu: "Au bord du lac, St-Sulpice",
               time: "10h00 - 12h00",
               price: "CHF 59.- / Personne",
-              desc: "Retrouve-nous le 5 septembre pour un atelier en collaboration entre My Matcha Harmony et Le Bar à Custom. Pendant que tu laisses parler ta créativité, Michela sera là pour te faire découvrir de délicieux matcha latte préparés avec le matcha cérémonial de Shizuoka. 🍵🎨",
+              desc: (
+                <>
+                  Retrouve-nous le 5 septembre pour un atelier en collaboration entre{" "}
+                  <a
+                    href="https://www.instagram.com/mymatchaharmony/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    My Matcha Harmony
+                  </a>{" "}
+                  et Le Bar à Custom. Pendant que tu laisses parler ta créativité, Michela sera là pour te faire découvrir de délicieux matcha latte préparés avec le matcha cérémonial de Shizuoka. 🍵🎨
+                </>
+              ),
               past: false,
               image: matchaPaintImg.url,
               imagePosition: "center",
