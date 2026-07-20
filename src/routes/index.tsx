@@ -521,7 +521,7 @@ function Index() {
               past: true,
               image: winePaintImg.url,
               imagePosition: "center 15%",
-              instagramUrl: "https://www.instagram.com/p/DYKe5apsLhx/",
+              instagramUrl: "https://www.instagram.com/p/DYxFsXAobkI/",
             },
             {
               date: "Dimanche 31 mai 2026",
@@ -532,7 +532,7 @@ function Index() {
               desc: "Le Bar à Custom déménage à l'hôtel Afterwork pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩",
               past: true,
               image: brunchTerrasseImg.url,
-              instagramUrl: "https://www.instagram.com/p/DZK1T1woaFi/",
+              instagramUrl: "https://www.instagram.com/p/DYKe5apsLhx/",
             },
             {
               date: "Samedi 25 avril 2026",
@@ -544,7 +544,7 @@ function Index() {
               past: true,
               image: manorLausanneImg.url,
               imagePosition: "center 25%",
-              instagramUrl: "https://www.instagram.com/p/DYxFsXAobkI/",
+              instagramUrl: "https://www.instagram.com/p/DZK1T1woaFi/",
             },
           ];
 
