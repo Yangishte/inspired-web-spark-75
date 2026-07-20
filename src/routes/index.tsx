@@ -19,7 +19,7 @@ import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png.asset.json";
 import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg.asset.json";
 import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
-import matchaPaintImg from "@/assets/events/matcha-paint.jpg";
+import matchaPaintImg from "@/assets/events/matcha-paint.png.asset.json";
 import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 import visanaLogo from "@/assets/partners/visana.jpg.asset.json";
@@ -502,7 +502,7 @@ function Index() {
               price: "CHF 59.- / Personne",
               desc: "Retrouve-nous le 5 septembre pour un atelier en collaboration entre My Matcha Harmony et Le Bar à Custom. Pendant que tu laisses parler ta créativité, Michela sera là pour te faire découvrir de délicieux matcha latte préparés avec le matcha cérémonial de Shizuoka. 🍵🎨",
               past: false,
-              image: matchaPaintImg,
+              image: matchaPaintImg.url,
               imagePosition: "center",
               instagramUrl: null,
             },
