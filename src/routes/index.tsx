@@ -1168,15 +1168,14 @@ function Index() {
           </p>
         </div>
         <div className="mx-auto flex max-w-5xl justify-center px-6">
-          <a
-            href="https://app.acuityscheduling.com/schedule.php?owner=32315373&ref=booking_button"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => setBookingModalOpen(true)}
             className="acuity-embed-button float-neutral inline-block rounded-full px-8 py-4 font-marker text-lg transition-transform hover:scale-105"
             style={{ background: "var(--cocoa)", color: "var(--cream)", textDecoration: "none" }}
           >
             Prendre rendez-vous
-          </a>
+          </button>
         </div>
       </section>
 
