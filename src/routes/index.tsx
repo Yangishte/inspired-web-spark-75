@@ -489,7 +489,7 @@ function Index() {
               date: "Samedi 5 septembre 2026",
               titre: "Matcha & Paint",
               lieu: "Au bord du lac, St-Sulpice",
-              time: "10h00 - 12h00",
+              time: "10h00 - 12h00 ou 13h30 - 15H30",
               price: "CHF 59.- / Personne",
               desc: (
                 <>
