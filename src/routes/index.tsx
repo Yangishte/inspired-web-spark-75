@@ -19,6 +19,7 @@ import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png.asset.json";
 import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg.asset.json";
 import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
+import matchaPaintImg from "@/assets/events/matcha-paint.jpg";
 import lfmLogo from "@/assets/partners/lfm.png.asset.json";
 import illustreLogo from "@/assets/partners/illustre.png.asset.json";
 import visanaLogo from "@/assets/partners/visana.jpg.asset.json";
@@ -494,14 +495,14 @@ function Index() {
         {(() => {
           const events = [
             {
-              date: "Prochainement",
-              titre: "Prochain événement prochainement !",
-              lieu: "Reste connecté.e",
-              time: "Date & lieu à venir",
+              date: "Samedi 5 septembre 2026",
+              titre: "Matcha & Paint",
+              lieu: "Au bord du lac, St-Sulpice",
+              time: "Horaire à venir",
               price: "Tarif à venir",
-              desc: "Un nouvel atelier inédit est en préparation... On te réserve une belle surprise très bientôt !",
+              desc: "✨ SAVE THE DATE ✨ Retrouve-nous le 5 septembre pour un atelier en collaboration entre My Matcha Harmony et Le Bar à Custom. Pendant que tu laisses parler ta créativité, Michela sera là pour te faire découvrir de délicieux matcha latte préparés avec le matcha cérémonial de Shizuoka. 🍵🎨",
               past: false,
-              image: null,
+              image: matchaPaintImg,
               imagePosition: "center",
               instagramUrl: null,
             },
