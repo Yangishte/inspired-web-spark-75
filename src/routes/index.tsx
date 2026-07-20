@@ -895,11 +895,11 @@ function Index() {
                         >
                           la page de réservation
                         </a>
-                        .
+                        &nbsp;;
                       </li>
-                      <li>Sélectionner sous quantité : le nombre de personnes participant à l'atelier.</li>
-                      <li>Choisissez une date et un créneau horaire.</li>
-                      <li>Cliquez sur : Sélectionner et continuer.</li>
+                      <li>Sélectionner sous quantité : le nombre de personnes participant à l'atelier ;</li>
+                      <li>Choisissez une date et un créneau horaire ;</li>
+                      <li>Cliquez sur : Sélectionner et continuer ;</li>
                       <li>
                         Remplissez vos informations et réglez votre session directement sur la page suivante via notre plateforme de paiement sécurisée. Vous recevrez ensuite un e-mail de confirmation.
                       </li>
