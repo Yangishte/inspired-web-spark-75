@@ -563,7 +563,7 @@ function Index() {
             return (
               <div
                 key={e.titre}
-                className="flex flex-col overflow-hidden rounded-3xl border-2 shadow-xl"
+                className={`flex flex-col overflow-hidden rounded-3xl border-2 shadow-xl transition-all ${e.past ? "opacity-60 grayscale" : ""}`}
                 style={{ borderColor: "var(--cocoa)", background: "var(--cream)" }}
               >
                 {/* IMAGE / TOP BUBBLE */}
@@ -690,21 +690,10 @@ function Index() {
           };
 
           return (
-            <div className="space-y-10">
-              {/* À VENIR */}
-              <div>
-                <div className="mb-4 h-1 rounded-full" style={{ background: "var(--cocoa)" }} />
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {events.filter((e) => !e.past).map(renderEventCard)}
-                </div>
-              </div>
-
-              {/* PASSÉS */}
-              <div>
-                <div className="mb-4 h-1 rounded-full" style={{ background: "var(--cocoa)" }} />
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {events.filter((e) => e.past).map(renderEventCard)}
-                </div>
+            <div>
+              <div className="mb-4 h-1 rounded-full" style={{ background: "var(--cocoa)" }} />
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {events.map(renderEventCard)}
               </div>
             </div>
           );
