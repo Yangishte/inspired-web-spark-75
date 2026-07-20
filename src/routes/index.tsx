@@ -879,6 +879,18 @@ function Index() {
                 </div>
               ) },
               { q: "💰 Tarifs ?", a: "Adulte : CHF 49.- · Enfant : CHF 39.-" },
+              {
+                q: "👧 Comment réserver pour les enfants ?",
+                a: (
+                  <div className="space-y-3">
+                    <p>5 à 13 ans (CHF 39.- / dont CHF 10.- des CHF 49.- remboursés sur place)</p>
+                    <p>La présence d'un participant adulte est obligatoire pour les enfants de moins de 14 ans.</p>
+                    <p>
+                      Réservez directement sur le site web pour les enfants de 13 ans ou moins, au tarif standard de CHF 49.-. En présentant la carte d'identité de l'enfant sur place, CHF 10.- vous seront remboursés, réduisant ainsi le prix final de l'enfant à CHF 39.-.
+                    </p>
+                  </div>
+                ),
+              },
               { q: "⏱️ Durée ?", a: "2 heures avec boisson offertes !" },
               { q: "👜 Dois-je venir avec mes supports ?", a: "Non pas besoin! Choisissez parmi divers supports: des trousses grandes ou petites, des sacs de diverses tailles et formes, des sacs à dos, etc." },
               {
