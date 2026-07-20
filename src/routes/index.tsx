@@ -380,7 +380,7 @@ function Index() {
             ensoleillée.
           </p>
           <p className="mt-3 text-base" style={{ color: "var(--clay)" }}>
-            Accessible dès 6 ans.
+            Accessible dès 5 ans.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
