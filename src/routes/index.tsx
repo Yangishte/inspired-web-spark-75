@@ -341,7 +341,6 @@ function Index() {
             {[
               { label: "L'atelier", href: "#atelier" },
               { label: "Événements", href: "#evenements" },
-              { label: "Services", href: "#services" },
               { label: "Tarifs", href: "#tarifs" },
               { label: "FAQ", href: "#faq" },
               { label: "Réserver", href: "#reserver" },
