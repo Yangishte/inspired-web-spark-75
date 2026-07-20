@@ -551,8 +551,9 @@ function Index() {
           ];
 
           const renderEventCard = (e: typeof events[0]) => {
-            const ctaHref = e.instagramUrl || "#reserver";
+            const ctaHref = e.past ? e.instagramUrl || "#reserver" : "#reserver";
             const ctaLabel = e.past ? "Voir" : "Réserver";
+            const ctaIsExternal = ctaHref.startsWith("http");
             return (
               <div
                 key={e.titre}
@@ -656,8 +657,8 @@ function Index() {
                   <div className="mt-auto flex flex-nowrap items-center gap-3">
                     <a
                       href={ctaHref}
-                      target={e.instagramUrl ? "_blank" : undefined}
-                      rel={e.instagramUrl ? "noopener noreferrer" : undefined}
+                      target={ctaIsExternal ? "_blank" : undefined}
+                      rel={ctaIsExternal ? "noopener noreferrer" : undefined}
                       className="flex h-[52px] flex-1 items-center justify-center whitespace-nowrap rounded-xl px-4 font-marker text-sm transition-transform hover:scale-105 md:text-base"
                       style={{ background: "var(--cocoa)", color: "var(--cream)" }}
                     >
