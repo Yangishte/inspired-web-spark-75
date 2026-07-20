@@ -633,7 +633,7 @@ function Index() {
                     )}
                     {e.time && (
                       <p className="text-sm" style={{ color: "var(--cocoa)" }}>
-                        <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>🗓️</span>{" "}
+                        <span aria-hidden="true" className="inline-block" style={{ fontFamily: "Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" }}>🕰️</span>{" "}
                         <span className="font-marker">{e.time}</span>
                       </p>
                     )}
