@@ -555,12 +555,28 @@ function Index() {
                 {/* IMAGE / TOP BUBBLE */}
                 <div className="relative m-3 h-48 overflow-hidden rounded-2xl sm:h-56">
                   {e.image ? (
-                    <img
-                      src={e.image}
-                      alt={e.titre}
-                      className="h-full w-full object-cover"
-                      style={{ objectPosition: (e as { imagePosition?: string }).imagePosition || "center" }}
-                    />
+                    e.instagramUrl ? (
+                      <a
+                        href={e.instagramUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block h-full w-full"
+                      >
+                        <img
+                          src={e.image}
+                          alt={e.titre}
+                          className="h-full w-full object-cover"
+                          style={{ objectPosition: (e as { imagePosition?: string }).imagePosition || "center" }}
+                        />
+                      </a>
+                    ) : (
+                      <img
+                        src={e.image}
+                        alt={e.titre}
+                        className="h-full w-full object-cover"
+                        style={{ objectPosition: (e as { imagePosition?: string }).imagePosition || "center" }}
+                      />
+                    )
                   ) : (
                     <div
                       className="flex h-full w-full items-center justify-center"
