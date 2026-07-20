@@ -917,6 +917,30 @@ function Index() {
                 ),
               },
               { q: "✨ Ensuite ?", a: "Après les deux heures d'atelier, vous pourrez repartir avec votre création. La peinture résiste à un lavage à 30°." },
+              {
+                q: "📝 Annulation ou modification de la réservation ?",
+                a: (
+                  <div className="space-y-3">
+                    <p>
+                      Vous avez la possibilité de modifier la date de votre réservation jusqu'à 48 heures avant le début de l'atelier. Ce délai passé, aucune modification ne sera acceptée.
+                    </p>
+                    <p>
+                      La modification de votre réservation est possible via le lien correspondant donné dans le courriel de confirmation ou par e-mail à :{" "}
+                      <a href="mailto:lebaracustom@gmail.com" className="underline" style={{ color: "var(--clay)" }}>
+                        lebaracustom@gmail.com
+                      </a>
+                    </p>
+                    <p>
+                      Dans aucun cas, nous ne procéderons au remboursement d'une réservation. Deux possibilités sont proposées :
+                    </p>
+                    <ol className="list-decimal space-y-1 pl-5">
+                      <li>Replanifier un rendez-vous</li>
+                      <li>Recevoir un bon valeur pour une prochaine réservation.</li>
+                    </ol>
+                    <p>Nous vous remercions pour votre compréhension.</p>
+                  </div>
+                ),
+              },
             ].map((item) => (
               <AccordionItem key={item.q} value={item.q} className="border-0">
                 <AccordionTrigger 
