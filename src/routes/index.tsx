@@ -880,6 +880,34 @@ function Index() {
               ) },
               { q: "💰 Quels sont les tarifs ?", a: "Adulte : CHF 49.- · Enfant : CHF 39.-" },
               {
+                q: "📅 Comment réserver ?",
+                a: (
+                  <div className="space-y-3">
+                    <ol className="list-decimal space-y-2 pl-5">
+                      <li>
+                        Aller à{" "}
+                        <a
+                          href="https://app.acuityscheduling.com/schedule/6d9effbc/appointment/81047761/calendar/10150049?ref=booking_button"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline"
+                          style={{ color: "var(--clay)" }}
+                        >
+                          la page de réservation
+                        </a>
+                        .
+                      </li>
+                      <li>Sélectionner sous quantité : le nombre de personnes participant à l'atelier.</li>
+                      <li>Choisissez une date et un créneau horaire.</li>
+                      <li>Cliquez sur : Sélectionner et continuer.</li>
+                      <li>
+                        Remplissez vos informations et réglez votre session directement sur la page suivante via notre plateforme de paiement sécurisée. Vous recevrez ensuite un e-mail de confirmation.
+                      </li>
+                    </ol>
+                  </div>
+                ),
+              },
+              {
                 q: "👧 Comment réserver pour les enfants ?",
                 a: (
                   <div className="space-y-3">
