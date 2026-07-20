@@ -658,14 +658,14 @@ function Index() {
                       href={ctaHref}
                       target={e.instagramUrl ? "_blank" : undefined}
                       rel={e.instagramUrl ? "noopener noreferrer" : undefined}
-                      className="flex h-[52px] w-[100px] items-center justify-center rounded-xl px-4 font-marker text-base transition-transform hover:scale-105 md:w-[120px] lg:w-[140px]"
+                      className="flex h-[52px] flex-1 items-center justify-center whitespace-nowrap rounded-xl px-4 font-marker text-sm transition-transform hover:scale-105 md:text-base"
                       style={{ background: "var(--cocoa)", color: "var(--cream)" }}
                     >
                       {ctaLabel}
                     </a>
                     {e.price && (
                       <span
-                        className="flex h-[52px] w-[140px] shrink-0 items-center justify-center rounded-full px-3 font-marker text-sm uppercase leading-none tracking-wide text-center md:w-[160px] md:px-4 md:text-base lg:w-[180px]"
+                        className="flex h-[52px] flex-1 items-center justify-center whitespace-nowrap rounded-full px-3 font-marker text-sm uppercase leading-none tracking-wide text-center md:px-4 md:text-base"
                         style={{ background: "#e8b84a", color: "var(--cocoa)" }}
                       >
                         {e.price.split("\n")[0]}
