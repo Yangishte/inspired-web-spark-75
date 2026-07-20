@@ -380,7 +380,10 @@ function Index() {
           <p className="mt-3 text-base" style={{ color: "var(--clay)" }}>
             Accessible dès 6 ans.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <p className="mt-6 text-base font-medium" style={{ color: "var(--cocoa)" }}>
+            Prochain atelier le 5 septembre !
+          </p>
+          <div className="mt-4 flex flex-wrap gap-4">
             <a
               href="#reserver"
               className="float-left rounded-full px-7 py-3 font-marker text-lg transition-transform hover:scale-105"
