@@ -1026,15 +1026,14 @@ function Index() {
                     <ol className="list-decimal space-y-2 pl-5">
                       <li>
                         Aller à{" "}
-                        <a
-                          href="https://app.acuityscheduling.com/schedule/6d9effbc/appointment/81047761/calendar/10150049?ref=booking_button"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <button
+                          type="button"
+                          onClick={() => setBookingModalOpen(true)}
                           className="underline"
                           style={{ color: "var(--clay)" }}
                         >
                           la page de réservation
-                        </a>
+                        </button>
                         &nbsp;;
                       </li>
                       <li>Sélectionner sous quantité : le nombre de personnes participant à l'atelier ;</li>
