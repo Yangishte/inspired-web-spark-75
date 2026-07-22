@@ -1125,8 +1125,8 @@ function Index() {
                 a: (
                   <p>
                     Pour les bons cadeaux, les évènements privés, team-building, anniversaires, EVJF, EVJG, etc. veuillez nous contacter par e-mail :{" "}
-                    <a href="mailto:moonwalcoeur@outlook.com" className="underline" style={{ color: "var(--clay)" }}>
-                      moonwalcoeur@outlook.com
+                    <a href="mailto:lebaracustom@gmail.com" className="underline" style={{ color: "var(--clay)" }}>
+                      lebaracustom@gmail.com
                     </a>
                   </p>
                 ),
@@ -1252,11 +1252,11 @@ function Index() {
           On se fera un plaisir de te répondre dans les meilleurs délais!
         </p>
           <a
-            href="mailto:moonwalcoeur@outlook.com"
+            href="mailto:lebaracustom@gmail.com"
             className="mx-auto mt-10 inline-block max-w-full break-words rounded-full px-6 py-4 font-marker text-lg transition-transform hover:scale-105 sm:px-10 sm:text-xl"
             style={{ background: "var(--cocoa)", color: "var(--cream)" }}
           >
-            moonwalcoeur@outlook.com
+            lebaracustom@gmail.com
           </a>
           <div className="mx-auto mt-6 flex items-center justify-center gap-4">
             <a
