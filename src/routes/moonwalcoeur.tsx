@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg.asset.json";
-import textileImg from "@/assets/moonwalcoeur/textile.jpg";
+import textileAsset from "@/assets/moonwalcoeur/textile-king-pop.jpeg.asset.json";
 import autresImg from "@/assets/moonwalcoeur/autres.jpg";
 import mwSignatureAsset from "@/assets/moonwalcoeur/signature.png.asset.json";
 import petits1Asset from "@/assets/moonwalcoeur/petits-1.jpeg.asset.json";
