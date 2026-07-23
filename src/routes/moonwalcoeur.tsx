@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg.asset.json";
-import textileImg from "@/assets/moonwalcoeur/textile.jpg";
+import textileAsset from "@/assets/moonwalcoeur/textile-king-pop.jpeg.asset.json";
 import autresImg from "@/assets/moonwalcoeur/autres.jpg";
 import mwSignatureAsset from "@/assets/moonwalcoeur/signature.png.asset.json";
 import petits1Asset from "@/assets/moonwalcoeur/petits-1.jpeg.asset.json";
@@ -318,7 +318,7 @@ function Moonwalcoeur() {
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {[
             { title: "Chaussure", img: chaussureAsset.url },
-            { title: "Textile", img: textileImg },
+            { title: "Textile", img: textileAsset.url },
             { title: "Autres supports", img: autresImg },
           ].map((card, i) => (
             <div
