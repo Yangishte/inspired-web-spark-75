@@ -318,7 +318,7 @@ function Moonwalcoeur() {
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {[
             { title: "Chaussure", img: chaussureAsset.url },
-            { title: "Textile", img: textileImg },
+            { title: "Textile", img: textileAsset.url },
             { title: "Autres supports", img: autresImg },
           ].map((card, i) => (
             <div
