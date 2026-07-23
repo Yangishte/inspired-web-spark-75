@@ -319,7 +319,7 @@ function Moonwalcoeur() {
           {[
             { title: "Chaussure", img: chaussureAsset.url },
             { title: "Textile", img: textileAsset.url },
-            { title: "Autres supports", img: autresImg },
+            { title: "Autres supports", img: autresAsset.url },
           ].map((card, i) => (
             <div
               key={card.title}
