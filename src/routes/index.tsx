@@ -217,6 +217,26 @@ function Index() {
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const nextReviewRef = useRef(2);
   const activeSlotRef = useRef<0 | 1>(0);
+  const marqueeTrackRef = useRef<HTMLDivElement>(null);
+  const marqueeResumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Mobile: pause the auto-marquee while the user drags, resume shortly after release
+  const pauseMarquee = () => {
+    const el = marqueeTrackRef.current;
+    if (el) el.style.animationPlayState = "paused";
+  };
+  const resumeMarquee = () => {
+    const el = marqueeTrackRef.current;
+    if (el) el.style.animationPlayState = "running";
+  };
+  const handleMarqueeTouchStart = () => {
+    if (marqueeResumeTimer.current) clearTimeout(marqueeResumeTimer.current);
+    pauseMarquee();
+  };
+  const handleMarqueeTouchEnd = () => {
+    if (marqueeResumeTimer.current) clearTimeout(marqueeResumeTimer.current);
+    marqueeResumeTimer.current = setTimeout(resumeMarquee, 1800);
+  };
 
   useEffect(() => {
     const id = setInterval(() => setHeroIndex((i) => (i + 1) % heroImages.length), 5000);
