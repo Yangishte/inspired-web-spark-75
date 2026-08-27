@@ -772,8 +772,13 @@ function Index() {
             Ils nous font confiance
           </h2>
         </div>
-        <div className="relative overflow-x-auto md:overflow-hidden scrollbar-hide">
-          <div className="flex items-center gap-10 md:gap-12 marquee-track w-max px-6 md:px-0">
+        <div className="relative overflow-x-auto md:overflow-hidden scrollbar-hide" style={{ WebkitOverflowScrolling: "touch" }}>
+          <div
+            ref={marqueeTrackRef}
+            onTouchStart={handleMarqueeTouchStart}
+            onTouchEnd={handleMarqueeTouchEnd}
+            className="flex items-center gap-10 md:gap-12 marquee-track w-max px-6 md:px-0"
+          >
             {[...partners, ...partners].map((p, i) => (
               <div
                 key={i}
