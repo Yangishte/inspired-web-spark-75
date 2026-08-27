@@ -193,6 +193,7 @@
   animation: marquee-scroll 30s linear infinite;
 }
 .marquee-track:hover { animation-play-state: paused; }
+.marquee-paused .marquee-track { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none !important; }
 }
