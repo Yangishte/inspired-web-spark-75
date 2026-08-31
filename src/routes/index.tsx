@@ -35,7 +35,6 @@ import clientDolphin from "@/assets/clients/client-dolphin-new.png.asset.json";
 import clientLemon from "@/assets/clients/client-lemon.png.asset.json";
 import clientBordel from "@/assets/clients/client-bordel.png.asset.json";
 import clientRockpaper from "@/assets/clients/client-rockpaper.png.asset.json";
-import { PartnersMarquee } from "@/components/PartnersMarquee";
 
 
 type Partner = {
@@ -753,7 +752,66 @@ function Index() {
             Ils nous font confiance
           </h2>
         </div>
-        <PartnersMarquee partners={partners} />
+        <div className="relative overflow-hidden">
+          <div className="flex items-center gap-10 md:gap-12 marquee-track w-max">
+            {[...partners, ...partners].map((p, i) => (
+              <div
+                key={i}
+                className={`shrink-0 flex flex-col items-center justify-center ${p.text ? "gap-1" : ""}`}
+              >
+                <div className="flex h-16 w-28 md:h-20 md:w-36 items-center justify-center">
+                  {p.link ? (
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-full w-full items-center justify-center"
+                    >
+                      {p.shape === "circle" ? (
+                        <div className="h-16 w-16 md:h-20 md:w-20 overflow-hidden rounded-full">
+                          <img
+                            src={p.url}
+                            alt={p.name}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : (
+                        <img
+                          src={p.url}
+                          alt={p.name}
+                          className="h-full w-full object-contain px-2"
+                          loading="lazy"
+                        />
+                      )}
+                    </a>
+                  ) : p.shape === "circle" ? (
+                    <div className="h-16 w-16 md:h-20 md:w-20 overflow-hidden rounded-full">
+                      <img
+                        src={p.url}
+                        alt={p.name}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={p.url}
+                      alt={p.name}
+                      className="h-full w-full object-contain px-2"
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+                {p.text && (
+                  <span className="font-marker text-xs tracking-wide" style={{ color: "var(--cream)" }}>
+                    {p.text}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* SERVICES — Carrousel 3D */}
