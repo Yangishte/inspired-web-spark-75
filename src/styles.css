@@ -93,11 +93,27 @@
     border-color: var(--color-border);
   }
 
+  /* Désactive le scroll anchoring automatique du navigateur
+     (provoquait des sauts de scroll intermittents en inactivité) */
+  html,
+  body {
+    overflow-anchor: none;
+  }
+
+  body * {
+    overflow-anchor: none;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
     overflow-x: hidden;
+  }
+
+  /* Évite les reflows au chargement des images différées */
+  img {
+    overflow-anchor: none;
   }
 
   ::selection {
