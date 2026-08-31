@@ -94,6 +94,9 @@ export function PartnersMarquee({
         <div className="flex w-max shrink-0 items-center gap-10 md:gap-12 pr-10 md:pr-12" aria-hidden="true">
           {children}
         </div>
+        <div className="flex w-max shrink-0 items-center gap-10 md:gap-12 pr-10 md:pr-12" aria-hidden="true">
+          {children}
+        </div>
       </div>
     </div>
   );
