@@ -176,8 +176,9 @@ function ClientPeeks() {
             src={img.src}
             alt={img.alt}
             aria-hidden="true"
+            loading="lazy"
             className={`pointer-events-none absolute z-0 client-peek ${pos.cls}`}
-            style={{ ["--peek-rot" as string]: pos.rot, animationDelay: `${i * 5}s` }}
+            style={{ ["--peek-rot" as string]: pos.rot, animationDelay: `${i * 5}s`, aspectRatio: "1 / 1" }}
             onAnimationIteration={() => cycleSlot(i)}
           />
         );
@@ -434,10 +435,10 @@ function Index() {
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <div className="float-left overflow-hidden rounded-3xl border-4 shadow-xl" style={{ borderColor: "var(--cocoa)" }}>
-              <img src={atelierImg1.url} alt="Atelier Bar à custom — espace de création" className="h-72 w-full object-cover md:h-96" />
+              <img src={atelierImg1.url} alt="Atelier Bar à custom — espace de création" loading="lazy" className="h-72 w-full object-cover md:h-96" />
             </div>
             <div className="float-right float-delay-2 overflow-hidden rounded-3xl border-4 shadow-xl" style={{ borderColor: "var(--cocoa)" }}>
-              <img src={atelierImg2.url} alt="Atelier Bar à custom — préparation" className="h-72 w-full object-cover md:h-96" />
+              <img src={atelierImg2.url} alt="Atelier Bar à custom — préparation" loading="lazy" className="h-72 w-full object-cover md:h-96" />
             </div>
           </div>
 
@@ -940,7 +941,7 @@ function Index() {
               className="group inline-flex items-center gap-3 rounded-full border-2 px-6 py-3 text-sm transition-transform hover:scale-[1.03]"
               style={{ borderColor: "var(--clay)", background: "var(--cream)", color: "var(--cocoa)" }}
             >
-              <img src={moonwalcoeurLogo.url} alt="Moonwalcoeur" className="h-6 w-auto" />
+              <img src={moonwalcoeurLogo.url} alt="Moonwalcoeur" width={526} height={732} className="h-6 w-auto" style={{ aspectRatio: "526 / 732" }} />
               <span className="font-display">Le sur-mesure · Sur devis</span>
               <span className="hidden font-handwritten text-sm sm:inline" style={{ color: "var(--clay)" }}>Projets longs, mariage, cadeau →</span>
             </Link>
