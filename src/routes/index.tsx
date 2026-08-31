@@ -752,9 +752,9 @@ function Index() {
             Ils nous font confiance
           </h2>
         </div>
-        <div className="relative overflow-hidden">
-          <div className="flex items-center gap-10 md:gap-12 marquee-track w-max">
-            {[...partners, ...partners].map((p, i) => (
+        <PartnersMarquee>
+          <>
+            {partners.map((p, i) => (
               <div
                 key={i}
                 className={`shrink-0 flex flex-col items-center justify-center ${p.text ? "gap-1" : ""}`}
