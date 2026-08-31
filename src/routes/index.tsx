@@ -810,8 +810,8 @@ function Index() {
                 )}
               </div>
             ))}
-          </div>
-        </div>
+          </>
+        </PartnersMarquee>
       </section>
 
       {/* SERVICES — Carrousel 3D */}
