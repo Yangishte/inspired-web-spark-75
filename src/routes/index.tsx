@@ -16,6 +16,7 @@ import heroImg9 from "@/assets/hero/IMG_7474.jpeg.asset.json";
 import atelierImg1 from "@/assets/atelier/IMG_0367.jpeg.asset.json";
 import atelierImg2 from "@/assets/atelier/IMG_0360.jpeg.asset.json";
 import BagsCarousel3D from "@/components/BagsCarousel3D";
+import { PartnersMarquee } from "@/components/PartnersMarquee";
 import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png.asset.json";
 import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg.asset.json";
 import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
@@ -752,9 +753,9 @@ function Index() {
             Ils nous font confiance
           </h2>
         </div>
-        <div className="relative overflow-hidden">
-          <div className="flex items-center gap-10 md:gap-12 marquee-track w-max">
-            {[...partners, ...partners].map((p, i) => (
+        <PartnersMarquee>
+          <>
+            {partners.map((p, i) => (
               <div
                 key={i}
                 className={`shrink-0 flex flex-col items-center justify-center ${p.text ? "gap-1" : ""}`}
@@ -810,8 +811,8 @@ function Index() {
                 )}
               </div>
             ))}
-          </div>
-        </div>
+          </>
+        </PartnersMarquee>
       </section>
 
       {/* SERVICES — Carrousel 3D */}
