@@ -940,7 +940,7 @@ function Index() {
               className="group inline-flex items-center gap-3 rounded-full border-2 px-6 py-3 text-sm transition-transform hover:scale-[1.03]"
               style={{ borderColor: "var(--clay)", background: "var(--cream)", color: "var(--cocoa)" }}
             >
-              <img src={moonwalcoeurLogo.url} alt="Moonwalcoeur" className="h-6 w-auto" />
+              <img src={moonwalcoeurLogo.url} alt="Moonwalcoeur" width={526} height={732} className="h-6 w-auto" style={{ aspectRatio: "526 / 732" }} />
               <span className="font-display">Le sur-mesure · Sur devis</span>
               <span className="hidden font-handwritten text-sm sm:inline" style={{ color: "var(--clay)" }}>Projets longs, mariage, cadeau →</span>
             </Link>
