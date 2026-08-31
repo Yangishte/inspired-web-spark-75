@@ -1026,7 +1026,7 @@ function Index() {
                   <div className="space-y-3">
                     <ol className="list-decimal space-y-2 pl-5">
                       <li>
-                        Aller à{" "}
+                        Allez à{" "}
                         <button
                           type="button"
                           onClick={() => setBookingModalOpen(true)}
@@ -1037,7 +1037,7 @@ function Index() {
                         </button>
                         &nbsp;;
                       </li>
-                      <li>Sélectionner sous quantité : le nombre de personnes participant à l'atelier ;</li>
+                      <li>Sélectionnez sous quantité : le nombre de personnes participant à l'atelier ;</li>
                       <li>Choisissez une date et un créneau horaire ;</li>
                       <li>Cliquez sur : Sélectionner et continuer ;</li>
                       <li>
