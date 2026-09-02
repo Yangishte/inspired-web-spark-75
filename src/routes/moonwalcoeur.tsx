@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
-import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg.asset.json";
-import textileAsset from "@/assets/moonwalcoeur/textile-king-pop.jpeg.asset.json";
-import autresAsset from "@/assets/moonwalcoeur/autres-vegeta.jpeg.asset.json";
-import mwSignatureAsset from "@/assets/moonwalcoeur/signature.png.asset.json";
-import petits1Asset from "@/assets/moonwalcoeur/petits-1.jpeg.asset.json";
-import petits2Asset from "@/assets/moonwalcoeur/petits-2.jpeg.asset.json";
-import petits3Asset from "@/assets/moonwalcoeur/petits-3.jpeg.asset.json";
+import chaussureAsset from "@/assets/moonwalcoeur/chaussure.jpeg";
+import textileAsset from "@/assets/moonwalcoeur/textile-king-pop.jpeg";
+import autresAsset from "@/assets/moonwalcoeur/autres-vegeta.jpeg";
+import mwSignatureAsset from "@/assets/moonwalcoeur/signature.png";
+import petits1Asset from "@/assets/moonwalcoeur/petits-1.jpeg";
+import petits2Asset from "@/assets/moonwalcoeur/petits-2.jpeg";
+import petits3Asset from "@/assets/moonwalcoeur/petits-3.jpeg";
 
 export const Route = createFileRoute("/moonwalcoeur")({
   head: () => ({
@@ -254,7 +254,7 @@ function Moonwalcoeur() {
         <h1 className="mt-4 mx-auto w-full max-w-3xl">
           <span className="sr-only">Moonwalcoeur</span>
           <SpotlightSignature
-            src={mwSignatureAsset.url}
+            src={mwSignatureAsset}
             alt="Moonwalcoeur"
             className="mx-auto w-full h-auto"
           />
@@ -319,9 +319,9 @@ function Moonwalcoeur() {
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {[
-            { title: "Chaussure", img: chaussureAsset.url },
-            { title: "Textile", img: textileAsset.url },
-            { title: "Autres supports", img: autresAsset.url },
+            { title: "Chaussure", img: chaussureAsset },
+            { title: "Textile", img: textileAsset },
+            { title: "Autres supports", img: autresAsset },
           ].map((card, i) => (
             <div
               key={card.title}
@@ -375,9 +375,9 @@ function Moonwalcoeur() {
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {[
-            { title: "Ethan", img: petits1Asset.url },
-            { title: "Gear 5", img: petits2Asset.url },
-            { title: "Roshan", img: petits3Asset.url },
+            { title: "Ethan", img: petits1Asset },
+            { title: "Gear 5", img: petits2Asset },
+            { title: "Roshan", img: petits3Asset },
           ].map((card, i) => (
             <div
               key={card.title}

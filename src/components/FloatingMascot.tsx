@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import mascot0 from "@/assets/mascot/Calque_4.png.asset.json";
-import mascot1 from "@/assets/mascot/Calque_5.png.asset.json";
-import mascot2 from "@/assets/mascot/Calque_6.png.asset.json";
-import mascot3 from "@/assets/mascot/Calque_7.png.asset.json";
-import mascot4 from "@/assets/mascot/Calque_8.png.asset.json";
+import mascot0 from "@/assets/mascot/Calque_4.png";
+import mascot1 from "@/assets/mascot/Calque_5.png";
+import mascot2 from "@/assets/mascot/Calque_6.png";
+import mascot3 from "@/assets/mascot/Calque_7.png";
+import mascot4 from "@/assets/mascot/Calque_8.png";
 
 const WIDTH_DESKTOP = 90;
 const HEIGHT_DESKTOP = 132;

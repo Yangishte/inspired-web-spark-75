@@ -3,39 +3,39 @@ import { Instagram, Star, Menu, X, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import heroImg1 from "@/assets/hero/IMG_0362.jpeg.asset.json";
-import heroImg2 from "@/assets/hero/IMG_3609.jpeg.asset.json";
-import heroImg3 from "@/assets/hero/IMG_6192.jpeg.asset.json";
-import heroImg4 from "@/assets/hero/IMG_6209.jpeg.asset.json";
-import heroImg5 from "@/assets/hero/IMG_6211.jpeg.asset.json";
-import heroImg6 from "@/assets/hero/IMG_6623.jpeg.asset.json";
-import heroImg7 from "@/assets/hero/IMG_7448.jpeg.asset.json";
-import heroImg8 from "@/assets/hero/IMG_7459.jpeg.asset.json";
-import heroImg9 from "@/assets/hero/IMG_7474.jpeg.asset.json";
+import heroImg1 from "@/assets/hero/IMG_0362.jpeg";
+import heroImg2 from "@/assets/hero/IMG_3609.jpeg";
+import heroImg3 from "@/assets/hero/IMG_6192.jpeg";
+import heroImg4 from "@/assets/hero/IMG_6209.jpeg";
+import heroImg5 from "@/assets/hero/IMG_6211.jpeg";
+import heroImg6 from "@/assets/hero/IMG_6623.jpeg";
+import heroImg7 from "@/assets/hero/IMG_7448.jpeg";
+import heroImg8 from "@/assets/hero/IMG_7459.jpeg";
+import heroImg9 from "@/assets/hero/IMG_7474.jpeg";
 
-import atelierImg1 from "@/assets/atelier/IMG_0367.jpeg.asset.json";
-import atelierImg2 from "@/assets/atelier/IMG_0360.jpeg.asset.json";
+import atelierImg1 from "@/assets/atelier/IMG_0367.jpeg";
+import atelierImg2 from "@/assets/atelier/IMG_0360.jpeg";
 import BagsCarousel3D from "@/components/BagsCarousel3D";
 import { PartnersMarquee } from "@/components/PartnersMarquee";
-import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png.asset.json";
-import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg.asset.json";
-import winePaintImg from "@/assets/events/wine-paint.jpg.asset.json";
-import manorLausanneImg from "@/assets/events/manor-lausanne.jpg.asset.json";
-import matchaPaintImg from "@/assets/events/matcha-paint.png.asset.json";
-import lfmLogo from "@/assets/partners/lfm.png.asset.json";
-import illustreLogo from "@/assets/partners/illustre.png.asset.json";
-import visanaLogo from "@/assets/partners/visana.jpg.asset.json";
+import moonwalcoeurLogo from "@/assets/moonwalcoeur/logo.png";
+import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg";
+import winePaintImg from "@/assets/events/wine-paint.jpg";
+import manorLausanneImg from "@/assets/events/manor-lausanne.jpg";
+import matchaPaintImg from "@/assets/events/matcha-paint.png";
+import lfmLogo from "@/assets/partners/lfm.png";
+import illustreLogo from "@/assets/partners/illustre.png";
+import visanaLogo from "@/assets/partners/visana.jpg";
 import archeNoeLogo from "@/assets/partners/arche-noe.png";
-import littleGreenHouseLogo from "@/assets/partners/little-green-house.png.asset.json";
-import corridorLogo from "@/assets/partners/corridor.webp.asset.json";
-import manorLogo from "@/assets/partners/manor.png.asset.json";
-import maisonBlancheLogo from "@/assets/partners/maison-blanche.png.asset.json";
-import afterworkLogo from "@/assets/partners/afterwork.png.asset.json";
-import clientCherry from "@/assets/clients/client-cherry.png.asset.json";
-import clientDolphin from "@/assets/clients/client-dolphin-new.png.asset.json";
-import clientLemon from "@/assets/clients/client-lemon.png.asset.json";
-import clientBordel from "@/assets/clients/client-bordel.png.asset.json";
-import clientRockpaper from "@/assets/clients/client-rockpaper.png.asset.json";
+import littleGreenHouseLogo from "@/assets/partners/little-green-house.png";
+import corridorLogo from "@/assets/partners/corridor.webp";
+import manorLogo from "@/assets/partners/manor.png";
+import maisonBlancheLogo from "@/assets/partners/maison-blanche.png";
+import afterworkLogo from "@/assets/partners/afterwork.png";
+import clientCherry from "@/assets/clients/client-cherry.png";
+import clientDolphin from "@/assets/clients/client-dolphin-new.png";
+import clientLemon from "@/assets/clients/client-lemon.png";
+import clientBordel from "@/assets/clients/client-bordel.png";
+import clientRockpaper from "@/assets/clients/client-rockpaper.png";
 
 
 type Partner = {
@@ -47,15 +47,15 @@ type Partner = {
 };
 
 const partners: Partner[] = [
-  { name: "LFM La Radio", url: lfmLogo.url, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", text: "Ecoute le podcast ici!" },
-  { name: "L'Illustré", url: illustreLogo.url, shape: "rect" },
-  { name: "Visana", url: visanaLogo.url, shape: "rect" },
+  { name: "LFM La Radio", url: lfmLogo, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", text: "Ecoute le podcast ici!" },
+  { name: "L'Illustré", url: illustreLogo, shape: "rect" },
+  { name: "Visana", url: visanaLogo, shape: "rect" },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" },
-  { name: "Little Green House", url: littleGreenHouseLogo.url, shape: "rect" },
-  { name: "Corridor Lausanne", url: corridorLogo.url, shape: "rect" },
-  { name: "Manor", url: manorLogo.url, shape: "rect" },
-  { name: "Maison Blanche", url: maisonBlancheLogo.url, shape: "circle" },
-  { name: "Afterwork", url: afterworkLogo.url, shape: "rect" },
+  { name: "Little Green House", url: littleGreenHouseLogo, shape: "rect" },
+  { name: "Corridor Lausanne", url: corridorLogo, shape: "rect" },
+  { name: "Manor", url: manorLogo, shape: "rect" },
+  { name: "Maison Blanche", url: maisonBlancheLogo, shape: "circle" },
+  { name: "Afterwork", url: afterworkLogo, shape: "rect" },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
@@ -93,11 +93,11 @@ function NavLink({ label, href, delay = 0 }: { label: string; href: string; dela
 }
 
 const CLIENT_IMAGES = [
-  { src: clientCherry.url, alt: "Sac cerises peint main" },
-  { src: clientDolphin.url, alt: "Trousse dauphins peinte main" },
-  { src: clientLemon.url, alt: "Sac citrons peint main" },
-  { src: clientBordel.url, alt: "Trousse Mon bordel artistique" },
-  { src: clientRockpaper.url, alt: "Sac Rock Paper Scissors chats peint main" },
+  { src: clientCherry, alt: "Sac cerises peint main" },
+  { src: clientDolphin, alt: "Trousse dauphins peinte main" },
+  { src: clientLemon, alt: "Sac citrons peint main" },
+  { src: clientBordel, alt: "Trousse Mon bordel artistique" },
+  { src: clientRockpaper, alt: "Sac Rock Paper Scissors chats peint main" },
 ];
 
 // Chaque position appartient à une "zone" (coin de la section). On garantit
@@ -435,10 +435,10 @@ function Index() {
           </p>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <div className="float-left overflow-hidden rounded-3xl border-4 shadow-xl" style={{ borderColor: "var(--cocoa)" }}>
-              <img src={atelierImg1.url} alt="Atelier Bar à custom — espace de création" loading="lazy" className="h-72 w-full object-cover md:h-96" />
+              <img src={atelierImg1} alt="Atelier Bar à custom — espace de création" loading="lazy" className="h-72 w-full object-cover md:h-96" />
             </div>
             <div className="float-right float-delay-2 overflow-hidden rounded-3xl border-4 shadow-xl" style={{ borderColor: "var(--cocoa)" }}>
-              <img src={atelierImg2.url} alt="Atelier Bar à custom — préparation" loading="lazy" className="h-72 w-full object-cover md:h-96" />
+              <img src={atelierImg2} alt="Atelier Bar à custom — préparation" loading="lazy" className="h-72 w-full object-cover md:h-96" />
             </div>
           </div>
 
@@ -511,7 +511,7 @@ function Index() {
                 </>
               ),
               past: false,
-              image: matchaPaintImg.url,
+              image: matchaPaintImg,
               imagePosition: "center",
               instagramUrl: "https://www.instagram.com/p/Daavbq_KsW5/",
             },
@@ -523,7 +523,7 @@ function Index() {
               price: "CHF 65.- / personne",
               desc: "Un après-midi entre vin, soleil et créativité 🍇🖌️ Antoine nous parle de son domaine, puis tu profites de vin à discrétion tout en personnalisant ton support textile dans une ambiance détendue et inspirante.",
               past: true,
-              image: winePaintImg.url,
+              image: winePaintImg,
               imagePosition: "center 15%",
               instagramUrl: "https://www.instagram.com/p/DYxFsXAobkI/",
             },
@@ -535,7 +535,7 @@ function Index() {
               price: "CHF 90.- / personne",
               desc: "Le Bar à Custom déménage à l'hôtel Afterwork pour un atelier Brunch & Paint 🎨🥞 Petit brunch en terrasse, puis tu peins ton support textile et repars avec le bide bien rempli et un sac supermégatrop joli ! 🤩",
               past: true,
-              image: brunchTerrasseImg.url,
+              image: brunchTerrasseImg,
               instagramUrl: "https://www.instagram.com/p/DYKe5apsLhx/",
             },
             {
@@ -546,7 +546,7 @@ function Index() {
               price: "CHF 49.- / personne",
               desc: "Le Bar à Custom déménage à Manor le temps d'un atelier exceptionnel. Tu peins sur ton support, tu sirotes une petite boisson, tu dégustes quelques mignardises et tu crées un souvenir inoubliable 😍",
               past: true,
-              image: manorLausanneImg.url,
+              image: manorLausanneImg,
               imagePosition: "center 25%",
               instagramUrl: "https://www.instagram.com/p/DZK1T1woaFi/",
             },
@@ -941,7 +941,7 @@ function Index() {
               className="group inline-flex items-center gap-3 rounded-full border-2 px-6 py-3 text-sm transition-transform hover:scale-[1.03]"
               style={{ borderColor: "var(--clay)", background: "var(--cream)", color: "var(--cocoa)" }}
             >
-              <img src={moonwalcoeurLogo.url} alt="Moonwalcoeur" width={526} height={732} className="h-6 w-auto" style={{ aspectRatio: "526 / 732" }} />
+              <img src={moonwalcoeurLogo} alt="Moonwalcoeur" width={526} height={732} className="h-6 w-auto" style={{ aspectRatio: "526 / 732" }} />
               <span className="font-display">Le sur-mesure · Sur devis</span>
               <span className="hidden font-handwritten text-sm sm:inline" style={{ color: "var(--clay)" }}>Projets longs, mariage, cadeau →</span>
             </Link>

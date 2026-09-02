@@ -379,7 +379,7 @@ export default function BagsCarousel3D() {
           aria-hidden
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${bgRoom.url})`,
+            backgroundImage: `url(${bgRoom})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
