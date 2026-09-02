@@ -3,7 +3,6 @@ import { Instagram, Star, Menu, X, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import barACustomLogo from "@/assets/brand/bar-a-custom.png";
 import heroImg1 from "@/assets/hero/IMG_0362.jpeg";
 import heroImg2 from "@/assets/hero/IMG_3609.jpeg";
 import heroImg3 from "@/assets/hero/IMG_6192.jpeg";
@@ -314,8 +313,8 @@ function Index() {
 
       {/* NAV */}
       <header className="relative z-20 mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 pt-8">
-        <a href="#" className="float-soft" aria-label="Bar à custom">
-          <img src={barACustomLogo} alt="Bar à custom" className="h-14 w-auto" />
+        <a href="#" className="float-soft font-display text-2xl tracking-tight" style={{ color: "var(--cocoa)" }}>
+          Bar à custom
         </a>
         {/* Desktop nav */}
         <nav className="hidden md:flex flex-wrap items-center gap-7">
