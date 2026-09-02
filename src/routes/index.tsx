@@ -403,7 +403,7 @@ function Index() {
             {heroImages.map((img, i) => (
               <img
                 key={i}
-                src={img.url}
+                src={img}
                 alt={`Création Bar à custom ${i + 1}`}
                 className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
                 style={{ opacity: i === heroIndex ? 1 : 0 }}
