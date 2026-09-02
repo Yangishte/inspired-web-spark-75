@@ -177,7 +177,7 @@ export function FloatingMascot() {
             style={{ willChange: "transform" }}
           >
             <img
-              src={EMOTIONS[emotionIdx].url}
+              src={EMOTIONS[emotionIdx]}
               alt=""
               draggable={false}
               className="block h-full w-full select-none"
