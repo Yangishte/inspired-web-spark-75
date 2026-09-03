@@ -315,7 +315,7 @@ function Index() {
       {/* NAV */}
       <header className="relative z-20 mx-auto flex max-w-7xl flex-wrap items-start justify-between gap-6 px-6 pt-8">
         <a href="#" className="float-soft -mt-2" aria-label="Bar à custom">
-          <img src={barACustomLogo} alt="Bar à custom" className="h-24 w-auto md:h-28" />
+          <img src={barACustomLogo} alt="Bar à custom" className="h-36 w-auto md:h-44" />
         </a>
         {/* Desktop nav */}
         <nav className="hidden md:flex flex-wrap items-center gap-7">
