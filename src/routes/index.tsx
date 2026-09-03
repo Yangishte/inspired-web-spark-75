@@ -372,9 +372,6 @@ function Index() {
       {/* HERO */}
       <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 pb-32 pt-20 md:grid-cols-[1.2fr_1fr] md:pt-32">
         <div>
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
-            Atelier de personnalisation — St-Sulpice&nbsp;
-          </span>
           <h1
             className="mt-4 break-words font-display text-4xl leading-[0.95] sm:text-5xl md:text-7xl"
             style={{ color: "var(--cocoa)" }}
