@@ -314,8 +314,11 @@ function Index() {
 
       {/* NAV */}
       <header className="relative z-20 mx-auto flex max-w-7xl flex-wrap items-start justify-between gap-6 px-6 pt-8">
-        <a href="#" className="float-soft -mt-2" aria-label="Bar à custom">
+        <a href="#" className="float-soft -mt-2 flex flex-col" aria-label="Bar à custom">
           <img src={barACustomLogo} alt="Bar à custom" className="h-36 w-auto md:h-44" />
+          <span className="mt-1 font-handwritten text-xl leading-tight md:text-2xl" style={{ color: "var(--clay)" }}>
+            Atelier de personnalisation — St-Sulpice
+          </span>
         </a>
         {/* Desktop nav */}
         <nav className="hidden md:flex flex-wrap items-center gap-7">
@@ -368,9 +371,6 @@ function Index() {
       {/* HERO */}
       <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 pb-32 pt-20 md:grid-cols-[1.2fr_1fr] md:pt-32">
         <div>
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>
-            Atelier de personnalisation — St-Sulpice&nbsp;
-          </span>
           <h1
             className="mt-4 break-words font-display text-4xl leading-[0.95] sm:text-5xl md:text-7xl"
             style={{ color: "var(--cocoa)" }}
