@@ -320,7 +320,6 @@ function Index() {
             Atelier de personnalisation — St-Sulpice
           </span>
         </a>
-        </a>
         {/* Desktop nav */}
         <nav className="hidden md:flex flex-wrap items-center gap-7">
           <NavLink label="L'atelier" href="#atelier" delay={1} />
