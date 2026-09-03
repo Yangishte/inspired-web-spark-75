@@ -314,8 +314,12 @@ function Index() {
 
       {/* NAV */}
       <header className="relative z-20 mx-auto flex max-w-7xl flex-wrap items-start justify-between gap-6 px-6 pt-8">
-        <a href="#" className="float-soft -mt-2" aria-label="Bar à custom">
+        <a href="#" className="float-soft -mt-2 flex flex-col" aria-label="Bar à custom">
           <img src={barACustomLogo} alt="Bar à custom" className="h-36 w-auto md:h-44" />
+          <span className="mt-1 font-handwritten text-xl leading-tight md:text-2xl" style={{ color: "var(--clay)" }}>
+            Atelier de personnalisation — St-Sulpice
+          </span>
+        </a>
         </a>
         {/* Desktop nav */}
         <nav className="hidden md:flex flex-wrap items-center gap-7">
