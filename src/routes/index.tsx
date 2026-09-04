@@ -491,6 +491,31 @@ function Index() {
         {(() => {
           const events = [
             {
+              date: "Samedi 26 septembre 2026",
+              titre: "Sunset Flowers",
+              lieu: "Villeneuve",
+              time: "17h30 - 20h00",
+              price: "CHF 70.- / personne",
+              desc: "On remet ça … et on avait envie de vous proposer une soirée un peu plus différente. Cette fois, on se retrouve au bord du lac, au coucher du soleil, avec un pinceau à la main, un apéro à partager et surtout l'envie de passer un joli moment ensemble. 🌅🤎",
+              past: false,
+              image: sunsetFlowersImg,
+              imagePosition: "center",
+              instagramUrl: "",
+            },
+            {
+              date: "Samedi 12 septembre 2026",
+              titre: "Atelier bijoux de sac x Ciela Bijoux",
+              lieu: "St-Sulpice VD",
+              time: "3 heures",
+              price: "CHF 65.- / personne",
+              desc: "En collaboration avec @ciela_bijoux, on te propose un atelier inédit qui apporte une nouvelle dimension à la personnalisation sur textile ! Pendant 3 heures, tu créeras ton propre bijou de sac avant de personnaliser le support textile de ton choix parmi notre collection (sac, trousse, tote bag…). Tu repartiras avec une création qui ne ressemble à aucune autre ! 👜✨",
+              past: false,
+              image: "",
+              imagePosition: "center",
+              instagramUrl: "",
+            },
+            {
+
               date: "Samedi 5 septembre 2026",
               titre: "Matcha & Paint",
               lieu: "Au bord du lac, St-Sulpice",
