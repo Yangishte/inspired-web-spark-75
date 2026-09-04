@@ -23,6 +23,8 @@ import brunchTerrasseImg from "@/assets/events/brunch-terrasse.jpg";
 import winePaintImg from "@/assets/events/wine-paint.jpg";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg";
 import matchaPaintImg from "@/assets/events/matcha-paint.png";
+import sunsetFlowersImg from "@/assets/events/sunset-flowers.jpg";
+
 import lfmLogo from "@/assets/partners/lfm.png";
 import illustreLogo from "@/assets/partners/illustre.png";
 import visanaLogo from "@/assets/partners/visana.jpg";
