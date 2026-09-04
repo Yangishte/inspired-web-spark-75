@@ -24,6 +24,7 @@ import winePaintImg from "@/assets/events/wine-paint.jpg";
 import manorLausanneImg from "@/assets/events/manor-lausanne.jpg";
 import matchaPaintImg from "@/assets/events/matcha-paint.png";
 import sunsetFlowersImg from "@/assets/events/sunset-flowers.jpg";
+import cielaBijouxImg from "@/assets/events/ciela-bijoux.png";
 
 import lfmLogo from "@/assets/partners/lfm.png";
 import illustreLogo from "@/assets/partners/illustre.png";
@@ -512,8 +513,9 @@ function Index() {
               price: "CHF 65.- / personne",
               desc: "En collaboration avec @ciela_bijoux, on te propose un atelier inédit qui apporte une nouvelle dimension à la personnalisation sur textile ! Pendant 3 heures, tu créeras ton propre bijou de sac avant de personnaliser le support textile de ton choix parmi notre collection (sac, trousse, tote bag…). Tu repartiras avec une création qui ne ressemble à aucune autre ! 👜✨",
               past: false,
-              image: "",
+              image: cielaBijouxImg,
               imagePosition: "center",
+              imageFit: "contain",
               instagramUrl: "",
             },
             {
