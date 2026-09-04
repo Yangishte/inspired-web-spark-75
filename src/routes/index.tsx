@@ -313,9 +313,9 @@ function Index() {
       />
 
       {/* NAV */}
-      <header className="relative z-20 mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6 pt-8">
-        <a href="#" className="float-soft" aria-label="Bar à custom">
-          <img src={barACustomLogo} alt="Bar à custom" className="h-32 w-auto md:h-36" />
+      <header className="relative z-20 mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-6 px-6 pt-8">
+        <a href="#" className="float-soft block" aria-label="Bar à custom">
+          <img src={barACustomLogo} alt="Bar à custom" className="h-24 w-auto md:h-28" />
         </a>
         {/* Desktop nav */}
         <nav className="hidden md:flex flex-wrap items-center gap-7">
