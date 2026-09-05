@@ -505,36 +505,8 @@ function Index() {
 
           {/* AVIS BULLES */}
           <div className="mt-16 grid items-start gap-6 md:grid-cols-2">
-            {[slot0, slot1].map((reviewIndex, slot) => {
-              const review = reviews[reviewIndex];
-              const isFading = fadingSlot === slot;
-              return (
-                <div
-                  key={slot}
-                  className={`relative rounded-3xl border-2 p-5 text-left shadow-xl transition-opacity duration-300 sm:p-6 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
-                  style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
-                >
-                  <span
-                    className="absolute -top-5 left-6 font-display text-5xl leading-none"
-                    style={{ color: "var(--clay)" }}
-                    aria-hidden
-                  >
-                    "
-                  </span>
-                  <div className="mb-3 flex gap-1 pt-3" aria-label="5 étoiles">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={18} fill="#FACC15" color="#FACC15" />
-                    ))}
-                  </div>
-                  <p className="font-handwritten text-lg sm:text-xl" style={{ color: "var(--cocoa)" }}>
-                    {review.text}
-                  </p>
-                  <p className="mt-4 font-marker text-sm" style={{ color: "var(--clay)" }}>
-                    — {review.name}
-                  </p>
-                </div>
-              );
-            })}
+            <ReviewsRotator />
+
           </div>
 
         </div>
