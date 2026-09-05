@@ -210,30 +210,42 @@ const reviews = [
   },
 ];
 
-function Index() {
+function HeroSlideshow() {
   const [heroIndex, setHeroIndex] = useState(0);
-  const [faqVisible, setFaqVisible] = useState(false);
-  const [slot0, setSlot0] = useState(0);
-  const [slot1, setSlot1] = useState(1);
-  const [fadingSlot, setFadingSlot] = useState<0 | 1 | null>(null);
-  
-  
-  const [hoveredPricing, setHoveredPricing] = useState<string | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [bookingModalOpen, setBookingModalOpen] = useState(false);
-  const nextReviewRef = useRef(2);
-  const activeSlotRef = useRef<0 | 1>(0);
 
   useEffect(() => {
     const id = setInterval(() => setHeroIndex((i) => (i + 1) % heroImages.length), 5000);
     return () => clearInterval(id);
   }, []);
 
+  return (
+    <>
+      {heroImages.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          alt={`Création Bar à custom ${i + 1}`}
+          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
+          style={{ opacity: i === heroIndex ? 1 : 0 }}
+        />
+      ))}
+    </>
+  );
+}
+
+function ReviewsRotator() {
+  const [slot0, setSlot0] = useState(0);
+  const [slot1, setSlot1] = useState(1);
+  const [fadingSlot, setFadingSlot] = useState<0 | 1 | null>(null);
+  const nextReviewRef = useRef(2);
+  const activeSlotRef = useRef<0 | 1>(0);
+
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
     const id = setInterval(() => {
       const slotToUpdate = activeSlotRef.current;
       setFadingSlot(slotToUpdate);
-      const timeoutId = setTimeout(() => {
+      timeoutId = setTimeout(() => {
         const next = nextReviewRef.current;
         if (slotToUpdate === 0) setSlot0(next);
         else setSlot1(next);
@@ -241,10 +253,55 @@ function Index() {
         activeSlotRef.current = slotToUpdate === 0 ? 1 : 0;
         requestAnimationFrame(() => setFadingSlot(null));
       }, 300);
-      return () => clearTimeout(timeoutId);
     }, 5000);
-    return () => clearInterval(id);
+    return () => {
+      clearInterval(id);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
+
+  return (
+    <>
+      {[slot0, slot1].map((reviewIndex, slot) => {
+        const review = reviews[reviewIndex];
+        const isFading = fadingSlot === slot;
+        return (
+          <div
+            key={slot}
+            className={`relative rounded-3xl border-2 p-5 text-left shadow-xl transition-opacity duration-300 sm:p-6 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
+            style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
+          >
+            <span
+              className="absolute -top-5 left-6 font-display text-5xl leading-none"
+              style={{ color: "var(--clay)" }}
+              aria-hidden
+            >
+              "
+            </span>
+            <div className="mb-3 flex gap-1 pt-3" aria-label="5 étoiles">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={18} fill="#FACC15" color="#FACC15" />
+              ))}
+            </div>
+            <p className="font-handwritten text-lg sm:text-xl" style={{ color: "var(--cocoa)" }}>
+              {review.text}
+            </p>
+            <p className="mt-4 font-marker text-sm" style={{ color: "var(--clay)" }}>
+              — {review.name}
+            </p>
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
+function Index() {
+  const [faqVisible, setFaqVisible] = useState(false);
+  const [hoveredPricing, setHoveredPricing] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
+
 
   useEffect(() => {
     const link = document.createElement("link");
@@ -404,15 +461,8 @@ function Index() {
             className="animate-float-hero relative h-80 w-80 overflow-hidden rounded-[2rem] border-4 shadow-2xl md:h-96 md:w-96"
             style={{ borderColor: "var(--cocoa)", background: "var(--sand)" }}
           >
-            {heroImages.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt={`Création Bar à custom ${i + 1}`}
-                className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
-                style={{ opacity: i === heroIndex ? 1 : 0 }}
-              />
-            ))}
+            <HeroSlideshow />
+
           </div>
           <span
             className="absolute -bottom-4 -left-4 rotate-[-8deg] rounded-full border-2 px-4 py-2 font-handwritten text-xl"
@@ -448,36 +498,8 @@ function Index() {
 
           {/* AVIS BULLES */}
           <div className="mt-16 grid items-start gap-6 md:grid-cols-2">
-            {[slot0, slot1].map((reviewIndex, slot) => {
-              const review = reviews[reviewIndex];
-              const isFading = fadingSlot === slot;
-              return (
-                <div
-                  key={slot}
-                  className={`relative rounded-3xl border-2 p-5 text-left shadow-xl transition-opacity duration-300 sm:p-6 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
-                  style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
-                >
-                  <span
-                    className="absolute -top-5 left-6 font-display text-5xl leading-none"
-                    style={{ color: "var(--clay)" }}
-                    aria-hidden
-                  >
-                    "
-                  </span>
-                  <div className="mb-3 flex gap-1 pt-3" aria-label="5 étoiles">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={18} fill="#FACC15" color="#FACC15" />
-                    ))}
-                  </div>
-                  <p className="font-handwritten text-lg sm:text-xl" style={{ color: "var(--cocoa)" }}>
-                    {review.text}
-                  </p>
-                  <p className="mt-4 font-marker text-sm" style={{ color: "var(--clay)" }}>
-                    — {review.name}
-                  </p>
-                </div>
-              );
-            })}
+            <ReviewsRotator />
+
           </div>
 
         </div>
