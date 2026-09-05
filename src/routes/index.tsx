@@ -461,15 +461,8 @@ function Index() {
             className="animate-float-hero relative h-80 w-80 overflow-hidden rounded-[2rem] border-4 shadow-2xl md:h-96 md:w-96"
             style={{ borderColor: "var(--cocoa)", background: "var(--sand)" }}
           >
-            {heroImages.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt={`Création Bar à custom ${i + 1}`}
-                className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
-                style={{ opacity: i === heroIndex ? 1 : 0 }}
-              />
-            ))}
+            <HeroSlideshow />
+
           </div>
           <span
             className="absolute -bottom-4 -left-4 rotate-[-8deg] rounded-full border-2 px-4 py-2 font-handwritten text-xl"
