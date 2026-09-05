@@ -181,8 +181,8 @@ function ClientPeeks() {
             alt={img.alt}
             aria-hidden="true"
             loading="lazy"
-            className={`pointer-events-none absolute z-0 client-peek ${pos.cls}`}
-            style={{ ["--peek-rot" as string]: pos.rot, animationDelay: `${i * 5}s`, aspectRatio: "1 / 1" }}
+            className={`pointer-events-none absolute z-0 client-peek h-auto ${pos.cls}`}
+            style={{ ["--peek-rot" as string]: pos.rot, animationDelay: `${i * 5}s` }}
             onAnimationIteration={() => cycleSlot(i)}
           />
         );
