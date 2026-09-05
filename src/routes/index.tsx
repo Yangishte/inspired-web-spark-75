@@ -619,8 +619,12 @@ function Index() {
                         <img
                           src={e.image}
                           alt={e.titre}
-                          className="h-full w-full object-cover"
-                          style={{ objectPosition: (e as { imagePosition?: string }).imagePosition || "center" }}
+                          className={`h-full w-full ${(e as { imageFit?: string }).imageFit === "contain" ? "object-contain" : "object-cover"}`}
+                          style={{
+                            objectPosition: (e as { imagePosition?: string }).imagePosition || "center",
+                            background:
+                              (e as { imageFit?: string }).imageFit === "contain" ? "#f6f0e4" : undefined,
+                          }}
                         />
                       </a>
                     ) : (
