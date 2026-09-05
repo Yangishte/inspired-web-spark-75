@@ -526,12 +526,26 @@ function Index() {
               lieu: "St-Sulpice VD",
               time: "3 heures",
               price: "CHF 65.- / personne",
-              desc: "En collaboration avec @ciela_bijoux, on te propose un atelier inédit qui apporte une nouvelle dimension à la personnalisation sur textile ! Pendant 3 heures, tu créeras ton propre bijou de sac avant de personnaliser le support textile de ton choix parmi notre collection (sac, trousse, tote bag…). Tu repartiras avec une création qui ne ressemble à aucune autre ! 👜✨",
+              desc: (
+                <>
+                  En collaboration avec{" "}
+                  <a
+                    href="https://www.instagram.com/p/DcHCWbao9TE/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    @ciela_bijoux
+                  </a>
+                  , on te propose un atelier inédit qui apporte une nouvelle dimension à la personnalisation sur textile ! Pendant 3 heures, tu créeras ton propre bijou de sac avant de personnaliser le support textile de ton choix parmi notre collection (sac, trousse, tote bag…). Tu repartiras avec une création qui ne ressemble à aucune autre ! 👜✨
+                </>
+              ),
               past: false,
               image: cielaBijouxImg,
               imagePosition: "center",
               imageFit: "contain",
-              instagramUrl: "",
+              instagramUrl: "https://www.instagram.com/p/DcHCWbao9TE/",
             },
             {
               date: "Samedi 26 septembre 2026",
