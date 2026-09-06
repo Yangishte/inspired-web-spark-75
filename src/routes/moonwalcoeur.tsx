@@ -417,8 +417,9 @@ function Moonwalcoeur() {
       </section>
 
       <footer className="relative z-10 mx-auto max-w-6xl px-6 pb-12 pt-8 text-center text-sm text-[#A8AEC9]">
-        Moonwalcoeur · transmission depuis l'atelier · © 2026
-        Moonwalcoeur · transmission depuis l'atelier · © 2026
+        Transmission depuis l'atelier&nbsp;
+        <br />
+        © 2026 Moonwalcoeur
       </footer>
     </div>
   );
