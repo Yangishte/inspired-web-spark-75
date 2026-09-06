@@ -269,7 +269,7 @@ function ReviewsRotator() {
           <div
             key={slot}
             className={`relative rounded-3xl border-2 p-5 text-left shadow-xl transition-opacity duration-300 sm:p-6 ${slot === 0 ? "float-left" : "float-right float-delay-2"} ${isFading ? "opacity-0" : "opacity-100"}`}
-            style={{ borderColor: "var(--clay)", background: "var(--cream)" }}
+            style={{ borderColor: "var(--clay)", background: "var(--cream)", minHeight: "16rem" }}
           >
             <span
               className="absolute -top-5 left-6 font-display text-5xl leading-none"
@@ -283,7 +283,7 @@ function ReviewsRotator() {
                 <Star key={i} size={18} fill="#FACC15" color="#FACC15" />
               ))}
             </div>
-            <p className="font-handwritten text-lg sm:text-xl" style={{ color: "var(--cocoa)" }}>
+            <p className="line-clamp-6 font-handwritten text-lg sm:text-xl" style={{ color: "var(--cocoa)" }}>
               {review.text}
             </p>
             <p className="mt-4 font-marker text-sm" style={{ color: "var(--clay)" }}>
