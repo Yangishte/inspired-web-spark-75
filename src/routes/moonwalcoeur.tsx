@@ -120,14 +120,12 @@ function SpotlightSignature({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <img src={src} alt={alt} width={526} height={732} className="relative z-10 w-full h-auto" style={{ aspectRatio: "526 / 732" }} />
+      <img src={src} alt={alt} className="relative z-10 w-full h-auto" />
       <img
         src={src}
         alt=""
         aria-hidden
-        width={526}
-        height={732}
-        className="absolute inset-0 z-20 w-full h-auto"
+        className="absolute inset-0 z-20 h-full w-full"
         style={{
           opacity: hover ? 1 : 0,
           transition: "opacity 0.25s ease-out",
