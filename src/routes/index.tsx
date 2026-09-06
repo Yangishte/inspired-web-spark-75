@@ -515,33 +515,6 @@ function Index() {
         {(() => {
           const events = [
             {
-
-              date: "Samedi 5 septembre 2026",
-              titre: "Matcha & Paint",
-              lieu: "Au bord du lac, St-Sulpice",
-              time: "10h00 - 12h00 ou 13h30 - 15H30",
-              price: "CHF 59.- / Personne",
-              desc: (
-                <>
-                  Retrouve-nous le 5 septembre pour un atelier en collaboration entre{" "}
-                  <a
-                    href="https://www.instagram.com/mymatchaharmony/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                    style={{ color: "var(--cocoa)" }}
-                  >
-                    My Matcha Harmony
-                  </a>{" "}
-                  et Le Bar à Custom. Pendant que tu laisses parler ta créativité, Michela sera là pour te faire découvrir de délicieux matcha latte préparés avec le matcha cérémonial de Shizuoka. 🍵🎨
-                </>
-              ),
-              past: true,
-              image: matchaPaintImg,
-              imagePosition: "center",
-              instagramUrl: "https://www.instagram.com/p/Daavbq_KsW5/",
-            },
-            {
               date: "Samedi 12 septembre 2026",
               titre: "Atelier bijoux de sac x Ciela Bijoux",
               lieu: "St-Sulpice VD",
@@ -579,6 +552,32 @@ function Index() {
               image: sunsetFlowersImg,
               imagePosition: "center",
               instagramUrl: "https://www.instagram.com/p/Dcl5HoWqji2/",
+            },
+            {
+              date: "Samedi 5 septembre 2026",
+              titre: "Matcha & Paint",
+              lieu: "Au bord du lac, St-Sulpice",
+              time: "10h00 - 12h00 ou 13h30 - 15H30",
+              price: "CHF 59.- / Personne",
+              desc: (
+                <>
+                  Retrouve-nous le 5 septembre pour un atelier en collaboration entre{" "}
+                  <a
+                    href="https://www.instagram.com/mymatchaharmony/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    My Matcha Harmony
+                  </a>{" "}
+                  et Le Bar à Custom. Pendant que tu laisses parler ta créativité, Michela sera là pour te faire découvrir de délicieux matcha latte préparés avec le matcha cérémonial de Shizuoka. 🍵🎨
+                </>
+              ),
+              past: true,
+              image: matchaPaintImg,
+              imagePosition: "center",
+              instagramUrl: "https://www.instagram.com/p/Daavbq_KsW5/",
             },
             {
               date: "Dimanche 7 juin 2026",
