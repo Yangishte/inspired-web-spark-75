@@ -508,8 +508,7 @@ function Index() {
       {/* ÉVÉNEMENTS */}
       <section id="evenements" data-reveal="zoom-in" className="reveal relative z-10 mx-auto max-w-6xl px-6 py-20">
         <div className="mb-6 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Réserve ta place ↓</span>
-          <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+          <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
             Nos événements
           </h2>
         </div>
@@ -894,8 +893,7 @@ function Index() {
       {/* SERVICES — Carrousel 3D */}
       <section id="services" data-reveal="flip-up" className="reveal relative z-10 mx-auto max-w-6xl px-6 py-28">
         <div className="mb-12 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Choisis ton support!</span>
-          <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+          <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
             Exemples de supports
           </h2>
         </div>
@@ -1059,8 +1057,7 @@ function Index() {
           </span>
         ))}
         <div className="mb-10 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Les questions ↓</span>
-          <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+          <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
             FAQ
           </h2>
         </div>
@@ -1237,8 +1234,7 @@ function Index() {
 
 
         <div className="mx-auto mb-8 max-w-5xl px-6 text-center">
-          <span className="font-handwritten text-2xl" style={{ color: "var(--clay)" }}>Prends ton créneau</span>
-          <h2 className="mt-2 font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
+          <h2 className="font-display text-4xl md:text-5xl" style={{ color: "var(--cocoa)" }}>
             Réserver un rendez-vous
           </h2>
           <p className="mt-4 font-handwritten text-xl" style={{ color: "var(--clay)" }}>
