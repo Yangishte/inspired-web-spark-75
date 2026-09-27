@@ -76,8 +76,13 @@ const partners: Partner[] = [
     link: "https://mymatchaharmony.ch/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAac3Krirs1MlQZnhmcD7PdWLyfjX6zZ1OpdpwgfMTVkBwPkc9dUpk-TU4JogLQ_aem_rBfEMjzoAB_rMrll-716_A",
   },
   { name: "Afterwork", url: afterworkLogo, shape: "rect", link: "https://afterworkhotel.ch/fr" },
-  { name: "Entre Nous", url: entreNousLogo, shape: "circle" },
-  { name: "Maison Blanche", url: maisonBlancheLogo, shape: "circle" },
+  { name: "Entre Nous", url: entreNousLogo, shape: "circle", link: "https://www.instagram.com/entrenous.ch/" },
+  {
+    name: "Maison Blanche",
+    url: maisonBlancheLogo,
+    shape: "circle",
+    link: "https://www.domainemaisonblanche.ch/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaeFzqYFyN1O98z13dsweuXbCd4KesYXYW-G9Rw2UdhlIdgbxvZxMj-uKCofEw_aem_VD9pxJUNn52C0y_7gJ5qjA",
+  },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
