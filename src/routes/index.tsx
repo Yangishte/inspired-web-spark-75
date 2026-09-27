@@ -558,7 +558,7 @@ function Index() {
                   >
                     @instantscomplices_
                   </a>{" "}
-                  à St-Sulpice pour un brunch convivial suivi d’un atelier peinture sur textile.
+                   à St-Sulpice pour un brunch convivial suivi d’un atelier peinture sur textile.
                   Repartez avec une pièce unique customisée de vos mains ✨
                   <br />
                   <br />
