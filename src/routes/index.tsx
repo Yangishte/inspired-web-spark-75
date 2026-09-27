@@ -61,6 +61,9 @@ const partners: Partner[] = [
   { name: "Manor", url: manorLogo, shape: "rect" },
   { name: "Maison Blanche", url: maisonBlancheLogo, shape: "circle" },
   { name: "Afterwork", url: afterworkLogo, shape: "rect" },
+  { name: "Ciela Bijoux", url: cielaLogo, shape: "circle" },
+  { name: "My Matcha Harmony", url: matchaHarmonyLogo, shape: "circle" },
+  { name: "Entre Nous", url: entreNousLogo, shape: "circle" },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
