@@ -550,7 +550,7 @@ function Index() {
                   <br />
                   Le dimanche 15 novembre, de 10h à 14h, on se retrouve avec{" "}
                   <a
-                    href="https://www.instagram.com/instantscomplices_/"
+                    href="https://www.instagram.com/instantscomplices/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline"
