@@ -56,16 +56,26 @@ type Partner = {
 
 // Ordre alterné: jamais plus de 2 mêmes formes à la suite (bout à bout inclus).
 const partners: Partner[] = [
-  { name: "L'Illustré", url: illustreLogo, shape: "rect" },
-  { name: "Visana", url: visanaLogo, shape: "rect" },
+  { name: "L'Illustré", url: illustreLogo, shape: "rect", link: "https://www.illustre.ch" },
+  { name: "Visana", url: visanaLogo, shape: "rect", link: "https://www.visana.ch/fr/clientele-privee" },
   { name: "LFM La Radio", url: lfmLogo, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", text: "Ecoute le podcast ici!" },
-  { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" },
-  { name: "Little Green House", url: littleGreenHouseLogo, shape: "rect" },
-  { name: "Ciela Bijoux", url: cielaLogo, shape: "circle" },
-  { name: "Corridor Lausanne", url: corridorLogo, shape: "rect" },
-  { name: "Manor", url: manorLogo, shape: "rect" },
-  { name: "My Matcha Harmony", url: matchaHarmonyLogo, shape: "circle" },
-  { name: "Afterwork", url: afterworkLogo, shape: "rect" },
+  { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect", link: "https://www.archedenoe.ch" },
+  { name: "Little Green House", url: littleGreenHouseLogo, shape: "rect", link: "https://www.littlegreenhouse.ch/fr/" },
+  {
+    name: "Ciela Bijoux",
+    url: cielaLogo,
+    shape: "circle",
+    link: "https://www.ciela-bijoux.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafgQOzmbJm3IX_216ugSinM0F_q4jqmxGVNdvMe4lZwC0V_2v21ENvV4x6ReA_aem_g6Bwi7Z9Xg0tvmP-Nz1cFQ",
+  },
+  { name: "Corridor Lausanne", url: corridorLogo, shape: "rect", link: "https://matchacorridor.com" },
+  { name: "Manor", url: manorLogo, shape: "rect", link: "https://www.manor.ch/fr?srsltid=AU7gw4Vm19Cn-p0FpxqtAv79qor--ENwKTQWvFMEyMkoocZC4uTVkI9R" },
+  {
+    name: "My Matcha Harmony",
+    url: matchaHarmonyLogo,
+    shape: "circle",
+    link: "https://mymatchaharmony.ch/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAac3Krirs1MlQZnhmcD7PdWLyfjX6zZ1OpdpwgfMTVkBwPkc9dUpk-TU4JogLQ_aem_rBfEMjzoAB_rMrll-716_A",
+  },
+  { name: "Afterwork", url: afterworkLogo, shape: "rect", link: "https://afterworkhotel.ch/fr" },
   { name: "Entre Nous", url: entreNousLogo, shape: "circle" },
   { name: "Maison Blanche", url: maisonBlancheLogo, shape: "circle" },
 ];
