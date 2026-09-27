@@ -54,19 +54,20 @@ type Partner = {
   text?: string;
 };
 
+// Ordre alterné: jamais plus de 2 mêmes formes à la suite (bout à bout inclus).
 const partners: Partner[] = [
-  { name: "LFM La Radio", url: lfmLogo, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", text: "Ecoute le podcast ici!" },
   { name: "L'Illustré", url: illustreLogo, shape: "rect" },
   { name: "Visana", url: visanaLogo, shape: "rect" },
+  { name: "LFM La Radio", url: lfmLogo, shape: "circle", link: "https://www.lfm.ch/podcasts/le-6-9-lfm-linvite·e-du-6-9-16-03-2026-0818/", text: "Ecoute le podcast ici!" },
   { name: "L'Arche de Noé", url: archeNoeLogo, shape: "rect" },
   { name: "Little Green House", url: littleGreenHouseLogo, shape: "rect" },
+  { name: "Ciela Bijoux", url: cielaLogo, shape: "circle" },
   { name: "Corridor Lausanne", url: corridorLogo, shape: "rect" },
   { name: "Manor", url: manorLogo, shape: "rect" },
-  { name: "Maison Blanche", url: maisonBlancheLogo, shape: "circle" },
-  { name: "Afterwork", url: afterworkLogo, shape: "rect" },
-  { name: "Ciela Bijoux", url: cielaLogo, shape: "circle" },
   { name: "My Matcha Harmony", url: matchaHarmonyLogo, shape: "circle" },
+  { name: "Afterwork", url: afterworkLogo, shape: "rect" },
   { name: "Entre Nous", url: entreNousLogo, shape: "circle" },
+  { name: "Maison Blanche", url: maisonBlancheLogo, shape: "circle" },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
