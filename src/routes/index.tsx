@@ -516,6 +516,38 @@ function Index() {
         {(() => {
           const events = [
             {
+              date: "Dimanche 15 novembre 2026",
+              titre: "Brunch & Paint x instantscomplices",
+              lieu: "St-Sulpice VD",
+              time: "10h00 - 14h00",
+              price: "CHF 70.- / personne",
+              desc: (
+                <>
+                  On vous concocte un moment gourmand et créatif rien que pour vous !
+                  <br />
+                  <br />
+                  Le dimanche 15 novembre, de 10h à 14h, on se retrouve avec{" "}
+                  <a
+                    href="https://www.instagram.com/instantscomplices_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    @instantscomplices_
+                  </a>{" "}
+                  à St-Sulpice pour un brunch convivial suivi d’un atelier peinture sur textile.
+                  Repartez avec une pièce unique customisée de vos mains ✨
+                  <br />
+                  <br />
+                  ⚠️ Places limitées à 10 personnes, pour garder ce moment intime et convivial.
+                </>
+              ),
+              past: false,
+              image: brunchInstantsComplicesImg,
+              imagePosition: "center",
+            },
+            {
               date: "Samedi 26 septembre 2026",
               titre: "Sunset Flowers",
               lieu: "Villeneuve",
@@ -636,38 +668,6 @@ function Index() {
               image: manorLausanneImg,
               imagePosition: "center 25%",
               instagramUrl: "https://www.instagram.com/p/DZK1T1woaFi/",
-            },
-            {
-              date: "Dimanche 15 novembre 2026",
-              titre: "Brunch & Paint x instantscomplices",
-              lieu: "St-Sulpice VD",
-              time: "10h00 - 14h00",
-              price: "CHF 70.- / personne",
-              desc: (
-                <>
-                  On vous concocte un moment gourmand et créatif rien que pour vous !
-                  <br />
-                  <br />
-                  Le dimanche 15 novembre, de 10h à 14h, on se retrouve avec{" "}
-                  <a
-                    href="https://www.instagram.com/instantscomplices_/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                    style={{ color: "var(--cocoa)" }}
-                  >
-                    @instantscomplices_
-                  </a>{" "}
-                  à St-Sulpice pour un brunch convivial suivi d’un atelier peinture sur textile.
-                  Repartez avec une pièce unique customisée de vos mains ✨
-                  <br />
-                  <br />
-                  ⚠️ Places limitées à 10 personnes, pour garder ce moment intime et convivial.
-                </>
-              ),
-              past: false,
-              image: brunchInstantsComplicesImg,
-              imagePosition: "center",
             },
           ];
 
