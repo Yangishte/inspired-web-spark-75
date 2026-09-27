@@ -548,11 +548,33 @@ function Index() {
               lieu: "Villeneuve",
               time: "17h30 - 20h00",
               price: "CHF 70.- / personne",
-              desc: "On remet ça … et on avait envie de vous proposer une soirée un peu plus différente. Cette fois, on se retrouve au bord du lac, au coucher du soleil, avec un pinceau à la main, un apéro à partager et surtout l'envie de passer un joli moment ensemble. 🌅🤎",
+              desc: (
+                <>
+                  On vous prépare un event unique avec{" "}
+                  <a
+                    href="https://www.instagram.com/entrenous.ch/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    @entrenous.ch
+                  </a>{" "}
+                  — Apéro dinatoire & Paint 🥂🎨
+                  <br />
+                  <br />
+                  Un apéro dinatoire, de la peinture sur textile et un coucher de soleil pour
+                  inspirer vos esprits créatifs ! 🌅
+                  <br />
+                  <br />
+                  ⚠️ Les places sont limitées, donc si ce moment de partage t’inspire, bookes ta
+                  session !
+                </>
+              ),
               past: false,
               image: sunsetFlowersImg,
               imagePosition: "center",
-              instagramUrl: "https://www.instagram.com/p/Dcl5HoWqji2/",
+              instagramUrl: "https://www.instagram.com/p/DdyPeTruHsL/",
             },
             {
               date: "Dimanche 15 novembre 2026",
