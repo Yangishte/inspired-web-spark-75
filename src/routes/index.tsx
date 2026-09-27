@@ -36,6 +36,9 @@ import corridorLogo from "@/assets/partners/corridor.webp";
 import manorLogo from "@/assets/partners/manor.png";
 import maisonBlancheLogo from "@/assets/partners/maison-blanche.png";
 import afterworkLogo from "@/assets/partners/afterwork.png";
+import cielaLogo from "@/assets/partners/ciela.png";
+import matchaHarmonyLogo from "@/assets/partners/my-matcha-harmony.png";
+import entreNousLogo from "@/assets/partners/entre-nous.png";
 import clientCherry from "@/assets/clients/client-cherry.png";
 import clientDolphin from "@/assets/clients/client-dolphin-new.png";
 import clientLemon from "@/assets/clients/client-lemon.png";
@@ -61,6 +64,9 @@ const partners: Partner[] = [
   { name: "Manor", url: manorLogo, shape: "rect" },
   { name: "Maison Blanche", url: maisonBlancheLogo, shape: "circle" },
   { name: "Afterwork", url: afterworkLogo, shape: "rect" },
+  { name: "Ciela Bijoux", url: cielaLogo, shape: "circle" },
+  { name: "My Matcha Harmony", url: matchaHarmonyLogo, shape: "circle" },
+  { name: "Entre Nous", url: entreNousLogo, shape: "circle" },
 ];
 
 const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9];
