@@ -552,6 +552,7 @@ function Index() {
               past: false,
               image: brunchInstantsComplicesImg,
               imagePosition: "center",
+              instagramUrl: "https://www.instagram.com/p/DdUAIIHDcNr/?img_index=4",
             },
             {
               date: "Samedi 26 septembre 2026",
