@@ -516,33 +516,6 @@ function Index() {
         {(() => {
           const events = [
             {
-              date: "Samedi 12 septembre 2026",
-              titre: "Atelier bijoux de sac x Ciela Bijoux",
-              lieu: "St-Sulpice VD",
-              time: "3 heures",
-              price: "CHF 65.- / personne",
-              desc: (
-                <>
-                  En collaboration avec{" "}
-                  <a
-                    href="https://www.instagram.com/p/DcHCWbao9TE/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline"
-                    style={{ color: "var(--cocoa)" }}
-                  >
-                    @ciela_bijoux
-                  </a>
-                  , on te propose un atelier inédit qui apporte une nouvelle dimension à la personnalisation sur textile ! Pendant 3 heures, tu créeras ton propre bijou de sac avant de personnaliser le support textile de ton choix parmi notre collection (sac, trousse, tote bag…). Tu repartiras avec une création qui ne ressemble à aucune autre ! 👜✨
-                </>
-              ),
-              past: false,
-              image: cielaBijouxImg,
-              imagePosition: "center",
-              imageFit: "contain",
-              instagramUrl: "https://www.instagram.com/p/DcHCWbao9TE/",
-            },
-            {
               date: "Samedi 26 septembre 2026",
               titre: "Sunset Flowers",
               lieu: "Villeneuve",
@@ -571,42 +544,37 @@ function Index() {
                   session !
                 </>
               ),
-              past: false,
+              past: true,
               image: sunsetFlowersImg,
               imagePosition: "center",
               instagramUrl: "https://www.instagram.com/p/DdyPeTruHsL/",
             },
             {
-              date: "Dimanche 15 novembre 2026",
-              titre: "Brunch & Paint x instantscomplices",
+              date: "Samedi 12 septembre 2026",
+              titre: "Atelier bijoux de sac x Ciela Bijoux",
               lieu: "St-Sulpice VD",
-              time: "10h00 - 14h00",
-              price: "CHF 70.- / personne",
+              time: "3 heures",
+              price: "CHF 65.- / personne",
               desc: (
                 <>
-                  On vous concocte un moment gourmand et créatif rien que pour vous !
-                  <br />
-                  <br />
-                  Le dimanche 15 novembre, de 10h à 14h, on se retrouve avec{" "}
+                  En collaboration avec{" "}
                   <a
-                    href="https://www.instagram.com/instantscomplices_/"
+                    href="https://www.instagram.com/p/DcHCWbao9TE/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline"
                     style={{ color: "var(--cocoa)" }}
                   >
-                    @instantscomplices_
-                  </a>{" "}
-                  à St-Sulpice pour un brunch convivial suivi d’un atelier peinture sur textile.
-                  Repartez avec une pièce unique customisée de vos mains ✨
-                  <br />
-                  <br />
-                  ⚠️ Places limitées à 10 personnes, pour garder ce moment intime et convivial.
+                    @ciela_bijoux
+                  </a>
+                  , on te propose un atelier inédit qui apporte une nouvelle dimension à la personnalisation sur textile ! Pendant 3 heures, tu créeras ton propre bijou de sac avant de personnaliser le support textile de ton choix parmi notre collection (sac, trousse, tote bag…). Tu repartiras avec une création qui ne ressemble à aucune autre ! 👜✨
                 </>
               ),
-              past: false,
-              image: brunchInstantsComplicesImg,
+              past: true,
+              image: cielaBijouxImg,
               imagePosition: "center",
+              imageFit: "contain",
+              instagramUrl: "https://www.instagram.com/p/DcHCWbao9TE/",
             },
             {
               date: "Samedi 5 septembre 2026",
@@ -668,6 +636,38 @@ function Index() {
               image: manorLausanneImg,
               imagePosition: "center 25%",
               instagramUrl: "https://www.instagram.com/p/DZK1T1woaFi/",
+            },
+            {
+              date: "Dimanche 15 novembre 2026",
+              titre: "Brunch & Paint x instantscomplices",
+              lieu: "St-Sulpice VD",
+              time: "10h00 - 14h00",
+              price: "CHF 70.- / personne",
+              desc: (
+                <>
+                  On vous concocte un moment gourmand et créatif rien que pour vous !
+                  <br />
+                  <br />
+                  Le dimanche 15 novembre, de 10h à 14h, on se retrouve avec{" "}
+                  <a
+                    href="https://www.instagram.com/instantscomplices_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    @instantscomplices_
+                  </a>{" "}
+                  à St-Sulpice pour un brunch convivial suivi d’un atelier peinture sur textile.
+                  Repartez avec une pièce unique customisée de vos mains ✨
+                  <br />
+                  <br />
+                  ⚠️ Places limitées à 10 personnes, pour garder ce moment intime et convivial.
+                </>
+              ),
+              past: false,
+              image: brunchInstantsComplicesImg,
+              imagePosition: "center",
             },
           ];
 
