@@ -9,17 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as MoonwalcoeurRouteImport } from './routes/moonwalcoeur'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MoonwalcoeurRouteImport } from './routes/moonwalcoeur'
 
-const MoonwalcoeurRoute = MoonwalcoeurRouteImport.update({
-  id: '/moonwalcoeur',
-  path: '/moonwalcoeur',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoonwalcoeurRoute = MoonwalcoeurRouteImport.update({
+  id: '/moonwalcoeur',
+  path: '/moonwalcoeur',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -51,18 +51,18 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/moonwalcoeur': {
-      id: '/moonwalcoeur'
-      path: '/moonwalcoeur'
-      fullPath: '/moonwalcoeur'
-      preLoaderRoute: typeof MoonwalcoeurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/moonwalcoeur': {
+      id: '/moonwalcoeur'
+      path: '/moonwalcoeur'
+      fullPath: '/moonwalcoeur'
+      preLoaderRoute: typeof MoonwalcoeurRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
