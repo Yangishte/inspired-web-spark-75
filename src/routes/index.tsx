@@ -556,16 +556,29 @@ function Index() {
                     className="underline"
                     style={{ color: "var(--cocoa)" }}
                   >
-                    @instantscomplices_
+                    @instantscomplices
                   </a>{" "}
-                   à St-Sulpice pour un brunch convivial suivi d’un atelier peinture sur textile.
+                   à St-Sulpice pour un brunch convivial suivi d’un atelier peinture sur textile.
                   Repartez avec une pièce unique customisée de vos mains ✨
                   <br />
                   <br />
-                  ⚠️ Places limitées à 10 personnes, pour garder ce moment intime et convivial.
+                  ⚠️ Places limitées à 10 personnes ⚠️
+                  <br />
+                  Pour réserver envoyez un message à{" "}
+                  <a
+                    href="https://www.instagram.com/instantscomplices/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--cocoa)" }}
+                  >
+                    @instantscomplices
+                  </a>
+                  .
                 </>
               ),
               past: false,
+              ctaDisabled: true,
               image: brunchInstantsComplicesImg,
               imagePosition: "center",
               instagramUrl: "https://www.instagram.com/p/DdUAIIHDcNr/?img_index=4",
@@ -695,6 +708,7 @@ function Index() {
           ];
 
           const renderEventCard = (e: typeof events[0]) => {
+            const ctaDisabled = (e as { ctaDisabled?: boolean }).ctaDisabled === true;
             const ctaHref = e.past ? e.instagramUrl || "#reserver" : "#reserver";
             const ctaLabel = e.past ? "Voir" : "Réserver";
             const ctaIsExternal = ctaHref.startsWith("http");
@@ -808,15 +822,29 @@ function Index() {
                   </div>
 
                   <div className="mt-auto flex flex-nowrap items-center gap-3">
-                    <a
-                      href={ctaHref}
-                      target={ctaIsExternal ? "_blank" : undefined}
-                      rel={ctaIsExternal ? "noopener noreferrer" : undefined}
-                      className="flex h-[52px] flex-1 items-center justify-center whitespace-nowrap rounded-xl px-4 font-marker text-sm transition-transform hover:scale-105 md:text-base"
-                      style={{ background: "var(--cocoa)", color: "var(--cream)" }}
-                    >
-                      {ctaLabel}
-                    </a>
+                    {ctaDisabled ? (
+                      <span
+                        aria-disabled="true"
+                        className="flex h-[52px] flex-1 cursor-not-allowed items-center justify-center whitespace-nowrap rounded-xl px-4 font-marker text-sm md:text-base"
+                        style={{
+                          background: "#c9c2b8",
+                          color: "#f4efe6",
+                          boxShadow: "inset 0 0 0 2px rgba(0,0,0,0.08)",
+                        }}
+                      >
+                        {ctaLabel}
+                      </span>
+                    ) : (
+                      <a
+                        href={ctaHref}
+                        target={ctaIsExternal ? "_blank" : undefined}
+                        rel={ctaIsExternal ? "noopener noreferrer" : undefined}
+                        className="flex h-[52px] flex-1 items-center justify-center whitespace-nowrap rounded-xl px-4 font-marker text-sm transition-transform hover:scale-105 md:text-base"
+                        style={{ background: "var(--cocoa)", color: "var(--cream)" }}
+                      >
+                        {ctaLabel}
+                      </a>
+                    )}
                     {e.price && (
                       <span
                         className="flex h-[52px] flex-1 items-center justify-center whitespace-nowrap rounded-full px-3 font-marker text-sm uppercase leading-none tracking-wide text-center md:px-4 md:text-base"
