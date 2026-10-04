@@ -564,7 +564,7 @@ function Index() {
                   <br />
                   ⚠️ Places limitées à 10 personnes ⚠️
                   <br />
-                  Pour réserver envoyez un message à{" "}
+                  Pour réserver, envoyez un message à{" "}
                   <a
                     href="https://www.instagram.com/instantscomplices/"
                     target="_blank"
